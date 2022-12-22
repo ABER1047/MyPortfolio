@@ -596,7 +596,7 @@ obj_desc_thumbnail.style.opacity = "1";
     }
     else if (n_showcase_game == 1)
     {
-    obj_desc_thumbnail.src = "imgs/astronaut_thumbnail.png";
+    obj_desc_thumbnail.src = "imgs/Astronaut_thumbnail.png";
     obj_astronaut_desc.style.top = "60%";
     obj_astronaut_desc.style.opacity = "1";
     }
