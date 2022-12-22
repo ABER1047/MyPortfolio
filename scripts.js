@@ -192,8 +192,8 @@ window.onload = function()
 {
 window.scrollTo(0, 0);
 css_values();
-setTimeout(force_loading,6000);
-setTimeout(show_page_anime,6000);
+setTimeout(force_loading,7000);
+setTimeout(show_page_anime,7000);
 }
 $(window).resize(function()
 {
