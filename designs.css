@@ -1,0 +1,87 @@
+@font-face
+{ 
+font-family : customfont;
+src: url(etc/BM_hanna_air.otf);
+}
+
+div
+{
+font-family: customfont;
+}
+
+
+
+
+/* Loading bar */
+.loading_bar_bg
+{
+position : fixed;
+width : 1920px;
+height : 1080px;
+transition : width 4.5s, opacity 1s;
+}
+
+.loading_bar_grad
+{
+position : fixed;
+background-image : linear-gradient(to right,#bdbdbd,#466074,#263b4b,#192731,#547282,#b2d7eb,#547282,#192731);
+margin-left : -8px;
+width : 1920px;
+height : 2px;
+}
+
+.loading_bar
+{
+position : fixed;
+width : 0px;
+height : 2px;
+margin-left : -8px;
+background : white;
+transition : width 4.5s;
+}
+
+.hello_title_eng
+{
+font-size : var(--s160px);
+left : var(--s112px);
+font-weight : bold;
+transition : top 0.5s, opacity 0.5s, margin 0.1s;
+margin-left : var(--m_interect_xx);
+margin-top : var(--m_interect_yy);
+}
+
+.hello_title_kor
+{
+font-size : var(--s48px);
+left : var(--s112px);
+font-weight : bold;
+transition : top 0.5s, opacity 0.5s, margin 0.1s;
+margin-left : var(--m_interect_xx);
+margin-top : var(--m_interect_yy);
+}
+
+.hello_title_jap
+{
+font-size : var(--s48px);
+left : var(--s108px);
+font-weight : bold;
+font-family: auto;
+transition : top 0.5s, opacity 0.5s, margin 0.1s;
+margin-left : var(--m_interect_xx);
+margin-top : var(--m_interect_yy);
+}
+
+.hello_title_desc
+{
+font-size : var(--s16px);
+left : var(--s112px);
+transition : top 0.5s, opacity 0.5s, margin 0.1s;
+margin-left : var(--m_interect_xx);
+margin-top : var(--m_interect_yy);
+}
+
+.accent
+{
+font-size : 20px;
+color : #E0C9A8;
+}
