@@ -8,6 +8,7 @@ var obj_hello_title_desc = document.getElementById("hello_title_desc");
 var obj_trailer_video = document.getElementById("trailer_video");
 var obj_quick_select_main = document.getElementById("quick_select_main");
 var obj_quick_select_showcase = document.getElementById("quick_select_showcase");
+var obj_qquick_select_other_works = document.getElementById("quick_select_other_works");
 var obj_quick_select_contact = document.getElementById("quick_select_contact");
 var obj_discord_icon = document.getElementById("discord_icon");
 var obj_github_icon = document.getElementById("github_icon");
@@ -30,6 +31,21 @@ var obj_desc_thumbnail = document.getElementById("desc_thumbnail");
 var obj_project_wak_desc = document.getElementById("project_wak_desc");
 var obj_astronaut_desc = document.getElementById("astronaut_desc");
 var obj_arena_of_wakgood_desc = document.getElementById("arena_of_wakgood_desc");
+
+
+var obj_other_works_text = document.getElementById("other_works_text");
+var obj_works_arrow_left = document.getElementById("works_arrow_left");
+var obj_works_arrow_right = document.getElementById("works_arrow_right");
+var obj_showcase_works_title1 = document.getElementById("showcase_works_title1");
+var obj_showcase_works_title_sec1 = document.getElementById("showcase_works_title_sec1");
+var obj_showcase_works_title2 = document.getElementById("showcase_works_title2");
+var obj_showcase_works_title_sec2 = document.getElementById("showcase_works_title_sec2");
+var obj_showcase_works_title3 = document.getElementById("showcase_works_title3");
+var obj_showcase_works_title_sec3 = document.getElementById("showcase_works_title_sec3");
+var obj_none_gif = document.getElementById("none_gif");
+var obj_bocchi_gif = document.getElementById("bocchi_gif");
+var obj_delaunay_gif = document.getElementById("delaunay_gif");
+var obj_works_more_desc = document.getElementById("works_more_desc");
 var obj_game_selector_button = [];
 var obj_game_selector_button_activated = [];
 for(var i = 1; i <= 4; i++)
@@ -55,6 +71,7 @@ for(var i = 0; i < 99; i++)
 scroll_animation[i] = 0;
 }
 var n_showcase_game = 0;
+var n_showcase_works = 0;
 var opened_more_desc = 0;
 
 
@@ -193,6 +210,11 @@ obj_quick_select_main.addEventListener("mouseleave",function()
 obj_quick_select_main.style.color = "#192731";
 })
 
+obj_quick_select_main.addEventListener("click",function()
+{
+window.scrollTo(0, 0);
+})
+
 obj_quick_select_showcase.addEventListener("mouseover",function()
 {
 obj_quick_select_showcase.style.color = "#749eca";
@@ -201,6 +223,11 @@ obj_quick_select_showcase.style.color = "#749eca";
 obj_quick_select_showcase.addEventListener("mouseleave",function()
 {
 obj_quick_select_showcase.style.color = "#192731";
+})
+
+obj_quick_select_showcase.addEventListener("click",function()
+{
+window.scrollTo(0, 1500);
 })
 
 obj_quick_select_contact.addEventListener("mouseover",function()
@@ -212,6 +239,28 @@ obj_quick_select_contact.addEventListener("mouseleave",function()
 {
 obj_quick_select_contact.style.color = "#192731";
 })
+
+obj_quick_select_contact.addEventListener("click",function()
+{
+window.scrollTo(0, 600);
+})
+
+obj_qquick_select_other_works.addEventListener("mouseover",function()
+{
+obj_qquick_select_other_works.style.color = "#749eca";
+})
+
+obj_qquick_select_other_works.addEventListener("mouseleave",function()
+{
+obj_qquick_select_other_works.style.color = "#192731";
+})
+
+obj_qquick_select_other_works.addEventListener("click",function()
+{
+window.scrollTo(0, 3000);
+})
+
+
 
 
 
@@ -377,6 +426,9 @@ n_showcase_game ++;
 debug_log(n_showcase_game);
 setTimeout(repos_gif,50);
 })
+
+
+
 
 
 
@@ -562,6 +614,164 @@ obj_more_desc.style.background = "#141527";
 
 
 
+
+
+
+
+
+
+
+
+function repos_works_gif()
+{
+scroll_animation[3] = 0;
+    if (n_showcase_works == 1)
+    {
+    obj_none_gif.style.left = "59%";
+    obj_none_gif.style.top = "3130px";
+    obj_none_gif.style.filter = "blur(5px)";
+    obj_none_gif.style.zIndex = "100";
+    obj_none_gif.style.width = 700*c_x+"px";
+    
+    obj_bocchi_gif.style.left = "30.5%";
+    obj_bocchi_gif.style.top = "3100px";
+    obj_bocchi_gif.style.filter = "blur(0px)";
+    obj_bocchi_gif.style.zIndex = "101";
+    obj_bocchi_gif.style.width = 800*c_x+"px";
+    
+    obj_delaunay_gif.style.left = "5%";
+    obj_delaunay_gif.style.top = "3130px";
+    obj_delaunay_gif.style.filter = "blur(5px)";
+    obj_delaunay_gif.style.zIndex = "100";
+    obj_delaunay_gif.style.width = 700*c_x+"px";
+    
+    
+    obj_showcase_works_title1.style.opacity = "0";
+    obj_showcase_works_title_sec1.style.opacity = "0";
+    obj_showcase_works_title2.style.opacity = "1";
+    obj_showcase_works_title_sec2.style.opacity = "1";
+    obj_showcase_works_title3.style.opacity = "0";
+    obj_showcase_works_title_sec3.style.opacity = "0";
+    
+    
+    obj_works_more_desc.href = "https://github.com/ABER1047/bocchi";
+    }
+    else if (n_showcase_works == 2)
+    {
+    obj_delaunay_gif.style.left = "59%";
+    obj_delaunay_gif.style.top = "3130px";
+    obj_delaunay_gif.style.filter = "blur(5px)";
+    obj_delaunay_gif.style.zIndex = "100";
+    obj_delaunay_gif.style.width = 700*c_x+"px";
+    
+    obj_none_gif.style.left = "30.5%";
+    obj_none_gif.style.top = "3100px";
+    obj_none_gif.style.filter = "blur(0px)";
+    obj_none_gif.style.zIndex = "101";
+    obj_none_gif.style.width = 800*c_x+"px";
+    
+    obj_bocchi_gif.style.left = "5%";
+    obj_bocchi_gif.style.top = "3130px";
+    obj_bocchi_gif.style.filter = "blur(5px)";
+    obj_bocchi_gif.style.zIndex = "100";
+    obj_bocchi_gif.style.width = 700*c_x+"px";
+    
+    
+    obj_showcase_works_title1.style.opacity = "0";
+    obj_showcase_works_title_sec1.style.opacity = "0";
+    obj_showcase_works_title2.style.opacity = "0";
+    obj_showcase_works_title_sec2.style.opacity = "0";
+    obj_showcase_works_title3.style.opacity = "1";
+    obj_showcase_works_title_sec3.style.opacity = "1";
+    }
+    else
+    {
+    obj_bocchi_gif.style.left = "59%";
+    obj_bocchi_gif.style.top = "3130px";
+    obj_bocchi_gif.style.filter = "blur(5px)";
+    obj_bocchi_gif.style.zIndex = "100";
+    obj_bocchi_gif.style.width = 700*c_x+"px";
+    
+    obj_delaunay_gif.style.left = "30.5%";
+    obj_delaunay_gif.style.top = "3100px";
+    obj_delaunay_gif.style.filter = "blur(0px)";
+    obj_delaunay_gif.style.zIndex = "101";
+    obj_delaunay_gif.style.width = 800*c_x+"px";
+    
+    obj_none_gif.style.left = "5%";
+    obj_none_gif.style.top = "3130px";
+    obj_none_gif.style.filter = "blur(5px)";
+    obj_none_gif.style.zIndex = "100";
+    obj_none_gif.style.width = 700*c_x+"px";
+    
+    
+    obj_showcase_works_title1.style.opacity = "1";
+    obj_showcase_works_title_sec1.style.opacity = "1";
+    obj_showcase_works_title2.style.opacity = "0";
+    obj_showcase_works_title_sec2.style.opacity = "0";
+    obj_showcase_works_title3.style.opacity = "0";
+    obj_showcase_works_title_sec3.style.opacity = "0";
+    
+    
+    obj_works_more_desc.href = "https://github.com/ABER1047/delaunay-trianglulation";
+    }
+    
+
+setTimeout(scroll_animation_active,500);
+}
+
+
+obj_works_arrow_left.addEventListener("click",function()
+{
+n_showcase_works --;
+
+    if (n_showcase_works < 0)
+    {
+    n_showcase_works = 2;
+    }
+setTimeout(repos_works_gif,50);
+})
+
+obj_works_arrow_right.addEventListener("click",function()
+{
+n_showcase_works ++;
+
+    if (n_showcase_works > 2)
+    {
+    n_showcase_works = 0;
+    }
+setTimeout(repos_works_gif,50);
+})
+
+
+
+
+
+
+obj_works_more_desc.addEventListener("mouseover",function()
+{
+obj_works_more_desc.style.background = "#b79aca";
+})
+
+obj_works_more_desc.addEventListener("mouseleave",function()
+{
+obj_works_more_desc.style.background = "#141527";
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function css_values()
 {
 c_w = window.innerWidth;
@@ -657,6 +867,39 @@ obj_trailer_video.style.filter = "blur("+$(window).scrollTop()*0.04+"px)";
         setTimeout(text_appearence_anime1,500,obj_showcase_game_title3);
         obj_showcase_game_title_sec3.style.width = "0px";
         setTimeout(text_appearence2_anime2,1000,obj_showcase_game_title_sec3);
+        }
+    }
+    
+    if (scroll > 1200 && scroll_animation[2] == 0)
+    {
+    scroll_animation[2] = 1;
+    obj_other_works_text.style.width = "0px";
+    setTimeout(text_appearence_anime1,500,obj_other_works_text);
+    }
+    
+    if (scroll > 1750 && scroll_animation[3] == 0)
+    {
+    scroll_animation[3] = 1;
+        if (n_showcase_works == 0)
+        {
+        obj_showcase_works_title1.style.width = "0px";
+        setTimeout(text_appearence_anime1,500,obj_showcase_works_title1);
+        obj_showcase_works_title_sec1.style.width = "0px";
+        setTimeout(text_appearence2_anime2,1000,obj_showcase_works_title_sec1);
+        }
+        else if (n_showcase_works == 1)
+        {
+        obj_showcase_works_title2.style.width = "0px";
+        setTimeout(text_appearence_anime1,500,obj_showcase_works_title2);
+        obj_showcase_works_title_sec2.style.width = "0px";
+        setTimeout(text_appearence2_anime2,1000,obj_showcase_works_title_sec2);
+        }
+        else
+        {
+        obj_showcase_works_title3.style.width = "0px";
+        setTimeout(text_appearence_anime1,500,obj_showcase_works_title3);
+        obj_showcase_works_title_sec3.style.width = "0px";
+        setTimeout(text_appearence2_anime2,1000,obj_showcase_works_title_sec3);
         }
     }
 }
