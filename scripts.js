@@ -537,7 +537,7 @@ obj_game_selector_button_activated[n_showcase_game] = 4;
 
 
 
-addEventListener("click",function()
+obj_desc_blinder.addEventListener("click",function()
 {
 desc_des_start();
 });
