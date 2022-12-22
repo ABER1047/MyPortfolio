@@ -46,6 +46,7 @@ var obj_none_gif = document.getElementById("none_gif");
 var obj_bocchi_gif = document.getElementById("bocchi_gif");
 var obj_delaunay_gif = document.getElementById("delaunay_gif");
 var obj_works_more_desc = document.getElementById("works_more_desc");
+var obj_works_more_desc_link = document.getElementById("works_more_desc_link");
 var obj_game_selector_button = [];
 var obj_game_selector_button_activated = [];
 for(var i = 1; i <= 4; i++)
@@ -187,12 +188,24 @@ target_.style.color = "#749eca";
 
 
 
-window.onload = css_values();
+window.onload = function()
+{
+window.scrollTo(0, 0);
+css_values();
+setTimeout(force_loading,6000);
+setTimeout(show_page_anime,6000);
+}
 $(window).resize(function()
 {
 css_values();
 })
 
+
+function force_loading()
+{
+obj_loading_bar.style.transition = "width 1s";
+obj_loading_bar.style.width = window.innerWidth+"px";
+}
 
 
 
@@ -654,7 +667,7 @@ scroll_animation[3] = 0;
     obj_showcase_works_title_sec3.style.opacity = "0";
     
     
-    obj_works_more_desc.href = "https://github.com/ABER1047/bocchi";
+    obj_works_more_desc_link.href = "https://github.com/ABER1047/bocchi";
     }
     else if (n_showcase_works == 2)
     {
@@ -713,7 +726,7 @@ scroll_animation[3] = 0;
     obj_showcase_works_title_sec3.style.opacity = "0";
     
     
-    obj_works_more_desc.href = "https://github.com/ABER1047/delaunay-trianglulation";
+    obj_works_more_desc_link.href = "https://github.com/ABER1047/delaunay-trianglulation";
     }
     
 
@@ -742,8 +755,6 @@ n_showcase_works ++;
     }
 setTimeout(repos_works_gif,50);
 })
-
-
 
 
 
