@@ -173,9 +173,14 @@
     
     
         <div class = "sepa_bg" id = "sepa_bg" style = "position : absolute; background : #ffffff; width : 2000px; height : 533px; left : -8px; top : 4190px;"></div>
+        <img class = "dot_effect" id = "dot_effect" src = "imgs/dot_effect.png" loading = "lazy" style = "position : absolute; left : -4%; width : var(--s256px); top : 4170px;">
+        <img class = "dot_effect" id = "dot_effect" src = "imgs/dot_effect.png" loading = "lazy" style = "position : absolute; left : 91%; width : var(--s256px); top : 4170px;">
         <div class = "sepa_bg" id = "sepa_bg" style = "position : absolute; background : #bbbbc4; width : 2000px; height : 433px; left : -8px; top : 4290px;"></div>
         
-        <input id = "air_res_bar" class = "air_res_bar" type="range" min = "0" max = "100" value = "0" style = "opacity : 0;">
+        <img class = "dot_effect_bg" id = "dot_effect_bg" src = "imgs/dot_effect_bg.png" loading = "lazy" style = "position : absolute; left : -7px; width : 50%; top : 4450px; opacity : 1">
+        <img class = "dot_effect_bg" id = "dot_effect_bg" src = "imgs/dot_effect_bg.png" loading = "lazy" style = "position : absolute; left : 937px; width : 50%; top : 4450px; opacity : 1">
+        
+        <input class = "air_res_bar" id = "air_res_bar"  type="range" min = "0" max = "100" value = "0" style = "opacity : 0;">
         
         <img class = "works_gif1" id = "works_gif1" src = "imgs/works1.gif" loading = "lazy" style = "position : absolute; left : var(--works_gif_1_xx); width : var(--s450px); top : 4380px; transition : left 1s, opacity 2s; opacity : 0;">
         <img class = "works_gif2" id = "works_gif2" src = "imgs/works2.gif" loading = "lazy" style = "position : absolute; left : var(--works_gif_2_xx); width : var(--s450px); top : 4380px; transition : left 1s, opacity 2s; opacity : 0;">
@@ -187,24 +192,24 @@
         
         <div class = "sepa_bg" id = "sepa_bg" style = "position : absolute; background-image : linear-gradient(to bottom,#ffffff00,#ffffff00,#1927316e,#141527f3,#141527); width : 2000px; height : 323px; left : -8px; top : 4400px;"></div>
         
-        <img class = "aftereffect" id = "aftereffect" src = "imgs/adobeaftereffects.png" style = "position : absolute; width : 40px; top : 4750px; left : 16%; transition : top 1.5s; filter : grayscale(99%);">
-        <img class = "photoshop" id = "photoshop" src = "imgs/adobephotoshop.png" style = "position : absolute; width : 40px; top : 4750px; left : 21%; transition : top 1.5s; filter : grayscale(99%);">
-        <img class = "aseprite" id = "aseprite" src = "imgs/aseprite.png" style = "position : absolute; width : 40px; top : 4750px; left : 26%; transition : top 1.5s; filter : grayscale(99%);">
-        <img class = "blender" id = "blender" src = "imgs/blender.png" style = "position : absolute; width : 40px; top : 4750px; left : 31%; transition : top 1.5s; filter : grayscale(99%);">
-        <img class = "clipstudio" id = "clipstudio" src = "imgs/clipstudio.png" style = "position : absolute; width : 40px; top : 4750px; left : 36%; transition : top 1.5s; filter : grayscale(99%);">
-        <img class = "gms" id = "gms" src = "imgs/gms.png" style = "position : absolute; width : 40px; top : 4750px; left : 41%; transition : top 1.5s; filter : grayscale(99%);">
-        <img class = "c" id = "c" src = "imgs/c.png" style = "position : absolute; width : 40px; top : 4750px; left : 46%; transition : top 1.5s; filter : grayscale(99%);">
-        <img class = "cpp" id = "cpp" src = "imgs/cplusplus.png" style = "position : absolute; width : 40px; top : 4750px; left : 51%; transition : top 1.5s; filter : grayscale(99%);">
-        <img class = "html" id = "html" src = "imgs/html5.png" style = "position : absolute; width : 40px; top : 4750px; left : 56%; transition : top 1.5s; filter : grayscale(99%);">
-        <img class = "javascript" id = "javascript" src = "imgs/javascript.png" style = "position : absolute; width : 40px; top : 4750px; left : 61%; transition : top 1.5s; filter : grayscale(99%);">
-        <img class = "css" id = "css" src = "imgs/css3.png" style = "position : absolute; width : 40px; top : 4750px; left : 66%; transition : top 1.5s; filter : grayscale(99%);">
-        <img class = "android" id = "android" src = "imgs/android.png" style = "position : absolute; width : 40px; top : 4750px; left : 71%; transition : top 1.5s; filter : grayscale(99%);">
-        <img class = "java" id = "java" src = "imgs/java.png" style = "position : absolute; width : 40px; top : 4750px; left : 76%; transition : top 1.5s; filter : grayscale(99%);">
-        <img class = "unity" id = "unity" src = "imgs/unity.png" style = "position : absolute; width : 40px; top : 4750px; left : 81%; transition : top 1.5s; filter : grayscale(99%);">
+        <img class = "aftereffect" id = "aftereffect" src = "imgs/adobeaftereffects.png" style = "position : absolute; width : 40px; top : 4740px; left : 16%; transition : top 1.5s; filter : grayscale(99%);">
+        <img class = "photoshop" id = "photoshop" src = "imgs/adobephotoshop.png" style = "position : absolute; width : 40px; top : 4740px; left : 21%; transition : top 1.5s; filter : grayscale(99%);">
+        <img class = "aseprite" id = "aseprite" src = "imgs/aseprite.png" style = "position : absolute; width : 40px; top : 4740px; left : 26%; transition : top 1.5s; filter : grayscale(99%);">
+        <img class = "blender" id = "blender" src = "imgs/blender.png" style = "position : absolute; width : 40px; top : 4740px; left : 31%; transition : top 1.5s; filter : grayscale(99%);">
+        <img class = "clipstudio" id = "clipstudio" src = "imgs/clipstudio.png" style = "position : absolute; width : 40px; top : 4740px; left : 36%; transition : top 1.5s; filter : grayscale(99%);">
+        <img class = "gms" id = "gms" src = "imgs/gms.png" style = "position : absolute; width : 40px; top : 4740px; left : 41%; transition : top 1.5s; filter : grayscale(99%);">
+        <img class = "c" id = "c" src = "imgs/c.png" style = "position : absolute; width : 40px; top : 4740px; left : 46%; transition : top 1.5s; filter : grayscale(99%);">
+        <img class = "cpp" id = "cpp" src = "imgs/cplusplus.png" style = "position : absolute; width : 40px; top : 4740px; left : 51%; transition : top 1.5s; filter : grayscale(99%);">
+        <img class = "html" id = "html" src = "imgs/html5.png" style = "position : absolute; width : 40px; top : 4740px; left : 56%; transition : top 1.5s; filter : grayscale(99%);">
+        <img class = "javascript" id = "javascript" src = "imgs/javascript.png" style = "position : absolute; width : 40px; top : 4740px; left : 61%; transition : top 1.5s; filter : grayscale(99%);">
+        <img class = "css" id = "css" src = "imgs/css3.png" style = "position : absolute; width : 40px; top : 4740px; left : 66%; transition : top 1.5s; filter : grayscale(99%);">
+        <img class = "android" id = "android" src = "imgs/android.png" style = "position : absolute; width : 40px; top : 4740px; left : 71%; transition : top 1.5s; filter : grayscale(99%);">
+        <img class = "java" id = "java" src = "imgs/java.png" style = "position : absolute; width : 40px; top : 4740px; left : 76%; transition : top 1.5s; filter : grayscale(99%);">
+        <img class = "unity" id = "unity" src = "imgs/unity.png" style = "position : absolute; width : 40px; top : 4740px; left : 81%; transition : top 1.5s; filter : grayscale(99%);">
         
         
         <div class = "sepa_bg" id = "sepa_bg" style = "position : absolute; background : #141527; width : 2000px; height : 70px; left : -8px; top : 4723px;"></div>
-        <div class = "credit" id = "credit" style = "position : absolute; color : #e29056; left : 48.2%; top : 4740px; text-align : center; opacity : 0.7; font-size : 16px;">Powered by Github<br>@ABER1047</div>
+        <a href = "https://github.com/ABER1047/Project_aboutme"><div class = "credit" id = "credit" style = "position : absolute; color : #e29056; left : 48.2%; top : 4740px; text-align : center; opacity : 0.7; font-size : 16px; transition : all 0.2s;">Powered by Github<br>@ABER1047</div></a>
     </body>
     
 

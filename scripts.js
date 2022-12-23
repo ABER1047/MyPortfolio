@@ -72,6 +72,10 @@ var obj_java = document.getElementById("java");
 var obj_unity = document.getElementById("unity");
 
 
+var obj_air_res_bar = document.getElementById("air_res_bar")
+var obj_credit = document.getElementById("credit");
+
+
 var obj_game_selector_button = [];
 var obj_game_selector_button_activated = [];
 var obj_works_gif = [];
@@ -923,16 +927,31 @@ setTimeout(icons_appearance,1450,target);
 function works_gif_anime(target)
 {
 target.style.opacity = "1";
-document.querySelector(".air_res_bar").style.opacity = "1";
+obj_air_res_bar.style.opacity = "1";
 }
 
 
 
+obj_credit.addEventListener("mouseover",function()
+{
+obj_credit.style.color = "#79b0c2";
+})
+
+obj_credit.addEventListener("mouseleave",function()
+{
+obj_credit.style.color = "#e29056";
+})
 
 
+obj_air_res_bar.addEventListener("mouseover",function()
+{
+obj_air_res_bar.style.background = "#86868d";
+})
 
-
-
+obj_air_res_bar.addEventListener("mouseleave",function()
+{
+obj_air_res_bar.style.background = "#bbbbc4";
+})
 
 
 
@@ -1111,9 +1130,9 @@ obj_trailer_video.style.filter = "blur("+$(window).scrollTop()*0.04+"px)";
     }
 }
 
-document.querySelector(".air_res_bar").addEventListener("input",function()
+obj_air_res_bar.addEventListener("input",function()
 {
-works_gif_scroll_xx = (document.getElementById("air_res_bar").value)*15.5;
+works_gif_scroll_xx = (obj_air_res_bar.value)*15.5;
     for(var k = 1 ; k <= 7; k++)
     {
     document.documentElement.style.setProperty("--works_gif_"+k+"_xx",-works_gif_scroll_xx+(k-1)*500*c_x+"px");

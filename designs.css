@@ -104,7 +104,7 @@ position : absolute;
 background : #bbbbc4;
 font-weight : bold;
 white-space: nowrap;
-transition : color 2s, opacity 1s;
+transition : background 0.2s, opacity 1s;
 top : 4230px;
 z-index : 9999;
 padding : 2px;
@@ -150,4 +150,10 @@ width : 12px;
 height : 12px;
 cursor: pointer;
 transition : opacity 0.5s;
+}
+
+
+.dot_effect_bg
+{
+-webkit-mask-image:-webkit-gradient(linear, left bottom, left top, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)))
 }
