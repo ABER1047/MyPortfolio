@@ -1,14 +1,17 @@
 var obj_loading_bar = document.getElementById("loading_bar");
 var obj_loading_bar_bg = document.getElementById("loading_bar_bg");
 var obj_loading_bar_grad = document.getElementById("loading_bar_grad");
+var obj_starry_stars2 = document.getElementById("starry_stars2");
 var obj_hello_title_eng = document.getElementById("hello_title_eng");
 var obj_hello_title_kor = document.getElementById("hello_title_kor");
 var obj_hello_title_jap = document.getElementById("hello_title_jap");
 var obj_hello_title_desc = document.getElementById("hello_title_desc");
 var obj_trailer_video = document.getElementById("trailer_video");
+var obj_quick_select_bg_outline = document.getElementById("quick_select_bg_outline");
+var obj_quick_select_bg = document.getElementById("quick_select_bg");
 var obj_quick_select_main = document.getElementById("quick_select_main");
 var obj_quick_select_showcase = document.getElementById("quick_select_showcase");
-var obj_qquick_select_other_works = document.getElementById("quick_select_other_works");
+var obj_quick_select_other_works = document.getElementById("quick_select_other_works");
 var obj_quick_select_contact = document.getElementById("quick_select_contact");
 var obj_discord_icon = document.getElementById("discord_icon");
 var obj_github_icon = document.getElementById("github_icon");
@@ -31,6 +34,8 @@ var obj_desc_thumbnail = document.getElementById("desc_thumbnail");
 var obj_project_wak_desc = document.getElementById("project_wak_desc");
 var obj_astronaut_desc = document.getElementById("astronaut_desc");
 var obj_arena_of_wakgood_desc = document.getElementById("arena_of_wakgood_desc");
+var obj_download_link = document.getElementById("download_link");
+var obj_download_button = document.getElementById("download_button");
 
 
 var obj_other_works_text = document.getElementById("other_works_text");
@@ -47,8 +52,29 @@ var obj_bocchi_gif = document.getElementById("bocchi_gif");
 var obj_delaunay_gif = document.getElementById("delaunay_gif");
 var obj_works_more_desc = document.getElementById("works_more_desc");
 var obj_works_more_desc_link = document.getElementById("works_more_desc_link");
+
+
+
+
+var obj_aftereffect = document.getElementById("aftereffect");
+var obj_photoshop = document.getElementById("photoshop");
+var obj_aseprite = document.getElementById("aseprite");
+var obj_blender = document.getElementById("blender");
+var obj_clipstudio = document.getElementById("clipstudio");
+var obj_gms = document.getElementById("gms");
+var obj_c = document.getElementById("c");
+var obj_cpp = document.getElementById("cpp");
+var obj_html = document.getElementById("html");
+var obj_javascript = document.getElementById("javascript");
+var obj_css = document.getElementById("css");
+var obj_android = document.getElementById("android");
+var obj_java = document.getElementById("java");
+var obj_unity = document.getElementById("unity");
+
+
 var obj_game_selector_button = [];
 var obj_game_selector_button_activated = [];
+var obj_works_gif = [];
 for(var i = 1; i <= 4; i++)
 {
 obj_game_selector_button[i] = document.getElementById("game_selector_button"+i);
@@ -57,6 +83,12 @@ obj_game_selector_button[i] = document.getElementById("game_selector_button"+i);
 for(var i = 0; i < 4; i++)
 {
 obj_game_selector_button_activated[i] = 1;
+}
+
+
+for(var i = 1; i <= 7; i++)
+{
+obj_works_gif[i] = document.getElementById("works_gif"+i);
 }
 
 
@@ -74,6 +106,7 @@ scroll_animation[i] = 0;
 var n_showcase_game = 0;
 var n_showcase_works = 0;
 var opened_more_desc = 0;
+var works_gif_scroll_xx = 0;
 
 
 
@@ -94,7 +127,24 @@ obj_loading_bar_bg.style.background = "#02050C";
 obj_loading_bar.style.background = "#02050C";
 obj_loading_bar_bg.style.transition = "background 1s, width 1s, opacity 1s";
 obj_loading_bar.style.transition = "background 1s, width 1s";
-setTimeout(show_page,1000)
+setTimeout(show_page,1000);
+setTimeout(starry_stars_brighting,1500);
+}
+
+
+function starry_stars_brighting()
+{
+obj_starry_stars2.style.top = irandom_range(0,700)*irandom_return()+"px";
+obj_starry_stars2.style.left = irandom_range(0,700)*irandom_return()+"px";
+obj_starry_stars2.style.transform = "rotate("+irandom_range(0,359)+"deg)";
+obj_starry_stars2.style.opacity = 0.4;
+setTimeout(starry_stars_fading,1100);
+}
+
+function starry_stars_fading()
+{
+obj_starry_stars2.style.opacity = 0;
+setTimeout(starry_stars_brighting,irandom_range(3100,4000));
 }
 
 
@@ -110,10 +160,15 @@ obj_trailer_video.style.filter = "blur(0px)";
 
 console.log("page_loaded");
 
-setTimeout(title_anime1,1000)
-setTimeout(title_anime2,1200)
-setTimeout(title_anime3,1400)
-setTimeout(title_anime4,1600)
+setTimeout(title_anime1,1000);
+setTimeout(title_anime2,1200);
+setTimeout(title_anime3,1400);
+setTimeout(title_anime4,1600);
+setTimeout(quick_select_menu_anime1,2000);
+setTimeout(quick_select_menu_anime2,2500);
+setTimeout(quick_select_menu_anime3,2600);
+setTimeout(quick_select_menu_anime4,2700);
+setTimeout(quick_select_menu_anime5,2800);
 }
 
 
@@ -152,6 +207,33 @@ obj_loading_bar_grad.style.top = -128+"px";
 obj_trailer_video.style.transition = "all 0.1s";
 document.getElementById("body_t").style.overflowY = "scroll";
 }
+
+function quick_select_menu_anime1()
+{
+obj_quick_select_bg_outline.style.top = "56px";
+obj_quick_select_bg.style.top = "-8px";
+}
+
+function quick_select_menu_anime2()
+{
+obj_quick_select_main.style.top = "17px";
+}
+
+function quick_select_menu_anime3()
+{
+obj_quick_select_contact.style.top = "17px";
+}
+
+function quick_select_menu_anime4()
+{
+obj_quick_select_showcase.style.top = "17px";
+}
+
+function quick_select_menu_anime5()
+{
+obj_quick_select_other_works.style.top = "17px";
+}
+
 
 function text_appearence_anime1(target)
 {
@@ -258,17 +340,17 @@ obj_quick_select_contact.addEventListener("click",function()
 window.scrollTo(0, 600);
 })
 
-obj_qquick_select_other_works.addEventListener("mouseover",function()
+obj_quick_select_other_works.addEventListener("mouseover",function()
 {
-obj_qquick_select_other_works.style.color = "#749eca";
+obj_quick_select_other_works.style.color = "#749eca";
 })
 
-obj_qquick_select_other_works.addEventListener("mouseleave",function()
+obj_quick_select_other_works.addEventListener("mouseleave",function()
 {
-obj_qquick_select_other_works.style.color = "#192731";
+obj_quick_select_other_works.style.color = "#192731";
 })
 
-obj_qquick_select_other_works.addEventListener("click",function()
+obj_quick_select_other_works.addEventListener("click",function()
 {
 window.scrollTo(0, 3000);
 })
@@ -349,6 +431,10 @@ scroll_animation[1] = 0;
     obj_showcase_game_title_sec2.style.opacity = "1";
     obj_showcase_game_title3.style.opacity = "0";
     obj_showcase_game_title_sec3.style.opacity = "0";
+    
+    
+    
+    obj_download_link.href = "https://github.com/ABER1047/Astronaut_remake";
     }
     else if (n_showcase_game == 2)
     {
@@ -378,6 +464,10 @@ scroll_animation[1] = 0;
     obj_showcase_game_title_sec2.style.opacity = "0";
     obj_showcase_game_title3.style.opacity = "1";
     obj_showcase_game_title_sec3.style.opacity = "1";
+    
+    
+    
+    obj_download_link.href = "https://github.com/ABER1047/Arena-of-woowakgood";
     }
     else
     {
@@ -407,6 +497,10 @@ scroll_animation[1] = 0;
     obj_showcase_game_title_sec2.style.opacity = "0";
     obj_showcase_game_title3.style.opacity = "0";
     obj_showcase_game_title_sec3.style.opacity = "0";
+    
+    
+    
+    obj_download_link.href = "https://github.com/ABER1047/Project-wak";
     }
     
 
@@ -547,6 +641,21 @@ desc_des_start();
 });
 
 
+obj_download_button.addEventListener("mouseover",function()
+{
+obj_download_button.style.background = "#b0d0e5";
+})
+
+obj_download_button.addEventListener("mouseleave",function()
+{
+obj_download_button.style.background = "white";
+})
+
+
+
+
+
+
 
 function desc_des_start()
 {
@@ -557,6 +666,7 @@ function desc_des_start()
     obj_astronaut_desc.style.opacity = "0";
     obj_arena_of_wakgood_desc.style.opacity = "0";
     obj_desc_thumbnail.style.opacity = "0";
+    obj_download_button.style.opacity = "0";
     setTimeout(desc_blinder_des,500);
     }
 }
@@ -571,6 +681,7 @@ obj_project_wak_desc.style.top = "-999px";
 obj_astronaut_desc.style.top = "-999px";
 obj_arena_of_wakgood_desc.style.top = "-999px";
 obj_desc_thumbnail.style.top = "-999px";
+obj_download_button.style.top = "-999px";
 opened_more_desc = 0;
 }
 
@@ -585,25 +696,27 @@ setTimeout(desc_blinder_cre,500);
 document.getElementById("body_t").style.overflowY = "hidden";
 obj_desc_blinder.style.height = "2000px";
 obj_desc_blinder.style.opacity = "0.95";
-obj_desc_thumbnail.style.top = "20%";
+obj_desc_thumbnail.style.top = "18%";
 obj_desc_thumbnail.style.opacity = "1";
+obj_download_button.style.top = "800px";
+obj_download_button.style.opacity = "1";
 
     if (n_showcase_game == 0)
     {
     obj_desc_thumbnail.src = "imgs/project_wak_thumbnail.png";
-    obj_project_wak_desc.style.top = "60%";
+    obj_project_wak_desc.style.top = "55%";
     obj_project_wak_desc.style.opacity = "1";
     }
     else if (n_showcase_game == 1)
     {
     obj_desc_thumbnail.src = "imgs/Astronaut_thumbnail.png";
-    obj_astronaut_desc.style.top = "60%";
+    obj_astronaut_desc.style.top = "55%";
     obj_astronaut_desc.style.opacity = "1";
     }
     else
     {
     obj_desc_thumbnail.src = "imgs/arena_of_wakgood_thumbnail.gif";
-    obj_arena_of_wakgood_desc.style.top = "60%";
+    obj_arena_of_wakgood_desc.style.top = "55%";
     obj_arena_of_wakgood_desc.style.opacity = "1";
     }
 })
@@ -774,6 +887,50 @@ obj_works_more_desc.style.background = "#141527";
 
 
 
+function icons_appearance_first(target)
+{
+icons_appearance(target);
+setTimeout(icons_appearance_first_white,1000,target);
+}
+
+function icons_appearance_first_white(target)
+{
+target.style.filter = "grayscale(0%)";
+setTimeout(icons_appearance_first_black,50,target);
+}
+
+function icons_appearance_first_black(target)
+{
+target.style.transition = "top 1.5s, filter 1s";
+target.style.filter = "grayscale(100%)";
+}
+
+function icons_appearance(target)
+{
+target.style.top = "4618px";
+setTimeout(icons_fading,1450,target);
+}
+
+function icons_fading(target)
+{
+target.style.top = "4625px";
+setTimeout(icons_appearance,1450,target);
+}
+
+
+function works_gif_anime(target)
+{
+target.style.opacity = "1";
+document.querySelector(".air_res_bar").style.opacity = "1";
+}
+
+
+
+
+
+
+
+
 
 
 
@@ -817,6 +974,12 @@ document.documentElement.style.setProperty("--s410px",410*c_x+"px");
 document.documentElement.style.setProperty("--s800px",800*c_x+"px");
 document.documentElement.style.setProperty("--s700px",700*c_x+"px");
 document.documentElement.style.setProperty("--s500px",500*c_x+"px");
+document.documentElement.style.setProperty("--s450px",450*c_x+"px");
+
+    for(var k = 1 ; k <= 7; k++)
+    {
+    document.documentElement.style.setProperty("--works_gif_"+k+"_xx",works_gif_scroll_xx+(k-1)*500*c_x+"px");
+    }
 }
 
 
@@ -830,6 +993,9 @@ var mouse_movement_dis_yy = (mouse_y - c_h*0.5)/72*is_pc
 
 document.documentElement.style.setProperty("--m_interect_xx",mouse_movement_dis_xx+"px");
 document.documentElement.style.setProperty("--m_interect_yy",mouse_movement_dis_yy+"px");
+
+document.documentElement.style.setProperty("--m_interect_xx2",-mouse_movement_dis_xx*0.5+"px");
+document.documentElement.style.setProperty("--m_interect_yy2",-mouse_movement_dis_yy*0.5+"px");
 })
 
 $(window).scroll(function()
@@ -913,4 +1079,38 @@ obj_trailer_video.style.filter = "blur("+$(window).scrollTop()*0.04+"px)";
         setTimeout(text_appearence2_anime2,1000,obj_showcase_works_title_sec3);
         }
     }
+    
+    if (scroll > 2600 && scroll_animation[4] == 0)
+    {
+    scroll_animation[4] = 1;
+
+    setTimeout(icons_appearance_first,100,obj_aftereffect);
+    setTimeout(icons_appearance_first,200,obj_photoshop);
+    setTimeout(icons_appearance_first,300,obj_aseprite);
+    setTimeout(icons_appearance_first,400,obj_blender);
+    setTimeout(icons_appearance_first,500,obj_clipstudio);
+    setTimeout(icons_appearance_first,600,obj_gms);
+    setTimeout(icons_appearance_first,700,obj_c);
+    setTimeout(icons_appearance_first,800,obj_cpp);
+    setTimeout(icons_appearance_first,900,obj_html);
+    setTimeout(icons_appearance_first,1000,obj_javascript);
+    setTimeout(icons_appearance_first,1100,obj_css);
+    setTimeout(icons_appearance_first,1200,obj_android);
+    setTimeout(icons_appearance_first,1300,obj_java);
+    setTimeout(icons_appearance_first,1400,obj_unity);
+    
+        for(var i = 1; i <= 7; i++)
+        {
+        setTimeout(works_gif_anime,1600,obj_works_gif[i]);
+        }
+    }
 }
+
+document.querySelector(".air_res_bar").addEventListener("input",function()
+{
+works_gif_scroll_xx = (document.getElementById("air_res_bar").value)*15.5;
+    for(var k = 1 ; k <= 7; k++)
+    {
+    document.documentElement.style.setProperty("--works_gif_"+k+"_xx",-works_gif_scroll_xx+(k-1)*500*c_x+"px");
+    }
+})
