@@ -70,6 +70,7 @@ var obj_css = document.getElementById("css");
 var obj_android = document.getElementById("android");
 var obj_java = document.getElementById("java");
 var obj_unity = document.getElementById("unity");
+var obj_opengl = document.getElementById("opengl");
 
 
 var obj_air_res_bar = document.getElementById("air_res_bar")
@@ -1121,6 +1122,8 @@ obj_trailer_video.style.filter = "blur("+$(window).scrollTop()*0.04+"px)";
         setTimeout(icons_appearance_first,1200,obj_android);
         setTimeout(icons_appearance_first,1300,obj_java);
         setTimeout(icons_appearance_first,1400,obj_unity);
+        setTimeout(icons_appearance_first,1500,obj_opengl);
+        
         
             for(var i = 1; i <= 7; i++)
             {
