@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang = "ko">
+    <head></head>
+    <meta charset = "utf-8">
+    <meta name = "viewport" content = "initial-scale = 1, minimum-scale = 1">
+    
+    <link rel = "icon" href = "imgs/github_icon_white.png">
+    <title>ABER1047's website</title>
+
+    <body id = "body_t" class = "body_t">
+        <style>
+        .body_t
+        {
+        overflow-x: hidden; /* Hide horizontal scrollbar */
+        overflow-y: hidden;
+        }
+        </style>
+    
+        <div class = "full_background">
+            <div class = "first_theme_bg"></div>
+            
+            <div class = "first_theme">
+                <div class = "trailer_bg" style="opacity : 1; filter : blur(0px);">
+                    <video id = "trailer_video" class = "trailer_video" autoplay muted loop playsinline control preload = "auto" width = "1920" style = "transition : transform 0.03s" loading = "eager">
+                    <source src = "imgs/page_trailer.mp4" type = "video/mp4" loading = "eager" preload = "auto">
+                    </video>
+                    <script src = "https://code.jquery.com/jquery-3.3.1.js"></script>
+                </div>
+                
+            
+                <div class = "info_f">
+                <h1 id = "title" class = "title" style = "transition : opacity 0.8s, top 0.8s; opacity : 0">Hello!</h1>
+                <h2 id = "title_small1" class = "title_small1" style = "transition : opacity 0.8s, top 0.8s; opacity : 0">안녕하세요!</h2>
+                <h2 id = "title_small2" class = "title_small2" style = "transition : opacity 0.8s, top 0.8s; opacity : 0">こんにちは!</h2>
+                <p id = "desc_first" class = "desc_first" style = "transition : opacity 0.8s, top 0.8s; opacity : 0">해당 사이트는 포트폴리오 용도로 제작되었으며,<br>해당 사이트를 포함한, 전시된 모든 프로젝트들은 전부 본인이 개발한 것임을 밝힙니다.</p>
+                </div>
+            </div>
+            
+            
+            <div id = "select_menu" class = "select_menu" style = "transition : width 0.8s">
+                <div class = "select_menu_title">
+                    <h1 id = "title_sec" class = "title_sec" style = "transition : opacity 0.8s, top 0.8s; opacity : 0">Showcase</h1>
+                    <h2 id = "title_sec_small" class = "title_sec_small" style = "transition : opacity 0.8s, top 0.8s; opacity : 0">쇼케이스</h2>
+                </div>
+                
+                <div id = "theme_selector_buttons" class = "theme_selector_buttons" style = "transition : opacity 0.8s; opacity : 0">
+                    <li>
+                        <div class = "showcase_theme_button1"></div>
+                        <div class = "showcase_theme_button2"></div>
+                        <div class = "showcase_theme_button3"></div>
+                        <div class = "showcase_theme_button4"></div>
+                        <div class = "mobile_mode_margin"></div>
+                    </li>
+                    
+                    <div class = "under_box_bg"></div>
+                </div>
+                
+                    
+                <div class = "showcase_1">
+                    <div class = "showcase_title">
+                        <h1 id = "showcase1_title_sec" class = "showcase_title_sec" style = "transition : all 0.8s; opacity : 0; top : 32px;">Project Wak</h1>
+                        <h2 id = "showcase1_title_sec_small" class = "showcase_title_sec_small" style = "transition : all 0.8s; opacity : 0; top : 32px;">프로젝트 왁</h2>
+                    </div>
+            
+                    
+                    <div style = "overflow : hidden">
+                        <div id = "showcase1_image" class = "showcase1_image" style = "transition : opacity 0.8s; opacity : 0">
+                            <div class = "inner">
+                            <img class = "showcase_real_img" src = "imgs/test1.gif" loading = "lazy">
+                            </div>
+                            
+                            <div class = "inner">
+                            <img class = "showcase_real_img" src = "imgs/test2.gif" loading = "lazy">
+                            </div>
+                            
+                            <div class = "inner">
+                            <img class = "showcase_real_img" src = "imgs/test3.gif" loading = "lazy">
+                            </div>
+                            
+                            <div class = "inner">
+                            <img class = "showcase_real_img" src = "imgs/test4.gif" loading = "lazy">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id = "selector_buttons1" class = "selector_buttons" style = "transition : opacity 0.8s; opacity : 0">
+                        <li>
+                            <div class = "showcase1_button1"></div>
+                            <div class = "showcase1_button2"></div>
+                            <div class = "showcase1_button3"></div>
+                            <div class = "showcase1_button4"></div>
+                        </li>
+                    </div>
+
+                        
+                    <div id = "under_box_selector_buttons" class = "under_box_selector_buttons">
+                        <div id = "in_box_text1" class = "in_box_text" style = "transition : width 0.8s, opacity 0.8s; opacity : 0">
+                            <!-- theme 1 -->
+                            <span class = "first_text_accent">
+                            프
+                            </span>
+                            
+                            <span>
+                            로젝트 왁은 2022년도에 유튜버 <span class = "text_accent">우왁굳</span>을 위해 만들어진 팬게임이며,<br>소울라이크 느낌의 액션 RPG 장르의 게임 입니다.<br><br><br><br>
+                            </span>
+                            
+                            <!-- theme 2 -->
+                            <span>
+                            개발은 음원을 제외한 모든 부분 전부 <span class = "text_accent">1인 개발</span>로 제작되었으며,<br>게임 판매 플렛폼인 Steam(스팀)에 판매되는 액션 RPG게임 급의 퀄리티로<br>제작하는게 목표였기 때문에<br>비주얼 적으로나, 게임 플레이 적으로나 꽤나 스케일이 크게 제작되었습니다.<br><br><br><br>
+                            </span>
+                            
+                            <!-- theme 3-->
+                            <span>
+                            테스터는 대략 <span class = "text_accent">150명</span>이 넘는 분들이 지원을 해주셨습니다.<br><br><br><br><br><br><br><br><br><br><br><br>
+                            </span>
+                           
+                        </div>
+                    </div>
+                    
+                    
+                    
+
+                    
+                    <li>
+                        <a id = "showcase1_trailer_button" class = "showcase1_trailer_button" href = "https://youtu.be/UB72TRMkehI" style = "text-decoration : none; transition : opacity 0.8s, top 0.8s; opacity : 0">
+                        Watch Trailer
+                        </a>
+                        
+                        <a id = "showcase1_code_button" class = "showcase1_code_button" href = "https://github.com/ABER1047/Project-wak" style = "transition : opacity 0.8s, top 0.8s; opacity : 0">
+                        Source Code
+                        </a>
+                    </li>
+                </div>
+                
+                
+                
+                
+                <div class = "showcase_2">
+                    <div class = "showcase_title">
+                        <div class = "mobile_mode_margin2"></div>
+                        <h1 id = "showcase2_title_sec" class = "showcase_title_sec" style = "transition : all 0.8s; opacity : 0; top : 32px;">Arena of Wakgood</h1>
+                        <h2 id = "showcase2_title_sec_small" class = "showcase_title_sec_small" style = "transition : all 0.8s; opacity : 0; top : 32px;">아레나 오브 왁굳</h2>
+                    </div>
+                    
+                    <div style = "overflow : hidden">
+                        <div id = "showcase2_image" class = "showcase2_image" style = "transition : opacity 0.8s; opacity : 0">
+                            <div class = "inner">
+                            <img class = "showcase_real_img" src = "imgs/arena_wak1.gif" width = "690" height = "388" loading = "lazy">
+                            </div>
+                            
+                            <div class = "inner">
+                            <img class = "showcase_real_img" src = "imgs/arena_wak2.gif" width = "690" height = "388" loading = "lazy">
+                            </div>
+                            
+                            <div class = "inner">
+                            <img class = "showcase_real_img" src = "imgs/arena_wak3.gif" width = "690" height = "388" loading = "lazy">
+                            </div>
+                            
+                            <div class = "inner">
+                            <img class = "showcase_real_img" src = "imgs/arena_wak4.gif" width = "690" height = "388" loading = "lazy">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id = "selector_buttons2" class = "selector_buttons" style = "transition : opacity 0.8s; opacity : 0">
+                        <li>
+                            <div class = "showcase2_button1"></div>
+                            <div class = "showcase2_button2"></div>
+                            <div class = "showcase2_button3"></div>
+                            <div class = "showcase2_button4"></div>
+                        </li>
+                    </div>
+                
+                    
+                    
+                    
+                    
+                        
+                    <div class = "under_box_selector_buttons">
+                        <div id = "in_box_text2" class = "in_box_text" style = "transition : width 0.8s, opacity 0.8s; opacity : 0">
+                            <!-- theme 1 -->
+                            <span class = "first_text_accent">
+                            아
+                            </span>
+                            
+                            <span>
+                            레나 오브 왁굳은 2021년도에 유튜버 <span class = "text_accent">우왁굳</span>을 위해 만들어진 팬게임이며,<br>실시간 대전(PVP) 및 액션 장르의 게임 입니다.<br><br><br><br>
+                            </span>
+                            
+                            <!-- theme 2-->
+                            <span>
+                            각 플레이어들이 자신의 무기를 선택하여 대전하며,<br>각기 다른 <span class = "text_accent">게임 모드</span>와 여러 <span class = "text_accent">맵</span>들을 통해 다양한 플레이를 할 수 있습니다.<br>또한, <span class = "text_accent">채팅</span> 및 <span class = "text_accent">이모티콘</span>기능을 통해 플레이어들 끼리 서로 대화를 주고 받을 수 있습니다.<br><br><br><br>
+                            </span>
+                            
+                            <!-- theme 3 -->
+                            <span>
+                            개발은 음원을 제외한 모든 부분 전부 <span class = "text_accent">1인 개발</span>로 제작되었으며,<br>대략 <span class = "text_accent">15명</span>(비공개 테스트)의 테스터 분들과 함께 개발을 진행하였으며,<br>추후 공개 테스트로 전환했습니다.<br><br><br>
+                            </span>
+                            
+                            <!-- theme 4 -->
+                            <span>
+                            통신 방식은 Server-client방식을 채택했으며, 서버는 <span class = "text_accent">공식 서버</span>와, <span class = "text_accent">커뮤니티 서버</span>로 나눠뒀습니다.<br>(커뮤니티 서버의 경우 직접 방을 만들어 초대코드를 통해 초대하는 방식)<br><br><br><br>
+                            </span>
+                            
+                            <!-- theme 5 -->
+                            <span>
+                            첫 출시 당시, 예상보다 <span class = "text_accent">많은 접속자</span>(대략 100~150명 정도)로 인해 서버가 마비됨으로 써,<br><span class = "text_accent">우왁굳</span>님의 방송에선 진행 할 수 없게 되었습니다.<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                            </span>
+                            
+                        </div>
+                    </div>
+                    
+                    
+                    <li>
+                        <a id = "showcase2_trailer_button" class = "showcase2_trailer_button" href = "https://youtu.be/dbzp09Ly1CY" style = "transition : opacity 0.8s, top 0.8s; opacity : 0">
+                        Watch Trailer
+                        </a>
+                        
+                        <a id = "showcase2_code_button" class = "showcase2_code_button" href = "https://github.com/ABER1047/Arena-of-woowakgood" style = "transition : opacity 0.8s, top 0.8s; opacity : 0">
+                        Source Code
+                        </a>
+                    </li>
+                </div>
+                
+                
+                
+                
+                
+                
+                
+                
+                <div class = "showcase_3">
+                    <div class = "showcase_title">
+                        <div class = "mobile_mode_margin2"></div>
+                        <h1 id = "showcase3_title_sec" class = "showcase_title_sec" style = "transition : all 0.8s; opacity : 0; top : 32px;">Astronuat</h1>
+                        <h2 id = "showcase3_title_sec_small" class = "showcase_title_sec_small" style = "transition : all 0.8s; opacity : 0; top : 32px;">아스트로넛</h2>
+                    </div>
+                    
+                    <div style = "overflow : hidden">
+                        <div id = "showcase3_image" class = "showcase3_image" style = "transition : opacity 0.8s; opacity : 0">
+                            <div class = "inner">
+                            <img class = "showcase_real_img" src = "imgs/Project Astronaut1.gif" width = "690" height = "388" loading = "lazy">
+                            </div>
+                            
+                            <div class = "inner">
+                            <img class = "showcase_real_img" src = "imgs/Project Astronaut2.gif" width = "690" height = "388" loading = "lazy">
+                            </div>
+                            
+                            <div class = "inner">
+                            <img class = "showcase_real_img" src = "imgs/Project Astronaut4.gif" width = "690" height = "388" loading = "lazy">
+                            </div>
+                            
+                            <div class = "inner">
+                            <img class = "showcase_real_img" src = "imgs/Project Astronaut3.gif" width = "690" height = "388" loading = "lazy">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id = "selector_buttons3" class = "selector_buttons" style = "transition : opacity 0.8s; opacity : 0">
+                        <li>
+                            <div class = "showcase3_button1"></div>
+                            <div class = "showcase3_button2"></div>
+                            <div class = "showcase3_button3"></div>
+                            <div class = "showcase3_button4"></div>
+                        </li>
+                    </div>
+                
+                    
+                    
+                    
+                        
+                    <div class = "under_box_selector_buttons">
+                        <div id = "in_box_text3" class = "in_box_text" style = "transition : width 0.8s, opacity 0.8s; opacity : 0">
+                            <!-- theme 1 -->
+                            <span class = "first_text_accent">
+                            특
+                            </span>
+                            
+                            <span>
+                            성화고에 진학하기 위해 2019년도에 제작한 포트폴리오용 게임이며,<br>생존 RPG 장르의 게임 입니다.<br><br><br><br>
+                            </span>
+                            
+                            <!-- theme 2-->
+                            <span>
+                            게임의 목표는 여러가지 위험이 도사리는 다른 행성을 탐험하고 생존하는 것이며,<br>몬스터들을 잡거나, 지하 동굴을 탐험하거나, 행성 내에 이미 개척되어 개발된 지역을 방문하여<br>여러 NPC들에게 도움을 주거나, 받을 수 있고, 약탈 또한 가능합니다.<br><br><br><br>
+                            </span>
+                            
+                            <!-- theme 3 -->
+                            <span>
+                            또한, <span class = "text_accent">멀티 플레이</span>를 통해, 친구와 함께 플레이 할 수 있습니다.<br><br><br><br>
+                            </span>
+                            
+                            <!-- theme 4 -->
+                            <span>
+                            통신 방식은 Server-client방식을 채택했으며,<br>방 생성자와, 참가자로 구분되어 생성자의 아이피를 입력해서 접속하는 방식을 사용했습니다.<br><br><br><br>
+                            </span>
+                            
+                            <!-- theme 5 -->
+                            <span>
+                            아쉽게도, 특성화고 진학을 위해 제작하였고<br>심사 점수 중 포트폴리오에서의 점수만큼은 만점에 가까운 점수를 얻었지만,<br>다른 이유로 인해 진학하지 못하였습니다.<br>
+                            </span>
+                            
+                        </div>
+                    </div>
+                    
+                    <li>
+                        <a id = "showcase3_code_button" class = "showcase3_code_button" href = "https://github.com/ABER1047/Astronaut_remake" style = "transition : opacity 0.8s, top 0.8s; opacity : 0">
+                        Source Code
+                        </a>
+                    </li>
+                </div>
+
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                <div class = "showcase_4">
+                    <div class = "showcase_title">
+                        <div class = "mobile_mode_margin2"></div>
+                        <h1 id = "showcase4_title_sec" class = "showcase_title_sec" style = "transition : all 0.8s; opacity : 0; top : 32px;">Growing box</h1>
+                        <h2 id = "showcase4_title_sec_small" class = "showcase_title_sec_small" style = "transition : all 0.8s; opacity : 0; top : 32px;">박스 키우기</h2>
+                    </div>
+                    
+                    <div style = "overflow : hidden">
+                        <div id = "showcase4_image" class = "showcase4_image" style = "transition : opacity 0.8s; opacity : 0">
+                            <div class = "inner">
+                            <img class = "showcase_real_img" src = "imgs/box1.PNG" width = "690" height = "388" loading = "lazy">
+                            </div>
+                            
+                            <div class = "inner">
+                            <img class = "showcase_real_img" src = "imgs/box2.PNG" width = "690" height = "388" loading = "lazy">
+                            </div>
+                            
+                            <div class = "inner">
+                            <img class = "showcase_real_img" src = "imgs/box3.PNG" width = "690" height = "388" loading = "lazy">
+                            </div>
+                            
+                            <div class = "inner">
+                            <img class = "showcase_real_img" src = "imgs/box4.PNG" width = "690" height = "388" loading = "lazy">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id = "selector_buttons4" class = "selector_buttons" style = "transition : opacity 0.8s; opacity : 0">
+                        <li>
+                            <div class = "showcase4_button1"></div>
+                            <div class = "showcase4_button2"></div>
+                            <div class = "showcase4_button3"></div>
+                            <div class = "showcase4_button4"></div>
+                        </li>
+                    </div>
+                
+                    
+
+   
+                        
+                        
+                    <div class = "under_box_selector_buttons">
+                        <div id = "in_box_text4" class = "in_box_text" style = "transition : width 0.8s, opacity 0.8s; opacity : 0">
+                            <!-- theme 1 -->
+                            <span class = "first_text_accent">
+                            박
+                            </span>
+                            
+                            <span>
+                            스 키우기는 2018년과 2019년도 사이,<br>당시 초등학교 6학년 시절 <span class = "text_accent">처음</span>으로 제작한 모바일 게임이며,<br>방치형 클리커 장르의 게임 입니다.<br><br><br><br>
+                            </span>
+                            
+                            <!-- theme 2-->
+                            <span>
+                            현재는 오랫동안 관리를 하지 않아서 삭제되었지만,<br>당시에 앱스토어에 업로드 하여, 약 <span class = "text_accent">10만 다운로드</span>이상의 다운로드 수 기록 및,<br>실시간 인기 게임 순위에 올라 갔었습니다.<br><br><br><br>
+                            </span>
+                            
+                            <!-- theme 3 -->
+                            <span>
+                            개발 이후, 첫 성공을 통해 여러 모바일 게임을 추가로 제작하였으며<br>이후 제작한 게임들은 각각 <span class = "text_accent">1만 다운로드</span>에서 <span class = "text_accent">10만 다운로드</span>수를 기록하기도 했습니다.<br><br><br><br>
+                            </span>
+                            
+                            <!-- theme 4 -->
+                            <span>
+                            다만, 마찬가지로 오랫동안 관리를 하지 않았던 탓에<br>대부분 앱스토어에서 삭제당하였습니다.
+                            </span>
+                            
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li>
+                        <a id = "showcase4_code_button" class = "showcase4_code_button" href = "https://github.com/ABER1047/Growing-box" style = "transition : opacity 0.8s, top 0.8s; opacity : 0">
+                        Source Code
+                        </a>
+                    </li>
+                </div>
+            </div>
+            
+            
+            
+            
+            
+            <div class = "theme_selector">
+                <div id = "theme_selector_button1" class = theme_selector_button1 style = "transition : opacity 0.8s; opacity : 0">
+                Main
+                </div>
+                
+                <div id = "theme_selector_button2" class = theme_selector_button2 style = "transition : opacity 0.8s; opacity : 0">
+                Showcase
+                </div>
+                
+                <div id = "theme_selector_button3" class = theme_selector_button3 style = "transition : opacity 0.8s; opacity : 0">
+                Contact
+                </div>
+            </div>
+            
+
+  
+            
+            
+            <div class = "contact_page">
+                <div class = "contact_page_box">
+                </div>
+                
+
+                <a href = "https://github.com/ABER1047">
+                    <img class = "github_icon" src = "imgs/github_icon_white.png" href = "https://github.com/ABER1047" width = 32px height = 32px loading = "lazy">
+                </a>
+
+                
+
+                <a href = "https://discord.gg/hzbCTRemqq">
+                    <img class = "discord_icon" src = "imgs/discord_icon_white.png" width = 36px height = 36px loading = "lazy">
+                </a>
+
+
+                <a class = "youtube_icon" href = "https://www.youtube.com/channel/UCuBkudnNQFlTt6QQ-9Nhdtw/videos">
+                    <img src = "imgs/youtube_icon_white.png" width = 36px height = 25px loading = "lazy">
+                </a>
+            </div>
+         </div>
+    </body>
+    
+    
+    <!-- Loading bar -->
+    <body>
+        <div id = "loading_bar_bg" class = "loading_bar_bg"></div>
+        <div id = "loading_bar_grad" class = "loading_bar_grad"></div>
+        <div id = "loading_bar" class = "loading_bar"></div>
+    </body>
+    
+    <script src = "m_scripts.js"></script>
+    <link rel = "stylesheet" href = "m_design.css">
+</html>
+            

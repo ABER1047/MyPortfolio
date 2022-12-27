@@ -13,6 +13,9 @@ var obj_quick_select_main = document.getElementById("quick_select_main");
 var obj_quick_select_showcase = document.getElementById("quick_select_showcase");
 var obj_quick_select_other_works = document.getElementById("quick_select_other_works");
 var obj_quick_select_contact = document.getElementById("quick_select_contact");
+var obj_music_info = document.getElementById("music_info");
+var obj_music_info2 = document.getElementById("music_info2");
+var obj_music_button = document.getElementById("music_button");
 var obj_discord_icon = document.getElementById("discord_icon");
 var obj_github_icon = document.getElementById("github_icon");
 var obj_youtube_icon = document.getElementById("youtube_icon");
@@ -112,7 +115,9 @@ var n_showcase_game = 0;
 var n_showcase_works = 0;
 var opened_more_desc = 0;
 var works_gif_scroll_xx = 0;
-
+var music_on = 1;
+var audio = -4;
+var random_bgm = -4;
 
 
 
@@ -174,6 +179,8 @@ setTimeout(quick_select_menu_anime2,2500);
 setTimeout(quick_select_menu_anime3,2600);
 setTimeout(quick_select_menu_anime4,2700);
 setTimeout(quick_select_menu_anime5,2800);
+setTimeout(quick_select_menu_anime6,3200);
+setTimeout(quick_select_menu_anime6_2,4000);
 }
 
 
@@ -241,6 +248,16 @@ function quick_select_menu_anime5()
 obj_quick_select_other_works.style.top = "17px";
 }
 
+function quick_select_menu_anime6()
+{
+obj_music_button.style.top = "12px";
+}
+
+function quick_select_menu_anime6_2()
+{
+obj_music_button.style.left = "2.5%";
+}
+
 
 function text_appearence_anime1(target)
 {
@@ -284,7 +301,8 @@ css_values();
 setTimeout(force_loading,7000);
 setTimeout(show_page_anime,7000);
 }
-$(window).resize(function()
+
+window.addEventListener("resize", function()
 {
 css_values();
 })
@@ -329,7 +347,7 @@ obj_quick_select_showcase.style.color = "#192731";
 
 obj_quick_select_showcase.addEventListener("click",function()
 {
-window.scrollTo(0, 1500);
+window.scrollTo(0, 1495);
 })
 
 obj_quick_select_contact.addEventListener("mouseover",function()
@@ -359,9 +377,95 @@ obj_quick_select_other_works.style.color = "#192731";
 
 obj_quick_select_other_works.addEventListener("click",function()
 {
-window.scrollTo(0, 3000);
+window.scrollTo(0, 2822);
 })
 
+obj_music_button.addEventListener("mouseover",function()
+{
+obj_music_button.style.opacity = 0.7-music_on*0.3;
+})
+
+obj_music_button.addEventListener("mouseleave",function()
+{
+obj_music_button.style.opacity = 1-music_on*0.3;
+})
+
+obj_music_button.addEventListener("click",function()
+{
+music_on ++
+    if (music_on > 1)
+    {
+    music_on = 0;
+    }
+    
+    if (music_on == 0)
+    {
+    music_info.style.opacity = 0.8;
+    music_info2.style.opacity = 1;
+    play_sound();
+    }
+    else
+    {
+    music_info.style.opacity = 0;
+    music_info2.style.opacity = 0;
+    audio.pause();
+    }
+})
+
+function play_sound()
+{
+    if (audio == -4)
+    {
+    var saved_random_bgm = random_bgm;
+    random_bgm = choose("Chiffon","Kokorotravel","Dhalia","PIXELIZE","Telepathic Love","Pluie");
+    
+        while(true)
+        {
+            if (saved_random_bgm == random_bgm)
+            {
+            random_bgm = choose("Chiffon","Kokorotravel","Dhalia","PIXELIZE","Telepathic Love","Pluie");
+            }
+            else
+            {
+            break;
+            }
+        }
+    audio = new Audio("sounds/Snails House - "+random_bgm+".mp3");
+    audio.pitchShift = false;
+    audio.volume = 0.03;
+    audio.loop = false;
+    
+    obj_music_info2.textContent = "Ujico*/Snail's House - "+random_bgm;
+    }
+audio.play();
+}
+
+function stop_sound()
+{
+audio.currentTime = 0;
+audio.pause();
+audio = -4;
+}
+
+
+audio.onended = function()
+{
+stop_sound();
+setTimeout(play_sound,100);
+}
+
+
+obj_music_info.addEventListener("click",function()
+{
+stop_sound();
+setTimeout(play_sound,100);
+})
+
+obj_music_info2.addEventListener("click",function()
+{
+stop_sound();
+setTimeout(play_sound,100);
+})
 
 
 
@@ -960,8 +1064,6 @@ obj_air_res_bar.style.background = "#bbbbc4";
 
 
 
-
-
 function css_values()
 {
 c_w = window.innerWidth;
@@ -970,10 +1072,11 @@ c_x = c_w/1920;
 var c_x_comp = c_w/480;
 c_x_comp = correct_value(c_x_comp,0,1);
 
-    if (c_x < 0.5)
+    if (c_x < 0.6)
     {
     is_pc = 0;
-    c_x = 0.5;
+    c_x = 0.6;
+    window.location.href = "m_index.html";
     }
     else
     {
