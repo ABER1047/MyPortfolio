@@ -16,6 +16,11 @@
         }
         </style>
         
+        <div id = "loading_bar_bg" class = "loading_bar_bg" style = "z-index : 999; background : white; width : 105%; height : 105%; left : -8px; top : -8px; cursor : progress"></div>
+        <div id = "loading_bar_grad" class = "loading_bar_grad" style = "z-index : 1000; top : 50%;"></div>
+        <div id = "loading_bar" class = "loading_bar" style = "z-index : 1001; top : 50%;"></div>
+        
+        
         <div class = "starry_bg" loading = "eager" style = "position : fixed; z-index : 0; left : -32px; width : 2000px; height : 2000px; background : #141925;"></div>
         <div class = "starry_bg" loading = "eager" style = "position : fixed; z-index : 0; left : -32px; width : 2000px; height : 2000px; background : black; opacity : var(--scroll_opacity);"></div>
         <img class = "starry_stars" src = "imgs/stars.png" loading = "eager" style = "position : fixed; z-index : 0; left : -32px; width : 1950px; margin-top : var(--m_interect_yy); margin-left : var(--m_interect_xx); top : var(--scroll_yy); filter : blur(1px); opacity : 0.3;">
@@ -45,13 +50,6 @@
         <img class = "music_button" id = "music_button" src = "imgs/music_icon.png" loading = "lazy" style = "position : fixed; left : 49%; width : var(--s36px); top : -63px; z-index : 800; transition : top 0.5s, opacity 0.3s, left 1s; opacity : 0.7">
     
 
-
-        <div id = "loading_bar_bg" class = "loading_bar_bg" style = "z-index : 999; background : white; width : 105%; height : 105%; left : -8px; top : -8px; cursor : progress"></div>
-        <div id = "loading_bar_grad" class = "loading_bar_grad" style = "z-index : 1000; top : 50%;"></div>
-        <div id = "loading_bar" class = "loading_bar" style = "z-index : 1001; top : 50%;"></div>
-        
-        
-        
         
         <div class = "sepa_bg" id = "sepa_bg" style = "position : absolute; background : white; width : 2000px; height : 180px; left : -8px; top : 980px;"></div>
         
