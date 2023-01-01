@@ -130,7 +130,7 @@ var img_name = ["arena_wak1","arena_wak2","arena_wak3","arena_wak4","project_wak
     var preloaded_imgs_obj = document.createElement("img");
     preloaded_imgs_obj.src = "imgs/"+img_name[i]+".gif";
     preloaded_imgs_obj.style.width = "0px";
-    $("input").after(preloaded_imgs_obj[i]);
+    $("input").after(preloaded_imgs_obj);
     }
 }
 
