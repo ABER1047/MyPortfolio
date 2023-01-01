@@ -122,7 +122,17 @@ var random_bgm = -4;
 
 
 
-
+function preload_imgs()
+{
+var img_name = ["arena_wak1","arena_wak2","arena_wak3","arena_wak4","project_wak_1","project_wak_2","project_wak_3","project_wak_4","Project Astronaut1","Project Astronaut2","Project Astronaut3","Project Astronaut4"];
+    for(var i = 0; i <= arguments.length; i++)
+    {
+    var preloaded_imgs_obj = document.createElement("img");
+    preloaded_imgs_obj.src = "imgs/"+img_name[i]+".gif";
+    preloaded_imgs_obj.style.width = "0px";
+    $("input").after(preloaded_imgs_obj[i]);
+    }
+}
 
 
 obj_trailer_video.onloadeddata = function()
@@ -131,6 +141,7 @@ console.log("loaded_video");
 obj_loading_bar.style.transition = "width 1s";
 obj_loading_bar.style.width = window.innerWidth+"px";
 
+preload_imgs();
 
 setTimeout(show_page_anime,1000);
 }
@@ -303,10 +314,6 @@ target_.style.color = "#749eca";
 window.onload = function()
 {
 window.scrollTo(0, 0);
-
-
-preload_images("imgs","gif","arena_wak1","arena_wak2","arena_wak3","arena_wak4","project_wak_1","project_wak_2","project_wak_3","project_wak_4","Project Astronaut1","Project Astronaut2","Project Astronaut3","Project Astronaut4");
-
 css_values();
 setTimeout(force_loading,7000);
 setTimeout(show_page_anime,7000);
