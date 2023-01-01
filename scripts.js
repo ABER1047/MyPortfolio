@@ -304,8 +304,8 @@ window.onload = function()
 {
 window.scrollTo(0, 0);
 
-var img_name = ["arena_wak1","arena_wak2","arena_wak3","arena_wak4","project_wak_1","project_wak_2","project_wak_3","project_wak_4","Project Astronaut1","Project Astronaut2","Project Astronaut3","Project Astronaut4"];
-preload_images("imgs","gif",img_name);
+
+preload_images("imgs","gif","arena_wak1","arena_wak2","arena_wak3","arena_wak4","project_wak_1","project_wak_2","project_wak_3","project_wak_4","Project Astronaut1","Project Astronaut2","Project Astronaut3","Project Astronaut4");
 
 css_values();
 setTimeout(force_loading,7000);
