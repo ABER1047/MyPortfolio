@@ -415,35 +415,82 @@ music_on ++
     music_info.style.opacity = 0;
     music_info2.style.opacity = 0;
     audio.pause();
+    
+    obj_music_button.src = "imgs/music_icon.png";
     }
 })
 
+
+function album_imgs()
+{
+var album_num = 7;
+    if (random_bgm == "PIXELIZE" || random_bgm == "Telepathic Love")
+    {
+    album_num = 6;
+    }
+    else if (random_bgm == "Kokorotravel")
+    {
+    album_num = 5;
+    }
+    else if (random_bgm == "Dhalia")
+    {
+    album_num = 4;
+    }
+    else if (random_bgm == "Pluie" || random_bgm == "Sunflower")
+    {
+    album_num = 1;
+    }
+    else if (random_bgm == "Letter From Heaven 空中都市 ver")
+    {
+    album_num = 3;
+    }
+    else if (random_bgm == "Snowlight")
+    {
+    album_num = 2;
+    }
+    
+obj_music_button.src = "imgs/album"+album_num+".png";
+}
+
+
+
+function select_music()
+{
+random_bgm = choose("PIXELIZE","Telepathic Love","Kokorotravel","Dhalia","Pluie","Sunflower","Hello","Snowlight","Letter From Heaven 空中都市 ver");
+}
+
+
+
 function play_sound()
 {
-    if (audio == -4)
+    if (music_on == 0)
     {
-    var saved_random_bgm = random_bgm;
-    random_bgm = choose("Chiffon","Kokorotravel","Dhalia","PIXELIZE","Telepathic Love","Pluie");
-    
-        while(true)
+        if (audio == -4)
         {
-            if (saved_random_bgm == random_bgm)
+        var saved_random_bgm = random_bgm;
+
+            while(true)
             {
-            random_bgm = choose("Chiffon","Kokorotravel","Dhalia","PIXELIZE","Telepathic Love","Pluie");
+                if (saved_random_bgm == random_bgm)
+                {
+                select_music();
+                }
+                else
+                {
+                break;
+                }
             }
-            else
-            {
-            break;
-            }
+        audio = new Audio("sounds/Snails House - "+random_bgm+".mp3");
+        audio.pitchShift = false;
+        audio.volume = 0.03;
+        audio.loop = false;
+        
+        obj_music_info2.textContent = "Ujico*/Snail's House - "+random_bgm;
         }
-    audio = new Audio("sounds/Snails House - "+random_bgm+".mp3");
-    audio.pitchShift = false;
-    audio.volume = 0.03;
-    audio.loop = false;
-    
-    obj_music_info2.textContent = "Ujico*/Snail's House - "+random_bgm;
+        
+    audio.play();
+    setTimeout(album_imgs,100);
     }
-audio.play();
 }
 
 function stop_sound()
