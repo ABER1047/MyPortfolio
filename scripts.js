@@ -119,6 +119,7 @@ var music_on = 1;
 var audio = -4;
 var random_bgm = -4;
 
+var music_auto_playing = [];
 
 
 
@@ -414,6 +415,8 @@ music_on ++
     {
     music_info.style.opacity = 0;
     music_info2.style.opacity = 0;
+    clearTimeout(music_auto_playing[0]);
+    clearTimeout(music_auto_playing[1]);
     audio.pause();
     
     obj_music_button.src = "imgs/music_icon.png";
@@ -480,6 +483,8 @@ function play_sound()
                 break;
                 }
             }
+        
+        
         audio = new Audio("sounds/Snails House - "+random_bgm+".mp3");
         audio.pitchShift = false;
         audio.volume = 0.03;
@@ -490,6 +495,7 @@ function play_sound()
         
     audio.play();
     setTimeout(album_imgs,100);
+    setTimeout(play_music_automatically,100);
     }
 }
 
@@ -500,12 +506,18 @@ audio.pause();
 audio = -4;
 }
 
-
-audio.onended = function()
+function play_music_automatically()
 {
-stop_sound();
-setTimeout(play_sound,100);
+//play audio automatically
+var duration = parseInt(audio.duration),
+currentTime = parseInt(audio.currentTime),
+timeLeft = duration - currentTime;
+
+music_auto_playing[0] = setTimeout(stop_sound,timeLeft*1000);
+music_auto_playing[1] = setTimeout(play_sound,timeLeft*1000+100);
+debug_log("duration : "+duration);
 }
+
 
 
 obj_music_info.addEventListener("click",function()
@@ -1297,3 +1309,4 @@ works_gif_scroll_xx = (obj_air_res_bar.value)*15.5;
     document.documentElement.style.setProperty("--works_gif_"+k+"_xx",-works_gif_scroll_xx+(k-1)*500*c_x+"px");
     }
 })
+
