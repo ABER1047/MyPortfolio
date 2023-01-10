@@ -133,7 +133,7 @@ obj_loading_bar.style.width = window.innerWidth+"px";
 
 preload_images("imgs","gif","arena_wak1","arena_wak2","arena_wak3","arena_wak4","project_wak_1","project_wak_2","project_wak_3","project_wak_4","Project Astronaut1","Project Astronaut2","Project Astronaut3","Project Astronaut4");
 
-setTimeout(show_page_anime,1000);
+setTimeout(show_page_anime,4000);
 }
 
 
