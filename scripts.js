@@ -93,7 +93,6 @@ for(var i = 0; i < 4; i++)
 obj_game_selector_button_activated[i] = 1;
 }
 
-
 for(var i = 1; i <= 7; i++)
 {
 obj_works_gif[i] = document.getElementById("works_gif"+i);
