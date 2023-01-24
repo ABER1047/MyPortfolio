@@ -22,10 +22,6 @@ var obj_youtube_icon = document.getElementById("youtube_icon");
 var obj_showcase_text = document.getElementById("showcase_text");
 var obj_showcase_game_title1 = document.getElementById("showcase_game_title1");
 var obj_showcase_game_title_sec1 = document.getElementById("showcase_game_title_sec1");
-var obj_showcase_game_title2 = document.getElementById("showcase_game_title2");
-var obj_showcase_game_title_sec2 = document.getElementById("showcase_game_title_sec2");
-var obj_showcase_game_title3 = document.getElementById("showcase_game_title3");
-var obj_showcase_game_title_sec3 = document.getElementById("showcase_game_title_sec3");
 var obj_othergames_arrow_left = document.getElementById("othergames_arrow_left");
 var obj_othergames_arrow_right = document.getElementById("othergames_arrow_right");
 var obj_arena_of_wakgood_gif = document.getElementById("arena_of_wakgood_gif");
@@ -46,10 +42,6 @@ var obj_works_arrow_left = document.getElementById("works_arrow_left");
 var obj_works_arrow_right = document.getElementById("works_arrow_right");
 var obj_showcase_works_title1 = document.getElementById("showcase_works_title1");
 var obj_showcase_works_title_sec1 = document.getElementById("showcase_works_title_sec1");
-var obj_showcase_works_title2 = document.getElementById("showcase_works_title2");
-var obj_showcase_works_title_sec2 = document.getElementById("showcase_works_title_sec2");
-var obj_showcase_works_title3 = document.getElementById("showcase_works_title3");
-var obj_showcase_works_title_sec3 = document.getElementById("showcase_works_title_sec3");
 var obj_none_gif = document.getElementById("none_gif");
 var obj_bocchi_gif = document.getElementById("bocchi_gif");
 var obj_delaunay_gif = document.getElementById("delaunay_gif");
@@ -302,7 +294,7 @@ target_.style.color = "#749eca";
 
 window.onload = function()
 {
-window.scrollTo(0, 0);
+window.scrollTo({top : 0, left : 0, behavior : "smooth"});
 css_values();
 setTimeout(force_loading,7000);
 setTimeout(show_page_anime,7000);
@@ -338,7 +330,7 @@ obj_quick_select_main.style.color = "#192731";
 
 obj_quick_select_main.addEventListener("click",function()
 {
-window.scrollTo(0, 0);
+window.scrollTo({top : 0, left : 0, behavior : "smooth"});
 })
 
 obj_quick_select_showcase.addEventListener("mouseover",function()
@@ -353,7 +345,7 @@ obj_quick_select_showcase.style.color = "#192731";
 
 obj_quick_select_showcase.addEventListener("click",function()
 {
-window.scrollTo(0, 1495);
+window.scrollTo({top : 1495, left : 0, behavior : "smooth"});
 })
 
 obj_quick_select_contact.addEventListener("mouseover",function()
@@ -368,7 +360,7 @@ obj_quick_select_contact.style.color = "#192731";
 
 obj_quick_select_contact.addEventListener("click",function()
 {
-window.scrollTo(0, 600);
+window.scrollTo({top : 600, left : 0, behavior : "smooth"});
 })
 
 obj_quick_select_other_works.addEventListener("mouseover",function()
@@ -383,7 +375,7 @@ obj_quick_select_other_works.style.color = "#192731";
 
 obj_quick_select_other_works.addEventListener("click",function()
 {
-window.scrollTo(0, 2822);
+window.scrollTo({top : 2822, left : 0, behavior : "smooth"});
 })
 
 obj_music_button.addEventListener("mouseover",function()
@@ -600,12 +592,10 @@ scroll_animation[1] = 0;
     
     
     
-    obj_showcase_game_title1.style.opacity = "0";
-    obj_showcase_game_title_sec1.style.opacity = "0";
-    obj_showcase_game_title2.style.opacity = "1";
-    obj_showcase_game_title_sec2.style.opacity = "1";
-    obj_showcase_game_title3.style.opacity = "0";
-    obj_showcase_game_title_sec3.style.opacity = "0";
+    obj_showcase_game_title1.textContent = "Astronaut";
+    obj_showcase_game_title_sec1.textContent = "아스트로넛";
+    obj_showcase_game_title1.style.left = "46%";
+    obj_showcase_game_title_sec1.style.left = "50%";
     
     
     
@@ -633,12 +623,11 @@ scroll_animation[1] = 0;
     
     
     
-    obj_showcase_game_title1.style.opacity = "0";
-    obj_showcase_game_title_sec1.style.opacity = "0";
-    obj_showcase_game_title2.style.opacity = "0";
-    obj_showcase_game_title_sec2.style.opacity = "0";
-    obj_showcase_game_title3.style.opacity = "1";
-    obj_showcase_game_title_sec3.style.opacity = "1";
+    obj_showcase_game_title1.textContent = "Arena of Wakgood";
+    obj_showcase_game_title_sec1.textContent = "아레나 오브 왁굳";
+    obj_showcase_game_title1.style.left = "43.5%";
+    obj_showcase_game_title_sec1.style.left = "48%";
+
     
     
     
@@ -666,12 +655,10 @@ scroll_animation[1] = 0;
     
     
     
-    obj_showcase_game_title1.style.opacity = "1";
-    obj_showcase_game_title_sec1.style.opacity = "1";
-    obj_showcase_game_title2.style.opacity = "0";
-    obj_showcase_game_title_sec2.style.opacity = "0";
-    obj_showcase_game_title3.style.opacity = "0";
-    obj_showcase_game_title_sec3.style.opacity = "0";
+    obj_showcase_game_title1.textContent = "Project Wak";
+    obj_showcase_game_title_sec1.textContent = "프로젝트 왁";
+    obj_showcase_game_title1.style.left = "46%";
+    obj_showcase_game_title_sec1.style.left = "50%";
     
     
     
@@ -947,12 +934,11 @@ scroll_animation[3] = 0;
     obj_delaunay_gif.style.width = 700*c_x+"px";
     
     
-    obj_showcase_works_title1.style.opacity = "0";
-    obj_showcase_works_title_sec1.style.opacity = "0";
-    obj_showcase_works_title2.style.opacity = "1";
-    obj_showcase_works_title_sec2.style.opacity = "1";
-    obj_showcase_works_title3.style.opacity = "0";
-    obj_showcase_works_title_sec3.style.opacity = "0";
+    obj_showcase_works_title1.textContent = "Bocchi!";
+    obj_showcase_works_title_sec1.textContent = "ぼっち・ざ・ろっく!";
+    obj_showcase_works_title1.style.left = "48.3%";
+    obj_showcase_works_title_sec1.style.left = "44.2%";
+    obj_showcase_works_title_sec1.style.fontFamily = "auto";
     
     
     obj_works_more_desc_link.href = "https://github.com/ABER1047/bocchi";
@@ -978,12 +964,11 @@ scroll_animation[3] = 0;
     obj_bocchi_gif.style.width = 700*c_x+"px";
     
     
-    obj_showcase_works_title1.style.opacity = "0";
-    obj_showcase_works_title_sec1.style.opacity = "0";
-    obj_showcase_works_title2.style.opacity = "0";
-    obj_showcase_works_title_sec2.style.opacity = "0";
-    obj_showcase_works_title3.style.opacity = "1";
-    obj_showcase_works_title_sec3.style.opacity = "1";
+    obj_showcase_works_title1.textContent = "Empty!";
+    obj_showcase_works_title_sec1.textContent = "이칸은 비어있네요!";
+    obj_showcase_works_title1.style.left = "43.5%";
+    obj_showcase_works_title_sec1.style.left = "48%";
+    obj_showcase_works_title_sec1.style.fontFamily = "customfont";
     }
     else
     {
@@ -1006,12 +991,11 @@ scroll_animation[3] = 0;
     obj_none_gif.style.width = 700*c_x+"px";
     
     
-    obj_showcase_works_title1.style.opacity = "1";
-    obj_showcase_works_title_sec1.style.opacity = "1";
-    obj_showcase_works_title2.style.opacity = "0";
-    obj_showcase_works_title_sec2.style.opacity = "0";
-    obj_showcase_works_title3.style.opacity = "0";
-    obj_showcase_works_title_sec3.style.opacity = "0";
+    obj_showcase_works_title1.textContent = "Delaunay Triangulation";
+    obj_showcase_works_title_sec1.textContent = "들로네 삼각분할";
+    obj_showcase_works_title1.style.left = "41.5%";
+    obj_showcase_works_title_sec1.style.left = "50%";
+    obj_showcase_works_title_sec1.style.fontFamily = "customfont";
     
     
     obj_works_more_desc_link.href = "https://github.com/ABER1047/delaunay-trianglulation";
@@ -1212,30 +1196,14 @@ obj_trailer_video.style.filter = "blur("+$(window).scrollTop()*0.04+"px)";
         setTimeout(text_appearence_anime1,500,obj_showcase_text);
         }
         
-        if (scroll > 450 && scroll_animation[1] == 0)
+        if (scroll > 420 && scroll_animation[1] == 0)
         {
         scroll_animation[1] = 1;
-            if (n_showcase_game == 0)
-            {
-            obj_showcase_game_title1.style.width = "0px";
-            setTimeout(text_appearence_anime1,500,obj_showcase_game_title1);
-            obj_showcase_game_title_sec1.style.width = "0px";
-            setTimeout(text_appearence2_anime2,1000,obj_showcase_game_title_sec1);
-            }
-            else if (n_showcase_game == 1)
-            {
-            obj_showcase_game_title2.style.width = "0px";
-            setTimeout(text_appearence_anime1,500,obj_showcase_game_title2);
-            obj_showcase_game_title_sec2.style.width = "0px";
-            setTimeout(text_appearence2_anime2,1000,obj_showcase_game_title_sec2);
-            }
-            else
-            {
-            obj_showcase_game_title3.style.width = "0px";
-            setTimeout(text_appearence_anime1,500,obj_showcase_game_title3);
-            obj_showcase_game_title_sec3.style.width = "0px";
-            setTimeout(text_appearence2_anime2,1000,obj_showcase_game_title_sec3);
-            }
+
+        obj_showcase_game_title1.style.width = "0px";
+        setTimeout(text_appearence_anime1,500,obj_showcase_game_title1);
+        obj_showcase_game_title_sec1.style.width = "0px";
+        setTimeout(text_appearence2_anime2,1000,obj_showcase_game_title_sec1);
         }
         
         if (scroll > 1200 && scroll_animation[2] == 0)
@@ -1248,27 +1216,11 @@ obj_trailer_video.style.filter = "blur("+$(window).scrollTop()*0.04+"px)";
         if (scroll > 1750 && scroll_animation[3] == 0)
         {
         scroll_animation[3] = 1;
-            if (n_showcase_works == 0)
-            {
-            obj_showcase_works_title1.style.width = "0px";
-            setTimeout(text_appearence_anime1,500,obj_showcase_works_title1);
-            obj_showcase_works_title_sec1.style.width = "0px";
-            setTimeout(text_appearence2_anime2,1000,obj_showcase_works_title_sec1);
-            }
-            else if (n_showcase_works == 1)
-            {
-            obj_showcase_works_title2.style.width = "0px";
-            setTimeout(text_appearence_anime1,500,obj_showcase_works_title2);
-            obj_showcase_works_title_sec2.style.width = "0px";
-            setTimeout(text_appearence2_anime2,1000,obj_showcase_works_title_sec2);
-            }
-            else
-            {
-            obj_showcase_works_title3.style.width = "0px";
-            setTimeout(text_appearence_anime1,500,obj_showcase_works_title3);
-            obj_showcase_works_title_sec3.style.width = "0px";
-            setTimeout(text_appearence2_anime2,1000,obj_showcase_works_title_sec3);
-            }
+
+        obj_showcase_works_title1.style.width = "0px";
+        setTimeout(text_appearence_anime1,500,obj_showcase_works_title1);
+        obj_showcase_works_title_sec1.style.width = "0px";
+        setTimeout(text_appearence2_anime2,1000,obj_showcase_works_title_sec1);
         }
         
         if (scroll > 2600 && scroll_animation[4] == 0)
