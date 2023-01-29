@@ -113,6 +113,8 @@ var random_bgm = -4;
 var music_auto_playing = [];
 
 
+var quick_selector_activated = -1;
+
 
 
 
@@ -172,13 +174,6 @@ setTimeout(title_anime1,1000);
 setTimeout(title_anime2,1200);
 setTimeout(title_anime3,1400);
 setTimeout(title_anime4,1600);
-setTimeout(quick_select_menu_anime1,2000);
-setTimeout(quick_select_menu_anime2,2500);
-setTimeout(quick_select_menu_anime3,2600);
-setTimeout(quick_select_menu_anime4,2700);
-setTimeout(quick_select_menu_anime5,2800);
-setTimeout(quick_select_menu_anime6,3200);
-setTimeout(quick_select_menu_anime6_2,4000);
 }
 
 
@@ -224,31 +219,55 @@ function quick_select_menu_anime1()
 {
 obj_quick_select_bg_outline.style.top = "56px";
 obj_quick_select_bg.style.top = "-8px";
+    if (quick_selector_activated == 1)
+    {
+    setTimeout(quick_select_menu_anime2,500);
+    }
 }
 
 function quick_select_menu_anime2()
 {
 obj_quick_select_main.style.top = "17px";
+    if (quick_selector_activated == 1)
+    {
+    setTimeout(quick_select_menu_anime3,100);
+    }
 }
 
 function quick_select_menu_anime3()
 {
 obj_quick_select_contact.style.top = "17px";
+    if (quick_selector_activated == 1)
+    {
+    setTimeout(quick_select_menu_anime4,100);
+    }
 }
 
 function quick_select_menu_anime4()
 {
 obj_quick_select_showcase.style.top = "17px";
+    if (quick_selector_activated == 1)
+    {
+    setTimeout(quick_select_menu_anime5,100);
+    }
 }
 
 function quick_select_menu_anime5()
 {
 obj_quick_select_other_works.style.top = "17px";
+    if (quick_selector_activated == 1)
+    {
+    setTimeout(quick_select_menu_anime6,400);
+    }
 }
 
 function quick_select_menu_anime6()
 {
 obj_music_button.style.top = "12px";
+    if (quick_selector_activated == 1)
+    {
+    setTimeout(quick_select_menu_anime6_2,400);
+    }
 }
 
 function quick_select_menu_anime6_2()
@@ -1189,6 +1208,27 @@ obj_trailer_video.style.filter = "blur("+$(window).scrollTop()*0.04+"px)";
 
     if (scroll_animation[99] == 1)
     {
+        if (scroll <= -1000)
+        {
+        quick_selector_activated = -1;
+        
+        obj_quick_select_bg_outline.style.top = "-24px";
+        obj_quick_select_bg.style.top = "-88px";
+        obj_quick_select_main.style.top = "-63px";
+        obj_quick_select_contact.style.top = "-63px";
+        obj_quick_select_showcase.style.top = "-63px";
+        obj_quick_select_other_works.style.top = "-63px";
+        obj_music_button.style.top = "-63px";
+        }
+        else
+        {
+            if (quick_selector_activated == -1)
+            {
+            quick_selector_activated = 1;
+            quick_select_menu_anime1();
+            }
+        }
+    
         if (scroll > 0 && scroll_animation[0] == 0)
         {
         scroll_animation[0] = 1;
