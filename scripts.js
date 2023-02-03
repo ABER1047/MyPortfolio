@@ -1192,8 +1192,10 @@ document.documentElement.style.setProperty("--m_interect_yy2",-mouse_movement_di
 
 $(window).scroll(function()
 {
-scroll = $(window).scrollTop()-1000;
+var scroll_real = $(window).scrollTop();
+scroll = scroll_real-1000;
 document.documentElement.style.setProperty("--scroll_yy",scroll*0.02*c_x+"px");
+document.documentElement.style.setProperty("--real_scroll_yy",scroll_real+"px");
 var __opacity__ = scroll+1000;
 __opacity__ = correct_value(0,1);
 document.documentElement.style.setProperty("--scroll_opacity",__opacity__*0.01);
