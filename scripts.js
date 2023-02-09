@@ -110,7 +110,7 @@ var music_on = 1;
 var audio = -4;
 var random_bgm = -4;
 
-var music_auto_playing = [];
+var music_auto_playing = [-4,-4];
 
 
 var quick_selector_activated = -1;
@@ -217,62 +217,65 @@ scroll_animation[99] = 1;
 
 function quick_select_menu_anime1()
 {
-obj_quick_select_bg_outline.style.top = "56px";
-obj_quick_select_bg.style.top = "-8px";
     if (quick_selector_activated == 1)
     {
+    obj_quick_select_bg_outline.style.top = "56px";
+    obj_quick_select_bg.style.top = "-8px";
     setTimeout(quick_select_menu_anime2,500);
     }
 }
 
 function quick_select_menu_anime2()
 {
-obj_quick_select_main.style.top = "17px";
     if (quick_selector_activated == 1)
     {
+    obj_quick_select_main.style.top = "17px";
     setTimeout(quick_select_menu_anime3,100);
     }
 }
 
 function quick_select_menu_anime3()
 {
-obj_quick_select_contact.style.top = "17px";
     if (quick_selector_activated == 1)
     {
+    obj_quick_select_contact.style.top = "17px";
     setTimeout(quick_select_menu_anime4,100);
     }
 }
 
 function quick_select_menu_anime4()
 {
-obj_quick_select_showcase.style.top = "17px";
     if (quick_selector_activated == 1)
     {
+    obj_quick_select_showcase.style.top = "17px";
     setTimeout(quick_select_menu_anime5,100);
     }
 }
 
 function quick_select_menu_anime5()
 {
-obj_quick_select_other_works.style.top = "17px";
     if (quick_selector_activated == 1)
     {
+    obj_quick_select_other_works.style.top = "17px";
     setTimeout(quick_select_menu_anime6,400);
     }
 }
 
 function quick_select_menu_anime6()
 {
-obj_music_button.style.top = "12px";
     if (quick_selector_activated == 1)
     {
+    obj_music_button.style.top = "12px";
     setTimeout(quick_select_menu_anime6_2,400);
     }
 }
 
 function quick_select_menu_anime6_2()
 {
-obj_music_button.style.left = "2.5%";
+    if (quick_selector_activated == 1)
+    {
+    obj_music_button.style.left = "2.5%";
+    }
 }
 
 
@@ -425,8 +428,6 @@ music_on ++
     {
     music_info.style.opacity = 0;
     music_info2.style.opacity = 0;
-    clearTimeout(music_auto_playing[0]);
-    clearTimeout(music_auto_playing[1]);
     audio.pause();
     
     obj_music_button.src = "imgs/music_icon.png";
@@ -461,6 +462,14 @@ var album_num = 7;
     {
     album_num = 2;
     }
+    else if (random_bgm == "Sweet Dreams")
+    {
+    album_num = 8;
+    }
+    else if (random_bgm == "frostbite")
+    {
+    album_num = 9;
+    }
     
 obj_music_button.src = "imgs/album"+album_num+".png";
 }
@@ -469,7 +478,7 @@ obj_music_button.src = "imgs/album"+album_num+".png";
 
 function select_music()
 {
-random_bgm = choose("PIXELIZE","Telepathic Love","Kokorotravel","Dhalia","Pluie","Sunflower","Hello","Snowlight","Letter From Heaven 空中都市 ver");
+random_bgm = choose("PIXELIZE","Telepathic Love","Kokorotravel","Dhalia","Pluie","Sunflower","Hello","Snowlight","Letter From Heaven 空中都市 ver","Sweet Dreams","frostbite");
 }
 
 
@@ -518,6 +527,12 @@ audio = -4;
 
 function play_music_automatically()
 {
+    if (music_auto_playing[0] != -4)
+    {
+    clearTimeout(music_auto_playing[0]);
+    clearTimeout(music_auto_playing[1]);
+    }
+
 //play audio automatically
 var duration = parseInt(audio.duration),
 currentTime = parseInt(audio.currentTime),
