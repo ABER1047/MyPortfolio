@@ -1210,7 +1210,11 @@ $(window).scroll(function()
 var scroll_real = $(window).scrollTop();
 scroll = scroll_real-1000;
 document.documentElement.style.setProperty("--scroll_yy",scroll*0.02*c_x+"px");
+
+if (scroll_real < 3000)
+{
 document.documentElement.style.setProperty("--real_scroll_yy",scroll_real+"px");
+}
 var __opacity__ = scroll+1000;
 __opacity__ = correct_value(0,1);
 document.documentElement.style.setProperty("--scroll_opacity",__opacity__*0.01);
