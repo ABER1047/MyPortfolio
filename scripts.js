@@ -7,6 +7,7 @@ var obj_hello_title_kor = document.getElementById("hello_title_kor");
 var obj_hello_title_jap = document.getElementById("hello_title_jap");
 var obj_hello_title_desc = document.getElementById("hello_title_desc");
 var obj_trailer_video = document.getElementById("trailer_video");
+var obj_trailer_bg = document.getElementById("trailer_bg");
 var obj_quick_select_bg_outline = document.getElementById("quick_select_bg_outline");
 var obj_quick_select_bg = document.getElementById("quick_select_bg");
 var obj_quick_select_main = document.getElementById("quick_select_main");
@@ -1250,6 +1251,9 @@ obj_trailer_video.style.filter = "blur("+$(window).scrollTop()*0.04+"px)";
             quick_select_menu_anime1();
             }
         }
+
+        
+
     
         if (scroll > 0 && scroll_animation[0] == 0)
         {
