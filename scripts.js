@@ -124,8 +124,6 @@ console.log("loaded_video");
 obj_loading_bar.style.transition = "width 1s";
 obj_loading_bar.style.width = window.innerWidth+"px";
 
-preload_images("imgs","gif","arena_wak1","arena_wak2","arena_wak3","arena_wak4","project_wak_1","project_wak_2","project_wak_3","project_wak_4","Project Astronaut1","Project Astronaut2","Project Astronaut3","Project Astronaut4");
-
 setTimeout(show_page_anime,4000);
 }
 
@@ -137,6 +135,9 @@ obj_loading_bar_bg.style.background = "#02050C";
 obj_loading_bar.style.background = "#02050C";
 obj_loading_bar_bg.style.transition = "background 1s, width 1s, opacity 1s";
 obj_loading_bar.style.transition = "background 1s, width 1s";
+
+preload_images("imgs","gif","arena_wak1","arena_wak2","arena_wak3","arena_wak4","project_wak_1","project_wak_2","project_wak_3","project_wak_4","Project Astronaut1","Project Astronaut2","Project Astronaut3","Project Astronaut4");
+
 setTimeout(show_page,1000);
 setTimeout(starry_stars_brighting,1500);
 }
