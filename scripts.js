@@ -43,7 +43,7 @@ var obj_works_arrow_left = document.getElementById("works_arrow_left");
 var obj_works_arrow_right = document.getElementById("works_arrow_right");
 var obj_showcase_works_title1 = document.getElementById("showcase_works_title1");
 var obj_showcase_works_title_sec1 = document.getElementById("showcase_works_title_sec1");
-var obj_none_gif = document.getElementById("none_gif");
+var obj_jwab_gif = document.getElementById("none_gif");
 var obj_bocchi_gif = document.getElementById("bocchi_gif");
 var obj_delaunay_gif = document.getElementById("delaunay_gif");
 var obj_works_more_desc = document.getElementById("works_more_desc");
@@ -456,7 +456,7 @@ var album_num = 7;
     {
     album_num = 1;
     }
-    else if (random_bgm == "Letter From Heaven 空中都市 ver")
+    else if (random_bgm == "Letter From Heaven 空中都市 ver" || random_bgm == "Sight")
     {
     album_num = 3;
     }
@@ -480,7 +480,7 @@ obj_music_button.src = "imgs/album"+album_num+".png";
 
 function select_music()
 {
-random_bgm = choose("PIXELIZE","Telepathic Love","Kokorotravel","Dhalia","Pluie","Sunflower","Hello","Snowlight","Letter From Heaven 空中都市 ver","Sweet Dreams","frostbite");
+random_bgm = choose("PIXELIZE","Telepathic Love","Kokorotravel","Dhalia","Pluie","Sunflower","Hello","Snowlight","Letter From Heaven 空中都市 ver","Sweet Dreams","frostbite","Sight");
 }
 
 
@@ -914,7 +914,7 @@ obj_download_button.style.opacity = "1";
     else
     {
     obj_desc_thumbnail.src = "imgs/arena_of_wakgood_thumbnail.gif";
-    obj_arena_of_wakgood_desc.style.top = "55%";
+    obj_arena_of_wakgood_desc.style.top = "53%";
     obj_arena_of_wakgood_desc.style.opacity = "1";
     }
 })
@@ -951,11 +951,11 @@ function repos_works_gif()
 scroll_animation[3] = 0;
     if (n_showcase_works == 1)
     {
-    obj_none_gif.style.left = "59%";
-    obj_none_gif.style.top = "3130px";
-    obj_none_gif.style.filter = "blur(5px)";
-    obj_none_gif.style.zIndex = "100";
-    obj_none_gif.style.width = 700*c_x+"px";
+    obj_jwab_gif.style.left = "59%";
+    obj_jwab_gif.style.top = "3130px";
+    obj_jwab_gif.style.filter = "blur(5px)";
+    obj_jwab_gif.style.zIndex = "100";
+    obj_jwab_gif.style.width = 700*c_x+"px";
     
     obj_bocchi_gif.style.left = "30.5%";
     obj_bocchi_gif.style.top = "3100px";
@@ -987,11 +987,11 @@ scroll_animation[3] = 0;
     obj_delaunay_gif.style.zIndex = "100";
     obj_delaunay_gif.style.width = 700*c_x+"px";
     
-    obj_none_gif.style.left = "30.5%";
-    obj_none_gif.style.top = "3100px";
-    obj_none_gif.style.filter = "blur(0px)";
-    obj_none_gif.style.zIndex = "101";
-    obj_none_gif.style.width = 800*c_x+"px";
+    obj_jwab_gif.style.left = "30.5%";
+    obj_jwab_gif.style.top = "3100px";
+    obj_jwab_gif.style.filter = "blur(0px)";
+    obj_jwab_gif.style.zIndex = "101";
+    obj_jwab_gif.style.width = 800*c_x+"px";
     
     obj_bocchi_gif.style.left = "5%";
     obj_bocchi_gif.style.top = "3130px";
@@ -1000,11 +1000,13 @@ scroll_animation[3] = 0;
     obj_bocchi_gif.style.width = 700*c_x+"px";
     
     
-    obj_showcase_works_title1.textContent = "Empty!";
-    obj_showcase_works_title_sec1.textContent = "이칸은 비어있네요!";
+    obj_showcase_works_title1.textContent = "Just Wak & Beats";
+    obj_showcase_works_title_sec1.textContent = "저스트 왁 & 비트";
     obj_showcase_works_title1.style.left = "43.5%";
     obj_showcase_works_title_sec1.style.left = "48%";
     obj_showcase_works_title_sec1.style.fontFamily = "customfont";
+    
+    obj_works_more_desc_link.href = "https://github.com/ABER1047/Just_Wak_and_Beats";
     }
     else
     {
@@ -1020,11 +1022,11 @@ scroll_animation[3] = 0;
     obj_delaunay_gif.style.zIndex = "101";
     obj_delaunay_gif.style.width = 800*c_x+"px";
     
-    obj_none_gif.style.left = "5%";
-    obj_none_gif.style.top = "3130px";
-    obj_none_gif.style.filter = "blur(5px)";
-    obj_none_gif.style.zIndex = "100";
-    obj_none_gif.style.width = 700*c_x+"px";
+    obj_jwab_gif.style.left = "5%";
+    obj_jwab_gif.style.top = "3130px";
+    obj_jwab_gif.style.filter = "blur(5px)";
+    obj_jwab_gif.style.zIndex = "100";
+    obj_jwab_gif.style.width = 700*c_x+"px";
     
     
     obj_showcase_works_title1.textContent = "Delaunay Triangulation";
