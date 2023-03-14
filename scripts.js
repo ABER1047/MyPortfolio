@@ -114,7 +114,7 @@ var audio = -4;
 var random_bgm = -4;
 
 var music_auto_playing = [-4,-4];
-
+var saved_random_bgm = -4;
 
 var quick_selector_activated = -1;
 
@@ -494,7 +494,7 @@ function play_sound()
     {
         if (audio == -4)
         {
-        var saved_random_bgm = random_bgm;
+        saved_random_bgm = random_bgm;
 
             while(true)
             {
