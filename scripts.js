@@ -43,9 +43,11 @@ var obj_works_arrow_left = document.getElementById("works_arrow_left");
 var obj_works_arrow_right = document.getElementById("works_arrow_right");
 var obj_showcase_works_title1 = document.getElementById("showcase_works_title1");
 var obj_showcase_works_title_sec1 = document.getElementById("showcase_works_title_sec1");
-var obj_jwab_gif = document.getElementById("none_gif");
-var obj_bocchi_gif = document.getElementById("bocchi_gif");
-var obj_delaunay_gif = document.getElementById("delaunay_gif");
+
+
+var max_size_ = 2;
+
+
 var obj_works_more_desc = document.getElementById("works_more_desc");
 var obj_works_more_desc_link = document.getElementById("works_more_desc_link");
 
@@ -168,6 +170,7 @@ obj_loading_bar_grad.style.opacity = 0;
 obj_loading_bar_grad.style.opacity = 0;
 
 obj_trailer_video.style.filter = "blur(0px)";
+repos_works_gif();
 
 
 console.log("page_loaded");
@@ -949,95 +952,43 @@ obj_more_desc.style.background = "#141527";
 function repos_works_gif()
 {
 scroll_animation[3] = 0;
-    if (n_showcase_works == 1)
-    {
-    obj_jwab_gif.style.left = "59%";
-    obj_jwab_gif.style.top = "3130px";
-    obj_jwab_gif.style.filter = "blur(5px)";
-    obj_jwab_gif.style.zIndex = "100";
-    obj_jwab_gif.style.width = 700*c_x+"px";
-    
-    obj_bocchi_gif.style.left = "30.5%";
-    obj_bocchi_gif.style.top = "3100px";
-    obj_bocchi_gif.style.filter = "blur(0px)";
-    obj_bocchi_gif.style.zIndex = "101";
-    obj_bocchi_gif.style.width = 800*c_x+"px";
-    
-    obj_delaunay_gif.style.left = "5%";
-    obj_delaunay_gif.style.top = "3130px";
-    obj_delaunay_gif.style.filter = "blur(5px)";
-    obj_delaunay_gif.style.zIndex = "100";
-    obj_delaunay_gif.style.width = 700*c_x+"px";
-    
-    
-    obj_showcase_works_title1.textContent = "Bocchi!";
-    obj_showcase_works_title_sec1.textContent = "ぼっち・ざ・ろっく!";
-    obj_showcase_works_title1.style.left = "48.3%";
-    obj_showcase_works_title_sec1.style.left = "44.2%";
-    obj_showcase_works_title_sec1.style.fontFamily = "auto";
-    
-    
-    obj_works_more_desc_link.href = "https://github.com/ABER1047/bocchi";
-    }
-    else if (n_showcase_works == 2)
-    {
-    obj_delaunay_gif.style.left = "59%";
-    obj_delaunay_gif.style.top = "3130px";
-    obj_delaunay_gif.style.filter = "blur(5px)";
-    obj_delaunay_gif.style.zIndex = "100";
-    obj_delaunay_gif.style.width = 700*c_x+"px";
-    
-    obj_jwab_gif.style.left = "30.5%";
-    obj_jwab_gif.style.top = "3100px";
-    obj_jwab_gif.style.filter = "blur(0px)";
-    obj_jwab_gif.style.zIndex = "101";
-    obj_jwab_gif.style.width = 800*c_x+"px";
-    
-    obj_bocchi_gif.style.left = "5%";
-    obj_bocchi_gif.style.top = "3130px";
-    obj_bocchi_gif.style.filter = "blur(5px)";
-    obj_bocchi_gif.style.zIndex = "100";
-    obj_bocchi_gif.style.width = 700*c_x+"px";
-    
-    
-    obj_showcase_works_title1.textContent = "Just Wak & Beats";
-    obj_showcase_works_title_sec1.textContent = "저스트 왁 & 비트";
-    obj_showcase_works_title1.style.left = "43.5%";
-    obj_showcase_works_title_sec1.style.left = "48%";
-    obj_showcase_works_title_sec1.style.fontFamily = "customfont";
-    
-    obj_works_more_desc_link.href = "https://github.com/ABER1047/Just_Wak_and_Beats";
-    }
-    else
-    {
-    obj_bocchi_gif.style.left = "59%";
-    obj_bocchi_gif.style.top = "3130px";
-    obj_bocchi_gif.style.filter = "blur(5px)";
-    obj_bocchi_gif.style.zIndex = "100";
-    obj_bocchi_gif.style.width = 700*c_x+"px";
-    
-    obj_delaunay_gif.style.left = "30.5%";
-    obj_delaunay_gif.style.top = "3100px";
-    obj_delaunay_gif.style.filter = "blur(0px)";
-    obj_delaunay_gif.style.zIndex = "101";
-    obj_delaunay_gif.style.width = 800*c_x+"px";
-    
-    obj_jwab_gif.style.left = "5%";
-    obj_jwab_gif.style.top = "3130px";
-    obj_jwab_gif.style.filter = "blur(5px)";
-    obj_jwab_gif.style.zIndex = "100";
-    obj_jwab_gif.style.width = 700*c_x+"px";
-    
-    
-    obj_showcase_works_title1.textContent = "Delaunay Triangulation";
-    obj_showcase_works_title_sec1.textContent = "들로네 삼각분할";
-    obj_showcase_works_title1.style.left = "41.5%";
-    obj_showcase_works_title_sec1.style.left = "50%";
-    obj_showcase_works_title_sec1.style.fontFamily = "customfont";
-    
-    
-    obj_works_more_desc_link.href = "https://github.com/ABER1047/delaunay-trianglulation";
-    }
+
+var works_url = ["https://github.com/ABER1047/Just_Wak_and_Beats","https://github.com/ABER1047/bocchi","https://github.com/ABER1047/delaunay-trianglulation","https://github.com/ABER1047/HitoriBocchi"];
+var works_title_eng = ["Just Wak & Beats","Bocchi!","Delaunay Triangulation","Hitori Bocchi","Empty"]
+var works_title_kr = ["저스트 왁 & 비트","ぼっち・ざ・ろっく!","들로네 삼각분할","ひとりぼっち","비어있음"]
+
+
+for(var i = -max_size_; i <= max_size_; i++)
+{//n_showcase_works
+var _real_i = i+2;
+var n_show_case_ = i-n_showcase_works;
+n_show_case_ = (n_show_case_ < -max_size_) ? max_size_*2+n_show_case_+1 : n_show_case_;
+n_show_case_ = (n_show_case_ > max_size_) ? -max_size_*2+n_show_case_-1 : n_show_case_;
+
+var img_size = (1 - abs(n_show_case_)/(max_size_*3))*800;
+var obj_sub_project = document.getElementById("sub_project"+_real_i);
+obj_sub_project.style.left = (c_w - img_size)*0.5+(n_show_case_)*(720/max_size_)+"px";
+obj_sub_project.style.top = (3100+abs(n_show_case_)*21)+"px";
+obj_sub_project.style.filter = "blur("+(abs(n_show_case_)*2)+"px)";
+obj_sub_project.style.zIndex = 101-abs(n_show_case_);
+obj_sub_project.style.width = img_size+"px";
+}
+
+var n_real_showcase = n_showcase_works+max_size_;
+if (n_real_showcase == 1 || n_real_showcase == 3)
+{
+obj_showcase_works_title_sec1.style.fontFamily = "auto";
+}
+else
+{
+obj_showcase_works_title_sec1.style.fontFamily = "customfont";
+}
+
+obj_showcase_works_title1.textContent = works_title_eng[n_real_showcase];
+obj_showcase_works_title_sec1.textContent = works_title_kr[n_real_showcase];
+obj_showcase_works_title1.style.left = c_w*0.5-(obj_showcase_works_title1.textContent.length)*9+"px";
+obj_showcase_works_title_sec1.style.left = c_w*0.5-(obj_showcase_works_title_sec1.textContent.length)*3+"px";
+obj_works_more_desc_link.href = works_url[n_real_showcase];
     
 
 setTimeout(scroll_animation_active,500);
@@ -1048,9 +999,9 @@ obj_works_arrow_left.addEventListener("click",function()
 {
 n_showcase_works --;
 
-    if (n_showcase_works < 0)
+    if (n_showcase_works < -max_size_)
     {
-    n_showcase_works = 2;
+    n_showcase_works = max_size_;
     }
 setTimeout(repos_works_gif,50);
 })
@@ -1059,9 +1010,9 @@ obj_works_arrow_right.addEventListener("click",function()
 {
 n_showcase_works ++;
 
-    if (n_showcase_works > 2)
+    if (n_showcase_works > max_size_)
     {
-    n_showcase_works = 0;
+    n_showcase_works = -max_size_;
     }
 setTimeout(repos_works_gif,50);
 })
