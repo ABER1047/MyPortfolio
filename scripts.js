@@ -1212,6 +1212,7 @@ obj_trailer_video.style.filter = "blur("+$(window).scrollTop()*0.04+"px)";
         {
         scroll_animation[0] = 1;
         obj_showcase_text.style.width = "0px";
+        document.getElementById("sepa_bg1_2").style.width = "2000px";
         setTimeout(text_appearence_anime1,500,obj_showcase_text);
         }
         
@@ -1229,13 +1230,13 @@ obj_trailer_video.style.filter = "blur("+$(window).scrollTop()*0.04+"px)";
         {
         scroll_animation[2] = 1;
         obj_other_works_text.style.width = "0px";
+        document.getElementById("sepa_bg2_2").style.width = "2000px";
         setTimeout(text_appearence_anime1,500,obj_other_works_text);
         }
         
         if (scroll > 1750 && scroll_animation[3] == 0)
         {
         scroll_animation[3] = 1;
-
         obj_showcase_works_title1.style.width = "0px";
         setTimeout(text_appearence_anime1,500,obj_showcase_works_title1);
         obj_showcase_works_title_sec1.style.width = "0px";
@@ -1245,7 +1246,7 @@ obj_trailer_video.style.filter = "blur("+$(window).scrollTop()*0.04+"px)";
         if (scroll > 2600 && scroll_animation[4] == 0)
         {
         scroll_animation[4] = 1;
-
+        document.getElementById("sepa_bg3_2").style.width = "2000px";
         setTimeout(icons_appearance_first,100,obj_aftereffect);
         setTimeout(icons_appearance_first,200,obj_photoshop);
         setTimeout(icons_appearance_first,300,obj_aseprite);
