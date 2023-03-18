@@ -16,15 +16,15 @@
         }
         </style>
         
-        <div id = "loading_bar_bg" class = "loading_bar_bg" style = "z-index : 999; background : white; width : 105%; height : 105%; left : -8px; top : -8px; cursor : progress"></div>
-        <div id = "loading_bar_grad" class = "loading_bar_grad" style = "z-index : 1000; top : 50%;"></div>
-        <div id = "loading_bar" class = "loading_bar" style = "z-index : 1001; top : 50%;"></div>
+        <div id = "loading_bar_bg" class = "loading_bar_bg" style = "z-index : 999; left : 0px; background : white; width : 100%; height : 105%; top : -8px; cursor : progress; position : absolute"></div>
+        <div id = "loading_bar_grad" class = "loading_bar_grad" style = "z-index : 1000; top : 50%; left : 0px; position : absolute; cursor : progress;"></div>
+        <div id = "loading_bar" class = "loading_bar" style = "z-index : 1001; top : 50%; left : 0px; position : absolute; cursor : progress;"></div>
         
         
-        <div class = "starry_bg" loading = "eager" style = "position : fixed; z-index : 0; left : -32px; width : 2000px; height : 2000px; background : #141925;"></div>
-        <div class = "starry_bg" loading = "eager" style = "position : fixed; z-index : 0; left : -32px; width : 2000px; height : 2000px; background : black; opacity : var(--scroll_opacity);"></div>
-        <img class = "starry_stars" src = "imgs/stars.png" loading = "eager" style = "position : absolute; z-index : 0; left : -32px; width : 1950px; top : var(--real_scroll_yy); margin-top : var(--m_interect_yy); margin-left : var(--m_interect_xx); filter : blur(1px); opacity : 0.3; transition : top 1s;">
-        <img class = "starry_stars2" id = "starry_stars2" src = "imgs/stars.png" loading = "eager" style = "position : absolute; z-index : 0; left : -32px; width : 2500px; top : var(--real_scroll_yy); margin-top : var(--m_interect_yy2); margin-left : var(--m_interect_xx2); transition : opacity 2s, top 1s; opacity : 0; ">
+        <div class = "starry_bg" loading = "eager" style = "position : fixed; z-index : 0; width : 100%; height : 100%; background : #141925; left : 0px;"></div>
+        <div class = "starry_bg" loading = "eager" style = "position : fixed; z-index : 0; width : 100%; height : 100%; background : black; opacity : var(--scroll_opacity); left : 0px;"></div>
+        <img class = "starry_stars" src = "imgs/stars.png" loading = "eager" style = "position : absolute; z-index : 0; width : 1950px; top : var(--real_scroll_yy); margin-top : var(--m_interect_yy); margin-left : var(--m_interect_xx); filter : blur(1px); opacity : 0.3; transition : top 1s; left : 0px;">
+        <img class = "starry_stars2" id = "starry_stars2" src = "imgs/stars.png" loading = "eager" style = "position : absolute; z-index : 0; width : 2500px; top : var(--real_scroll_yy); margin-top : var(--m_interect_yy2); margin-left : var(--m_interect_xx2); transition : opacity 2s, top 1s; opacity : 0; left : 0px;">
         
         <div class = "trailer_bg" id = "trailer_bg" style = "opacity : 1; filter : blur(0px);">
             <video id = "trailer_video" class = "trailer_video" autoplay muted loop playsinline control preload = "true" width = "105%" style = "filter : blur(50px); z-index : 100; position : absolute; transition : filter 1s, transform 0.03s; left : -64px; top : -70px;">
@@ -38,8 +38,8 @@
         <div class = "hello_title_jap" id = "hello_title_jap" style = "position : absolute; color : #AD8264; opacity : 0; top : var(--s300px);">こんにちは!</div>
         <div class = "hello_title_desc" id = "hello_title_desc" style = "position : absolute; color : #E0C9A8; opacity : 0; top : var(--s410px);">해당 웹사이트는 포트폴리오 용도로 제작되었으며,<br>웹사이트를 포함한, 전시된 모든 프로젝트들은<br>전부 본인이 개발한 것임을 밝힙니다.</div>
 
-        <div class = "quick_select_bg_outline" id = "quick_select_bg_outline" style = "position : fixed; background-image : linear-gradient(to right,#bdbdbd,#466074,#263b4b,#192731,#547282,#b2d7eb,#547282,#192731); width : 2000px; height : 2px; left : -8px; top : -24px; z-index : 750; transition : top 0.5s;"></div>
-        <div class = "quick_select_bg" id = "quick_select_bg" style = "position : fixed; background : white; width : 2000px; height : 64px; left : -8px; top : -88px; z-index : 750; opacity : 0.95; transition : top 0.5s;"></div>
+        <div class = "quick_select_bg_outline" id = "quick_select_bg_outline" style = "position : fixed; background-image : linear-gradient(to right,#bdbdbd,#466074,#263b4b,#192731,#547282,#b2d7eb,#547282,#192731); width : 100%; height : 2px; left : 0px; top : -24px; z-index : 750; transition : top 0.5s;"></div>
+        <div class = "quick_select_bg" id = "quick_select_bg" style = "position : fixed; background : white; width : 100%; height : 64px; top : -88px; z-index : 750; opacity : 0.95; transition : top 0.5s; left : 0px;"></div>
         
         <div class = "quick_select_main" id = "quick_select_main" style = "position : fixed; color : #192731; left : var(--sr168px); top : -63px; font-weight : bolder; font-size : 16px; cursor : pointer; transition : all 0.2s; z-index : 800; transition : top 0.5s;">Main</div>
         <div class = "quick_select_contact" id = "quick_select_contact" style = "position : fixed; color : #192731; left : var(--sr288px); top : -63px; font-weight : bolder; font-size : 16px; cursor : pointer; transition : all 0.2s; z-index : 800; transition : top 0.5s;">Contact</div>
@@ -51,23 +51,23 @@
     
 
         
-        <div class = "sepa_bg" id = "sepa_bg" style = "position : absolute; background : white; width : 2000px; height : 180px; left : -8px; top : 980px;"></div>
+        <div class = "sepa_bg" id = "sepa_bg" style = "position : absolute; background : white; width : 100%; height : 180px; top : 980px; left : 0px;"></div>
         
         
-        <img class = "dot_effect" id = "dot_effect" src = "imgs/dot_effect.png" loading = "lazy" style = "position : absolute; left : -4%; width : var(--s256px); top : 940px;">
+        <img class = "dot_effect" id = "dot_effect" src = "imgs/dot_effect.png" loading = "lazy" style = "position : absolute; width : var(--s256px); top : 940px; left : 0px;">
         <img class = "dot_effect" id = "dot_effect" src = "imgs/dot_effect.png" loading = "lazy" style = "position : absolute; left : 91%; width : var(--s256px); top : 940px;">
         <a href = "https://discord.gg/hzbCTRemqq" target = "_blank"><img class = "discord_icon" id = "discord_icon" src = "imgs/discord_icon.png" style = "position : absolute; width : 48px; top : 1060px; left : 44%; transition : opacity 0.2s;"></a>
         <a href = "https://github.com/ABER1047" target = "_blank"><img class = "github_icon" id = "github_icon" src = "imgs/github_icon.png" style = "position : absolute; width : 44px; top : 1060px; left : 50%; transition : opacity 0.2s;"></a>
         <a href = "https://www.youtube.com/channel/UCuBkudnNQFlTt6QQ-9Nhdtw/videos" target = "_blank"><img class = "youtube_icon" id = "youtube_icon" src = "imgs/youtube_icon.png" style = "position : absolute; width : 48px; top : 1066px; left : 56%; transition : opacity 0.2s;"></a>
         
         
-        <div class = "sepa_bg" id = "sepa_bg" style = "position : absolute; background : white; width : 2000px; padding : 473px; left : -8px; top : 1520px;"></div>
+        <div class = "sepa_bg" id = "sepa_bg" style = "position : absolute; background : white; width : 100%; padding : 473px; top : 1520px; left : 0px;"></div>
         
-        <img class = "dot_effect" id = "dot_effect" src = "imgs/dot_effect.png" loading = "lazy" style = "position : absolute; left : -4%; width : var(--s256px); top : 1600px;">
-        <img class = "dot_effect" id = "dot_effect" src = "imgs/dot_effect.png" loading = "lazy" style = "position : absolute; left : 87%; width : var(--s320px); top : 2020px;">
+        <img class = "dot_effect" id = "dot_effect" src = "imgs/dot_effect.png" loading = "lazy" style = "position : absolute; width : var(--s256px); top : 1600px; left : 0px;">
+        <img class = "dot_effect" id = "dot_effect" src = "imgs/dot_effect.png" loading = "lazy" style = "position : absolute; width : var(--s320px); top : 2020px; left : 0px;">
         <div class = "showcase_text" id = "showcase_text" style = "position : absolute; background : #141527; width : 200px; height : 48px; font-size : 48px; left : 46%; top : 1600px; color : #141527; transition : all 0.5s; font-weight : bold;">Showcase</div>
         
-        <div class = "sepa_bg1_2" id = "sepa_bg1_2" style = "position : absolute; background : #bbbbc4; width : 0px; height : 540px; left : -8px; top : 1695px; transition : all 2s;"></div>
+        <div class = "sepa_bg1_2" id = "sepa_bg1_2" style = "position : absolute; background : #bbbbc4; width : 0px; height : 540px; top : 1695px; transition : all 2s; left : 0px;"></div>
         
         <img class = "arena_of_wakgood_gif" id = "arena_of_wakgood_gif" src = "imgs/arena_wak1.gif" loading = "eager" style = "position : absolute; left : 5%; width : var(--s700px); top : 1760px; transition : all 0.5s; filter : blur(5px)">
         <img class = "astronaut_gif" id = "astronaut_gif" src = "imgs/Project Astronaut1.gif" loading = "eager" style = "position : absolute; left : 59%; width : var(--s700px); top : 1760px; transition : all 0.5s; filter : blur(5px)">
@@ -86,7 +86,7 @@
         
         <div class = "more_desc" id = "more_desc" style = "position : absolute; background : #141527; padding : 9px; border-radius: 8px; font-size : 20px; left : 48.5%; top : 2370px; color : white; transition : color 0.5s, width 0.5s, background 0.2s; white-space : nowrap; opacity : 1; cursor : pointer; text-align : center; ">자세히 보기</div>
         <a href = "https://github.com/ABER1047" target = "_blank"><div class = "more_works" id = "more_works" style = "position : absolute; background : #141527; padding : 9px; border-radius: 8px; font-size : 14px; left : 85%; top : 2420px; color : white; transition : color 0.5s, width 0.5s, background 0.2s; white-space : nowrap; opacity : 1; cursor : pointer; text-align : center; ">더 많은 프로젝트 구경하기</div></a>
-        <div class = "desc_blinder" id = "desc_blinder" style = "position : fixed; width : 2000px; left : -8px; height : 0px; top : -8px; background : #02050C; white-space : nowrap; opacity : 0; transition : opacity 0.5s; z-index : 2000"></div>
+        <div class = "desc_blinder" id = "desc_blinder" style = "position : fixed; width : 100%; height : 0px; top : -8px; background : #02050C; white-space : nowrap; opacity : 0; transition : opacity 0.5s; z-index : 2000"></div>
         <a class = "download_link" id = "download_link" href = "https://github.com/ABER1047/Project-wak" target = "_blank"><div class = "download_button" id = "download_button" style = "position : fixed; background : white; padding : 9px; border-radius: 8px; font-size : 20px; left : 49.1%; top : -999px; color : #192731; transition : color 0.5s, width 0.5s, background 0.2s, opacity 0.5s; white-space : nowrap; opacity : 1; cursor : pointer; text-align : center; opacity : 0; z-index : 2002; font-weight : bold;">소스코드</div></a>
         
         
@@ -136,12 +136,12 @@
         
         
         
-        <div class = "sepa_bg" id = "sepa_bg" style = "position : absolute; background : #ffffff; width : 2000px; padding : 461px; left : -8px; top : 2870px;"></div>
+        <div class = "sepa_bg" id = "sepa_bg" style = "position : absolute; background : #ffffff; width : 100%; padding : 461px; top : 2870px; left : 0px;"></div>
         
-        <img class = "dot_effect" id = "dot_effect" src = "imgs/dot_effect.png" loading = "lazy" style = "position : absolute; left : -4%; width : var(--s500px); top : 2900px; opacity : 0.5;">
+        <img class = "dot_effect" id = "dot_effect" src = "imgs/dot_effect.png" loading = "lazy" style = "position : absolute; width : var(--s500px); top : 2900px; opacity : 0.5; left : 0px;">
         
         <div class = "other_works_text" id = "other_works_text" style = "position : absolute; background : #141527; width : 230px; height : 48px; font-size : 40px; left : 45%; top : 2965px; color : #141527; transition : all 0.5s; font-weight : bold; white-space : nowrap;">Other Works</div>
-        <div class = "sepa_bg2_2" id = "sepa_bg2_2" style = "position : absolute; background : #bbbbc4; width : 0px; height : 540px; left : -8px; top : 3055px; transition : all 2s;"></div>
+        <div class = "sepa_bg2_2" id = "sepa_bg2_2" style = "position : absolute; background : #bbbbc4; width : 0px; height : 540px; top : 3055px; transition : all 2s; left : 0px;"></div>
         
 
         <video class = "sub_project0" id = "sub_project0" loading = "eager" autoplay muted loop playsinline control preload = "auto" style = "position : absolute; left : 5%; width : var(--s700px); top : 3130px; transition : all 0.5s; filter : blur(5px)">
@@ -177,10 +177,10 @@
     
     
     
-        <div class = "sepa_bg" id = "sepa_bg" style = "position : absolute; background : #ffffff; width : 2000px; padding : 266px; left : -8px; top : 4190px;"></div>
-        <img class = "dot_effect" id = "dot_effect" src = "imgs/dot_effect.png" loading = "lazy" style = "position : absolute; left : -4%; width : var(--s256px); top : 4170px;">
+        <div class = "sepa_bg" id = "sepa_bg" style = "position : absolute; background : #ffffff; width : 100%; padding : 266px; top : 4190px; left : 0px;"></div>
+        <img class = "dot_effect" id = "dot_effect" src = "imgs/dot_effect.png" loading = "lazy" style = "position : absolute; width : var(--s256px); top : 4170px; left : 0px;">
         <img class = "dot_effect" id = "dot_effect" src = "imgs/dot_effect.png" loading = "lazy" style = "position : absolute; left : 91%; width : var(--s256px); top : 4170px;">
-        <div class = "sepa_bg3_2" id = "sepa_bg3_2" style = "position : absolute; background : #bbbbc4; width : 0px; height : 432px; left : -8px; top : 4290px; transition : all 2s;"></div>
+        <div class = "sepa_bg3_2" id = "sepa_bg3_2" style = "position : absolute; background : #bbbbc4; width : 0px; height : 432px; top : 4290px; transition : all 2s; left : 0px;"></div>
         
         <img class = "dot_effect_bg" id = "dot_effect_bg" src = "imgs/dot_effect_bg.png" loading = "lazy" style = "position : absolute; left : -7px; width : 50%; top : 4450px; opacity : 1">
         <img class = "dot_effect_bg" id = "dot_effect_bg" src = "imgs/dot_effect_bg.png" loading = "lazy" style = "position : absolute; left : 937px; width : 50%; top : 4450px; opacity : 1">
@@ -195,7 +195,7 @@
         <img class = "works_gif6" id = "works_gif6" src = "imgs/works6.gif" loading = "lazy" style = "position : absolute; left : var(--works_gif_6_xx); width : var(--s450px); top : 4380px; transition : left 1s, opacity 2s; opacity : 0;">
         <img class = "works_gif7" id = "works_gif7" src = "imgs/works7.gif" loading = "lazy" style = "position : absolute; left : var(--works_gif_7_xx); width : var(--s450px); top : 4380px; transition : left 1s, opacity 2s; opacity : 0;">
         
-        <div class = "sepa_bg" id = "sepa_bg" style = "position : absolute; background-image : linear-gradient(to bottom,#ffffff00,#ffffff00,#1927316e,#141527f3,#141527); width : 2000px; height : 323px; left : -8px; top : 4400px;"></div>
+        <div class = "sepa_bg" id = "sepa_bg" style = "position : absolute; background-image : linear-gradient(to bottom,#ffffff00,#ffffff00,#1927316e,#141527f3,#141527); width : 100%; height : 323px;  top : 4400px; left : 0px;"></div>
         
         <img class = "aftereffect" id = "aftereffect" src = "imgs/adobeaftereffects.png" style = "position : absolute; width : 40px; top : 4740px; left : 12%; transition : top 1.5s; filter : grayscale(99%);">
         <img class = "photoshop" id = "photoshop" src = "imgs/adobephotoshop.png" style = "position : absolute; width : 40px; top : 4740px; left : 17%; transition : top 1.5s; filter : grayscale(99%);">
@@ -214,7 +214,7 @@
         <img class = "opengl" id = "opengl" src = "imgs/opengl.png" style = "position : absolute; width : 40px; top : 4740px; left : 82%; transition : top 1.5s; filter : grayscale(99%);">
         
         
-        <div class = "sepa_bg" id = "sepa_bg" style = "position : absolute; background : #141527; width : 2000px; height : 70px; left : -8px; top : 4723px;"></div>
+        <div class = "sepa_bg" id = "sepa_bg" style = "position : absolute; background : #141527; width : 100%; height : 70px;  top : 4723px; left : 0px;"></div>
         <a href = "https://github.com/ABER1047/Project_aboutme" target = "_blank"><div class = "credit" id = "credit" style = "position : absolute; color : #e29056; left : 48.2%; top : 4730px; text-align : center; opacity : 0.7; font-size : 14px; transition : all 0.2s;">Powered by Github<br>@ABER1047</div></a>
     </body>
     
