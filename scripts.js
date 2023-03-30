@@ -139,8 +139,8 @@ obj_loading_bar.style.background = "#02050C";
 obj_loading_bar_bg.style.transition = "background 1s, width 1s, opacity 1s";
 obj_loading_bar.style.transition = "background 1s, width 1s";
 
-preload_images("imgs","gif","arena_wak1","arena_wak2","arena_wak3","arena_wak4","project_wak_1","project_wak_2","project_wak_3","project_wak_4","Project Astronaut1","Project Astronaut2","Project Astronaut3","Project Astronaut4");
-
+preload_images("imgs","gif","arena_wak1","arena_wak2","arena_wak3","arena_wak4","project_wak_1","project_wak_2","project_wak_3","project_wak_4","Project Astronaut1","Project Astronaut2","Project Astronaut3","Project Astronaut4","arena_of_wakgood_thumbnail");
+preload_images("imgs","png","project_wak_thumbnail","Astronaut_thumbnail");
 setTimeout(show_page,1000);
 setTimeout(starry_stars_brighting,1500);
 }
@@ -1113,12 +1113,14 @@ c_x_comp = correct_value(c_x_comp,0,1);
     {
     is_pc = 0;
     c_x = 0.6;
-    window.location.href = "m_index.html";
+    //window.location.href = "m_index.html";
     }
     else
     {
     is_pc = 1;
     }
+
+document.documentElement.style.setProperty("--view_width_x1p1",c_h*1.1+"px");
 
     for(var i = 16; i <= 256; i += 4)
     {
@@ -1137,6 +1139,9 @@ document.documentElement.style.setProperty("--s800px",800*c_x+"px");
 document.documentElement.style.setProperty("--s700px",700*c_x+"px");
 document.documentElement.style.setProperty("--s500px",500*c_x+"px");
 document.documentElement.style.setProperty("--s450px",450*c_x+"px");
+
+document.documentElement.style.setProperty("--m980px",980+(1-is_pc)*320+"px");
+document.documentElement.style.setProperty("--m1060px",1060+(1-is_pc)*320+"px");
 
     for(var k = 1 ; k <= 7; k++)
     {
