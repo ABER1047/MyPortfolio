@@ -1120,7 +1120,7 @@ c_x_comp = correct_value(c_x_comp,0,1);
     is_pc = 1;
     }
 
-document.documentElement.style.setProperty("--view_width_x1p1",c_h*1.1+"px");
+document.documentElement.style.setProperty("--view_width_x1p1",c_h*1.1+32+"px");
 
     for(var i = 16; i <= 256; i += 4)
     {
