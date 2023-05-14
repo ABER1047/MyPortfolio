@@ -126,10 +126,16 @@ obj_trailer_video.onloadeddata = function()
     console.log("loaded_video");
     obj_loading_bar.style.transition = "width 1s";
     obj_loading_bar.style.width = window.innerWidth+"px";
-
+    
+    setTimeout(loading_bg_color,1000);
     setTimeout(show_page_anime,8000);
 }
 
+function loading_bg_color()
+{
+    obj_loading_bar_bg.style.background = "white";
+    obj_loading_bar_bg.style.transition = "background 5s, width 1s, opacity 1s";
+}
 
 
 function show_page_anime()
@@ -323,8 +329,9 @@ window.onload = function()
 {
     window.scrollTo({top : 0, left : 0, behavior : "smooth"});
     css_values();
-    setTimeout(force_loading,7000);
-    setTimeout(show_page_anime,7000);
+    setTimeout(force_loading,10000);
+    setTimeout(show_page_anime,10000);
+    setTimeout(loading_bg_color,1000);
 }
 
 window.addEventListener("resize", function()
