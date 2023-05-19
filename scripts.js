@@ -1,7 +1,7 @@
-var obj_loading_bar = document.getElementById("loading_bar");
+
 var obj_loading_bar_bg = document.getElementById("loading_bar_bg");
 var obj_loading_bar_grad = document.getElementById("loading_bar_grad");
-var obj_starry_stars2 = document.getElementById("starry_stars2");
+var obj_background = document.getElementById("background");
 var obj_hello_title_eng = document.getElementById("hello_title_eng");
 var obj_hello_title_kor = document.getElementById("hello_title_kor");
 var obj_hello_title_jap = document.getElementById("hello_title_jap");
@@ -121,58 +121,21 @@ var quick_selector_activated = -1;
 
 
 
-obj_trailer_video.onloadeddata = function()
-{
-    console.log("loaded_video");
-    obj_loading_bar.style.transition = "width 1s";
-    obj_loading_bar.style.width = window.innerWidth+"px";
-    
-    setTimeout(loading_bg_color,1000);
-    setTimeout(show_page_anime,8000);
-}
-
-function loading_bg_color()
-{
-    obj_loading_bar_bg.style.background = "white";
-    obj_loading_bar_bg.style.transition = "background 5s, width 1s, opacity 1s";
-}
 
 
-function show_page_anime()
-{
-    obj_loading_bar_bg.style.background = "#02050C";
-    obj_loading_bar.style.background = "#02050C";
-    obj_loading_bar_bg.style.transition = "background 1s, width 1s, opacity 1s";
-    obj_loading_bar.style.transition = "background 1s, width 1s";
 
-    preload_images("imgs","gif","arena_wak1","arena_wak2","arena_wak3","arena_wak4","project_wak_1","project_wak_2","project_wak_3","project_wak_4","Project Astronaut1","Project Astronaut2","Project Astronaut3","Project Astronaut4","arena_of_wakgood_thumbnail");
-    preload_images("imgs","png","project_wak_thumbnail","Astronaut_thumbnail");
-    setTimeout(show_page,1000);
-    setTimeout(starry_stars_brighting,1500);
-}
+//첫 화면 로딩
+css_values();
+obj_loading_bar_grad.style.left = "0%";
+setTimeout(show_page,10000);
+preload_images("imgs","gif","arena_wak1","arena_wak2","arena_wak3","arena_wak4","project_wak_1","project_wak_2","project_wak_3","project_wak_4","Project Astronaut1","Project Astronaut2","Project Astronaut3","Project Astronaut4","arena_of_wakgood_thumbnail");
+preload_images("imgs","png","project_wak_thumbnail","Astronaut_thumbnail");
 
-
-function starry_stars_brighting()
-{
-    obj_starry_stars2.style.top = irandom_range(0,700)*irandom_return()+"px";
-    obj_starry_stars2.style.left = irandom_range(0,700)*irandom_return()+"px";
-    obj_starry_stars2.style.transform = "rotate("+irandom_range(0,359)+"deg)";
-    obj_starry_stars2.style.opacity = 0.4;
-    setTimeout(starry_stars_fading,1100);
-}
-
-function starry_stars_fading()
-{
-    obj_starry_stars2.style.opacity = 0;
-    setTimeout(starry_stars_brighting,irandom_range(3100,4000));
-}
 
 
 function show_page()
 {
     obj_loading_bar_bg.style.opacity = 0;
-    obj_loading_bar.style.opacity = 0;
-    obj_loading_bar_grad.style.opacity = 0;
     obj_loading_bar_grad.style.opacity = 0;
 
     obj_trailer_video.style.filter = "blur(0px)";
@@ -211,13 +174,8 @@ function title_anime4()
     obj_hello_title_desc.style.top = 460*c_x+"px";
     obj_hello_title_desc.style.opacity = "1";
 
-    obj_loading_bar_bg.style.width = 0;
     obj_loading_bar_bg.style.height = 0;
     obj_loading_bar_bg.style.top = -128+"px";
-    obj_loading_bar.style.width = 0;
-    obj_loading_bar.style.height = 0;
-    obj_loading_bar.style.top = -128+"px";
-    obj_loading_bar_grad.style.width = 0;
     obj_loading_bar_grad.style.height = 0;
     obj_loading_bar_grad.style.top = -128+"px";
     obj_trailer_video.style.transition = "all 0.1s";
@@ -293,7 +251,7 @@ function quick_select_menu_anime6_2()
 function text_appearence_anime1(target)
 {
     target.style.transition = "none";
-    target.style.color = "#d59d75";
+    target.style.color = "#fe74cc";
 
     setTimeout(text_appearence_anime2,50,target);
 }
@@ -301,7 +259,7 @@ function text_appearence_anime1(target)
 function text_appearence_anime2(target_)
 {
     target_.style.transition = "color 1s";
-    target_.style.color = "#141527";
+    target_.style.color = "#24254a";
 }
 
 
@@ -309,7 +267,7 @@ function text_appearence_anime2(target_)
 function text_appearence2_anime1(target)
 {
     target.style.transition = "none";
-    target.style.color = "#d59d75";
+    target.style.color = "#fe74cc";
 
     setTimeout(text_appearence2_anime2,50,target);
 }
@@ -325,27 +283,12 @@ function text_appearence2_anime2(target_)
 
 
 
-window.onload = function()
-{
-    window.scrollTo({top : 0, left : 0, behavior : "smooth"});
-    css_values();
-    setTimeout(force_loading,10000);
-    setTimeout(show_page_anime,10000);
-    setTimeout(loading_bg_color,1000);
-}
+
 
 window.addEventListener("resize", function()
 {
     css_values();
 })
-
-
-function force_loading()
-{
-    obj_loading_bar.style.transition = "width 1s";
-    obj_loading_bar.style.width = window.innerWidth+"px";
-}
-
 
 
 
@@ -713,7 +656,7 @@ function repos_gif()
     
 
     reset_color_gsb();
-    obj_game_selector_button[obj_game_selector_button_activated[n_showcase_game]].style.background = "#AD8264";
+    obj_game_selector_button[obj_game_selector_button_activated[n_showcase_game]].style.background = "#fe74cc";
     setTimeout(scroll_animation_active,500);
 }
 
@@ -757,14 +700,14 @@ function reset_color_gsb()
 {
     for(var i = 1; i <= 4; i++)
     {
-        obj_game_selector_button[i].style.background = "#141527";
+        obj_game_selector_button[i].style.background = "#24254a";
     }
 }
 
 obj_game_selector_button[1].addEventListener("click",function()
 {
     reset_color_gsb();
-    obj_game_selector_button[1].style.background = "#AD8264";
+    obj_game_selector_button[1].style.background = "#fe74cc";
     obj_game_selector_button_activated[n_showcase_game] = 1;
     if (n_showcase_game == 0)
     {
@@ -783,7 +726,7 @@ obj_game_selector_button[1].addEventListener("click",function()
 obj_game_selector_button[2].addEventListener("click",function()
 {
     reset_color_gsb();
-    obj_game_selector_button[2].style.background = "#AD8264";
+    obj_game_selector_button[2].style.background = "#fe74cc";
     obj_game_selector_button_activated[n_showcase_game] = 2;
     if (n_showcase_game == 0)
     {
@@ -802,7 +745,7 @@ obj_game_selector_button[2].addEventListener("click",function()
 obj_game_selector_button[3].addEventListener("click",function()
 {
     reset_color_gsb();
-    obj_game_selector_button[3].style.background = "#AD8264";
+    obj_game_selector_button[3].style.background = "#fe74cc";
     obj_game_selector_button_activated[n_showcase_game] = 3;
     if (n_showcase_game == 0)
     {
@@ -821,7 +764,7 @@ obj_game_selector_button[3].addEventListener("click",function()
 obj_game_selector_button[4].addEventListener("click",function()
 {
     reset_color_gsb();
-    obj_game_selector_button[4].style.background = "#AD8264";
+    obj_game_selector_button[4].style.background = "#fe74cc";
     obj_game_selector_button_activated[n_showcase_game] = 4;
     if (n_showcase_game == 0)
     {
@@ -856,7 +799,7 @@ obj_download_button.addEventListener("mouseover",function()
 
 obj_download_button.addEventListener("mouseleave",function()
 {
-    obj_download_button.style.background = "white";
+    obj_download_button.style.background = "#fff9f6";
 })
 
 
@@ -937,7 +880,7 @@ obj_more_desc.addEventListener("mouseover",function()
 
 obj_more_desc.addEventListener("mouseleave",function()
 {
-    obj_more_desc.style.background = "#141527";
+    obj_more_desc.style.background = "#24254a";
 })
 
 
@@ -1034,7 +977,7 @@ obj_works_more_desc.addEventListener("mouseover",function()
 
 obj_works_more_desc.addEventListener("mouseleave",function()
 {
-    obj_works_more_desc.style.background = "#141527";
+    obj_works_more_desc.style.background = "#24254a";
 })
 
 
@@ -1083,12 +1026,12 @@ function works_gif_anime(target)
 
 obj_credit.addEventListener("mouseover",function()
 {
-    obj_credit.style.color = "#79b0c2";
+    obj_credit.style.color = "#fe74cc";
 })
 
 obj_credit.addEventListener("mouseleave",function()
 {
-    obj_credit.style.color = "#e29056";
+    obj_credit.style.color = "#1a1a1a";
 })
 
 
@@ -1099,7 +1042,7 @@ obj_air_res_bar.addEventListener("mouseover",function()
 
 obj_air_res_bar.addEventListener("mouseleave",function()
 {
-    obj_air_res_bar.style.background = "#bbbbc4";
+    obj_air_res_bar.style.background = "#867dff";
 })
 
 
