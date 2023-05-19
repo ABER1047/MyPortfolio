@@ -20,6 +20,7 @@
         
         <div id = "loading_bar_bg" class = "loading_bar_bg" style = "z-index : 999; left : 0px; background : #24254a; width : 100%; height : 105%; top : -8px; cursor : progress; position : fixed"></div>
         <div id = "loading_bar_grad" class = "loading_bar_grad" style = "z-index : 1000; top : 50%; left : -100%; width : 100%; position : fixed; cursor : progress; transition : left 9s, opacity 0.3s;"></div>
+
         
         
         <div class = "background" loading = "eager" style = "position : absolute; z-index : 0; width : 100%; height : 4700px; background-image : linear-gradient(to bottom,#242446,#242446,#242446,#194de9); left : 0px;"></div>
@@ -30,6 +31,11 @@
             <source src = "imgs/page_trailer.mp4" type = "video/mp4" loading = "eager" preload = "auto">
             </video>
             <script src = "https://code.jquery.com/jquery-3.3.1.js"></script>
+        </div>
+        
+        <div class = "waveWrapper waveAnimation" style = "color : #fffdfe">
+            <div class = "wave waveTop" style = "background-image : url('imgs/wave_bg_2.png')"></div>
+            <div class = "wave waveMiddle" style = "background-image : url('imgs/wave_bg.png')"></div>
         </div>
         
         <div class = "hello_title_eng" id = "hello_title_eng" style = "position : absolute; color : #000000; opacity : 0; top : var(--s110px);">Hello!</div>
@@ -178,12 +184,11 @@
     
     
         <div class = "sepa_bg" id = "sepa_bg" style = "position : absolute; background : #fe74cc; width : 100%; padding : 266px; top : 4190px; left : 0px;"></div>
-        <img class = "dot_effect" id = "dot_effect" src = "imgs/dot_effect.png" loading = "lazy" style = "position : absolute; width : var(--s256px); top : 4170px; left : 0px;">
-        <img class = "dot_effect" id = "dot_effect" src = "imgs/dot_effect.png" loading = "lazy" style = "position : absolute; left : 91%; width : var(--s256px); top : 4170px;">
         <div class = "sepa_bg3_2" id = "sepa_bg3_2" style = "position : absolute; background : #fffdfe; width : 0px; height : 432px; top : 4210px; transition : all 2s; left : 0px;"></div>
+        <img class = "dot_effect" id = "dot_effect" src = "imgs/dot_effect.png" loading = "lazy" style = "position : absolute; width : var(--s256px); top : 4170px; left : -90px;">
+        <img class = "dot_effect" id = "dot_effect" src = "imgs/dot_effect.png" loading = "lazy" style = "position : absolute; left : 91%; width : var(--s256px); top : 4170px;">
         
-        <img class = "dot_effect_bg" id = "dot_effect_bg" src = "imgs/dot_effect_bg.png" loading = "lazy" style = "position : absolute; left : -32px; width : 50%; top : 4450px; opacity : 1">
-        <img class = "dot_effect_bg" id = "dot_effect_bg" src = "imgs/dot_effect_bg.png" loading = "lazy" style = "position : absolute; left : 937px; width : 50%; top : 4450px; opacity : 1">
+        
         
         <input class = "air_res_bar" id = "air_res_bar"  type = "range" min = "0" max = "100" value = "0" style = "opacity : 0;">
         
@@ -196,6 +201,8 @@
         <img class = "works_gif7" id = "works_gif7" src = "imgs/works7.gif" loading = "lazy" style = "position : absolute; left : var(--works_gif_7_xx); width : var(--s450px); top : 4380px; transition : left 1s, opacity 2s; opacity : 0;">
         
         <div class = "sepa_bg" id = "sepa_bg" style = "position : absolute; background-image : linear-gradient(to bottom,#fff9f30c,#fff9f3,#fff9f3); width : 100%; height : 323px;  top : 4400px; left : 0px;"></div>
+        <img class = "dot_effect_bg" id = "dot_effect_bg" src = "imgs/dot_effect_bg.png" loading = "lazy" style = "position : absolute; left : -10px; width : 50%; top : 4450px; opacity : 1">
+        <img class = "dot_effect_bg" id = "dot_effect_bg" src = "imgs/dot_effect_bg.png" loading = "lazy" style = "position : absolute; left : 937px; width : 50%; top : 4450px; opacity : 1">
         
         <img class = "aftereffect" id = "aftereffect" src = "imgs/adobeaftereffects.png" style = "position : absolute; width : 40px; top : 4740px; left : 12%; transition : top 1.5s; filter : grayscale(99%);">
         <img class = "photoshop" id = "photoshop" src = "imgs/adobephotoshop.png" style = "position : absolute; width : 40px; top : 4740px; left : 17%; transition : top 1.5s; filter : grayscale(99%);">

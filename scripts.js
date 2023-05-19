@@ -1071,6 +1071,7 @@ function css_values()
     }
 
     document.documentElement.style.setProperty("--view_width_x1p1",c_h*1.1+32+"px");
+    document.documentElement.style.setProperty("--view_height",c_h+"px");
 
     for(var i = 16; i <= 256; i += 4)
     {

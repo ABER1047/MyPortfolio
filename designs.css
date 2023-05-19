@@ -10,6 +10,59 @@ div
     scroll-behavior: smooth;
 }
 
+@keyframes move_wave 
+{
+    0% 
+    {
+        transform: translateX(0) translateZ(0) scaleY(0.9)
+    }
+    50% 
+    {
+        transform: translateX(-25%) translateZ(0) scaleY(1)
+    }
+    100% 
+    {
+        transform: translateX(-50%) translateZ(0) scaleY(0.9)
+    }
+}
+
+.waveWrapper 
+{
+    overflow : hidden;
+    position : absolute;
+    left : -950px;
+    right : 0;
+    bottom : 0;
+    top : 0;
+    margin : auto;
+    width : 1110px;
+    transform : rotate(90deg);
+}
+
+.wave 
+{
+    position : absolute;
+    left : 0;
+    width : 200%;
+    height : 100%;
+    background-repeat : repeat no-repeat;
+    background-position : 0 bottom;
+    transform-origin: center bottom;
+    background-size: 50% 292px;
+}
+
+.waveAnimation .waveTop
+{
+    animation : move_wave 8s linear infinite;
+}
+
+.waveAnimation .waveMiddle 
+{
+    animation : move_wave 6s linear infinite;
+}
+
+
+
 
 /* width */
 ::-webkit-scrollbar 
