@@ -93,7 +93,6 @@ div
 /* Loading bar */
 .loading_bar_bg
 {
-    position : fixed;
     width : 100%;
     height : 1080px;
     transition : width 4.5s, opacity 1s;
@@ -101,9 +100,7 @@ div
 
 .loading_bar_grad
 {
-    position : fixed;
     background-image : linear-gradient(to right,#ffedf3,#fef0f3,#edd6f2,#e593fe,#db7ef7,#b41dd6,#e593fe,#8a70f2);
-    width : 0px;
     height : 2px;
 }
 

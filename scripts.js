@@ -126,11 +126,10 @@ var quick_selector_activated = -1;
 
 //첫 화면 로딩
 css_values();
-obj_loading_bar_grad.style.left = "0%";
 setTimeout(show_page,10000);
 preload_images("imgs","gif","arena_wak1","arena_wak2","arena_wak3","arena_wak4","project_wak_1","project_wak_2","project_wak_3","project_wak_4","Project Astronaut1","Project Astronaut2","Project Astronaut3","Project Astronaut4","arena_of_wakgood_thumbnail");
 preload_images("imgs","png","project_wak_thumbnail","Astronaut_thumbnail");
-
+obj_loading_bar_grad.style.left = "0px";
 
 
 function show_page()
