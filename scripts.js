@@ -1040,7 +1040,7 @@ function css_values()
     document.documentElement.style.setProperty("--s450px",450*c_x+"px");
 
     document.documentElement.style.setProperty("--m980px",980+(1-is_pc)*320+"px");
-    document.documentElement.style.setProperty("--m1060px",1060+(1-is_pc)*320+"px");
+    document.documentElement.style.setProperty("--m1100px",1100+(1-is_pc)*320+"px");
 
     for(var k = 1 ; k <= 7; k++)
     {
