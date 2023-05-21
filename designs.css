@@ -54,11 +54,20 @@ div
 .waveAnimation .waveTop
 {
     animation : move_wave 8s linear infinite;
+    margin-top : var(--m_interect_120xx);
+    transition : margin 0.12s;
 }
 
 .waveAnimation .waveMiddle 
 {
     animation : move_wave 6s linear infinite;
+}
+
+.waveAnimation .waveBottom
+{
+    animation : move_wave 12s linear infinite;
+    margin-top : var(--m_interect_12xx);
+    transition : margin 0.1s;
 }
 
 

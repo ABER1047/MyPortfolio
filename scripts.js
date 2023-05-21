@@ -1059,6 +1059,9 @@ addEventListener("mousemove",function()
 
     document.documentElement.style.setProperty("--m_interect_xx",mouse_movement_dis_xx+"px");
     document.documentElement.style.setProperty("--m_interect_yy",mouse_movement_dis_yy+"px");
+    
+    document.documentElement.style.setProperty("--m_interect_120xx",-120-mouse_movement_dis_xx+"px");
+    document.documentElement.style.setProperty("--m_interect_12xx",-12+mouse_movement_dis_xx+"px");
 
     document.documentElement.style.setProperty("--m_interect_xx2",-mouse_movement_dis_xx*0.5+"px");
     document.documentElement.style.setProperty("--m_interect_yy2",-mouse_movement_dis_yy*0.5+"px");
@@ -1228,7 +1231,7 @@ function step_event()
         obj_bg_star[star_num].style.left = _xx+"px";
         obj_bg_star[star_num].style.filter = "blur(0.3px)";
         obj_bg_star[star_num].style.transform = "rotate("+irandom_range(0,359)+"deg)";
-        obj_bg_star[star_num].style.transition = "top "+(transition_time)+"s, opacity "+(transition_time)+"s";
+        obj_bg_star[star_num].style.transition = "top "+(transition_time)+"s, opacity "+(transition_time)+"s, filter 4s";
         document.getElementById("star_bg").appendChild(obj_bg_star[star_num]);
         setTimeout(set_star_pos,100,star_num,_yy);
         star_num += (star_num > 100) ? -101 : 1;
@@ -1248,7 +1251,7 @@ function set_star_pos(target,ystart)
         obj_bg_star[target].style.opacity = irandom_range(10,20)/20;
     }
     obj_bg_star[target].style.top = -(ystart/800)+"px";
-    setTimeout(des_star,15000,obj_bg_star[target]);
+    setTimeout(des_star,15000,target);
 }
 
 function des_star(target)
