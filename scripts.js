@@ -1203,7 +1203,7 @@ function step_event()
         obj_bg_star[star_num] = document.createElement("img");
         var scale = irandom_range(10,100)/80;
         var type = irandom_range(0,100);
-        if (type <= 95)
+        if (type <= 90)
         {
             var _xx = irandom_range(0,c_w-32);
             var _yy = (background_stars == 0) ? 4723 : irandom_range(0,4723);
@@ -1251,7 +1251,7 @@ function set_star_pos(target,ystart)
         obj_bg_star[target].style.opacity = irandom_range(10,20)/20;
     }
     obj_bg_star[target].style.top = -(ystart/800)+"px";
-    setTimeout(des_star,15000,target);
+    setTimeout(des_star,25000,target);
 }
 
 function des_star(target)
