@@ -1231,7 +1231,7 @@ function step_event()
         obj_bg_star[star_num].style.left = _xx+"px";
         obj_bg_star[star_num].style.filter = "blur(0.3px)";
         obj_bg_star[star_num].style.transform = "rotate("+irandom_range(0,359)+"deg)";
-        obj_bg_star[star_num].style.transition = "top "+(transition_time)+"s, opacity "+(transition_time)+"s, filter 4s";
+        obj_bg_star[star_num].style.transition = "top "+(transition_time)+"s, opacity 4s, filter 4s";
         document.getElementById("star_bg").appendChild(obj_bg_star[star_num]);
         setTimeout(set_star_pos,100,star_num,_yy);
         star_num += (star_num > 100) ? -101 : 1;
@@ -1244,17 +1244,19 @@ function set_star_pos(target,ystart)
 {
     if (obj_bg_star[target].src == "imgs/starlight2.png")
     {
-        obj_bg_star[target].style.opacity = 0;
-    }
-    else
-    {
         obj_bg_star[target].style.opacity = irandom_range(10,20)/20;
     }
     obj_bg_star[target].style.top = -(ystart/800)+"px";
-    setTimeout(des_star,25000,target);
+    setTimeout(des_star1,25000,target);
 }
 
-function des_star(target)
+function des_star1(target)
+{
+    obj_bg_star[target].style.opacity = 0;
+    setTimeout(des_star2,4000,target);
+}
+
+function des_star2(target)
 {
     obj_bg_star[target].remove();
 }
