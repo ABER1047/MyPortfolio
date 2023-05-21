@@ -1216,7 +1216,7 @@ function step_event()
         else
         {
             var _xx = irandom_range(-c_w*0.2,c_w*1.1);
-            var _yy = (background_stars == 0) ? 3223 : irandom_range(0,3223);
+            var _yy = (background_stars == 0) ? 2823 : irandom_range(0,2823);
             var size = c_x*1280*scale;
             var transition_time = floor(size)/8;
             obj_bg_star[star_num].style.width = size+"px";
