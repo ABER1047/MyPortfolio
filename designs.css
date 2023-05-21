@@ -141,11 +141,12 @@ div
 
 .hello_title_desc
 {
-    font-size : var(--s16px);
+    font-size : var(--s18px);
     left : var(--s112px);
     transition : top 0.5s, opacity 0.5s, margin 0.1s;
     margin-left : var(--m_interect_xx);
     margin-top : var(--m_interect_yy);;
+    text-shadow: -1px -1px 0 #fff9f6, 1px -1px 0 #fff9f6, -1px 1px 0 #fff9f6, 1px 1px 0 #fff9f6;
 }
 
 .accent

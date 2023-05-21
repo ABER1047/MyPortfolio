@@ -116,7 +116,7 @@ var music_auto_playing = [-4,-4];
 var saved_random_bgm = -4;
 
 var quick_selector_activated = -1;
-
+var background_stars = 1;
 
 
 
@@ -139,6 +139,7 @@ obj_loading_bar_grad.style.left = "0px";
 
 function show_page()
 {
+    background_stars = 0;
     obj_loading_bar_bg.style.opacity = 0;
     obj_loading_bar_grad.style.opacity = 0;
 
@@ -1019,6 +1020,7 @@ function css_values()
     document.documentElement.style.setProperty("--view_width_x1p1",c_h*1.1+32+"px");
     document.documentElement.style.setProperty("--view_height",c_h+"px");
 
+    document.documentElement.style.setProperty("--s18px",18*c_x+"px");
     for(var i = 16; i <= 256; i += 4)
     {
         document.documentElement.style.setProperty("--s"+i+"px",i*c_x+"px");
@@ -1183,3 +1185,73 @@ obj_air_res_bar.addEventListener("input",function()
     }
 })
 
+
+
+
+var obj_bg_star = [], star_num = 0;
+
+//step event
+setTimeout(step_event,200);
+function step_event()
+{
+    var random_val = irandom_range(0,100);
+    if (random_val <= 50+background_stars*50)
+    {
+        obj_bg_star[star_num] = document.createElement("img");
+        var scale = irandom_range(10,100)/80;
+        var type = irandom_range(0,100);
+        if (type <= 95)
+        {
+            var _xx = irandom_range(0,c_w-32);
+            var _yy = (background_stars == 0) ? 4723 : irandom_range(0,4723);
+            var size = c_x*24*scale;
+            var transition_time = floor(size)*4;
+            obj_bg_star[star_num].style.width = size+"px";
+            obj_bg_star[star_num].src = "imgs/flake"+irandom_range(1,5)+".png";
+            obj_bg_star[star_num].style.opacity = 1;
+        }
+        else
+        {
+            var _xx = irandom_range(-c_w*0.2,c_w*1.1);
+            var _yy = (background_stars == 0) ? 3223 : irandom_range(0,3223);
+            var size = c_x*1280*scale;
+            var transition_time = floor(size)/8;
+            obj_bg_star[star_num].style.width = size+"px";
+            obj_bg_star[star_num].src = "imgs/starlight2.png";
+            obj_bg_star[star_num].style.opacity = 0;
+        }
+        obj_bg_star[star_num].style.position = "absolute";
+        obj_bg_star[star_num].style.display = "block";
+        obj_bg_star[star_num].style.zIndex = 0;
+        obj_bg_star[star_num].style.top = _yy+"px";
+        obj_bg_star[star_num].draggable = false;
+        obj_bg_star[star_num].style.left = _xx+"px";
+        obj_bg_star[star_num].style.filter = "blur(0.3px)";
+        obj_bg_star[star_num].style.transform = "rotate("+irandom_range(0,359)+"deg)";
+        obj_bg_star[star_num].style.transition = "top "+(transition_time)+"s, opacity "+(transition_time)+"s";
+        document.getElementById("star_bg").appendChild(obj_bg_star[star_num]);
+        setTimeout(set_star_pos,100,star_num,_yy);
+        star_num += (star_num > 100) ? -101 : 1;
+    }
+    //step event
+    setTimeout(step_event,200);
+}
+
+function set_star_pos(target,ystart)
+{
+    if (obj_bg_star[target].src == "imgs/starlight2.png")
+    {
+        obj_bg_star[target].style.opacity = 0;
+    }
+    else
+    {
+        obj_bg_star[target].style.opacity = irandom_range(10,20)/20;
+    }
+    obj_bg_star[target].style.top = -(ystart/800)+"px";
+    setTimeout(des_star,15000,obj_bg_star[target]);
+}
+
+function des_star(target)
+{
+    obj_bg_star[target].remove();
+}
