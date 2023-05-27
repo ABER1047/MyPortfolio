@@ -9,5 +9,5 @@
 
 (메인)
 
-https://aber1047.github.io/Project_aboutme/
+https://aber1047.github.io/MyPortfolio/
 
