@@ -1190,73 +1190,75 @@ obj_air_res_bar.addEventListener("input",function()
 
 
 
-
-var obj_bg_star = [], star_num = 0;
-
-//step event
-setTimeout(step_event,200);
-function step_event()
+if (is_pc == 1)
 {
-    var random_val = irandom_range(0,100);
-    if (random_val <= 50+background_stars*50)
-    {
-        obj_bg_star[star_num] = document.createElement("img");
-        var scale = irandom_range(10,100)/80;
-        var type = irandom_range(0,100);
-        if (type <= 90)
-        {
-            var _xx = irandom_range(0,c_w-32);
-            var _yy = (background_stars == 0) ? 4723 : irandom_range(0,4723);
-            var size = c_x*24*scale;
-            var transition_time = floor(size)*4;
-            obj_bg_star[star_num].style.width = size+"px";
-            obj_bg_star[star_num].src = "imgs/flake"+irandom_range(1,5)+".png";
-            obj_bg_star[star_num].style.opacity = 1;
-        }
-        else
-        {
-            var _xx = irandom_range(-c_w*0.2,c_w*1.1);
-            var _yy = (background_stars == 0) ? 2823 : irandom_range(0,2823);
-            var size = c_x*1280*scale;
-            var transition_time = floor(size)/8;
-            obj_bg_star[star_num].style.width = size+"px";
-            obj_bg_star[star_num].src = "imgs/starlight2.png";
-            obj_bg_star[star_num].style.opacity = 0;
-        }
-        obj_bg_star[star_num].style.position = "absolute";
-        obj_bg_star[star_num].style.display = "block";
-        obj_bg_star[star_num].style.zIndex = 0;
-        obj_bg_star[star_num].style.top = _yy+"px";
-        obj_bg_star[star_num].draggable = false;
-        obj_bg_star[star_num].style.left = _xx+"px";
-        obj_bg_star[star_num].style.filter = "blur(0.3px)";
-        obj_bg_star[star_num].style.transform = "rotate("+irandom_range(0,359)+"deg)";
-        obj_bg_star[star_num].style.transition = "top "+(transition_time)+"s, opacity 4s, filter 4s";
-        document.getElementById("star_bg").appendChild(obj_bg_star[star_num]);
-        setTimeout(set_star_pos,100,star_num,_yy);
-        star_num += (star_num > 100) ? -101 : 1;
-    }
+    var obj_bg_star = [], star_num = 0;
+
     //step event
     setTimeout(step_event,200);
-}
-
-function set_star_pos(target,ystart)
-{
-    if (obj_bg_star[target].src == "imgs/starlight2.png")
+    function step_event()
     {
-        obj_bg_star[target].style.opacity = irandom_range(10,20)/20;
+        var random_val = irandom_range(0,100);
+        if (random_val <= 50+background_stars*50)
+        {
+            obj_bg_star[star_num] = document.createElement("img");
+            var scale = irandom_range(10,100)/80;
+            var type = irandom_range(0,100);
+            if (type <= 90)
+            {
+                var _xx = irandom_range(0,c_w-32);
+                var _yy = (background_stars == 0) ? 4723 : irandom_range(0,4723);
+                var size = c_x*24*scale;
+                var transition_time = floor(size)*4;
+                obj_bg_star[star_num].style.width = size+"px";
+                obj_bg_star[star_num].src = "imgs/flake"+irandom_range(1,5)+".png";
+                obj_bg_star[star_num].style.opacity = 1;
+            }
+            else
+            {
+                var _xx = irandom_range(-c_w*0.2,c_w*1.1);
+                var _yy = (background_stars == 0) ? 2823 : irandom_range(0,2823);
+                var size = c_x*1280*scale;
+                var transition_time = floor(size)/8;
+                obj_bg_star[star_num].style.width = size+"px";
+                obj_bg_star[star_num].src = "imgs/starlight2.png";
+                obj_bg_star[star_num].style.opacity = 0;
+            }
+            obj_bg_star[star_num].style.position = "absolute";
+            obj_bg_star[star_num].style.display = "block";
+            obj_bg_star[star_num].style.zIndex = 0;
+            obj_bg_star[star_num].style.top = _yy+"px";
+            obj_bg_star[star_num].draggable = false;
+            obj_bg_star[star_num].style.left = _xx+"px";
+            obj_bg_star[star_num].style.filter = "blur(0.3px)";
+            obj_bg_star[star_num].style.transform = "rotate("+irandom_range(0,359)+"deg)";
+            obj_bg_star[star_num].style.transition = "top "+(transition_time)+"s, opacity 4s, filter 4s";
+            document.getElementById("star_bg").appendChild(obj_bg_star[star_num]);
+            setTimeout(set_star_pos,100,star_num,_yy);
+            star_num += (star_num > 100) ? -101 : 1;
+        }
+        //step event
+        setTimeout(step_event,200);
     }
-    obj_bg_star[target].style.top = -(ystart/800)+"px";
-    setTimeout(des_star1,25000,target);
-}
 
-function des_star1(target)
-{
-    obj_bg_star[target].style.opacity = 0;
-    setTimeout(des_star2,4000,target);
-}
+    function set_star_pos(target,ystart)
+    {
+        if (obj_bg_star[target].src == "imgs/starlight2.png")
+        {
+            obj_bg_star[target].style.opacity = irandom_range(10,20)/20;
+        }
+        obj_bg_star[target].style.top = -(ystart/800)+"px";
+        setTimeout(des_star1,25000,target);
+    }
 
-function des_star2(target)
-{
-    obj_bg_star[target].remove();
+    function des_star1(target)
+    {
+        obj_bg_star[target].style.opacity = 0;
+        setTimeout(des_star2,4000,target);
+    }
+
+    function des_star2(target)
+    {
+        obj_bg_star[target].remove();
+    }
 }
