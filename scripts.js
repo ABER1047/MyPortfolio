@@ -1123,7 +1123,7 @@ function scroll_animation_active()
             setTimeout(text_appearence_anime1,500,obj_showcase_text);
         }
         
-        if (scroll > 420 && scroll_animation[1] == 0)
+        if (scroll > 220+is_pc*200 && scroll_animation[1] == 0)
         {
             scroll_animation[1] = 1;
 
@@ -1133,7 +1133,7 @@ function scroll_animation_active()
             setTimeout(text_appearence2_anime2,1000,obj_showcase_game_title_sec1);
         }
         
-        if (scroll > 1200 && scroll_animation[2] == 0)
+        if (scroll > 1000+is_pc*200 && scroll_animation[2] == 0)
         {
             scroll_animation[2] = 1;
             obj_other_works_text.style.width = "0px";
@@ -1141,7 +1141,7 @@ function scroll_animation_active()
             setTimeout(text_appearence_anime1,500,obj_other_works_text);
         }
         
-        if (scroll > 1750 && scroll_animation[3] == 0)
+        if (scroll > 1550+is_pc*200 && scroll_animation[3] == 0)
         {
             scroll_animation[3] = 1;
             obj_showcase_works_title1.style.width = "0px";
@@ -1150,7 +1150,7 @@ function scroll_animation_active()
             setTimeout(text_appearence2_anime2,1000,obj_showcase_works_title_sec1);
         }
         
-        if (scroll > 2600 && scroll_animation[4] == 0)
+        if (scroll > 2400+is_pc*200 && scroll_animation[4] == 0)
         {
             scroll_animation[4] = 1;
             document.getElementById("sepa_bg3_2").style.width = "2000px";
