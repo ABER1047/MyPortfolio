@@ -407,7 +407,7 @@ function album_imgs()
     {
         album_num = 5;
     }
-    else if (random_bgm == "Dhalia")
+    else if (random_bgm == "Dhalia" || random_bgm == "Lily" || random_bgm == "Intro")
     {
         album_num = 4;
     }
@@ -419,7 +419,7 @@ function album_imgs()
     {
         album_num = 3;
     }
-    else if (random_bgm == "Snowlight")
+    else if (random_bgm == "Snowlight" || random_bgm == "インベーダー" || random_bgm == "Ma Chouchoute")
     {
         album_num = 2;
     }
@@ -431,6 +431,7 @@ function album_imgs()
     {
         album_num = 9;
     }
+
         
     obj_music_button.src = "imgs/album"+album_num+".png";
 }
@@ -439,7 +440,7 @@ function album_imgs()
 
 function select_music()
 {
-    random_bgm = choose("PIXELIZE","Telepathic Love","Kokorotravel","Dhalia","Pluie","Sunflower","Hello","Snowlight","Letter From Heaven 空中都市 ver","Sweet Dreams","frostbite","Sight");
+    random_bgm = choose("PIXELIZE","Telepathic Love","Kokorotravel","Dhalia","Pluie","Sunflower","Hello","Snowlight","Letter From Heaven 空中都市 ver","Sweet Dreams","frostbite","Sight","Ma Chouchoute","インベーダー","Lily","Intro");
 }
 
 
@@ -1101,7 +1102,6 @@ function scroll_animation_active()
             obj_quick_select_contact.style.top = "-63px";
             obj_quick_select_showcase.style.top = "-63px";
             obj_quick_select_other_works.style.top = "-63px";
-            obj_music_button.style.top = "-63px";
         }
         else
         {
