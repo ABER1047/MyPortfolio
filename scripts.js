@@ -433,7 +433,7 @@ function album_imgs()
     }
 
         
-    obj_music_button.src = "imgs/album"+album_num+".png";
+    obj_music_button.src = "imgs/album"+(album_num)+".png";
 }
 
 
