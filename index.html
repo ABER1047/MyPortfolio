@@ -5,9 +5,9 @@
         <meta charset = "utf-8">
         <meta name = "viewport" http-equiv = "Content-Security-Policy">
         
-        <link rel = "icon" href = "imgs/github_icon_white.png">
+        <link rel = "icon" href = "imgs/website_icon.png">
         <link rel = "stylesheet" href = "designs.css">
-        <title>ABER1047's website</title>
+        <title>ABER*</title>
     </head>
 
 
@@ -21,11 +21,12 @@
         </style>
         
         <div id = "loading_bar_bg" class = "loading_bar_bg" style = "z-index : 999; left : 0px; background : #24254a; width : 100%; height : 105%; top : -8px; cursor : progress; position : fixed"></div>
-        <div id = "loading_bar_grad" class = "loading_bar_grad" style = "z-index : 1000; top : 50%; left : -100%; width : 100%; position : fixed; cursor : progress; transition : left 9s, opacity 0.3s; width : 100%;"></div>
+        <div id = "loading_bar_grad" class = "loading_bar_grad" style = "z-index : 1000; top : 50%; left : -100%; width : 100%; position : fixed; cursor : progress; transition : left 9s; width : 100%;"></div>
+        <div id = "screen_transition_bg" class = "screen_transition_bg" style = "z-index : 1001; left : 0px; background : #ffffff; width : 100%; height : 105%; top : 101%; cursor : progress; position : fixed; transition : height 0.7s, top 0.7s;"></div>
 
         
         
-        <div class = "background" loading = "eager" style = "position : absolute; z-index : 0; width : 100%; height : 4700px; background-image : linear-gradient(to bottom,#242446,#242446,#242446,#194de9); left : 0px;"></div>
+        <div class = "background" loading = "eager" style = "position : absolute; z-index : 0; width : 100%; height : 4700px; background-image : linear-gradient(to bottom,#242446,#242446,#242446,#867dff); left : 0px;"></div>
         <div class = "star_bg" id = "star_bg" style = "position : absolute;"></div>
         
         <div class = "trailer_bg" id = "trailer_bg" style = "opacity : 1; filter : blur(0px);">
@@ -41,10 +42,10 @@
             <div class = "wave waveMiddle" style = "background-image : url('imgs/wave_bg.png')"></div>
         </div>
         
-        <div class = "hello_title_eng" id = "hello_title_eng" style = "position : absolute; color : #000000; opacity : 0; top : var(--s110px);">Hello!</div>
+        <div class = "hello_title_eng" id = "hello_title_eng" style = "position : absolute; color : #121212; opacity : 0; top : var(--s110px);">Hello!</div>
         <div class = "hello_title_kor" id = "hello_title_kor" style = "position : absolute; color : #fe74cc; opacity : 0; top : var(--s260px);">안녕하세요!</div>
         <div class = "hello_title_jap" id = "hello_title_jap" style = "position : absolute; color : #867dff; opacity : 0; top : var(--s300px);">こんにちは!</div>
-        <div class = "hello_title_desc" id = "hello_title_desc" style = "position : absolute; color : #000000; opacity : 0; top : var(--s410px);">해당 웹사이트는 포트폴리오 용도로 제작되었으며,<br>웹사이트를 포함한, 전시된 모든 프로젝트들은<br>전부 본인이 개발한 것임을 밝힙니다.</div>
+        <div class = "hello_title_desc" id = "hello_title_desc" style = "position : absolute; color : #121212; opacity : 0; top : var(--s410px);">해당 웹사이트는 포트폴리오 용도로 제작되었으며,<br>웹사이트를 포함한, 전시된 모든 프로젝트들은<br>전부 본인이 개발한 것임을 밝힙니다.</div>
 
         <div class = "quick_select_bg_outline" id = "quick_select_bg_outline" style = "position : fixed; background-image : linear-gradient(to right,#bdbdbd,#466074,#263b4b,#192731,#547282,#b2d7eb,#547282,#192731); width : 100%; height : 2px; left : 0px; top : -24px; z-index : 750; transition : top 0.5s;"></div>
         <div class = "quick_select_bg" id = "quick_select_bg" style = "position : fixed; background : #fff9f6; width : 100%; height : 64px; top : -88px; z-index : 750; opacity : 0.95; transition : top 0.5s; left : 0px;"></div>
@@ -61,7 +62,7 @@
         
         <div class = "sepa_bg" id = "sepa_bg" style = "position : absolute; background : #fffdfe; width : 100%; height : 200px; top : var(--m980px); left : 0px;"></div>
         
-        
+        <div class = "aboutme" id = "aboutme" style = "position : absolute; background : #121212; padding : 9px; border-radius: 8px; font-size : 20px; left : 48.5%; top : 1030px; color : #fff9f6; transition : color 0.5s, width 0.5s, background 0.2s; white-space : nowrap; opacity : 1; cursor : pointer; text-align : center; ">About Me</div>
         <img class = "dot_effect" id = "dot_effect" src = "imgs/dot_effect.png" loading = "lazy" style = "position : absolute; width : var(--s256px); top : var(--m980px); left : -90px; margin-top : -64px;">
         <img class = "dot_effect" id = "dot_effect" src = "imgs/dot_effect.png" loading = "lazy" style = "position : absolute; left : 91%; width : var(--s256px); top : var(--m980px); margin-top : -64px;">
         <a href = "https://discord.gg/hzbCTRemqq" target = "_blank"><img class = "discord_icon" id = "discord_icon" src = "imgs/discord_icon.png" style = "position : absolute; width : 48px; top : var(--m1100px); left : 44%; transition : opacity 0.2s;"></a>
@@ -70,7 +71,7 @@
         
         
         
-        <div class = "sepa_bg" id = "sepa_bg" style = "position : absolute; background : #b8f2fc; width : 100%; padding : 473px; top : 1520px; left : 0px;"></div>
+        <div class = "sepa_bg" id = "sepa_bg" style = "position : absolute; background : #daeaeb; width : 100%; padding : 473px; top : 1520px; left : 0px;"></div>
         <div class = "sepa_bg1_2" id = "sepa_bg1_2" style = "position : absolute; background : #fffdfe; width : 0px; height : 900px; top : 1542px; transition : all 2s; left : 0px;"></div>
         
         <img class = "dot_effect" id = "dot_effect" src = "imgs/dot_effect.png" loading = "lazy" style = "position : absolute; width : var(--s256px); top : 1600px; left : 0px;">
@@ -100,7 +101,7 @@
         
         
         <img class = "desc_thumbnail" id = "desc_thumbnail" src = "imgs/project_wak_thumbnail.png" style = "position : fixed; width : var(--s500px); top : -999px; left : 38%; z-index : 2001; transition : opacity 0.4s;">
-        <div class = "project_wak_desc" id = "project_wak_desc" style = "position : fixed; text-align : center; left : 38.5%; top : -999px; white-space : nowrap; opacity : 0; transition : opacity 0.4s; z-index : 2001; font-size : 17px; color : #fe74cc;">
+        <div class = "project_wak_desc" id = "project_wak_desc" style = "position : fixed; text-align : center; left : 38.5%; top : -999px; white-space : nowrap; opacity : 0; transition : opacity 0.4s; z-index : 2001; font-size : 17px; color : #867dff;">
         <span class = "accent">프</span>로젝트 왁은 2022년도에 유튜버 <span class = "accent">우왁굳</span>을 위해 만들어진 팬게임이며,
         <br>소울라이크 느낌의 액션 RPG 장르의 게임 입니다.
         <br>개발은 음원을 제외한 모든 부분 전부 <span class = "accent">1인 개발</span>로 제작되었으며,
@@ -112,7 +113,7 @@
         <br>(유지 보수 기간 제외)
         </div>
         
-        <div class = "astronaut_desc" id = "astronaut_desc" style = "position : fixed; text-align : center; left : 33.3%; top : -999px; white-space : nowrap; opacity : 0; transition : opacity 0.4s; z-index : 2001; font-size : 17px; color : #fe74cc;">
+        <div class = "astronaut_desc" id = "astronaut_desc" style = "position : fixed; text-align : center; left : 33.3%; top : -999px; white-space : nowrap; opacity : 0; transition : opacity 0.4s; z-index : 2001; font-size : 17px; color : #867dff;">
         <span class = "accent">특</span>성화고에 진학하기 위해 2019년도에 제작한 포트폴리오용 게임이며,
         <br>생존 RPG 장르의 게임 입니다.
         <br>게임의 목표는 여러가지 위험이 도사리는 다른 행성을 탐험하고 생존하는 것이며,
@@ -125,7 +126,7 @@
         <br>(유지 보수 기간 제외)
         </div>
         
-        <div class = "arena_of_wakgood_desc" id = "arena_of_wakgood_desc" style = "position : fixed; text-align : center; left : 34%; top : -999px; white-space : nowrap; opacity : 0; transition : opacity 0.4s; z-index : 2001; font-size : 17px; color : #fe74cc;">
+        <div class = "arena_of_wakgood_desc" id = "arena_of_wakgood_desc" style = "position : fixed; text-align : center; left : 34%; top : -999px; white-space : nowrap; opacity : 0; transition : opacity 0.4s; z-index : 2001; font-size : 17px; color : #867dff;">
         <span class = "accent">아</span>레나 오브 왁굳은 2021년도에 <span class = "accent">유튜버</span> 우왁굳을 위해 만들어진 팬게임이며,
         <br>실시간 대전(PVP) 및 액션 장르의 게임 입니다.
         <br><span class = "accent">각기 다른 게임 모드와 여러 맵에서, 각 플레이어들이 자신의 무기를 들고 대전하며,</span>
@@ -140,7 +141,18 @@
         <br>(유지 보수 기간 제외)
         </div>
         
-        
+        <div class = "aboutme_desc" id = "aboutme_desc" style = "position : fixed; text-align : center; left : 34.9%; top : -999px; white-space : nowrap; opacity : 0; transition : opacity 0.4s; z-index : 2001; font-size : 17px; color : #867dff;">
+        <span class = "accent">ABER*</span> (아버)
+        <br><br><br><br><span class = "accent">2013년</span><br>(당시 초등학교 3학년)때 처음 <span class = "accent">Gamemaker</span>라는 게임 개발 툴을 접하면서 개발 시작.
+        <br><br><span class = "accent">2016년</span><br>처음 모바일 게임을 출시하여 <span class = "accent">총 다운로드 수 10만</span>과 동시에 <span class = "accent">구글 앱스토어 Top100</span>에 진입.
+        <br>(이후, 더욱 개발에 흥미가 생겨 여러 프로그래밍 언어를 공부하기 시작)
+        <br><br><span class = "accent">2018년<br>"Astronaut"</span> 개발 시작
+        <br><br><span class = "accent">2020년<br>"Hyumpanchi of Woowakgood"</span> 및 <span class = "accent">"아레나 오브 왁굳"</span> 개발 시작
+        <br><br><span class = "accent">2021년<br>"프로젝트 왁"</span> 개발 시작
+        <br><br><span class = "accent">2023년<br>"Just Wak and Beats"</span> 개발 시작
+        <br><br><span class = "accent">현재<br>GML, JS, Java, C, C++</span> 등등 프로그래밍 언어 및
+        <br><span class = "accent">프로그래밍 외</span>에도 관심 있는 <span class = "accent">Blender, FL Studio, 웹디자인, 일러스트</span> 등등 공부 중.
+        </div>
         
         
         

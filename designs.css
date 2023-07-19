@@ -104,12 +104,12 @@ div
 {
     width : 100%;
     height : 1080px;
-    transition : width 4.5s, opacity 1s;
+    transition : width 4.5s;
 }
 
 .loading_bar_grad
 {
-    background-image : linear-gradient(to right,#ffedf3,#fef0f3,#edd6f2,#e593fe,#db7ef7,#b41dd6,#e593fe,#8a70f2);
+    background-image : linear-gradient(to right,#fcf5f7,#fcf5f7,#c079d0,#7ad3e2,#3bb9d3,#d8eaeb);
     height : 2px;
 }
 

@@ -1,6 +1,7 @@
 
 var obj_loading_bar_bg = document.getElementById("loading_bar_bg");
 var obj_loading_bar_grad = document.getElementById("loading_bar_grad");
+var obj_screen_transition_bg = document.getElementById("screen_transition_bg");
 var obj_background = document.getElementById("background");
 var obj_hello_title_eng = document.getElementById("hello_title_eng");
 var obj_hello_title_kor = document.getElementById("hello_title_kor");
@@ -26,11 +27,13 @@ var obj_showcase_game_title_sec1 = document.getElementById("showcase_game_title_
 var obj_othergames_arrow_left = document.getElementById("othergames_arrow_left");
 var obj_othergames_arrow_right = document.getElementById("othergames_arrow_right");
 var obj_more_desc = document.getElementById("more_desc");
+var obj_aboutme = document.getElementById("aboutme");
 var obj_desc_blinder = document.getElementById("desc_blinder");
 var obj_desc_thumbnail = document.getElementById("desc_thumbnail");
 var obj_project_wak_desc = document.getElementById("project_wak_desc");
 var obj_astronaut_desc = document.getElementById("astronaut_desc");
 var obj_arena_of_wakgood_desc = document.getElementById("arena_of_wakgood_desc");
+var obj_aboutme_desc = document.getElementById("aboutme_desc");
 var obj_download_link = document.getElementById("download_link");
 var obj_download_button = document.getElementById("download_button");
 
@@ -125,7 +128,7 @@ var background_stars = 1;
 
 //첫 화면 로딩
 css_values();
-setTimeout(show_page,10000);
+setTimeout(show_page,9000);
 for(var i = 1; i <= 3; i++)
 {
     for(var k = 1; k <= 4; k++)
@@ -140,21 +143,28 @@ obj_loading_bar_grad.style.left = "0px";
 function show_page()
 {
     background_stars = 0;
-    obj_loading_bar_bg.style.opacity = 0;
-    obj_loading_bar_grad.style.opacity = 0;
 
     obj_trailer_video.style.filter = "blur(0px)";
     repos_works_gif();
     repos_gif();
 
-
+    obj_screen_transition_bg.style.top = "-8px";
     console.log("page_loaded");
-
-    setTimeout(title_anime1,1000);
-    setTimeout(title_anime2,1200);
-    setTimeout(title_anime3,1400);
-    setTimeout(title_anime4,1600);
+    setTimeout(screen_transition1,1000);
+    
+    setTimeout(title_anime1,2000);
+    setTimeout(title_anime2,2200);
+    setTimeout(title_anime3,2400);
+    setTimeout(title_anime4,2600);
 }
+
+function screen_transition1()
+{
+    obj_loading_bar_bg.style.opacity = 0;
+    obj_loading_bar_grad.style.opacity = 0;
+    obj_screen_transition_bg.style.height = "0px";
+}
+
 
 
 function title_anime1()
@@ -257,7 +267,7 @@ function quick_select_menu_anime6_2()
 function text_appearence_anime1(target)
 {
     target.style.transition = "none";
-    target.style.color = "#fe74cc";
+    target.style.color = "#dcc4db";
 
     setTimeout(text_appearence_anime2,50,target);
 }
@@ -265,7 +275,7 @@ function text_appearence_anime1(target)
 function text_appearence_anime2(target_)
 {
     target_.style.transition = "color 1s";
-    target_.style.color = "#24254a";
+    target_.style.color = "#121212";
 }
 
 
@@ -273,7 +283,7 @@ function text_appearence_anime2(target_)
 function text_appearence2_anime1(target)
 {
     target.style.transition = "none";
-    target.style.color = "#fe74cc";
+    target.style.color = "#dcc4db";
 
     setTimeout(text_appearence2_anime2,50,target);
 }
@@ -606,7 +616,7 @@ function repos_gif()
     
 
     reset_color_gsb();
-    obj_game_selector_button[obj_game_selector_button_activated[n_showcase_game]].style.background = "#fe74cc";
+    obj_game_selector_button[obj_game_selector_button_activated[n_showcase_game]].style.background = "#dcc4db";
     setTimeout(scroll_animation_active,500);
 }
 
@@ -650,7 +660,7 @@ function reset_color_gsb()
 {
     for(var i = 1; i <= 4; i++)
     {
-        obj_game_selector_button[i].style.background = "#24254a";
+        obj_game_selector_button[i].style.background = "#aec1cf";
     }
 }
 
@@ -659,7 +669,7 @@ function reset_color_gsb()
 obj_game_selector_button[1].addEventListener("click",function()
 {
     reset_color_gsb();
-    obj_game_selector_button[1].style.background = "#fe74cc";
+    obj_game_selector_button[1].style.background = "#dcc4db";
     obj_game_selector_button_activated[n_showcase_game] = 1;
     var target_num = n_showcase_game+2;
     if (target_num > 3)
@@ -677,7 +687,7 @@ obj_game_selector_button[1].addEventListener("click",function()
 obj_game_selector_button[2].addEventListener("click",function()
 {
     reset_color_gsb();
-    obj_game_selector_button[2].style.background = "#fe74cc";
+    obj_game_selector_button[2].style.background = "#dcc4db";
     obj_game_selector_button_activated[n_showcase_game] = 1;
     var target_num = n_showcase_game+2;
     if (target_num > 3)
@@ -695,7 +705,7 @@ obj_game_selector_button[2].addEventListener("click",function()
 obj_game_selector_button[3].addEventListener("click",function()
 {
     reset_color_gsb();
-    obj_game_selector_button[3].style.background = "#fe74cc";
+    obj_game_selector_button[3].style.background = "#dcc4db";
     obj_game_selector_button_activated[n_showcase_game] = 1;
     var target_num = n_showcase_game+2;
     if (target_num > 3)
@@ -713,7 +723,7 @@ obj_game_selector_button[3].addEventListener("click",function()
 obj_game_selector_button[4].addEventListener("click",function()
 {
     reset_color_gsb();
-    obj_game_selector_button[4].style.background = "#fe74cc";
+    obj_game_selector_button[4].style.background = "#dcc4db";
     obj_game_selector_button_activated[n_showcase_game] = 1;
     var target_num = n_showcase_game+2;
     if (target_num > 3)
@@ -766,6 +776,7 @@ function desc_des_start()
         obj_arena_of_wakgood_desc.style.opacity = "0";
         obj_desc_thumbnail.style.opacity = "0";
         obj_download_button.style.opacity = "0";
+        obj_aboutme_desc.style.opacity = "0";
         setTimeout(desc_blinder_des,500);
     }
 }
@@ -781,6 +792,10 @@ function desc_blinder_des()
     obj_arena_of_wakgood_desc.style.top = "-999px";
     obj_desc_thumbnail.style.top = "-999px";
     obj_download_button.style.top = "-999px";
+    obj_aboutme_desc.style.top = "-999px";
+    obj_desc_thumbnail.style.borderRadius = "0%";
+    obj_desc_thumbnail.style.left = "38%";
+    obj_desc_thumbnail.style.width = "var(--s500px)";
     opened_more_desc = 0;
 }
 
@@ -823,7 +838,7 @@ obj_more_desc.addEventListener("click",function()
 
 obj_more_desc.addEventListener("mouseover",function()
 {
-    obj_more_desc.style.background = "#b79aca";
+    obj_more_desc.style.background = "#121212";
 })
 
 obj_more_desc.addEventListener("mouseleave",function()
@@ -831,6 +846,46 @@ obj_more_desc.addEventListener("mouseleave",function()
     obj_more_desc.style.background = "#24254a";
 })
 
+
+
+
+
+
+
+
+
+
+
+
+obj_aboutme.addEventListener("click",function()
+{
+    setTimeout(desc_blinder_cre,500);
+    document.getElementById("body_t").style.overflowY = "hidden";
+    obj_desc_blinder.style.height = "2000px";
+    obj_desc_blinder.style.opacity = "0.95";
+    obj_desc_thumbnail.style.top = "7%";
+    obj_desc_thumbnail.style.opacity = "1";
+    obj_desc_thumbnail.style.width = "200px";
+    obj_desc_thumbnail.style.borderRadius = "50%";
+    obj_desc_thumbnail.style.overflow = "hidden";
+    obj_desc_thumbnail.style.left = "45.9%";
+    obj_download_button.style.top = "-800px";
+
+
+    obj_desc_thumbnail.src = "https://avatars.githubusercontent.com/u/78880883?v=4";
+    aboutme_desc.style.top = "33%";
+    aboutme_desc.style.opacity = "1";
+})
+
+obj_aboutme.addEventListener("mouseover",function()
+{
+    obj_aboutme.style.background = "#121212";
+})
+
+obj_aboutme.addEventListener("mouseleave",function()
+{
+    obj_aboutme.style.background = "#24254a";
+})
 
 
 
@@ -925,7 +980,7 @@ obj_works_more_desc.addEventListener("mouseover",function()
 
 obj_works_more_desc.addEventListener("mouseleave",function()
 {
-    obj_works_more_desc.style.background = "#24254a";
+    obj_works_more_desc.style.background = "#aec1cf";
 })
 
 
@@ -974,7 +1029,7 @@ function works_gif_anime(target)
 
 obj_credit.addEventListener("mouseover",function()
 {
-    obj_credit.style.color = "#fe74cc";
+    obj_credit.style.color = "#dcc4db";
 })
 
 obj_credit.addEventListener("mouseleave",function()
@@ -1062,7 +1117,9 @@ addEventListener("mousemove",function()
     document.documentElement.style.setProperty("--m_interect_yy",mouse_movement_dis_yy+"px");
     
     document.documentElement.style.setProperty("--m_interect_120xx",-120-mouse_movement_dis_xx+"px");
+    document.documentElement.style.setProperty("--m_interect_128xx",-128-mouse_movement_dis_xx+"px");
     document.documentElement.style.setProperty("--m_interect_12xx",-12+mouse_movement_dis_xx+"px");
+    document.documentElement.style.setProperty("--m_interect_20xx",-20+mouse_movement_dis_xx+"px");
 
     document.documentElement.style.setProperty("--m_interect_xx2",-mouse_movement_dis_xx*0.5+"px");
     document.documentElement.style.setProperty("--m_interect_yy2",-mouse_movement_dis_yy*0.5+"px");
