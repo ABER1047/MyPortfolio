@@ -33,7 +33,7 @@ div
     left : -950px;
     right : 0;
     bottom : 0;
-    top : 0;
+    top : -16px;
     margin : auto;
     width : 1110px;
     transform : rotate(90deg);
