@@ -125,15 +125,54 @@ div
     text-shadow: -8px -8px 0 #fff9f6, 8px -8px 0 #fff9f6, -8px 8px 0 #fff9f6, 8px 8px 0 #fff9f6;
 }
 
+.quick_select_bg_outline
+{
+    background : #ebebeb;
+    mix-blend-mode : difference;
+}
+
+.quick_select_other_works
+{
+    color: #fff9f6;
+    mix-blend-mode: difference;
+}
+
+.quick_select_showcase
+{
+    color: #fff9f6;
+    mix-blend-mode: difference;
+}
+
+.quick_select_contact
+{
+    color: #fff9f6;
+    mix-blend-mode: difference;
+}
+
+.quick_select_main
+{
+    color: #fff9f6;
+    mix-blend-mode: difference;
+}
+
 .music_info
 {
-    text-shadow: -1px -1px 0 #fff9f6, 1px -1px 0 #fff9f6, -1px 1px 0 #fff9f6, 1px 1px 0 #fff9f6;
+    color: #fff9f6;
+    mix-blend-mode: difference;
+    /* text-shadow : -1px -1px 0 #fff9f6, 1px -1px 0 #fff9f6, -1px 1px 0 #fff9f6, 1px 1px 0 #fff9f6; */
 }
 
 .music_info2
 {
-    text-shadow: -1px -1px 0 #fff9f6, 1px -1px 0 #fff9f6, -1px 1px 0 #fff9f6, 1px 1px 0 #fff9f6;
+    color: #fff9f6;
+    mix-blend-mode: difference;
 }
+
+.music_button
+{
+    filter : drop-shadow(1px 0 0px #fff9f6) drop-shadow(0 1px 0 #fff9f6) drop-shadow(-1px 0 0px #fff9f6) drop-shadow(0 -1px 0 #fff9f6);
+}
+
 
 .hello_title_kor
 {
@@ -191,7 +230,7 @@ div
     position : absolute;
     background : #867dff;
     font-weight : bold;
-    white-space: nowrap;
+    #ebebeb-space: nowrap;
     transition : background 0.2s, opacity 1s;
     top : 4230px;
     z-index : 9999;
