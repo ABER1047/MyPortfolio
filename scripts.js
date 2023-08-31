@@ -338,7 +338,7 @@ obj_quick_select_showcase.addEventListener("mouseleave",function()
 
 obj_quick_select_showcase.addEventListener("click",function()
 {
-    window.scrollTo({top : 1495, left : 0, behavior : "smooth"});
+    window.scrollTo({top : 1505, left : 0, behavior : "smooth"});
 })
 
 obj_quick_select_contact.addEventListener("mouseover",function()
@@ -368,7 +368,7 @@ obj_quick_select_other_works.addEventListener("mouseleave",function()
 
 obj_quick_select_other_works.addEventListener("click",function()
 {
-    window.scrollTo({top : 2822, left : 0, behavior : "smooth"});
+    window.scrollTo({top : 2850, left : 0, behavior : "smooth"});
 })
 
 obj_music_button.addEventListener("mouseover",function()
