@@ -838,7 +838,7 @@ obj_more_desc.addEventListener("click",function()
 
 obj_more_desc.addEventListener("mouseover",function()
 {
-    obj_more_desc.style.background = "#121212";
+    obj_more_desc.style.background = "#b79aca";
 })
 
 obj_more_desc.addEventListener("mouseleave",function()
@@ -879,7 +879,7 @@ obj_aboutme.addEventListener("click",function()
 
 obj_aboutme.addEventListener("mouseover",function()
 {
-    obj_aboutme.style.background = "#121212";
+    obj_aboutme.style.background = "#b79aca";
 })
 
 obj_aboutme.addEventListener("mouseleave",function()
@@ -980,7 +980,7 @@ obj_works_more_desc.addEventListener("mouseover",function()
 
 obj_works_more_desc.addEventListener("mouseleave",function()
 {
-    obj_works_more_desc.style.background = "#aec1cf";
+    obj_works_more_desc.style.background = "#24254a";
 })
 
 
