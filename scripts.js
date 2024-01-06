@@ -906,7 +906,7 @@ function repos_works_gif()
 {
     scroll_animation[3] = 0;
 
-    var works_url = ["https://github.com/Just-Wak-Beat/Project_Wak_Beat","https://github.com/ABER1047/bocchi","https://github.com/ABER1047/delaunay-trianglulation","https://github.com/ABER1047/HitoriBocchi"];
+    var works_url = ["https://just-wak-beat.github.io/Project-Wak-Beat-website/","https://wallpapers-projects-aber.github.io/bocchi/","https://github.com/ABER1047/delaunay-trianglulation","https://wallpapers-projects-aber.github.io/HitoriBocchi/"];
     var works_title_eng = ["Project Wak beat","Bocchi!","Delaunay Triangulation","Hitori Bocchi","Empty"];
     var works_title_kr = ["프로젝트 왁비트","ぼっち・ざ・ろっく!","들로네 삼각분할","ひとりぼっち","비어있음"];
 
