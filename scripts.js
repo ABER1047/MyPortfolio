@@ -136,7 +136,7 @@ for(var i = 1; i <= 3; i++)
         preload_images("imgs","gif","main"+i+"_"+k);
     }
 }
-preload_images("imgs","png","project_wak_thumbnail","Astronaut_thumbnail","arena_of_wakgood_thumbnail");
+preload_images("imgs","png","project_wak_thumbnail","Astronaut_thumbnail");
 obj_loading_bar_grad.style.left = "0px";
 
 
