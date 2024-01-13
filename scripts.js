@@ -8,7 +8,7 @@ var obj_hello_title_kor = document.getElementById("hello_title_kor");
 var obj_hello_title_jap = document.getElementById("hello_title_jap");
 var obj_hello_title_desc = document.getElementById("hello_title_desc");
 var obj_trailer_video = document.getElementById("trailer_video");
-var obj_trailer_bg = document.getElementById("trailer_bg");
+var obj_trailer_bg = document.getElementById("trailer_video");
 var obj_quick_select_bg_outline = document.getElementById("quick_select_bg_outline");
 //var obj_quick_select_bg = document.getElementById("quick_select_bg");
 var obj_quick_select_main = document.getElementById("quick_select_main");
@@ -30,10 +30,10 @@ var obj_more_desc = document.getElementById("more_desc");
 var obj_aboutme = document.getElementById("aboutme");
 var obj_desc_blinder = document.getElementById("desc_blinder");
 var obj_desc_thumbnail = document.getElementById("desc_thumbnail");
-var obj_project_wak_desc = document.getElementById("project_wak_desc");
-var obj_astronaut_desc = document.getElementById("astronaut_desc");
-var obj_arena_of_wakgood_desc = document.getElementById("arena_of_wakgood_desc");
+var obj_works_desc = document.getElementById("works_desc");
 var obj_aboutme_desc = document.getElementById("aboutme_desc");
+var obj_source_code_link = document.getElementById("source_code_link");
+var obj_source_code_button = document.getElementById("source_code_button");
 var obj_download_link = document.getElementById("download_link");
 var obj_download_button = document.getElementById("download_button");
 
@@ -79,12 +79,12 @@ var obj_credit = document.getElementById("credit");
 var obj_game_selector_button = [];
 var obj_game_selector_button_activated = [];
 var obj_works_gif = [];
-for(var i = 1; i <= 4; i++)
+for(var i = 0; i < 3; i++)
 {
-    obj_game_selector_button[i] = document.getElementById("game_selector_button"+i);
+    obj_game_selector_button[i] = document.getElementById("game_selector_button"+(i+1));
 }
 
-for(var i = 0; i < 4; i++)
+for(var i = 0; i < obj_game_selector_button.length; i++)
 {
     obj_game_selector_button_activated[i] = 1;
 }
@@ -127,7 +127,6 @@ var background_stars = 1;
 
 
 //첫 화면 로딩
-css_values();
 setTimeout(show_page,9000);
 for(var i = 1; i <= 3; i++)
 {
@@ -136,14 +135,16 @@ for(var i = 1; i <= 3; i++)
         preload_images("imgs","gif","main"+i+"_"+k);
     }
 }
-preload_images("imgs","png","project_wak_thumbnail","Astronaut_thumbnail");
+preload_images("imgs","png","project_wak_thumbnail","Astronaut_thumbnail","project_wak_beat_thumbnail");
 obj_loading_bar_grad.style.left = "0px";
 
 
 function show_page()
 {
+    css_values();
     background_stars = 0;
-
+    obj_trailer_bg.play();
+    obj_trailer_bg.currentTime = 4;
     obj_trailer_video.style.filter = "blur(0px)";
     repos_works_gif();
     repos_gif();
@@ -577,8 +578,9 @@ function repos_gif()
     scroll_animation[1] = 0;
 
     var works_url = ["https://github.com/ABER1047/Astronaut_remake","https://github.com/ABER1047/Arena-of-woowakgood","https://github.com/ABER1047/Project-wak"];
-    var works_title_eng = ["Astronaut","Arena of Wakgood","Project Wak"];
-    var works_title_kr = ["아스트로넛","아레나 오브 왁굳","프로젝트 왁"];
+    var works_title_eng = ["Project Wak Beat","Arena of Wakgood","Project Wak"];
+    var works_title_kr = ["프로젝트 왁비트","아레나 오브 왁굳","프로젝트 왁"];
+    var download_url = ["https://just-wak-beat.github.io/Project-Wak-Beat-website/","https://github.com/Arena-of-Wakgood/Arena-of-woowakgood","https://project-wak.github.io/Project-wak_website/"];
 
 
     for(var i = -max_size_main_project; i <= max_size_main_project; i++)
@@ -611,7 +613,8 @@ function repos_gif()
     obj_showcase_game_title_sec1.textContent = works_title_kr[n_real_showcase];
     obj_showcase_game_title1.style.left = c_w*0.5-(obj_showcase_game_title1.textContent.length)*9+"px";
     obj_showcase_game_title_sec1.style.left = c_w*0.5-(obj_showcase_game_title_sec1.textContent.length)*3+"px";
-    obj_download_link.href = works_url[n_real_showcase];
+    obj_source_code_link.href = works_url[n_real_showcase];
+    obj_download_link.href = download_url[n_real_showcase];
     
     
 
@@ -658,13 +661,31 @@ obj_othergames_arrow_right.addEventListener("click",function()
 
 function reset_color_gsb()
 {
-    for(var i = 1; i <= 4; i++)
+    for(var i = 0; i < obj_game_selector_button.length; i++)
     {
         obj_game_selector_button[i].style.background = "#aec1cf";
     }
 }
 
 
+
+obj_game_selector_button[0].addEventListener("click",function()
+{
+    reset_color_gsb();
+    obj_game_selector_button[0].style.background = "#dcc4db";
+    obj_game_selector_button_activated[n_showcase_game] = 1;
+    var target_num = n_showcase_game+2;
+    if (target_num > 3)
+    {
+        target_num -= 3
+    }
+    if (target_num < 1)
+    {
+        target_num += 3
+    }
+    var obj_main_project = document.getElementById("main_project"+target_num);
+    obj_main_project.src = "imgs/main"+(target_num)+"_"+1+".gif";
+})
 
 obj_game_selector_button[1].addEventListener("click",function()
 {
@@ -681,7 +702,7 @@ obj_game_selector_button[1].addEventListener("click",function()
         target_num += 3
     }
     var obj_main_project = document.getElementById("main_project"+target_num);
-    obj_main_project.src = "imgs/main"+(target_num)+"_"+1+".gif";
+    obj_main_project.src = "imgs/main"+(target_num)+"_"+2+".gif";
 })
 
 obj_game_selector_button[2].addEventListener("click",function()
@@ -699,44 +720,10 @@ obj_game_selector_button[2].addEventListener("click",function()
         target_num += 3
     }
     var obj_main_project = document.getElementById("main_project"+target_num);
-    obj_main_project.src = "imgs/main"+(target_num)+"_"+2+".gif";
-})
-
-obj_game_selector_button[3].addEventListener("click",function()
-{
-    reset_color_gsb();
-    obj_game_selector_button[3].style.background = "#dcc4db";
-    obj_game_selector_button_activated[n_showcase_game] = 1;
-    var target_num = n_showcase_game+2;
-    if (target_num > 3)
-    {
-        target_num -= 3
-    }
-    if (target_num < 1)
-    {
-        target_num += 3
-    }
-    var obj_main_project = document.getElementById("main_project"+target_num);
     obj_main_project.src = "imgs/main"+(target_num)+"_"+3+".gif";
 })
 
-obj_game_selector_button[4].addEventListener("click",function()
-{
-    reset_color_gsb();
-    obj_game_selector_button[4].style.background = "#dcc4db";
-    obj_game_selector_button_activated[n_showcase_game] = 1;
-    var target_num = n_showcase_game+2;
-    if (target_num > 3)
-    {
-        target_num -= 3
-    }
-    if (target_num < 1)
-    {
-        target_num += 3
-    }
-    var obj_main_project = document.getElementById("main_project"+target_num);
-    obj_main_project.src = "imgs/main"+(target_num)+"_"+4+".gif";
-})
+
 
 
 
@@ -750,9 +737,19 @@ addEventListener("mousewheel",function()
 });
 
 
+obj_source_code_button.addEventListener("mouseover",function()
+{
+    obj_source_code_button.style.background = "#b0d0e5";
+})
+
+obj_source_code_button.addEventListener("mouseleave",function()
+{
+    obj_source_code_button.style.background = "#fff9f6";
+})
+
 obj_download_button.addEventListener("mouseover",function()
 {
-    obj_download_button.style.background = "#b0d0e5";
+    obj_download_button.style.background = "#fe74cc";
 })
 
 obj_download_button.addEventListener("mouseleave",function()
@@ -770,13 +767,12 @@ function desc_des_start()
 {
     if (opened_more_desc == 1)
     {
-        obj_desc_blinder.style.opacity = "0";
-        obj_project_wak_desc.style.opacity = "0";
-        obj_astronaut_desc.style.opacity = "0";
-        obj_arena_of_wakgood_desc.style.opacity = "0";
-        obj_desc_thumbnail.style.opacity = "0";
-        obj_download_button.style.opacity = "0";
-        obj_aboutme_desc.style.opacity = "0";
+        obj_desc_blinder.style.opacity = 0;
+        obj_works_desc.style.opacity = 0;
+        obj_desc_thumbnail.style.opacity = 0;
+        obj_source_code_button.style.opacity = 0;
+        obj_download_button.style.opacity = 0;
+        obj_aboutme_desc.style.opacity = 0;
         setTimeout(desc_blinder_des,500);
     }
 }
@@ -787,14 +783,12 @@ function desc_blinder_des()
     document.getElementById("body_t").style.overflowY = "scroll";
 
 
-    obj_project_wak_desc.style.top = "-999px";
-    obj_astronaut_desc.style.top = "-999px";
-    obj_arena_of_wakgood_desc.style.top = "-999px";
+    obj_works_desc.style.top = "-999px";
     obj_desc_thumbnail.style.top = "-999px";
+    obj_source_code_button.style.top = "-999px";
     obj_download_button.style.top = "-999px";
     obj_aboutme_desc.style.top = "-999px";
     obj_desc_thumbnail.style.borderRadius = "0%";
-    obj_desc_thumbnail.style.left = "38%";
     obj_desc_thumbnail.style.width = "var(--s500px)";
     opened_more_desc = 0;
 }
@@ -806,32 +800,81 @@ function desc_blinder_cre()
 
 obj_more_desc.addEventListener("click",function()
 {
+    var tmp_str = "";
+    var downloadable = 0;
+    css_values();
     setTimeout(desc_blinder_cre,500);
+    setTimeout(css_values,10);
     document.getElementById("body_t").style.overflowY = "hidden";
     obj_desc_blinder.style.height = "2000px";
-    obj_desc_blinder.style.opacity = "0.95";
-    obj_desc_thumbnail.style.top = "18%";
-    obj_desc_thumbnail.style.opacity = "1";
-    obj_download_button.style.top = "800px";
-    obj_download_button.style.opacity = "1";
+    obj_desc_blinder.style.opacity = 0.95;
+    obj_desc_thumbnail.style.top = "16%";
+    obj_desc_thumbnail.style.opacity = 1;
+    obj_source_code_button.style.top = "800px";
+    obj_source_code_button.style.opacity = 1;
+    obj_works_desc.style.opacity = 1;
+    obj_works_desc.style.top = "48%";
 
     if (n_showcase_game == 1)
     {
+        tmp_str = "꽤나 스케일이 크게 제작되었으며, 약 150명 이상의 테스터분들이 도움을 주셨습니다.";
+        downloadable = 1;
+        
         obj_desc_thumbnail.src = "imgs/project_wak_thumbnail.png";
-        obj_project_wak_desc.style.top = "55%";
-        obj_project_wak_desc.style.opacity = "1";
+        obj_works_desc.innerHTML = "<span class = 'accent'>Project Wak(프로젝트 왁)</span></br></br>";
+        obj_works_desc.innerHTML += "<span class = 'accent'>출시</span></br>2022 연말공모전</br></br>";
+        obj_works_desc.innerHTML += "<span class = 'accent'>장르</span></br>소울라이크, 액션, RPG</br></br>";
+        obj_works_desc.innerHTML += "<span class = 'accent'>개발 기간</span></br>약 1년 반 (유지 보수 기간 제외, 1인 개발)</br></br>";
+        obj_works_desc.innerHTML += "</br></br>";
+        obj_works_desc.innerHTML += "게임 판매 플렛폼인 Steam(스팀)에 판매되는</br>";
+        obj_works_desc.innerHTML += "액션 RPG게임 급의 퀄리티로 제작하는게 목표였기 때문에</br>";
+        obj_works_desc.innerHTML += (tmp_str)+"</br>";
     }
     else if (n_showcase_game == 2)
     {
-        obj_desc_thumbnail.src = "imgs/Astronaut_thumbnail.png";
-        obj_astronaut_desc.style.top = "55%";
-        obj_astronaut_desc.style.opacity = "1";
+        tmp_str = "오리지널 맵들과 함께, 유저들이 직접 원하는 곡으로 제작한 '커스텀 유저 맵'을 플레이 해보실 수 있습니다.";
+        downloadable = 1;
+        
+        
+        obj_desc_thumbnail.src = "imgs/project_wak_beat_thumbnail.png";
+        obj_works_desc.innerHTML = "<span class = 'accent'>Project Wak Beat(프로젝트 왁비트)</span></br></br>";
+        obj_works_desc.innerHTML += "<span class = 'accent'>출시</span></br>2023 연말공모전</br></br>";
+        obj_works_desc.innerHTML += "<span class = 'accent'>장르</span></br>소울라이크, 액션, RPG</br></br>";
+        obj_works_desc.innerHTML += "<span class = 'accent'>개발 기간</span></br>약 1년 반 (유지 보수 기간 제외, 1인 개발)</br></br>";
+        obj_works_desc.innerHTML += "</br></br>";
+        obj_works_desc.innerHTML += "Project Wak Beat는 Project arrhythmia와 JSAB를 베이스로</br>";
+        obj_works_desc.innerHTML += "기본적으로는 비트에 맞춰 등장하는 여러 탄막들을 피하는 리듬게임이며,</br>";
+        obj_works_desc.innerHTML += "Windows & Android 플렛폼에서 플레이 가능합니다!</br>";
+        obj_works_desc.innerHTML += "오리지널 맵들과 함께, 유저들이 직접 원하는 곡으로 제작한 '커스텀 유저 맵'을 플레이 해보실 수 있습니다.</br>";
     }
     else
     {
+        tmp_str = "첫 출시 당시, 예상보다 많은 접속자로 인해 서버가 마비되어, 우왁굳님의 방송에선 진행 할 수 없게 되었습니다.";
+        downloadable = 1;
+        
+        
         obj_desc_thumbnail.src = "imgs/arena_of_wakgood_thumbnail.gif";
-        obj_arena_of_wakgood_desc.style.top = "53%";
-        obj_arena_of_wakgood_desc.style.opacity = "1";
+        obj_works_desc.innerHTML = "<span class = 'accent'>Arena of Wakgood(아레나 오브 왁굳)</span></br></br>";
+        obj_works_desc.innerHTML += "<span class = 'accent'>출시</span></br>2021년 3월 10일</br></br>";
+        obj_works_desc.innerHTML += "<span class = 'accent'>장르</span></br>액션, 멀티플레이, PVP, 대전</br></br>";
+        obj_works_desc.innerHTML += "<span class = 'accent'>개발 기간</span></br>약 1년 반 (유지 보수 기간 제외, 1인 개발)</br></br>";
+        obj_works_desc.innerHTML += "</br></br>";
+        obj_works_desc.innerHTML += "각기 다른 게임 모드와 여러 맵에서, 각 플레이어들이 자신의 무기를 들고 대전하며,</br>";
+        obj_works_desc.innerHTML += "채팅 및 이모티콘기능</span>을 통해 플레이어들 끼리 서로 대화를 주고 받을 수 있습니다.</br>";
+        obj_works_desc.innerHTML += "약 20명 이상의 비공개 테스터분들이 도움을 주셨습니다.</br>";
+        obj_works_desc.innerHTML += "첫 출시 당시, 예상보다 많은 접속자로 인해 서버가 마비되어, 우왁굳님의 방송에선 진행 할 수 없게 되었습니다.</br>";
+    }
+    
+    //for css
+    var text_max_width = (tmp_str.length)*12;
+    document.documentElement.style.setProperty("--works_desc_xx",(c_w-text_max_width)*0.5+"px");
+    document.documentElement.style.setProperty("--works_desc_width",text_max_width+"px");
+    document.documentElement.style.setProperty("--source_code_button_xx",(c_w-80)*0.5+"px");
+    
+    if (downloadable == 1)
+    {
+        obj_download_button.style.top = "850px";
+        obj_download_button.style.opacity = 1;
     }
 })
 
@@ -868,9 +911,8 @@ obj_aboutme.addEventListener("click",function()
     obj_desc_thumbnail.style.width = "200px";
     obj_desc_thumbnail.style.borderRadius = "50%";
     obj_desc_thumbnail.style.overflow = "hidden";
-    obj_desc_thumbnail.style.left = "45.9%";
+    obj_source_code_button.style.top = "-800px";
     obj_download_button.style.top = "-800px";
-
 
     obj_desc_thumbnail.src = "https://avatars.githubusercontent.com/u/78880883?v=4";
     aboutme_desc.style.top = "33%";
@@ -906,10 +948,10 @@ function repos_works_gif()
 {
     scroll_animation[3] = 0;
 
-    var works_url = ["https://just-wak-beat.github.io/Project-Wak-Beat-website/","https://wallpapers-projects-aber.github.io/bocchi/","https://github.com/ABER1047/delaunay-trianglulation","https://wallpapers-projects-aber.github.io/HitoriBocchi/"];
-    var works_title_eng = ["Project Wak beat","Bocchi!","Delaunay Triangulation","Hitori Bocchi","Empty"];
-    var works_title_kr = ["프로젝트 왁비트","ぼっち・ざ・ろっく!","들로네 삼각분할","ひとりぼっち","비어있음"];
-
+    var works_url = ["https://github.com/ABER-Portfolio/Astronaut_remake","https://wallpapers-projects-aber.github.io/bocchi/","https://github.com/ABER1047/delaunay-trianglulation","https://wallpapers-projects-aber.github.io/HitoriBocchi/","https://github.com/ABER1047"];
+    var works_title_eng = ["Astronaut","Bocchi!","Delaunay Triangulation","Hitori Bocchi","Empty"];
+    var works_title_kr = ["아스트로넛","ぼっち・ざ・ろっく!","들로네 삼각분할","ひとりぼっち","비어있음"];
+    var download_url = ["","https://steamcommunity.com/sharedfiles/filedetails/?id=2902111469","","https://steamcommunity.com/sharedfiles/filedetails/?id=2945142270",""];
 
     for(var i = -max_size_sub_project; i <= max_size_sub_project; i++)
     {//n_showcase_works
@@ -941,11 +983,116 @@ function repos_works_gif()
     obj_showcase_works_title_sec1.textContent = works_title_kr[n_real_showcase];
     obj_showcase_works_title1.style.left = c_w*0.5-(obj_showcase_works_title1.textContent.length)*9+"px";
     obj_showcase_works_title_sec1.style.left = c_w*0.5-(obj_showcase_works_title_sec1.textContent.length)*3+"px";
-    obj_works_more_desc_link.href = works_url[n_real_showcase];
-        
+    obj_source_code_link.href = works_url[n_real_showcase];
+    obj_download_link.href = download_url[n_real_showcase];
 
     setTimeout(scroll_animation_active,500);
 }
+
+
+obj_works_more_desc.addEventListener("click",function()
+{
+    var downloadable = 0;
+    var n_real_showcase = n_showcase_works+max_size_sub_project;
+    var tmp_str = "";
+    setTimeout(desc_blinder_cre,500);
+    setTimeout(css_values,10);
+    document.getElementById("body_t").style.overflowY = "hidden";
+    obj_desc_blinder.style.height = "2000px";
+    obj_desc_blinder.style.opacity = 0.95;
+    obj_desc_thumbnail.style.top = "16%";
+    obj_desc_thumbnail.style.opacity = 1;
+    obj_source_code_button.style.top = "800px";
+    obj_source_code_button.style.opacity = 1;
+    obj_works_desc.style.opacity = 1;
+    obj_works_desc.style.top = "48%";
+    obj_source_code_button.innerHTML = "소스코드";
+
+    if (n_real_showcase == 0)
+    {
+        tmp_str = "아쉽게도, 특성화고 진학을 위해 제작하였던 이 작품은 심사 점수 중 만점에 가까운 점수를 받을 수 있었지만,";
+        
+        obj_works_desc.style.top = "45%";
+        obj_desc_thumbnail.src = "imgs/astronaut_preview.gif";
+        obj_works_desc.innerHTML = "<span class = 'accent'>Astronaut (아스트로넛)</span></br></br>";
+        obj_works_desc.innerHTML += "<span class = 'accent'>출시</span></br>2019년</br></br>";
+        obj_works_desc.innerHTML += "<span class = 'accent'>장르</span></br>멀티플레이, RPG, 생존</br></br>";
+        obj_works_desc.innerHTML += "<span class = 'accent'>개발 기간</span></br>약 1년 반 (유지 보수 기간 제외, 1인 개발)</br></br>";
+        obj_works_desc.innerHTML += "</br></br>";
+        obj_works_desc.innerHTML += "<span class = 'accent'>2019년도에 특성화고에 진학하기 위한 포트폴리오 용도</span>로 제작했던 게임입니다.</br>";
+        obj_works_desc.innerHTML += "게임의 목표는 여러가지 위험이 도사리는 다른 행성을 탐험하고 몬스터들을 잡거나,</br>";
+        obj_works_desc.innerHTML += "지하 동굴을 탐험하거나, 행성 내에 이미 개척되어 개발된 지역을 방문하여 생존하는 것입니다.</br>";
+        obj_works_desc.innerHTML += "Server-client방식을 통해 멀티 플레이로 친구와 함께 플레이 할 수 있습니다.</br>";
+        obj_works_desc.innerHTML += "아쉽게도, 특성화고 진학을 위해 제작하였던 이 작품은 심사 점수 중 만점에 가까운 점수를 받을 수 있었지만,</br>";
+        obj_works_desc.innerHTML += "다른 이유로 인해 진학하지 못하였습니다.</br>";
+    }
+    else if (n_real_showcase == 1)
+    {
+        tmp_str = "Steam(스팀)의 Wallpaper Engine을 위한 웹사이트 입니다.";
+        downloadable = 1;
+        
+        obj_desc_thumbnail.src = "imgs/bocchi!.gif";
+        obj_works_desc.innerHTML = "<span class = 'accent'>Bocchi!</span></br></br>";
+        obj_works_desc.innerHTML += "<span class = 'accent'>출시</span></br>2022년 12월 16일</br></br>";
+        obj_works_desc.innerHTML += "<span class = 'accent'>개발 기간</span></br>약 7일 (유지 보수 기간 제외, 1인 개발)</br></br>";
+        obj_works_desc.innerHTML += "</br></br>";
+        obj_works_desc.innerHTML += "Steam(스팀)의 Wallpaper Engine을 위한 웹사이트 입니다.</br>";
+        obj_works_desc.innerHTML += "Wallpaper Engine 창작마당에서 다운로드 가능합니다.</br>";
+    }
+    else if (n_real_showcase == 2)
+    {
+        tmp_str = "이 삼각형들의 내각의 최소값이 최대가 되도록 하는 '들로네 삼각분할'을 구현한 프로젝트 입니다.";
+        
+        
+        obj_desc_thumbnail.src = "imgs/delaunay.gif";
+        obj_works_desc.innerHTML = "<span class = 'accent'>Delaunay Triangulation (들로네 삼각분할)</span></br></br>";
+        obj_works_desc.innerHTML += "<span class = 'accent'>출시</span></br>2022년 7월 23일</br></br>";
+        obj_works_desc.innerHTML += "<span class = 'accent'>개발 기간</span></br>약 2주 (유지 보수 기간 제외, 1인 개발)</br></br>";
+        obj_works_desc.innerHTML += "</br></br>";
+        obj_works_desc.innerHTML += "고등학교 수학 주제 탐구 활동을 위해 제작한 프로젝트 입니다.</br>";
+        obj_works_desc.innerHTML += "평면 위의 점들을 삼각형으로 연결하여 공간을 분할할 때,</br>";
+        obj_works_desc.innerHTML += "이 삼각형들의 내각의 최소값이 최대가 되도록 하는 '들로네 삼각분할'을 구현한 프로젝트 입니다.</br>";
+    }
+    else if (n_real_showcase == 3)
+    {
+        tmp_str = "실제 시간에 기반하여 자연스럽게 배경이 바뀌는 효과가 있습니다.";
+        downloadable = 1;
+        
+        obj_desc_thumbnail.src = "imgs/falling_bocchi_preview.gif";
+        obj_works_desc.innerHTML = "<span class = 'accent'>Hitori Bocchi</span></br></br>";
+        obj_works_desc.innerHTML += "<span class = 'accent'>출시</span></br>2023년 3월 11일</br></br>";
+        obj_works_desc.innerHTML += "<span class = 'accent'>개발 기간</span></br>약 7일 (유지 보수 기간 제외, 1인 개발)</br></br>";
+        obj_works_desc.innerHTML += "</br></br>";
+        obj_works_desc.innerHTML += "Steam(스팀)의 Wallpaper Engine을 위한 웹사이트 입니다.</br>";
+        obj_works_desc.innerHTML += "실제 시간에 기반하여 자연스럽게 배경이 바뀌는 효과가 있습니다.</br>";
+        obj_works_desc.innerHTML += "Wallpaper Engine 창작마당에서 다운로드 가능합니다.</br>";
+    }
+    else if (n_real_showcase == 4)
+    {
+        tmp_str = "더 많은 프로젝트를 구경하고 싶다면";
+        
+        
+        obj_desc_thumbnail.src = "imgs/X.png";
+        obj_works_desc.innerHTML = "<span class = 'accent'>이런!</span></br></br>";
+        obj_works_desc.innerHTML += "</br></br>";
+        obj_works_desc.innerHTML += "이곳은 아직 비어있네요!</br>";
+        obj_works_desc.innerHTML += "더 많은 프로젝트를 구경하고 싶다면</br>";
+        obj_works_desc.innerHTML += "제 깃허브 페이지를 방문해주세요!</br>";
+        obj_source_code_button.innerHTML = "방문하기";
+    }
+    
+    //for css
+    var text_max_width = (tmp_str.length)*12;
+    document.documentElement.style.setProperty("--works_desc_xx",(c_w-text_max_width)*0.5+"px");
+    document.documentElement.style.setProperty("--works_desc_width",text_max_width+"px");
+    document.documentElement.style.setProperty("--source_code_button_xx",(c_w-80)*0.5+"px");
+    
+    if (downloadable == 1)
+    {
+        obj_download_button.style.top = "850px";
+        obj_download_button.style.opacity = 1;
+    }
+})
 
 
 obj_works_arrow_left.addEventListener("click",function()
@@ -982,6 +1129,9 @@ obj_works_more_desc.addEventListener("mouseleave",function()
 {
     obj_works_more_desc.style.background = "#24254a";
 })
+
+
+
 
 
 
@@ -1073,19 +1223,36 @@ function css_values()
         is_pc = 1;
     }
 
-    document.documentElement.style.setProperty("--view_width_x1p1",c_h*1.1+32+"px");
+    var main_trailer_height = c_h*1.1+32;
+    document.documentElement.style.setProperty("--showcase_text_xx",(c_w-384*0.5)*0.5+"px");
+    document.documentElement.style.setProperty("--other_works_text_xx",(c_w-396*0.5)*0.5+"px");
+    document.documentElement.style.setProperty("--view_width_x1p1",main_trailer_height+"px");
     document.documentElement.style.setProperty("--view_height",c_h+"px");
-
-    document.documentElement.style.setProperty("--s18px",18*c_x+"px");
-    for(var i = 16; i <= 256; i += 4)
-    {
-        document.documentElement.style.setProperty("--s"+i+"px",i*c_x+"px");
-    }
+    document.documentElement.style.setProperty("--more_desc_xx",(c_w-86)*0.5+"px");
+    document.documentElement.style.setProperty("--desc_thumbnail_xx",(c_w-obj_desc_thumbnail.width)*0.5+"px");
+    document.documentElement.style.setProperty("--trailer_video_xx",(is_pc == 1) ? (64+"px") : (c_w-main_trailer_height/9*16)*0.5+"px");
     
-    for(var i = 128; i <= 512; i += 4)
+    for(var i = 1; i <= obj_game_selector_button.length; i++)
     {
-        document.documentElement.style.setProperty("--sr"+i+"px",c_w-i*c_x_comp+"px");
+        document.documentElement.style.setProperty("--game_selector_button"+i+"_xx",(c_w*0.5-64*(2-i))+"px");
     }
+
+    
+    
+
+    document.documentElement.style.setProperty("--sr168px",c_w-168*c_x_comp+"px");
+    document.documentElement.style.setProperty("--sr288px",c_w-288*c_x_comp+"px");
+    document.documentElement.style.setProperty("--sr384px",c_w-384*c_x_comp+"px");
+    document.documentElement.style.setProperty("--sr500px",c_w-500*c_x_comp+"px");
+
+    
+    document.documentElement.style.setProperty("--s18px",18*c_x+"px");
+    document.documentElement.style.setProperty("--s36px",36*c_x+"px");
+    document.documentElement.style.setProperty("--s48px",48*c_x+"px");
+    document.documentElement.style.setProperty("--s108px",108*c_x+"px");
+    document.documentElement.style.setProperty("--s112px",112*c_x+"px");
+    document.documentElement.style.setProperty("--s256"+"px",256*c_x+"px");
+    document.documentElement.style.setProperty("--s160"+"px",160*c_x+"px");
     document.documentElement.style.setProperty("--s110px",110*c_x+"px");
     document.documentElement.style.setProperty("--s260px",260*c_x+"px");
     document.documentElement.style.setProperty("--s300px",300*c_x+"px");
