@@ -857,7 +857,7 @@ obj_more_desc.addEventListener("click",function()
         obj_works_desc.innerHTML = "<span class = 'accent'>Arena of Wakgood(아레나 오브 왁굳)</span></br></br>";
         obj_works_desc.innerHTML += "<span class = 'accent'>출시</span></br>2021년 3월 10일</br></br>";
         obj_works_desc.innerHTML += "<span class = 'accent'>장르</span></br>액션, 멀티플레이, PVP, 대전</br></br>";
-        obj_works_desc.innerHTML += "<span class = 'accent'>개발 기간</span></br>약 1년 반 (유지 보수 기간 제외, 1인 개발)</br></br>";
+        obj_works_desc.innerHTML += "<span class = 'accent'>개발 기간</span></br>약 반년 (유지 보수 기간 제외, 1인 개발)</br></br>";
         obj_works_desc.innerHTML += "</br></br>";
         obj_works_desc.innerHTML += "각기 다른 게임 모드와 여러 맵에서, 각 플레이어들이 자신의 무기를 들고 대전하며,</br>";
         obj_works_desc.innerHTML += "채팅 및 이모티콘기능</span>을 통해 플레이어들 끼리 서로 대화를 주고 받을 수 있습니다.</br>";
