@@ -788,7 +788,6 @@ function desc_blinder_des()
     obj_source_code_button.style.top = "-999px";
     obj_download_button.style.top = "-999px";
     obj_aboutme_desc.style.top = "-999px";
-    obj_desc_thumbnail.style.borderRadius = "0%";
     obj_desc_thumbnail.style.width = "var(--s500px)";
     opened_more_desc = 0;
 }
@@ -909,14 +908,17 @@ obj_aboutme.addEventListener("click",function()
     obj_desc_thumbnail.style.top = "7%";
     obj_desc_thumbnail.style.opacity = "1";
     obj_desc_thumbnail.style.width = "200px";
-    obj_desc_thumbnail.style.borderRadius = "50%";
+    obj_desc_thumbnail.style.height = "200px";
     obj_desc_thumbnail.style.overflow = "hidden";
     obj_source_code_button.style.top = "-800px";
     obj_download_button.style.top = "-800px";
 
     obj_desc_thumbnail.src = "https://avatars.githubusercontent.com/u/78880883?v=4";
+    obj_desc_thumbnail.style.borderRadius = "9999px";
+    obj_desc_thumbnail.style.border = "1px solid white";
     aboutme_desc.style.top = "33%";
     aboutme_desc.style.opacity = "1";
+    css_values();
 })
 
 obj_aboutme.addEventListener("mouseover",function()
@@ -1001,6 +1003,7 @@ obj_works_more_desc.addEventListener("click",function()
     obj_desc_blinder.style.height = "2000px";
     obj_desc_blinder.style.opacity = 0.95;
     obj_desc_thumbnail.style.top = "16%";
+    obj_desc_thumbnail.style.borderRadius = "0px";
     obj_desc_thumbnail.style.opacity = 1;
     obj_source_code_button.style.top = "800px";
     obj_source_code_button.style.opacity = 1;
