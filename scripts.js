@@ -577,7 +577,7 @@ function repos_gif()
 {
     scroll_animation[1] = 0;
 
-    var works_url = ["https://github.com/ABER1047/Astronaut_remake","https://github.com/ABER1047/Arena-of-woowakgood","https://github.com/ABER1047/Project-wak"];
+    var works_url = ["https://github.com/Just-Wak-Beat/Project_Wak_Beat","https://github.com/ABER1047/Arena-of-woowakgood","https://github.com/ABER1047/Project-wak"];
     var works_title_eng = ["Project Wak Beat","Arena of Wakgood","Project Wak"];
     var works_title_kr = ["프로젝트 왁비트","아레나 오브 왁굳","프로젝트 왁"];
     var download_url = ["https://just-wak-beat.github.io/Project-Wak-Beat-website/","https://github.com/Arena-of-Wakgood/Arena-of-woowakgood","https://project-wak.github.io/Project-wak_website/"];
