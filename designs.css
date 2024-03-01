@@ -1,7 +1,13 @@
 @font-face
 { 
-    font-family : customfont;
-    src: url(etc/BM_hanna_air.otf);
+    font-family : customfont_kor;
+    src : url(etc/BM_hanna_air.otf);
+}
+
+@font-face
+{ 
+    font-family : customfont_jp;
+    src : url(etc/NotoSansJP-VariableFont_wght.ttf);
 }
 
 
@@ -9,15 +15,16 @@ body
 {
     margin : 0;
     padding : 0;
-    overflow-x: hidden;
-    overflow-y: hidden;
+    overflow-x : hidden;
+    overflow-y : hidden;
+    scroll-behavior : smooth;
 }
 
-div
+.body_t
 {
-    font-family: customfont;
-    scroll-behavior: smooth;
+    font-family : customfont_kor;
 }
+
 
 @keyframes move_wave 
 {
@@ -199,7 +206,7 @@ div
     font-size : var(--s48px);
     left : var(--s108px);
     font-weight : bold;
-    font-family: auto;
+    font-family: customfont_jp;
     transition : opacity 0.5s;
     margin-left : var(--m_interect_xx);
     margin-top : var(--m_interect_yy);
@@ -222,6 +229,11 @@ div
     color : #e29056;
 }
 
+.jp
+{
+    font-family: customfont_jp;
+}
+
 .showcase_works_title_sec2
 {
     font-family: auto;
@@ -239,7 +251,7 @@ div
     position : absolute;
     background : #867dff;
     font-weight : bold;
-    #ebebeb-space: nowrap;
+    white-space : nowrap;
     transition : background 0.2s, opacity 1s;
     top : 4230px;
     z-index : 9999;
