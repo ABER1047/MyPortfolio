@@ -1437,17 +1437,8 @@ function css_values()
     c_x = c_w/1920;
     var c_x_comp = c_w/480;
     c_x_comp = correct_value(c_x_comp,0,1);
-
-    if (c_x < 0.6)
-    {
-        is_pc = 0;
-        c_x = 0.6;
-        //window.location.href = "m_index.html";
-    }
-    else
-    {
-        is_pc = 1;
-    }
+    is_pc = (c_w < 1080 || c_h/c_w > 1 || (/Android|iPhone/i.test(navigator.userAgent))) ? 1/c_x : 1;
+    
 
     var main_trailer_height = c_h*1.1+32;
     document.documentElement.style.setProperty("--showcase_text_xx",(c_w-384*0.5)*0.5+"px");
@@ -1688,7 +1679,11 @@ if (is_pc == 1)
             star_num += (star_num > 100) ? -101 : 1;
         }
         //step event
-        setTimeout(step_event,200);
+        
+        if (is_pc == 1)
+        {
+            setTimeout(step_event,200);
+        }
     }
 
     function set_star_pos(target,ystart)
