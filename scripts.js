@@ -172,7 +172,7 @@ function set_language(region)
         text_scripts[36] = "지하 동굴을 탐험하거나, 행성 내에 이미 개척되어 개발된 지역을 방문하여 생존하는 것입니다.</br>";
         text_scripts[37] = "Server-client방식을 통해 멀티 플레이로 친구와 함께 플레이 할 수 있습니다.</br>";
         text_scripts[38] = "아쉽게도, 특성화고 진학을 위해 제작하였던 이 작품은 심사 점수 중 만점에 가까운 점수를 받을 수 있었지만,";
-        text_scripts[39] = "다른 이유로 인해 진학하지 못하였습니다.</br>";
+        text_scripts[39] = "개인적인 사정으로 인해 진학하지 못하였습니다.</br>";
         text_scripts[40] = "<span class = 'accent'>Bocchi!</span></br></br>";
         text_scripts[41] = "<span class = 'accent'>출시</span></br>2022년 12월 16일</br></br>";
         text_scripts[42] = "<span class = 'accent'>개발 기간</span></br>약 7일 (유지 보수 기간 제외, 1인 개발)</br></br>";
