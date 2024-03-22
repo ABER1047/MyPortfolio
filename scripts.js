@@ -1,4 +1,4 @@
-//variables for element id
+//#region variables for element id
 var obj_loading_bar_bg = document.getElementById("loading_bar_bg");
 var obj_loading_bar_grad = document.getElementById("loading_bar_grad");
 var obj_screen_transition_bg = document.getElementById("screen_transition_bg");
@@ -17,58 +17,61 @@ var obj_music_info2 = document.getElementById("music_info2");
 var obj_music_button = document.getElementById("music_button");
 var obj_star_point_parents = document.getElementById("star_point_parents");
 var obj_credit = document.getElementById("credit");
-
 var obj_contact_text = document.getElementById("contact_text");
 var obj_contact_youtube = document.getElementById("contact_youtube");
 var obj_contact_discord = document.getElementById("contact_discord");
 var obj_contact_github = document.getElementById("contact_github");
+//#endregion
 
-//variables for design
+//#region variables for design
 var c_w = -4;
 var c_h = -4;
 var is_pc = 1;
 var c_x = 1;
+//#endregion
 
-//variables for music
+//#region variables for music
 var music_on = 1;
 var audio = -4;
 var random_bgm = -4;
 var music_auto_playing = [ -4,-4 ];
 var saved_random_bgm = -4;
+//#endregion
 
-//variable for language
+//#region variable for language
 var text_scripts = [];
 for(var i = 0; i < 99; i++)
 {
     text_scripts[i] = "";
 }
+//#endregion
 
-//varialbe for scroll
+//#region varialbe for scroll
 n_scroll_pos = 0;
+//#endregion
 
-
-//loading speed (for dev)
+//#region loading speed (for dev)
 loading_speed = 3000; //9000
+//#endregion
 
-
-//variable for mouse pos
+//#region variable for mouse pos
 mouse_x = 0;
 mouse_y = 0;
+//#endregion
 
-//variable for star element
+//#region variable for star element
 var star_point = [-4, -4, -4, -4, -4, -4, -4, -4, -4, -4];
 var star_point_txt_box = [];
 var star_point_img_box = [];
 var star_point_img_box_src = [ "imgs/gms.png", "imgs/android.png", "imgs/google_play.jpg", "imgs/astronaut_preview.gif", "imgs/arena_of_wakgood_preview.gif", "imgs/delaunay_preview.gif", "imgs/bocchi_preview.mp4", "imgs/project_wak_preview.gif", "imgs/hitori_bocchi_trailer.mp4", "imgs/project_wak_beat_preview.mp4"];
 var star_point_img_box_type = [ "img", "img", "img", "img", "img", "img", "video", "img", "video", "video"];
+//#endregion
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-
-
-//set to current region language
+//#region set to current region language
 function set_language(region)
 {
     var tmp_current_region = region;
@@ -78,6 +81,7 @@ function set_language(region)
 
     if (tmp_current_region == "South Korea")
     {
+        //#region Korean text scripts
         text_scripts[1] = "<span class = 'accent'>2013년도 (당시 초등학교 3학년)</span>";
         text_scripts[1] += "</br>";
         text_scripts[1] += "첫 프로그래밍(GML) 입문";
@@ -188,9 +192,11 @@ function set_language(region)
         text_scripts[10] += "</br>";
         text_scripts[10] += "</br>";
         text_scripts[10] += "2024.01.14 출시";
+        //#endregion
     }
     else if (tmp_current_region == "Japan")
     {
+        //#region Japanese text scripts
         text_scripts[1] = "<span class = 'jp'><span class = 'accent'>2013年度(小学校3年生)</span>";
         text_scripts[1] += "</br>";
         text_scripts[1] += "初プログラミング(GML)入門</span>";
@@ -301,9 +307,11 @@ function set_language(region)
         text_scripts[10] += "</br>";
         text_scripts[10] += "</br>";
         text_scripts[10] += "2024.01.14リリース</span>";
+        //#endregion
     }
     else
     {
+        //#region English text scripts
         text_scripts[1] = "<span class = 'accent'>2013 (3rd grade in elementary school)</span>";
         text_scripts[1] += "</br>";
         text_scripts[1] += "I Learned programming language(GML) at first in my life";
@@ -409,14 +417,14 @@ function set_language(region)
         text_scripts[10] += "</br>";
         text_scripts[10] += "</br>";
         text_scripts[10] += "January 14, 2024 Released";
+        //#endregion
     }
 }
 set_language(get_country());
+//#endregion
 
 
-
-
-//첫 화면 로딩
+//#region 첫 화면 로딩
 setTimeout(show_page,loading_speed);
 obj_loading_bar_grad.style.left = "0px";
 
@@ -503,8 +511,6 @@ function screen_transition1()
     obj_screen_transition_bg.style.height = "0px";
 }
 
-
-
 function title_anime1()
 {
     obj_hello_title_eng.style.top = 140*c_x+"px";
@@ -540,7 +546,6 @@ function title_anime4()
 function quick_select_menu_anime1()
 {
     obj_quick_select_bg_outline.style.top = "48px";
-    //obj_quick_select_bg.style.top = "-8px";
     setTimeout(quick_select_menu_anime2,500);
 }
 
@@ -573,7 +578,6 @@ function quick_select_menu_anime6()
     obj_music_button.style.left = "2.5%";
 }
 
-
 function text_appearence_anime1(target)
 {
     target.style.transition = "none";
@@ -588,8 +592,6 @@ function text_appearence_anime2(target_)
     target_.style.color = "#121212";
 }
 
-
-
 function text_appearence2_anime1(target)
 {
     target.style.transition = "none";
@@ -603,14 +605,7 @@ function text_appearence2_anime2(target_)
     target_.style.transition = "color 1s";
     target_.style.color = "#749eca";
 }
-
-
-
-
-
-
-
-
+//#endregion
 
 
 //#region 상단 및 크레딧 매뉴 버튼
@@ -669,7 +664,6 @@ function text_appearence2_anime2(target_)
         obj_credit.style.color = "#ffffff";
     })
 //#endregion
-
 
 
 //#region 음악 버튼
