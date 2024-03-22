@@ -879,7 +879,11 @@ function css_values()
     document.documentElement.style.setProperty("--sepa_bg_bot_yy",(c_h-tmp_yy)+"px");
     
     var tmp_xx = set_value_case(n_scroll_pos*4,0,3000,true);
-    document.documentElement.style.setProperty("--sepa_bg_left_xx",(-3500+tmp_xx)+"px");
+    document.documentElement.style.setProperty("--sepa_bg_left_xx",tmp_xx+"px");
+    
+    document.documentElement.style.setProperty("--m_interect_120xx",-120-mouse_movement_dis_xx-n_scroll_pos*0.8+"px"); //pink wave
+    document.documentElement.style.setProperty("--m_interect_12xx",-12+mouse_movement_dis_xx-n_scroll_pos*0.9+"px"); //purple wave
+    document.documentElement.style.setProperty("--m_interect_0xx",-(tmp_xx)+"px"); //white wave
     
     
     var tmp_xx = (n_scroll_pos-600)*0.2;
@@ -890,6 +894,7 @@ function css_values()
     document.documentElement.style.setProperty("--black_line_yy",(c_h*0.55)+"px");
     document.documentElement.style.setProperty("--black_line_head_xx",(tmp_xx-16)+"px");
     document.documentElement.style.setProperty("--black_line_head_yy",(c_h*0.55-15)+"px");
+    
 
     
 
@@ -898,10 +903,6 @@ function css_values()
     var mouse_movement_dis_yy = (mouse_y - c_h*0.5)/72*is_pc;
     document.documentElement.style.setProperty("--m_interect_xx",mouse_movement_dis_xx+"px");
     document.documentElement.style.setProperty("--m_interect_yy",mouse_movement_dis_yy+"px");
-    
-    document.documentElement.style.setProperty("--m_interect_120xx",-120-mouse_movement_dis_xx-n_scroll_pos*0.8+"px"); //pink wave
-    document.documentElement.style.setProperty("--m_interect_12xx",-12+mouse_movement_dis_xx-n_scroll_pos*0.9+"px"); //purple wave
-    document.documentElement.style.setProperty("--m_interect_0xx",-(n_scroll_pos*4)+"px"); //white wave
 
     document.documentElement.style.setProperty("--m_interect_xx2",-mouse_movement_dis_xx*0.5+"px");
     document.documentElement.style.setProperty("--m_interect_yy2",-mouse_movement_dis_yy*0.5+"px");
