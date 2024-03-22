@@ -18,6 +18,11 @@ var obj_music_button = document.getElementById("music_button");
 var obj_star_point_parents = document.getElementById("star_point_parents");
 var obj_credit = document.getElementById("credit");
 
+var obj_contact_text = document.getElementById("contact_text");
+var obj_contact_youtube = document.getElementById("contact_youtube");
+var obj_contact_discord = document.getElementById("contact_discord");
+var obj_contact_github = document.getElementById("contact_github");
+
 //variables for design
 var c_w = -4;
 var c_h = -4;
@@ -956,6 +961,41 @@ $(window).scroll(function()
             star_point_txt_box[i].style.opacity = 0;
             star_point_img_box[i].style.opacity = 0;
         }
+    }
+    
+    
+    if (n_scroll_pos >= 1400)
+    {
+        obj_contact_text.style.top = "-999px";
+        obj_contact_youtube.style.top = "-999px";
+        obj_contact_discord.style.top = "-999px";
+        obj_contact_github.style.top = "-999px";
+    }
+    else if (n_scroll_pos >= 1000)
+    {
+        obj_contact_text.style.opacity = "0";
+        obj_contact_youtube.style.opacity = "0";
+        obj_contact_discord.style.opacity = "0";
+        obj_contact_github.style.opacity = "0";
+    }
+    else if (n_scroll_pos >= 500)
+    {
+        obj_contact_text.style.top = "47%";
+        obj_contact_youtube.style.top = "50%";
+        obj_contact_discord.style.top = "50%";
+        obj_contact_github.style.top = "50%";
+        
+        obj_contact_text.style.opacity = "1";
+        obj_contact_youtube.style.opacity = "1";
+        obj_contact_discord.style.opacity = "1";
+        obj_contact_github.style.opacity = "1";
+    }
+    else
+    {
+        obj_contact_text.style.opacity = "0";
+        obj_contact_youtube.style.opacity = "0";
+        obj_contact_discord.style.opacity = "0";
+        obj_contact_github.style.opacity = "0";
     }
 })
 //#endregion
