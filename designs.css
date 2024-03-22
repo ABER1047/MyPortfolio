@@ -44,8 +44,7 @@ body
 
 .waveWrapper 
 {
-    overflow : hidden;
-    position : absolute;
+    position : fixed;
     left : -950px;
     right : 0;
     bottom : 0;
@@ -65,6 +64,7 @@ body
     background-position : 0 bottom;
     transform-origin: center bottom;
     background-size: 50% 290px;
+    transition : all 0.2s;
 }
 
 .waveAnimation .waveTop
@@ -77,6 +77,8 @@ body
 .waveAnimation .waveMiddle 
 {
     animation : move_wave 6s linear infinite;
+    margin-top : var(--m_interect_0xx);
+    transition : all 0.5s;
 }
 
 .waveAnimation .waveBottom
@@ -135,7 +137,7 @@ body
     font-size : var(--s160px);
     left : var(--s112px);
     font-weight : bold;
-    transition : opacity 0.5s;
+    transition : opacity 0.5s, margin-left 0.1s, margin-top 0.1s;
     margin-left : var(--m_interect_xx);
     margin-top : var(--m_interect_yy);
     text-shadow: -8px -8px 0 #fff9f6, 8px -8px 0 #fff9f6, -8px 8px 0 #fff9f6, 8px 8px 0 #fff9f6;
@@ -147,13 +149,7 @@ body
     mix-blend-mode : difference;
 }
 
-.quick_select_other_works
-{
-    color: #fff9f6;
-    mix-blend-mode: difference;
-}
-
-.quick_select_showcase
+.quick_select_works
 {
     color: #fff9f6;
     mix-blend-mode: difference;
@@ -195,7 +191,7 @@ body
     font-size : var(--s48px);
     left : var(--s112px);
     font-weight : bold;
-    transition : opacity 0.5s;
+    transition : opacity 0.5s, margin-left 0.1s, margin-top 0.1s;
     margin-left : var(--m_interect_xx);
     margin-top : var(--m_interect_yy);
     text-shadow: -3px -3px 0 #fff9f6, 3px -3px 0 #fff9f6, -3px 3px 0 #fff9f6, 3px 3px 0 #fff9f6;
@@ -207,7 +203,7 @@ body
     left : var(--s108px);
     font-weight : bold;
     font-family: customfont_jp;
-    transition : opacity 0.5s;
+    transition : opacity 0.5s, margin-left 0.1s, margin-top 0.1s;
     margin-left : var(--m_interect_xx);
     margin-top : var(--m_interect_yy);
     text-shadow: -2.3px -2.3px 0 #fff9f6, 2.3px -2.3px 0 #fff9f6, -2.3px 2.3px 0 #fff9f6, 2.3px 2.3px 0 #fff9f6;
@@ -217,7 +213,7 @@ body
 {
     font-size : var(--s18px);
     left : var(--s112px);
-    transition : opacity 0.5s;
+    transition : opacity 0.5s, margin-left 0.1s, margin-top 0.1s;
     margin-left : var(--m_interect_xx);
     margin-top : var(--m_interect_yy);;
     text-shadow: -1px -1px 0 #fff9f6, 1px -1px 0 #fff9f6, -1px 1px 0 #fff9f6, 1px 1px 0 #fff9f6;
@@ -229,79 +225,13 @@ body
     color : #e29056;
 }
 
+.accent2
+{
+    font-size : 18px;
+    color : white;
+}
+
 .jp
 {
     font-family: customfont_jp;
-}
-
-.showcase_works_title_sec2
-{
-    font-family: auto;
-}
-
-.dot_effect
-{
-    margin-top : var(--m_interect_yy2);
-    margin-left : var(--m_interect_xx2);
-}
-
-.air_res_bar
-{
-    -webkit-appearance : none;
-    position : absolute;
-    background : #867dff;
-    font-weight : bold;
-    white-space : nowrap;
-    transition : background 0.2s, opacity 1s;
-    top : 4230px;
-    z-index : 9999;
-    padding : 2px;
-    height : 3px;
-    width : 150px;
-    left : 47.1%;
-    border-radius : 12px;
-}
-
-.air_res_bar:hover 
-{
-    transition : opacity 0.5s;
-}
-
-.air_res_bar::-webkit-slider-thumb 
-{
-    -webkit-appearance: none;
-    appearance: none;
-    width: 12px;
-    height: 12px;
-    background: #e29056;
-    cursor: pointer;
-    border-radius : 12px;
-    transition : opacity 0.5s;
-}
-
-.air_res_bar::-moz-range-thumb 
-{
-    width: 12px;
-    height: 12px;
-    background: #e29056;
-    cursor: pointer;
-    border-radius : 12px;
-    transition : opacity 0.5s;
-}
-
-.air_res_bar::-moz-range-thumb
-{
-    -webkit-appearance: none;
-    appearance: none;
-    background : #e29056;
-    width : 12px;
-    height : 12px;
-    cursor: pointer;
-    transition : opacity 0.5s;
-}
-
-
-.dot_effect_bg
-{
-    -webkit-mask-image:-webkit-gradient(linear, left bottom, left top, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)))
 }
