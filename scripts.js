@@ -185,7 +185,7 @@ function set_language(region)
         text_scripts[10] += "</br>";
         text_scripts[10] += "유튜버 '우왁굳'의 '2023 연말공모전'을 위해";
         text_scripts[10] += "</br>";
-        text_scripts[10] += "Project arrhythmia와 JSAB를 베이스로 제작한";
+        text_scripts[10] += "Project arrhythmia와 JSAB 게임을 기준으로 제작한";
         text_scripts[10] += "</br>";
         text_scripts[10] += "리듬, 액션, 탄막 장르의 게임";
         text_scripts[10] += "</br>";
@@ -408,7 +408,7 @@ function set_language(region)
         text_scripts[10] += "</br>";
         text_scripts[10] += "Rhythm, action, and ammunition genres game";
         text_scripts[10] += "</br>";
-        text_scripts[10] += "which is based on Project arrhythmia and JSAB";
+        text_scripts[10] += "which is fanmade game of Project arrhythmia and JSAB";
         text_scripts[10] += "</br>";
         text_scripts[10] += "was developed for Youtuber 'Woowakgood'";
         text_scripts[10] += "</br>";
