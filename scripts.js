@@ -122,7 +122,7 @@ function set_language(region)
         text_scripts[5] += "<span class = 'accent2'>'Arena of Wakgood (아레나 오브 왁굳)'</span>";
         text_scripts[5] += "</br>";
         text_scripts[5] += "</br>";
-        text_scripts[5] += "2019년도 부터 약 1년 간";
+        text_scripts[5] += "2019년도부터 약 1년 간";
         text_scripts[5] += "</br>";
         text_scripts[5] += "유튜버 '우왁굳'의 '2021 연말공모전'을 위해 제작한";
         text_scripts[5] += "</br>";
@@ -156,7 +156,7 @@ function set_language(region)
         text_scripts[8] += "<span class = 'accent2'>'Project Wak (프로젝트 왁)'</span>";
         text_scripts[8] += "</br>";
         text_scripts[8] += "</br>";
-        text_scripts[8] += "2021년도 후반기 부터 약 1년 반 동안";
+        text_scripts[8] += "2021년도 후반기부터 약 1년 반 동안";
         text_scripts[8] += "</br>";
         text_scripts[8] += "</br>";
         text_scripts[8] += "유튜버 '우왁굳'의 '2022 연말공모전'을 위해 제작한";
@@ -181,7 +181,7 @@ function set_language(region)
         text_scripts[10] += "<span class = 'accent2'>'Project Wak Beat (프로젝트 왁비트)'</span>";
         text_scripts[10] += "</br>";
         text_scripts[10] += "</br>";
-        text_scripts[10] += "2023년도 부터 약 1년 간";
+        text_scripts[10] += "2023년도부터 약 1년 간";
         text_scripts[10] += "</br>";
         text_scripts[10] += "유튜버 '우왁굳'의 '2023 연말공모전'을 위해";
         text_scripts[10] += "</br>";
