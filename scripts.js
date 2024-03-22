@@ -427,7 +427,7 @@ set_language(get_country());
 //#region 첫 화면 로딩
 setTimeout(show_page,loading_speed);
 obj_loading_bar_grad.style.left = "0px";
-
+obj_loading_bar_grad.style.transition = "left "+(loading_speed/1000)+"s";
 
 
 function show_page()
