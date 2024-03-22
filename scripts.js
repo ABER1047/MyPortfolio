@@ -48,7 +48,7 @@ n_scroll_pos = 0;
 
 
 //loading speed (for dev)
-loading_speed = 0; //9000
+loading_speed = 3000; //9000
 
 
 //variable for mouse pos
