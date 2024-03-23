@@ -148,10 +148,43 @@ body
     font-size : var(--s160px);
     left : var(--s112px);
     font-weight : bold;
-    transition : opacity 0.5s, margin-left 0.1s, margin-top 0.1s;
+    transition : opacity 0.5s;
     margin-left : var(--m_interect_xx);
     margin-top : var(--m_interect_yy);
     text-shadow: -8px -8px 0 #fff9f6, 8px -8px 0 #fff9f6, -8px 8px 0 #fff9f6, 8px 8px 0 #fff9f6;
+}
+
+.hello_title_kor
+{
+    font-size : var(--s48px);
+    left : var(--s112px);
+    font-weight : bold;
+    transition : opacity 0.5s;
+    margin-left : var(--m_interect_xx);
+    margin-top : var(--m_interect_yy);
+    text-shadow: -3px -3px 0 #fff9f6, 3px -3px 0 #fff9f6, -3px 3px 0 #fff9f6, 3px 3px 0 #fff9f6;
+}
+
+.hello_title_jap
+{
+    font-size : var(--s48px);
+    left : var(--s108px);
+    font-weight : bold;
+    font-family: customfont_jp;
+    transition : opacity 0.5s;
+    margin-left : var(--m_interect_xx);
+    margin-top : var(--m_interect_yy);
+    text-shadow: -2.3px -2.3px 0 #fff9f6, 2.3px -2.3px 0 #fff9f6, -2.3px 2.3px 0 #fff9f6, 2.3px 2.3px 0 #fff9f6;
+}
+
+.hello_title_desc
+{
+    font-size : var(--s18px);
+    left : var(--s112px);
+    transition : opacity 0.5s;
+    margin-left : var(--m_interect_xx);
+    margin-top : var(--m_interect_yy);;
+    text-shadow: -1px -1px 0 #fff9f6, 1px -1px 0 #fff9f6, -1px 1px 0 #fff9f6, 1px 1px 0 #fff9f6;
 }
 
 .quick_select_bg_outline
@@ -197,38 +230,6 @@ body
 }
 
 
-.hello_title_kor
-{
-    font-size : var(--s48px);
-    left : var(--s112px);
-    font-weight : bold;
-    transition : opacity 0.5s, margin-left 0.1s, margin-top 0.1s;
-    margin-left : var(--m_interect_xx);
-    margin-top : var(--m_interect_yy);
-    text-shadow: -3px -3px 0 #fff9f6, 3px -3px 0 #fff9f6, -3px 3px 0 #fff9f6, 3px 3px 0 #fff9f6;
-}
-
-.hello_title_jap
-{
-    font-size : var(--s48px);
-    left : var(--s108px);
-    font-weight : bold;
-    font-family: customfont_jp;
-    transition : opacity 0.5s, margin-left 0.1s, margin-top 0.1s;
-    margin-left : var(--m_interect_xx);
-    margin-top : var(--m_interect_yy);
-    text-shadow: -2.3px -2.3px 0 #fff9f6, 2.3px -2.3px 0 #fff9f6, -2.3px 2.3px 0 #fff9f6, 2.3px 2.3px 0 #fff9f6;
-}
-
-.hello_title_desc
-{
-    font-size : var(--s18px);
-    left : var(--s112px);
-    transition : opacity 0.5s, margin-left 0.1s, margin-top 0.1s;
-    margin-left : var(--m_interect_xx);
-    margin-top : var(--m_interect_yy);;
-    text-shadow: -1px -1px 0 #fff9f6, 1px -1px 0 #fff9f6, -1px 1px 0 #fff9f6, 1px 1px 0 #fff9f6;
-}
 
 .accent
 {
