@@ -133,14 +133,14 @@ function set_language(region)
         
         text_scripts[2] = "<span class = 'accent'>2016년 1월 (당시 초등학교 졸업 후 겨울 방학)</span>";
         text_scripts[2] += "</br>";
-        text_scripts[2] += "첫 모바일 게임 <span class = 'accent2'>'박스키우기'</span>";
+        text_scripts[2] += "<span class = 'accent2'>첫 모바일 게임 개발</span>";
         text_scripts[2] += "</br>";
         text_scripts[2] += "</br>";
-        text_scripts[2] += "겨울 방학때 처음으로 제작해 Google Play에 출시한 모바일 게임";
+        text_scripts[2] += "겨울 방학때 처음으로 제작해 Google Play에 출시";
         
         text_scripts[3] = "<span class = 'accent'>2017년도</span>";
         text_scripts[3] += "</br>";
-        text_scripts[3] += "모바일 게임 <span class = 'accent2'>'박스키우기' 15만 다운로드 달성</span>";
+        text_scripts[3] += "첫 모바일 게임 <span class = 'accent2'>15만 다운로드 달성</span>";
         text_scripts[3] += "</br>";
         text_scripts[3] += "</br>";
         text_scripts[3] += "Google Play 앱스토어 Top 100위 안에 등재된 이후,"
@@ -248,14 +248,14 @@ function set_language(region)
         
         text_scripts[2] = "<span class = 'jp'><span class = 'accent'>2016年1月(小学校卒業後の冬休み)</span>";
         text_scripts[2] += "</br>";
-        text_scripts[2] += "初モバイルゲーム<span class = 'accent2'>'ハコゲーム'</span>";
+        text_scripts[2] += "初モバイルゲーム";
         text_scripts[2] += "</br>";
         text_scripts[2] += "</br>";
-        text_scripts[2] += "冬休みに初めて作って、Google Playにリリースしたモバイルゲーム</span>";
+        text_scripts[2] += "冬休みに初めて作って、Google Playにリリース</span>";
         
         text_scripts[3] = "<span class = 'jp'><span class = 'accent'>2017年度</span>";
         text_scripts[3] += "</br>";
-        text_scripts[3] += "モバイルゲーム<span class = 'accent2'>'ハコゲーム' 15万ダウンロード達成</span>";
+        text_scripts[3] += "モバイルゲーム<span class = 'accent2'>15万ダウンロード達成</span>";
         text_scripts[3] += "</br>";
         text_scripts[3] += "</br>";
         text_scripts[3] += "Google PlayのTop 100位以内に登録された後、"
@@ -363,14 +363,14 @@ function set_language(region)
         
         text_scripts[2] = "<span class = 'accent'>January 2016 (Winter vacation after graduating from elementary school)</span>";
         text_scripts[2] += "</br>";
-        text_scripts[2] += "My first mobile game <span class = 'accent2'>'Growing Box'</span>";
+        text_scripts[2] += "My first mobile game developed";
         text_scripts[2] += "</br>";
         text_scripts[2] += "</br>";
         text_scripts[2] += "The first mobile game which I developed during the winter vacation and released on Google Play";
         
         text_scripts[3] = "<span class = 'accent'>2017</span>";
         text_scripts[3] += "</br>";
-        text_scripts[3] += "My first mobile game <span class = 'accent2'>'Growing Box' was downloaded 150k times</span>";
+        text_scripts[3] += "My first mobile game was<span class = 'accent2'>downloaded 150k times</span>";
         text_scripts[3] += "</br>";
         text_scripts[3] += "</br>";
         text_scripts[3] += "After achieved Top 100 in Google Play App Store,"
