@@ -78,9 +78,17 @@ body
 
 .waveAnimation .waveMiddle 
 {
-    animation : move_wave 6s linear infinite;
+    animation : move_wave 7s linear infinite;
     margin-top : var(--m_interect_0xx);
-    top : 16px;
+    top : 12px;
+    transition : all 0.5s;
+}
+
+.waveAnimation .waveBlinder
+{
+    animation : move_wave 6.8s linear infinite;
+    margin-top : var(--m_interect_0xx);
+    top : 180px;
     transition : all 0.5s;
 }
 
@@ -237,4 +245,107 @@ body
 .jp
 {
     font-family: customfont_jp;
+}
+
+
+
+.arrow 
+{
+    position: fixed;
+    top: 95%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+
+.arrow span 
+{
+    display: block;
+    width: 16px;
+    height: 16px;
+    border-bottom: 5px solid white;
+    border-right: 5px solid white;
+    transform: rotate(45deg);
+    margin: -10px;
+    animation: animate 2s infinite;
+}
+
+.arrow span:nth-child(2) 
+{
+    animation-delay: -0.2s;
+}
+
+.arrow span:nth-child(3) 
+{
+    animation-delay: -0.4s;
+}
+
+@keyframes animate 
+{
+    0% 
+    {
+        opacity: 0;
+        transform: rotate(45deg) translate(-20px, -20px);
+    }
+    50% 
+    {
+        opacity: 1;
+    }
+    100% 
+    {
+        opacity: 0;
+        transform: rotate(45deg) translate(20px, 20px);
+    }
+}
+
+
+
+
+.starlight_effect
+{
+    position: fixed;
+    margin-left : var(--m_interect_xx); 
+    margin-top : var(--m_interect_yy); 
+    transition : left 0.6s;
+}
+
+.starlight_effect span 
+{
+    display: block;
+    width: 1.5px;
+    height: 1.5px;
+    border-radius: 16px;
+    background-color : white;
+    margin: -10px;
+    animation: animate_starlight 5s infinite;
+}
+
+.starlight_effect span:nth-child(2) 
+{
+    animation-delay: -0.5s;
+}
+
+.starlight_effect span:nth-child(3) 
+{
+    animation-delay: -1s;
+}
+
+
+
+@keyframes animate_starlight
+{
+    0% 
+    {
+        opacity: 0;
+        transform: rotate(45deg) translate(-120px, -120px);
+    }
+    1% 
+    {
+        opacity: 1;
+    }
+    100% 
+    {
+        opacity: 0;
+        transform: rotate(45deg) translate(320px, 320px);
+    }
 }

@@ -21,6 +21,8 @@ var obj_contact_text = document.getElementById("contact_text");
 var obj_contact_youtube = document.getElementById("contact_youtube");
 var obj_contact_discord = document.getElementById("contact_discord");
 var obj_contact_github = document.getElementById("contact_github");
+var obj_black_line = document.getElementById("black_line");
+var obj_black_line_head = document.getElementById("black_line_head");
 //#endregion
 
 //#region variables for design
@@ -54,6 +56,10 @@ n_scroll_pos = 0;
 loading_speed = 3000; //9000
 //#endregion
 
+//#region variable for check is window resized
+is_window_resized = true;
+//#endregion
+
 //#region variable for mouse pos
 mouse_x = 0;
 mouse_y = 0;
@@ -63,8 +69,47 @@ mouse_y = 0;
 var star_point = [-4, -4, -4, -4, -4, -4, -4, -4, -4, -4];
 var star_point_txt_box = [];
 var star_point_img_box = [];
-var star_point_img_box_src = [ "imgs/gms.png", "imgs/android.png", "imgs/google_play.jpg", "imgs/astronaut_preview.gif", "imgs/arena_of_wakgood_preview.gif", "imgs/delaunay_preview.gif", "imgs/bocchi_preview.mp4", "imgs/project_wak_preview.gif", "imgs/hitori_bocchi_trailer.mp4", "imgs/project_wak_beat_preview.mp4"];
-var star_point_img_box_type = [ "img", "img", "img", "img", "img", "img", "video", "img", "video", "video"];
+var star_point_img_box_src = [ "imgs/gms.png", "imgs/android.png", "imgs/google_play.jpg", "imgs/astronaut_preview.gif", "imgs/arena_of_wakgood_preview.gif", "imgs/delaunay_preview.gif", "imgs/bocchi_preview.mp4", "imgs/project_wak_preview.mp4", "imgs/hitori_bocchi_trailer.mp4", "imgs/project_wak_beat_preview.mp4"];
+var star_point_img_box_type = [ "img", "img", "img", "img", "img", "img", "video", "video", "video", "video"];
+var star_point_source_code_link_box = [false, false, false, true, true, true, true, true, true, true ];
+var star_point_download_link_box = [false, false, false, false, true, false, true, true, true, true ];
+var star_point_trailer_link_box = [false, false, false, false, true, false, true, true, true, true ];
+
+
+//hyperlinks
+var star_point_source_code_link = [
+    false, 
+    false, 
+    false, 
+    "https://github.com/ABER-Portfolio/Astronaut_remake", 
+    "https://github.com/Arena-of-Wakgood/Arena-of-woowakgood", 
+    "https://github.com/ABER-Portfolio/delaunay-trianglulation", 
+    "https://github.com/Wallpapers-Projects-ABER/bocchi", 
+    "https://github.com/Project-Wak/Project-wak", 
+    "https://github.com/Wallpapers-Projects-ABER/HitoriBocchi", 
+    "https://github.com/Just-Wak-Beat/Project_Wak_Beat" ];
+var star_point_download_link = [
+    false, 
+    false, 
+    false, 
+    false, 
+    "https://github.com/ABER1047/Arena-of-woowakgood/releases/download/alpha-2.22/Arena_of_Woowakgood.zip", 
+    false, 
+    "https://steamcommunity.com/sharedfiles/filedetails/?id=2902111469", 
+    "https://project-wak.github.io/Project-wak_website/", 
+    "https://steamcommunity.com/sharedfiles/filedetails/?id=2945142270", 
+    "https://just-wak-beat.github.io/Project-Wak-Beat-website/" ];
+var star_point_trailer_link = [
+    false, 
+    false, 
+    false, 
+    false, 
+    "https://www.youtube.com/watch?v=dbzp09Ly1CY", 
+    false, 
+    "https://wallpapers-projects-aber.github.io/bocchi/", 
+    "https://youtu.be/YS-_TZILsJU?si=j43eQ-QJXfc1kR7c", 
+    "https://wallpapers-projects-aber.github.io/HitoriBocchi/", 
+    "https://youtu.be/y4fmaVC6ugo?si=Ca-CoinBQLCP8I0v" ];
 //#endregion
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -432,6 +477,7 @@ obj_loading_bar_grad.style.transition = "left "+(loading_speed/1000)+"s";
 
 function show_page()
 {
+    window.scrollTo({top : 0, left : 0, behavior : "smooth"});
     css_values();
     background_stars = 0;
     obj_trailer_video.play();
@@ -459,17 +505,18 @@ function show_page()
         star_point[i].style.position = "fixed";
         star_point[i].style.width = "32px";
         star_point[i].style.left = (tmp_xx)+"px";
-        star_point[i].style.transition = "left 0.2s, opacity 1.5s";
+        star_point[i].style.transition = "left 0.2s, opacity 1.5s, filter 1.5s";
         star_point[i].style.opacity = 0;
         star_point[i].style.zIndex = 100;
+        star_point[i].style.marginLeft = "var(--m_interect_xx3)";
+        star_point[i].style.marginTop = "var(--m_interect_yy3)";
         obj_star_point_parents.appendChild(star_point[i]);
         
         
         //text box
         var tmp_txt_box_width = 480;
         star_point_txt_box[i] = document.createElement("div");
-        star_point_txt_box[i].style.top = "var(--black_line_head_yy)";
-        star_point_txt_box[i].style.marginTop = "32px";
+        star_point_txt_box[i].style.top = "var(--black_line_txt_box_yy)";
         star_point_txt_box[i].style.position = "fixed";
         star_point_txt_box[i].style.opacity = 0;
         star_point_txt_box[i].style.left = (tmp_xx)+"px";
@@ -479,6 +526,9 @@ function show_page()
         star_point_txt_box[i].innerHTML = text_scripts[1+i];
         star_point_txt_box[i].style.transition = "opacity 0.3s";
         star_point_txt_box[i].style.color = "#cccccc";
+        star_point_txt_box[i].style.cursor = "default";
+        star_point_txt_box[i].style.marginLeft = "var(--m_interect_xx3)";
+        star_point_txt_box[i].style.marginTop = "var(--m_interect_yy3)";
         obj_star_point_parents.appendChild(star_point_txt_box[i]);
         
         
@@ -491,7 +541,7 @@ function show_page()
             star_point_img_box[i].loop = true;
             star_point_img_box[i].muted = true;
         }
-        star_point_img_box[i].style.top = (i <= 2) ? "var(--s470px)" : "var(--s256px)";
+        star_point_img_box[i].style.top = (i <= 2) ? "var(--s470px)" : "var(--s223px)";
         star_point_img_box[i].src = star_point_img_box_src[i];
         star_point_img_box[i].style.position = "fixed";
         star_point_img_box[i].style.opacity = 0;
@@ -499,8 +549,80 @@ function show_page()
         star_point_img_box[i].style.borderRadius = "16px";
         star_point_img_box[i].zIndex = 101;
         star_point_img_box[i].style.width = tmp_img_box_width+"px";
-        star_point_img_box[i].style.transition = "all 0.3s";
+        star_point_img_box[i].style.transition = "opacity 0.3s";
+        star_point_img_box[i].style.marginLeft = "var(--m_interect_xx3)";
+        star_point_img_box[i].style.marginTop = "var(--m_interect_yy3)";
         obj_star_point_parents.appendChild(star_point_img_box[i]);
+        
+        
+        //link box
+        var tmp_icon_box_width = 24;
+        if (star_point_source_code_link_box[i])
+        {
+            var tmp_ele = document.createElement("a");
+            tmp_ele.target = "_blank";
+            obj_star_point_parents.appendChild(tmp_ele);
+            
+            star_point_source_code_link_box[i] = document.createElement("img");
+            star_point_source_code_link_box[i].style.top = "var(--black_line_link_box_yy)";
+            star_point_source_code_link_box[i].style.position = "fixed";
+            star_point_source_code_link_box[i].src = "imgs/github_icon_white.png";
+            star_point_source_code_link_box[i].style.opacity = 0;
+            star_point_source_code_link_box[i].style.left = (tmp_txt_box_width+tmp_xx-160)+"px";
+            star_point_source_code_link_box[i].zIndex = 100;
+            star_point_source_code_link_box[i].style.width = (tmp_icon_box_width)+"px";
+            star_point_source_code_link_box[i].style.transition = "opacity 0.3s";
+            star_point_source_code_link_box[i].style.marginLeft = "var(--m_interect_xx3)";
+            star_point_source_code_link_box[i].style.marginTop = "var(--m_interect_yy3)";
+            star_point_source_code_link_box[i].link_owner_ele = tmp_ele;
+            tmp_ele.appendChild(star_point_source_code_link_box[i]);
+        }
+        
+        if (star_point_trailer_link_box[i])
+        {
+            var tmp_ele = document.createElement("a");
+            tmp_ele.target = "_blank";
+            obj_star_point_parents.appendChild(tmp_ele);
+            
+            star_point_trailer_link_box[i] = document.createElement("img");
+            star_point_trailer_link_box[i].style.top = "var(--black_line_link_box_yy)";
+            star_point_trailer_link_box[i].style.position = "fixed";
+            star_point_trailer_link_box[i].src = "imgs/youtube_icon_white.png";
+            star_point_trailer_link_box[i].style.opacity = 0;
+            star_point_trailer_link_box[i].style.left = (tmp_txt_box_width+tmp_xx-160-48)+"px";
+            star_point_trailer_link_box[i].zIndex = 100;
+            star_point_trailer_link_box[i].style.width = (tmp_icon_box_width)+"px";
+            star_point_trailer_link_box[i].style.transition = "opacity 0.3s";
+            star_point_trailer_link_box[i].style.marginLeft = "var(--m_interect_xx3)";
+            star_point_trailer_link_box[i].style.marginTop = "var(--m_interect_yy3)";
+            star_point_trailer_link_box[i].link_owner_ele = tmp_ele;
+            tmp_ele.appendChild(star_point_trailer_link_box[i]);
+        }
+        
+        if (star_point_download_link_box[i])
+        {
+            var tmp_ele = document.createElement("a");
+            tmp_ele.target = "_blank";
+            obj_star_point_parents.appendChild(tmp_ele);
+            
+            star_point_download_link_box[i] = document.createElement("img");
+            star_point_download_link_box[i].style.top = "var(--black_line_link_box_yy)";
+            star_point_download_link_box[i].style.position = "fixed";
+            star_point_download_link_box[i].src = "imgs/downlaod_icon.png";
+            star_point_download_link_box[i].style.opacity = 0;
+            star_point_download_link_box[i].style.left = (tmp_txt_box_width+tmp_xx-160-96)+"px";
+            star_point_download_link_box[i].zIndex = 100;
+            star_point_download_link_box[i].style.width = (tmp_icon_box_width)+"px";
+            star_point_download_link_box[i].style.transition = "opacity 0.3s";
+            star_point_download_link_box[i].style.marginLeft = "var(--m_interect_xx3)";
+            star_point_download_link_box[i].style.marginTop = "var(--m_interect_yy3)";
+            star_point_download_link_box[i].link_owner_ele = tmp_ele;
+            tmp_ele.appendChild(star_point_download_link_box[i]);
+        }
+        
+        // var star_point_source_code_link_box = [];
+        // var star_point_download_link_box = [];
+        // var star_point_trailer_link_box = [];
     }
 }
 
@@ -609,60 +731,79 @@ function text_appearence2_anime2(target_)
 
 
 //#region 상단 및 크레딧 매뉴 버튼
-    obj_quick_select_main.addEventListener("mouseover",function()
-    {
-        obj_quick_select_main.style.color = "#749eca";
-    })
+obj_quick_select_main.addEventListener("mouseover",function()
+{
+    obj_quick_select_main.style.color = "#749eca";
+});
 
-    obj_quick_select_main.addEventListener("mouseleave",function()
-    {
-        obj_quick_select_main.style.color = "#fff9f6";
-    })
+obj_quick_select_main.addEventListener("mouseleave",function()
+{
+    obj_quick_select_main.style.color = "#fff9f6";
+});
 
-    obj_quick_select_main.addEventListener("click",function()
-    {
-        window.scrollTo({top : 0, left : 0, behavior : "smooth"});
-    })
+obj_quick_select_main.addEventListener("click",function()
+{
+    window.scrollTo({top : 0, left : 0, behavior : "smooth"});
+});
 
-    obj_quick_select_contact.addEventListener("mouseover",function()
-    {
-        obj_quick_select_contact.style.color = "#749eca";
-    })
+obj_quick_select_contact.addEventListener("mouseover",function()
+{
+    obj_quick_select_contact.style.color = "#749eca";
+});
 
-    obj_quick_select_contact.addEventListener("mouseleave",function()
-    {
-        obj_quick_select_contact.style.color = "#fff9f6";
-    })
+obj_quick_select_contact.addEventListener("mouseleave",function()
+{
+    obj_quick_select_contact.style.color = "#fff9f6";
+});
 
-    obj_quick_select_contact.addEventListener("click",function()
-    {
-        window.scrollTo({top : 600, left : 0, behavior : "smooth"});
-    })
+obj_quick_select_contact.addEventListener("click",function()
+{
+    window.scrollTo({top : 600, left : 0, behavior : "smooth"});
+});
 
-    obj_quick_select_works.addEventListener("mouseover",function()
-    {
-        obj_quick_select_works.style.color = "#749eca";
-    })
+obj_quick_select_works.addEventListener("mouseover",function()
+{
+    obj_quick_select_works.style.color = "#749eca";
+});
 
-    obj_quick_select_works.addEventListener("mouseleave",function()
-    {
-        obj_quick_select_works.style.color = "#fff9f6";
-    })
+obj_quick_select_works.addEventListener("mouseleave",function()
+{
+    obj_quick_select_works.style.color = "#fff9f6";
+});
 
-    obj_quick_select_works.addEventListener("click",function()
-    {
-        window.scrollTo({top : 2400, left : 0, behavior : "smooth"});
-    })
-    
-    obj_credit.addEventListener("mouseover",function()
-    {
-        obj_credit.style.color = "#dcc4db";
-    })
+obj_quick_select_works.addEventListener("click",function()
+{
+    window.scrollTo({top : 2400, left : 0, behavior : "smooth"});
+});
 
-    obj_credit.addEventListener("mouseleave",function()
+obj_credit.addEventListener("mouseover",function()
+{
+    obj_credit.style.color = "#dcc4db";
+});
+
+obj_credit.addEventListener("mouseleave",function()
+{
+    obj_credit.style.color = "#ffffff";
+});
+
+
+//별 클릭 이벤트
+function star_click_event(evt)
+{
+    var i = evt.currentTarget.param1;
+    var tmp_val = 2410+i*120*5;
+    window.scrollTo({top : tmp_val, left : 0, behavior : "smooth"});
+    debug_log("scroll to : "+tmp_val);
+}
+
+document.addEventListener("click",function()
+{
+    for(var i = 0; i < star_point.length; i++)
     {
-        obj_credit.style.color = "#ffffff";
-    })
+        star_point[i].addEventListener("click",star_click_event);
+        star_point[i].param1 = i;
+    }
+});
 //#endregion
 
 
@@ -824,6 +965,7 @@ function text_appearence2_anime2(target_)
 //#region when window resized
 window.addEventListener("resize", function()
 {
+    is_window_resized = true;
     css_values();
 })
 //#endregion
@@ -838,38 +980,42 @@ function css_values()
     c_x_comp = correct_value(c_x_comp,0,1);
     is_pc = (c_w < 1080 || c_h/c_w > 1 || (/Android|iPhone/i.test(navigator.userAgent))) ? 1/c_x : 1;
     
+    if (is_window_resized)
+    {
+        var main_trailer_height = c_h*1.1+32;
+        document.documentElement.style.setProperty("--view_width_x1p1",main_trailer_height+"px");
+        document.documentElement.style.setProperty("--view_height",c_h+"px");
+        document.documentElement.style.setProperty("--trailer_video_xx",(is_pc == 1) ? (64+"px") : (c_w-main_trailer_height/9*16)*0.5+"px");
+        
 
-    var main_trailer_height = c_h*1.1+32;
-    document.documentElement.style.setProperty("--view_width_x1p1",main_trailer_height+"px");
-    document.documentElement.style.setProperty("--view_height",c_h+"px");
-    document.documentElement.style.setProperty("--trailer_video_xx",(is_pc == 1) ? (64+"px") : (c_w-main_trailer_height/9*16)*0.5+"px");
-    
+        document.documentElement.style.setProperty("--sr168px",c_w-168*c_x_comp+"px");
+        document.documentElement.style.setProperty("--sr288px",c_w-288*c_x_comp+"px");
+        document.documentElement.style.setProperty("--sr384px",c_w-384*c_x_comp+"px");
+        document.documentElement.style.setProperty("--sr500px",c_w-500*c_x_comp+"px");
 
-    document.documentElement.style.setProperty("--sr168px",c_w-168*c_x_comp+"px");
-    document.documentElement.style.setProperty("--sr288px",c_w-288*c_x_comp+"px");
-    document.documentElement.style.setProperty("--sr384px",c_w-384*c_x_comp+"px");
-    document.documentElement.style.setProperty("--sr500px",c_w-500*c_x_comp+"px");
+        
+        document.documentElement.style.setProperty("--s18px",18*c_x+"px");
+        document.documentElement.style.setProperty("--s36px",36*c_x+"px");
+        document.documentElement.style.setProperty("--s48px",48*c_x+"px");
+        document.documentElement.style.setProperty("--s108px",108*c_x+"px");
+        document.documentElement.style.setProperty("--s112px",112*c_x+"px");
+        document.documentElement.style.setProperty("--s223px",223*c_x+"px");
+        document.documentElement.style.setProperty("--s256px",256*c_x+"px");
+        document.documentElement.style.setProperty("--s160px",160*c_x+"px");
+        document.documentElement.style.setProperty("--s110px",110*c_x+"px");
+        document.documentElement.style.setProperty("--s260px",260*c_x+"px");
+        document.documentElement.style.setProperty("--s300px",300*c_x+"px");
+        document.documentElement.style.setProperty("--s410px",410*c_x+"px");
+        document.documentElement.style.setProperty("--s470px",470*c_x+"px");
+        document.documentElement.style.setProperty("--s800px",800*c_x+"px");
+        document.documentElement.style.setProperty("--s700px",700*c_x+"px");
+        document.documentElement.style.setProperty("--s500px",500*c_x+"px");
+        document.documentElement.style.setProperty("--s450px",450*c_x+"px");
 
-    
-    document.documentElement.style.setProperty("--s18px",18*c_x+"px");
-    document.documentElement.style.setProperty("--s36px",36*c_x+"px");
-    document.documentElement.style.setProperty("--s48px",48*c_x+"px");
-    document.documentElement.style.setProperty("--s108px",108*c_x+"px");
-    document.documentElement.style.setProperty("--s112px",112*c_x+"px");
-    document.documentElement.style.setProperty("--s256"+"px",256*c_x+"px");
-    document.documentElement.style.setProperty("--s160"+"px",160*c_x+"px");
-    document.documentElement.style.setProperty("--s110px",110*c_x+"px");
-    document.documentElement.style.setProperty("--s260px",260*c_x+"px");
-    document.documentElement.style.setProperty("--s300px",300*c_x+"px");
-    document.documentElement.style.setProperty("--s410px",410*c_x+"px");
-    document.documentElement.style.setProperty("--s470px",470*c_x+"px");
-    document.documentElement.style.setProperty("--s800px",800*c_x+"px");
-    document.documentElement.style.setProperty("--s700px",700*c_x+"px");
-    document.documentElement.style.setProperty("--s500px",500*c_x+"px");
-    document.documentElement.style.setProperty("--s450px",450*c_x+"px");
-
-    document.documentElement.style.setProperty("--m980px",980+(1-is_pc)*320+"px");
-    document.documentElement.style.setProperty("--m1100px",1100+(1-is_pc)*320+"px");
+        document.documentElement.style.setProperty("--m980px",980+(1-is_pc)*320+"px");
+        document.documentElement.style.setProperty("--m1100px",1100+(1-is_pc)*320+"px");
+        is_window_resized = !is_window_resized;
+    }
     
     
     
@@ -881,20 +1027,37 @@ function css_values()
     var tmp_xx = set_value_case(n_scroll_pos*4,0,3000,true);
     document.documentElement.style.setProperty("--sepa_bg_left_xx",tmp_xx+"px");
     
-    document.documentElement.style.setProperty("--m_interect_120xx",-120-mouse_movement_dis_xx-n_scroll_pos*0.8+"px"); //pink wave
-    document.documentElement.style.setProperty("--m_interect_12xx",-12+mouse_movement_dis_xx-n_scroll_pos*0.9+"px"); //purple wave
+    document.documentElement.style.setProperty("--m_interect_120xx",-120-mouse_movement_dis_xx-tmp_xx*1.5+"px"); //pink wave
+    document.documentElement.style.setProperty("--m_interect_12xx",-12+mouse_movement_dis_xx-tmp_xx*1.8+"px"); //purple wave
     document.documentElement.style.setProperty("--m_interect_0xx",-(tmp_xx)+"px"); //white wave
     
     
     var tmp_xx = (n_scroll_pos-600)*0.2;
-    tmp_xx = (tmp_xx < 320) ? -360 : tmp_xx;
-    tmp_xx = (tmp_xx <= 1520) ? tmp_xx : 4500;
+    if (tmp_xx < 240)
+    {
+        tmp_xx = 0;
+        obj_black_line.style.opacity = 0;
+        obj_black_line_head.style.opacity = 0;
+    }
+    else if (tmp_xx > 1520)
+    {
+        tmp_xx = 2000;
+        obj_black_line.style.opacity = 0;
+        obj_black_line_head.style.opacity = 0;
+    }
+    else
+    {
+        obj_black_line.style.opacity = 1;
+        obj_black_line_head.style.opacity = 1;
+    }
+
     debug_log("tmp_xx / "+tmp_xx);
     document.documentElement.style.setProperty("--black_line_xx",(-2300+tmp_xx)+"px");
     document.documentElement.style.setProperty("--black_line_yy",(c_h*0.55)+"px");
     document.documentElement.style.setProperty("--black_line_head_xx",(tmp_xx-16)+"px");
     document.documentElement.style.setProperty("--black_line_head_yy",(c_h*0.55-15)+"px");
-    
+    document.documentElement.style.setProperty("--black_line_txt_box_yy",(c_h*0.55+17)+"px");
+    document.documentElement.style.setProperty("--black_line_link_box_yy",(c_h*0.55-64)+"px");
 
     
 
@@ -906,12 +1069,18 @@ function css_values()
 
     document.documentElement.style.setProperty("--m_interect_xx2",-mouse_movement_dis_xx*0.5+"px");
     document.documentElement.style.setProperty("--m_interect_yy2",-mouse_movement_dis_yy*0.5+"px");
+    
+    document.documentElement.style.setProperty("--m_interect_xx3",mouse_movement_dis_xx*0.3+"px");
+    document.documentElement.style.setProperty("--m_interect_yy3",mouse_movement_dis_yy*0.3+"px");
 }
 
 addEventListener("mousemove",function()
 {
+    //마우스 커서 좌표 저장용 변수
     mouse_x = event.clientX;
     mouse_y = event.clientY;
+    
+    //인터렉티브 css 및 잡다한 변수들 관리용 함수
     css_values();
 });
 
@@ -922,8 +1091,9 @@ $(window).scroll(function()
     obj_trailer_video.style.filter = "blur("+(tmp_filter_val*0.1)+"px)";
     debug_log(n_scroll_pos);
     
+    //인터렉티브 css 및 잡다한 변수들 관리용 함수
     css_values();
-    //debug_log("star_point.length : "+star_point.length);
+
     for(var i = 0; i < star_point.length; i++)
     {
         var tmp_n_pos = 345+i*120-((n_scroll_pos-600)*0.2);
@@ -931,34 +1101,94 @@ $(window).scroll(function()
         debug_log("tmp_dis : "+tmp_dis);
         if (tmp_dis < 50 && n_scroll_pos < 8257)
         {
-            star_point[i].style.opacity = 1;
-            star_point_txt_box[i].style.opacity = 1;
+            //비디오 처음부터 재생
             if (star_point_img_box[i].style.opacity != 1)
             {
                 star_point_img_box[i].currentTime = 0;
             }
+            
+            //각 스타 포인트 속성 및 텍스트 박스, 이미지 박스 속성 관리
+            star_point[i].style.opacity = 1;
+            star_point[i].style.filter = "blur(0px)";
+            star_point[i].style.cursor = "pointer";
+            star_point_txt_box[i].style.opacity = 1;
             star_point_img_box[i].style.opacity = 1;
+            
+            
+            //각 스타 포인트 자리의 링크 아이콘들 속성 관리
+            if (star_point_source_code_link_box[i] != false)
+            {
+                star_point_source_code_link_box[i].style.opacity = 1;
+                star_point_source_code_link_box[i].style.cursor = "pointer";
+                star_point_source_code_link_box[i].link_owner_ele.href = star_point_source_code_link[i];
+            }
+            
+            if (star_point_download_link_box[i] != false)
+            {
+                star_point_download_link_box[i].style.opacity = 1;
+                star_point_download_link_box[i].style.cursor = "pointer";
+                star_point_download_link_box[i].link_owner_ele.href = star_point_download_link[i];
+            }
+            
+            if (star_point_trailer_link_box[i] != false)
+            {
+                star_point_trailer_link_box[i].style.opacity = 1;
+                star_point_trailer_link_box[i].style.cursor = "pointer";
+                star_point_trailer_link_box[i].link_owner_ele.href = star_point_trailer_link[i];
+            }
         }
         else if (tmp_dis >= 50 && tmp_dis < 70 && n_scroll_pos < 8257)
         {
-            star_point[i].style.opacity = (tmp_dis-55)/2.5;
+            var tmp_val = (tmp_dis-60)/2.5;
+            star_point[i].style.opacity = tmp_val;
+            star_point[i].style.filter = "blur("+tmp_val+"px)";
+            star_point[i].style.cursor = "pointer";
         }
         else
         {
+            //각 스타 포인트 속성 및 텍스트 박스, 이미지 박스 속성 관리
             if ((tmp_n_pos < 0 && tmp_dis > 320) || tmp_n_pos > 0 || n_scroll_pos >= 8257)
             {
                 star_point[i].style.opacity = 0;
+                star_point[i].style.cursor = "default";
             }
             else
             {
                 star_point[i].style.opacity = 1;
+                star_point[i].style.cursor = "pointer";
             }
+            star_point[i].style.filter = "blur(4px)";
             star_point_txt_box[i].style.opacity = 0;
             star_point_img_box[i].style.opacity = 0;
+            
+            
+            
+            //각 스타 포인트 자리의 링크 아이콘들 속성 관리
+            if (star_point_source_code_link_box[i] != false)
+            {
+                star_point_source_code_link_box[i].style.opacity = 0;
+                star_point_source_code_link_box[i].style.cursor = "default";
+                star_point_source_code_link_box[i].link_owner_ele.removeAttribute("href");
+            }
+            
+            if (star_point_download_link_box[i] != false)
+            {
+                star_point_download_link_box[i].style.opacity = 0;
+                star_point_download_link_box[i].style.cursor = "default";
+                star_point_download_link_box[i].link_owner_ele.removeAttribute("href");
+            }
+            
+            if (star_point_trailer_link_box[i] != false)
+            {
+                star_point_trailer_link_box[i].style.opacity = 0;
+                star_point_trailer_link_box[i].style.cursor = "default";
+                star_point_trailer_link_box[i].link_owner_ele.removeAttribute("href");
+            }
         }
     }
     
     
+    //스크롤 정도에 따라 작동하는 화면 애니메이션
     if (n_scroll_pos >= 1400)
     {
         obj_contact_text.style.top = "-999px";
@@ -994,6 +1224,8 @@ $(window).scroll(function()
     }
 })
 //#endregion
+
+
 
 
 
