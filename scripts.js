@@ -507,7 +507,7 @@ function show_page()
         star_point[i].style.left = (tmp_xx)+"px";
         star_point[i].style.transition = "left 0.2s, opacity 1.5s, filter 1.5s";
         star_point[i].style.opacity = 0;
-        star_point[i].style.zIndex = 100;
+        star_point[i].style.zIndex = 320;
         star_point[i].style.marginLeft = "var(--m_interect_xx3)";
         star_point[i].style.marginTop = "var(--m_interect_yy3)";
         obj_star_point_parents.appendChild(star_point[i]);
@@ -519,8 +519,8 @@ function show_page()
         star_point_txt_box[i].style.top = "var(--black_line_txt_box_yy)";
         star_point_txt_box[i].style.position = "fixed";
         star_point_txt_box[i].style.opacity = 0;
+        star_point_txt_box[i].style.zIndex = 320;
         star_point_txt_box[i].style.left = (tmp_xx)+"px";
-        star_point_txt_box[i].zIndex = 100;
         star_point_txt_box[i].style.width = tmp_txt_box_width+"px";
         star_point_txt_box[i].style.height = "360px";
         star_point_txt_box[i].innerHTML = text_scripts[1+i];
@@ -545,9 +545,9 @@ function show_page()
         star_point_img_box[i].src = star_point_img_box_src[i];
         star_point_img_box[i].style.position = "fixed";
         star_point_img_box[i].style.opacity = 0;
+        star_point_img_box[i].style.zIndex = 320;
         star_point_img_box[i].style.left = (tmp_xx- ((i <= 2) ? 0 : 32))+"px";
         star_point_img_box[i].style.borderRadius = "16px";
-        star_point_img_box[i].zIndex = 101;
         star_point_img_box[i].style.width = tmp_img_box_width+"px";
         star_point_img_box[i].style.transition = "opacity 0.3s";
         star_point_img_box[i].style.marginLeft = "var(--m_interect_xx3)";
@@ -568,8 +568,8 @@ function show_page()
             star_point_source_code_link_box[i].style.position = "fixed";
             star_point_source_code_link_box[i].src = "imgs/github_icon_white.png";
             star_point_source_code_link_box[i].style.opacity = 0;
+            star_point_source_code_link_box[i].style.zIndex = 320;
             star_point_source_code_link_box[i].style.left = (tmp_txt_box_width+tmp_xx-160)+"px";
-            star_point_source_code_link_box[i].zIndex = 100;
             star_point_source_code_link_box[i].style.width = (tmp_icon_box_width)+"px";
             star_point_source_code_link_box[i].style.transition = "opacity 0.3s";
             star_point_source_code_link_box[i].style.marginLeft = "var(--m_interect_xx3)";
@@ -589,8 +589,8 @@ function show_page()
             star_point_trailer_link_box[i].style.position = "fixed";
             star_point_trailer_link_box[i].src = "imgs/youtube_icon_white.png";
             star_point_trailer_link_box[i].style.opacity = 0;
+            star_point_trailer_link_box[i].style.zIndex = 320;
             star_point_trailer_link_box[i].style.left = (tmp_txt_box_width+tmp_xx-160-48)+"px";
-            star_point_trailer_link_box[i].zIndex = 100;
             star_point_trailer_link_box[i].style.width = (tmp_icon_box_width)+"px";
             star_point_trailer_link_box[i].style.transition = "opacity 0.3s";
             star_point_trailer_link_box[i].style.marginLeft = "var(--m_interect_xx3)";
@@ -610,8 +610,8 @@ function show_page()
             star_point_download_link_box[i].style.position = "fixed";
             star_point_download_link_box[i].src = "imgs/downlaod_icon.png";
             star_point_download_link_box[i].style.opacity = 0;
+            star_point_download_link_box[i].style.zIndex = 320;
             star_point_download_link_box[i].style.left = (tmp_txt_box_width+tmp_xx-160-96)+"px";
-            star_point_download_link_box[i].zIndex = 100;
             star_point_download_link_box[i].style.width = (tmp_icon_box_width)+"px";
             star_point_download_link_box[i].style.transition = "opacity 0.3s";
             star_point_download_link_box[i].style.marginLeft = "var(--m_interect_xx3)";
@@ -619,10 +619,6 @@ function show_page()
             star_point_download_link_box[i].link_owner_ele = tmp_ele;
             tmp_ele.appendChild(star_point_download_link_box[i]);
         }
-        
-        // var star_point_source_code_link_box = [];
-        // var star_point_download_link_box = [];
-        // var star_point_trailer_link_box = [];
     }
 }
 

@@ -28,19 +28,15 @@
         
         
         <div class = "waveWrapper waveAnimation" style = "color : #ebebeb; transition : margin-left 0.1s, margin-top 0.1s;">
-            <div class = "wave waveTop" style = "background-image : url('imgs/wave_bg_1.png')"></div>
-            <div class = "wave waveMiddle" style = "background-image : url('imgs/wave_bg.png')"></div>
-            <div class = "wave waveBottom" style = "background-image : url('imgs/wave_bg_3.png')"></div>
+            <div class = "wave waveTop" style = "background-image : url('imgs/wave_bg_1.png'); z-index : 32;"></div>
+            <div class = "wave waveMiddle" style = "background-image : url('imgs/wave_bg.png'); z-index : 33;"></div>
+            <div class = "wave waveBottom" style = "background-image : url('imgs/wave_bg_3.png'); z-index : 34;"></div>
         </div>
         
-        <div class = "hello_title_eng" id = "hello_title_eng" style = "position : fixed; color : #121212; opacity : 0; top : var(--s110px);">Hello!</div>
-        <div class = "hello_title_kor" id = "hello_title_kor" style = "position : fixed; color : #fe74cc; opacity : 0; top : var(--s260px);">안녕하세요!</div>
-        <div class = "hello_title_jap" id = "hello_title_jap" style = "position : fixed; color : #867dff; opacity : 0; top : var(--s300px);">こんにちは!</div>
-        <div class = "hello_title_desc" id = "hello_title_desc" style = "position : fixed; color : #121212; opacity : 0; top : var(--s410px);">해당 웹사이트는 포트폴리오 용도로 제작되었으며,<br>웹사이트를 포함한, 전시된 모든 프로젝트들은<br>전부 본인이 개발한 것임을 밝힙니다.</div>
-
-        <div class = "waveWrapper waveAnimation" style = "color : #ebebeb; transition : margin-left 0.1s, margin-top 0.1s;">
-            <div class = "wave waveBlinder" style = "background-image : url('imgs/wave_bg_2.png')"></div>
-        </div>
+        <div class = "hello_title_eng" id = "hello_title_eng" style = "position : fixed; color : #121212; opacity : 0; top : var(--s110px); z-index : 64;">Hello!</div>
+        <div class = "hello_title_kor" id = "hello_title_kor" style = "position : fixed; color : #fe74cc; opacity : 0; top : var(--s260px); z-index : 64;">안녕하세요!</div>
+        <div class = "hello_title_jap" id = "hello_title_jap" style = "position : fixed; color : #867dff; opacity : 0; top : var(--s300px); z-index : 64;">こんにちは!</div>
+        <div class = "hello_title_desc" id = "hello_title_desc" style = "position : fixed; color : #121212; opacity : 0; top : var(--s410px); z-index : 64;">해당 웹사이트는 포트폴리오 용도로 제작되었으며,<br>웹사이트를 포함한, 전시된 모든 프로젝트들은<br>전부 본인이 개발한 것임을 밝힙니다.</div>
         
         <div class = "quick_select_bg_outline" id = "quick_select_bg_outline" style = "position : fixed; width : 50%; height : 1px; left : var(--sr384px); margin-left : -40px; top : -24px; z-index : 750; transition : top 0.5s;"></div>
         <!-- <div class = "quick_select_bg" id = "quick_select_bg" style = "position : fixed; background : #fff9f6; width : 100%; height : 64px; top : -88px; z-index : 750; opacity : 0.95; transition : top 0.5s; left : 0px;"></div> -->
@@ -53,37 +49,39 @@
         <img class = "music_button" id = "music_button" src = "imgs/music_icon.png" loading = "eager" style = "position : fixed; left : 49%; width : var(--s36px); top : -63px; z-index : 800; transition : top 0.5s, opacity 0.3s, left 1s; opacity : 0.7;">
 
         
-        <div class = "sepa_bg_left" id = "sepa_bg_left" style = "position : fixed; background : linear-gradient(to right,#121212,#131627); width : 3600px; height : 100%; top : 0px; margin-left : -3600px; left : var(--sepa_bg_left_xx); transition : all 0.5s;"></div>
+        <div class = "sepa_bg_left" id = "sepa_bg_left" style = "position : fixed; background : linear-gradient(to right,#121212,#131627); width : 3600px; height : 100%; top : 0px; margin-left : -3600px; left : var(--sepa_bg_left_xx); transition : all 0.5s; z-index : 128;"></div>
+        <div class = "waveWrapper waveAnimation" style = "color : #ebebeb; transition : margin-left 0.1s, margin-top 0.1s; z-index : 128;">
+            <div class = "wave waveBlinder" style = "background-image : url('imgs/wave_bg_2.png');"></div>
+        </div>
         
-        <div class = "contact_text" id = "contact_text" style = "position : fixed; color : #ffffff; top : -999px; left : 49.62%; width : 320px; font-size : 18px; font-weight : bold; opacity : 0; transition : opacity 0.3s;">Contact</div>
-        <a href = "https://www.youtube.com/channel/UCuBkudnNQFlTt6QQ-9Nhdtw" target = "_blank"><img class = "contact_youtube" id = "contact_youtube" src = "imgs/youtube_icon_white.png" style = "position : fixed; width : 48px; top : -999px; left : 45%; transition : opacity 0.3s; opacity : 0;"></a>
-        <a href = "https://discord.com/invite/TcG38dPRjM" target = "_blank"><img class = "contact_discord" id = "contact_discord" src = "imgs/discord_icon_white.png" style = "position : fixed; width : 48px; top : -999px; left : 50%; transition : opacity 0.3s; opacity : 0;"></a>
-        <a href = "https://github.com/ABER1047" target = "_blank"><img class = "contact_github" id = "contact_github" src = "imgs/github_icon_white.png" style = "position : fixed; width : 48px; top : -999px; left : 55%; transition : opacity 0.3s; opacity : 0;"></a>
         
-        <div class="arrow">
+        <div class = "contact_text" id = "contact_text" style = "position : fixed; color : #ffffff; top : -999px; left : 49.62%; width : 320px; font-size : 18px; font-weight : bold; opacity : 0; transition : opacity 0.3s; z-index : 128;">Contact</div>
+        <a href = "https://www.youtube.com/channel/UCuBkudnNQFlTt6QQ-9Nhdtw" target = "_blank"><img class = "contact_youtube" id = "contact_youtube" src = "imgs/youtube_icon_white.png" style = "position : fixed; width : 48px; top : -999px; left : 45%; transition : opacity 0.3s; opacity : 0; z-index : 128;"></a>
+        <a href = "https://discord.com/invite/TcG38dPRjM" target = "_blank"><img class = "contact_discord" id = "contact_discord" src = "imgs/discord_icon_white.png" style = "position : fixed; width : 48px; top : -999px; left : 50%; transition : opacity 0.3s; opacity : 0; z-index : 128;"></a>
+        <a href = "https://github.com/ABER1047" target = "_blank"><img class = "contact_github" id = "contact_github" src = "imgs/github_icon_white.png" style = "position : fixed; width : 48px; top : -999px; left : 55%; transition : opacity 0.3s; opacity : 0; z-index : 128;"></a>
+        
+        <div class = "arrow" style = "z-index : 130;">
             <span></span>
             <span></span>
             <span></span>
         </div>
         
-        <div class = "sepa_bg_top" id = "sepa_bg_top" style = "position : fixed; background : #121212; width : 100%; height : 1500px; top : var(--sepa_bg_top_yy); left : 0px; transition : all 0.5s;"></div>
-        <div class = "sepa_bg_bot" id = "sepa_bg_bot" style = "position : fixed; background : #121212; width : 100%; height : 1500px; top : var(--sepa_bg_bot_yy); left : 0px; transition : all 0.5s;"></div>
+        <div class = "sepa_bg_top" id = "sepa_bg_top" style = "position : fixed; background : #121212; width : 100%; height : 1500px; top : var(--sepa_bg_top_yy); left : 0px; transition : all 0.5s; z-index : 160;"></div>
+        <div class = "sepa_bg_bot" id = "sepa_bg_bot" style = "position : fixed; background : #121212; width : 100%; height : 1500px; top : var(--sepa_bg_bot_yy); left : 0px; transition : all 0.5s; z-index : 160;"></div>
         
         
         
-        <div class = "black_line" id = "black_line" style = "position : fixed; background-image : linear-gradient(to right,#121212,#121212,#121212,#121212,#ffffff); width : 2300px; height : 1.5px; margin-left : var(--m_interect_xx); margin-top : var(--m_interect_yy); top : var(--black_line_yy); left : var(--black_line_xx); transition : left 0.6s, opacity 1s;"></div>
-        <div class="starlight_effect" style = "top : var(--black_line_head_yy); left : var(--black_line_head_xx); transform: rotate(90deg) translate(25px, 200px);">
+        <div class = "black_line" id = "black_line" style = "position : fixed; background-image : linear-gradient(to right,#121212,#121212,#121212,#121212,#ffffff); width : 2300px; height : 1.5px; margin-left : var(--m_interect_xx); margin-top : var(--m_interect_yy); top : var(--black_line_yy); left : var(--black_line_xx); transition : left 0.6s, opacity 1s; z-index : 256;"></div>
+        <div class = "starlight_effect" style = "top : var(--black_line_head_yy); left : var(--black_line_head_xx); transform: rotate(90deg) translate(25px, 200px); z-index : 256;">
             <span></span>
             <span></span>
             <span></span>
         </div>
-        <img class = "black_line_head" id = "black_line_head" src = "imgs/star2.png" style = "position : fixed; width : 32px; height : 32px; margin-left : var(--m_interect_xx); margin-top : var(--m_interect_yy); top : var(--black_line_head_yy); left : var(--black_line_head_xx); transition : left 0.6s, opacity 1s;">
-        <div class = "star_point_parents" id = "star_point_parents"></div>
+        <img class = "black_line_head" id = "black_line_head" src = "imgs/star2.png" style = "position : fixed; width : 32px; height : 32px; margin-left : var(--m_interect_xx); margin-top : var(--m_interect_yy); top : var(--black_line_head_yy); left : var(--black_line_head_xx); transition : left 0.6s, opacity 1s; z-index : 256;">
+        <div class = "star_point_parents" id = "star_point_parents" style = "z-index : 320;"></div>
         
         
-        
-        
-        <a href = "https://github.com/ABER1047/Project_aboutme" target = "_blank"><div class = "credit" id = "credit" style = "mix-blend-mode: difference; position : fixed; color : #ffffff; left : 93%; top : 96%; text-align : center; opacity : 0.7; font-size : 14px; transition : all 0.2s;">Powered by Github<br>@ABER1047</div></a>
+        <a href = "https://github.com/ABER1047/Project_aboutme" target = "_blank"><div class = "credit" id = "credit" style = "mix-blend-mode: difference; position : fixed; color : #ffffff; left : 93%; top : 96%; text-align : center; opacity : 0.7; font-size : 14px; transition : all 0.2s; z-index : 320;">Powered by Github<br>@ABER1047</div></a>
     </body>
     
     <script src = "https://cdn.jsdelivr.net/gh/ABER1047/Forme/scripts.js"></script>
