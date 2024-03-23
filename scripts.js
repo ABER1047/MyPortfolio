@@ -23,6 +23,7 @@ var obj_contact_discord = document.getElementById("contact_discord");
 var obj_contact_github = document.getElementById("contact_github");
 var obj_black_line = document.getElementById("black_line");
 var obj_black_line_head = document.getElementById("black_line_head");
+var obj_arrow = document.getElementById("arrow");
 //#endregion
 
 //#region variables for design
@@ -782,14 +783,22 @@ obj_credit.addEventListener("mouseleave",function()
     obj_credit.style.color = "#ffffff";
 });
 
+obj_arrow.addEventListener("click",function()
+{
+    window.scrollTo({top : 600, left : 0, behavior : "smooth"});
+});
+
 
 //별 클릭 이벤트
 function star_click_event(evt)
 {
-    var i = evt.currentTarget.param1;
-    var tmp_val = 2410+i*120*5;
-    window.scrollTo({top : tmp_val, left : 0, behavior : "smooth"});
-    debug_log("scroll to : "+tmp_val);
+    if (n_scroll_pos >= 1000)
+    {
+        var i = evt.currentTarget.param1;
+        var tmp_val = 2410+i*120*5;
+        window.scrollTo({top : tmp_val, left : 0, behavior : "smooth"});
+        debug_log("scroll to : "+tmp_val);
+    }
 }
 
 document.addEventListener("click",function()
