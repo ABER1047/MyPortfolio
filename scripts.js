@@ -128,20 +128,20 @@ function set_language(region)
     if (tmp_current_region == "South Korea")
     {
         //#region Korean text scripts
-        text_scripts[1] = "<span class = 'accent'>2013년도 (당시 초등학교 3학년)</span>";
+        text_scripts[1] = "<span class = 'accent_gold'>2013년도 (당시 초등학교 3학년)</span>";
         text_scripts[1] += "</br>";
         text_scripts[1] += "첫 프로그래밍(GML) 입문";
         
-        text_scripts[2] = "<span class = 'accent'>2016년 1월 (당시 초등학교 졸업 후 겨울 방학)</span>";
+        text_scripts[2] = "<span class = 'accent_red'>2016년 1월 (당시 초등학교 졸업 후 겨울 방학)</span>";
         text_scripts[2] += "</br>";
-        text_scripts[2] += "<span class = 'accent2'>첫 모바일 게임 개발</span>";
+        text_scripts[2] += "<span class = 'accent_red2'>첫 모바일 게임 개발</span>";
         text_scripts[2] += "</br>";
         text_scripts[2] += "</br>";
         text_scripts[2] += "겨울 방학때 처음으로 제작해 Google Play에 출시";
         
-        text_scripts[3] = "<span class = 'accent'>2017년도</span>";
+        text_scripts[3] = "<span class = 'accent_gold'>2017년도</span>";
         text_scripts[3] += "</br>";
-        text_scripts[3] += "첫 모바일 게임 <span class = 'accent2'>15만 다운로드 달성</span>";
+        text_scripts[3] += "첫 모바일 게임 <span class = 'accent_gold2'>15만 다운로드 달성</span>";
         text_scripts[3] += "</br>";
         text_scripts[3] += "</br>";
         text_scripts[3] += "Google Play 앱스토어 Top 100위 안에 등재된 이후,"
@@ -151,9 +151,9 @@ function set_language(region)
         text_scripts[3] += "</br>";
         text_scripts[3] += "(현재는 게임이 관리되지 않아 앱스토어에서 삭제됨)";
         
-        text_scripts[4] = "<span class = 'accent'>2018년도 후반기</span>";
+        text_scripts[4] = "<span class = 'accent_red'>2018년도 후반기</span>";
         text_scripts[4] += "</br>";
-        text_scripts[4] += "<span class = 'accent2'>'Astronaut (아스트로넛)'</span>";
+        text_scripts[4] += "<span class = 'accent_red2'>'Astronaut (아스트로넛)'</span>";
         text_scripts[4] += "</br>";
         text_scripts[4] += "</br>";
         text_scripts[4] += "특성화고 진학을 위해";
@@ -163,9 +163,9 @@ function set_language(region)
         text_scripts[4] += "</br>";
         text_scripts[4] += "(심사 결과 만점에 가까운 점수를 받았지만, 개인적인 사정으로 인해 진학 X)";
         
-        text_scripts[5] = "<span class = 'accent'>2020.03.10</span>";
+        text_scripts[5] = "<span class = 'accent_red'>2020.03.10</span>";
         text_scripts[5] += "</br>";
-        text_scripts[5] += "<span class = 'accent2'>'Arena of Wakgood (아레나 오브 왁굳)'</span>";
+        text_scripts[5] += "<span class = 'accent_red2'>'Arena of Wakgood (아레나 오브 왁굳)'</span>";
         text_scripts[5] += "</br>";
         text_scripts[5] += "</br>";
         text_scripts[5] += "2019년도부터 약 1년 간";
@@ -178,18 +178,18 @@ function set_language(region)
         text_scripts[5] += "</br>";
         text_scripts[5] += "2020.03.10 출시";
         
-        text_scripts[6] = "<span class = 'accent'>2022.07.03</span>";
+        text_scripts[6] = "<span class = 'accent_gold'>2022.07.03</span>";
         text_scripts[6] += "</br>";
-        text_scripts[6] += "<span class = 'accent2'>'Delauney Triangulation (들로네 삼각분할)'</span>";
+        text_scripts[6] += "<span class = 'accent_gold2'>'Delauney Triangulation (들로네 삼각분할)'</span>";
         text_scripts[6] += "</br>";
         text_scripts[6] += "</br>";
         text_scripts[6] += "고등학교 수학 주제 탐구 활동을 위해"
         text_scripts[6] += "</br>";
         text_scripts[6] += "'들로네 삼각분할'을 구현한 프로젝트 제작";
         
-        text_scripts[7] = "<span class = 'accent'>2023.12.16</span>";
+        text_scripts[7] = "<span class = 'accent_purple'>2023.12.16</span>";
         text_scripts[7] += "</br>";
-        text_scripts[7] += "<span class = 'accent2'>'Bocchi!'</span>";
+        text_scripts[7] += "<span class = 'accent_purple2'>'Bocchi!'</span>";
         text_scripts[7] += "</br>";
         text_scripts[7] += "</br>";
         text_scripts[7] += "Steam(스팀)의 Wallpaper Engine을 위한 웹사이트";
@@ -197,9 +197,9 @@ function set_language(region)
         text_scripts[7] += "</br>";
         text_scripts[7] += "2023.12.16 출시";
         
-        text_scripts[8] = "<span class = 'accent'>2023.01.19</span>";
+        text_scripts[8] = "<span class = 'accent_red'>2023.01.19</span>";
         text_scripts[8] += "</br>";
-        text_scripts[8] += "<span class = 'accent2'>'Project Wak (프로젝트 왁)'</span>";
+        text_scripts[8] += "<span class = 'accent_red2'>'Project Wak (프로젝트 왁)'</span>";
         text_scripts[8] += "</br>";
         text_scripts[8] += "</br>";
         text_scripts[8] += "2021년도 후반기부터 약 1년 반 동안";
@@ -212,9 +212,9 @@ function set_language(region)
         text_scripts[8] += "</br>";
         text_scripts[8] += "2023.01.19 출시";
         
-        text_scripts[9] = "<span class = 'accent'>2023.03.11</span>";
+        text_scripts[9] = "<span class = 'accent_purple'>2023.03.11</span>";
         text_scripts[9] += "</br>";
-        text_scripts[9] += "<span class = 'accent2'>'Hirori Bocchi!'</span>";
+        text_scripts[9] += "<span class = 'accent_purple2'>'Hirori Bocchi!'</span>";
         text_scripts[9] += "</br>";
         text_scripts[9] += "</br>";
         text_scripts[9] += "Steam(스팀)의 Wallpaper Engine을 위한 웹사이트";
@@ -222,9 +222,9 @@ function set_language(region)
         text_scripts[9] += "</br>";
         text_scripts[9] += "2023.03.11 출시";
         
-        text_scripts[10] = "<span class = 'accent'>2024.01.14</span>";
+        text_scripts[10] = "<span class = 'accent_red'>2024.01.14</span>";
         text_scripts[10] += "</br>";
-        text_scripts[10] += "<span class = 'accent2'>'Project Wak Beat (프로젝트 왁비트)'</span>";
+        text_scripts[10] += "<span class = 'accent_red2'>'Project Wak Beat (프로젝트 왁비트)'</span>";
         text_scripts[10] += "</br>";
         text_scripts[10] += "</br>";
         text_scripts[10] += "2023년도부터 약 1년 간";
@@ -243,20 +243,20 @@ function set_language(region)
     else if (tmp_current_region == "Japan")
     {
         //#region Japanese text scripts
-        text_scripts[1] = "<span class = 'jp'><span class = 'accent'>2013年度(小学校3年生)</span>";
+        text_scripts[1] = "<span class = 'jp'><span class = 'accent_gold'>2013年度(小学校3年生)</span>";
         text_scripts[1] += "</br>";
         text_scripts[1] += "初プログラミング(GML)入門</span>";
         
-        text_scripts[2] = "<span class = 'jp'><span class = 'accent'>2016年1月(小学校卒業後の冬休み)</span>";
+        text_scripts[2] = "<span class = 'jp'><span class = 'accent_red'>2016年1月(小学校卒業後の冬休み)</span>";
         text_scripts[2] += "</br>";
         text_scripts[2] += "初モバイルゲーム";
         text_scripts[2] += "</br>";
         text_scripts[2] += "</br>";
         text_scripts[2] += "冬休みに初めて作って、Google Playにリリース</span>";
         
-        text_scripts[3] = "<span class = 'jp'><span class = 'accent'>2017年度</span>";
+        text_scripts[3] = "<span class = 'jp'><span class = 'accent_gold'>2017年度</span>";
         text_scripts[3] += "</br>";
-        text_scripts[3] += "モバイルゲーム<span class = 'accent2'>15万ダウンロード達成</span>";
+        text_scripts[3] += "モバイルゲーム<span class = 'accent_gold2'>15万ダウンロード達成</span>";
         text_scripts[3] += "</br>";
         text_scripts[3] += "</br>";
         text_scripts[3] += "Google PlayのTop 100位以内に登録された後、"
@@ -266,9 +266,9 @@ function set_language(region)
         text_scripts[3] += "</br>";
         text_scripts[3] += "(現在はゲームの管理がされていないので、App Storeから削除されています)</span>";
         
-        text_scripts[4] = "<span class = 'jp'><span class = 'accent'>2018年度後半期</span>";
+        text_scripts[4] = "<span class = 'jp'><span class = 'accent_red'>2018年度後半期</span>";
         text_scripts[4] += "</br>";
-        text_scripts[4] += "<span class = 'accent2'>'Astronaut (アストロノート)'</span>";
+        text_scripts[4] += "<span class = 'accent_red2'>'Astronaut (アストロノート)'</span>";
         text_scripts[4] += "</br>";
         text_scripts[4] += "</br>";
         text_scripts[4] += "特性化進学のために";
@@ -278,9 +278,9 @@ function set_language(region)
         text_scripts[4] += "</br>";
         text_scripts[4] += "(審査結果満点に近いスコアを受けたが、個人的な事情により進学X)</span>";
         
-        text_scripts[5] = "<span class = 'jp'><span class = 'accent'>2020.03.10</span>";
+        text_scripts[5] = "<span class = 'jp'><span class = 'accent_red'>2020.03.10</span>";
         text_scripts[5] += "</br>";
-        text_scripts[5] += "<span class = 'accent2'>'Arena of Wakgood (アリーナオブワック)'</span>";
+        text_scripts[5] += "<span class = 'accent_red2'>'Arena of Wakgood (アリーナオブワック)'</span>";
         text_scripts[5] += "</br>";
         text_scripts[5] += "</br>";
         text_scripts[5] += "2019年度から約1年間";
@@ -293,18 +293,18 @@ function set_language(region)
         text_scripts[5] += "</br>";
         text_scripts[5] += "2020.03.10リリース</span>";
         
-        text_scripts[6] = "<span class = 'jp'><span class = 'accent'>2022.07.03</span>";
+        text_scripts[6] = "<span class = 'jp'><span class = 'accent_gold'>2022.07.03</span>";
         text_scripts[6] += "</br>";
-        text_scripts[6] += "<span class = 'accent2'>'Delauney Triangulation (デローネ三角分割)'</span>";
+        text_scripts[6] += "<span class = 'accent_gold2'>'Delauney Triangulation (デローネ三角分割)'</span>";
         text_scripts[6] += "</br>";
         text_scripts[6] += "</br>";
         text_scripts[6] += "高校の時、数学テーマ探求活動のために製作したプロジェクト"
         text_scripts[6] += "</br>";
         text_scripts[6] += "'デローネ三角分割'を具現したプロジェクト</span>";
         
-        text_scripts[7] = "<span class = 'jp'><span class = 'accent'>2023.12.16</span>";
+        text_scripts[7] = "<span class = 'jp'><span class = 'accent_purple'>2023.12.16</span>";
         text_scripts[7] += "</br>";
-        text_scripts[7] += "<span class = 'accent2'>'Bocchi!'</span>";
+        text_scripts[7] += "<span class = 'accent_purple2'>'Bocchi!'</span>";
         text_scripts[7] += "</br>";
         text_scripts[7] += "</br>";
         text_scripts[7] += "SteamのWallpaper Engineのために作ったウェブサイト";
@@ -312,9 +312,9 @@ function set_language(region)
         text_scripts[7] += "</br>";
         text_scripts[7] += "2023.12.16リリース</span>";
         
-        text_scripts[8] = "<span class = 'jp'><span class = 'accent'>2023.01.19</span>";
+        text_scripts[8] = "<span class = 'jp'><span class = 'accent_red'>2023.01.19</span>";
         text_scripts[8] += "</br>";
-        text_scripts[8] += "<span class = 'accent2'>'Project Wak (プロジェクトワック)'</span>";
+        text_scripts[8] += "<span class = 'accent_red2'>'Project Wak (プロジェクトワック)'</span>";
         text_scripts[8] += "</br>";
         text_scripts[8] += "</br>";
         text_scripts[8] += "2021年度後半期から約1年半間";
@@ -327,9 +327,9 @@ function set_language(region)
         text_scripts[8] += "</br>";
         text_scripts[8] += "2023.01.19リリース</span>";
         
-        text_scripts[9] = "<span class = 'jp'><span class = 'accent'>2023.03.11</span>";
+        text_scripts[9] = "<span class = 'jp'><span class = 'accent_purple'>2023.03.11</span>";
         text_scripts[9] += "</br>";
-        text_scripts[9] += "<span class = 'accent2'>'Hirori Bocchi!'</span>";
+        text_scripts[9] += "<span class = 'accent_purple2'>'Hirori Bocchi!'</span>";
         text_scripts[9] += "</br>";
         text_scripts[9] += "</br>";
         text_scripts[9] += "SteamのWallpaper Engineのために作ったウェブサイト";
@@ -337,9 +337,9 @@ function set_language(region)
         text_scripts[9] += "</br>";
         text_scripts[9] += "2023.03.11リリース</span>";
         
-        text_scripts[10] = "<span class = 'jp'><span class = 'accent'>2024.01.14</span>";
+        text_scripts[10] = "<span class = 'jp'><span class = 'accent_red'>2024.01.14</span>";
         text_scripts[10] += "</br>";
-        text_scripts[10] += "<span class = 'accent2'>'Project Wak Beat (プロジェクトワックビート)'</span>";
+        text_scripts[10] += "<span class = 'accent_red2'>'Project Wak Beat (プロジェクトワックビート)'</span>";
         text_scripts[10] += "</br>";
         text_scripts[10] += "</br>";
         text_scripts[10] += "2023年度から約1年間";
@@ -358,20 +358,20 @@ function set_language(region)
     else
     {
         //#region English text scripts
-        text_scripts[1] = "<span class = 'accent'>2013 (3rd grade in elementary school)</span>";
+        text_scripts[1] = "<span class = 'accent_gold'>2013 (3rd grade in elementary school)</span>";
         text_scripts[1] += "</br>";
         text_scripts[1] += "I Learned programming language(GML) at first in my life";
         
-        text_scripts[2] = "<span class = 'accent'>January 2016 (Winter vacation after graduating from elementary school)</span>";
+        text_scripts[2] = "<span class = 'accent_red'>January 2016 (Winter vacation after graduating from elementary school)</span>";
         text_scripts[2] += "</br>";
         text_scripts[2] += "My first mobile game developed";
         text_scripts[2] += "</br>";
         text_scripts[2] += "</br>";
         text_scripts[2] += "The first mobile game which I developed during the winter vacation and released on Google Play";
         
-        text_scripts[3] = "<span class = 'accent'>2017</span>";
+        text_scripts[3] = "<span class = 'accent_gold'>2017</span>";
         text_scripts[3] += "</br>";
-        text_scripts[3] += "My first mobile game was<span class = 'accent2'>downloaded 150k times</span>";
+        text_scripts[3] += "My first mobile game was<span class = 'accent_gold2'>downloaded 150k times</span>";
         text_scripts[3] += "</br>";
         text_scripts[3] += "</br>";
         text_scripts[3] += "After achieved Top 100 in Google Play App Store,"
@@ -381,9 +381,9 @@ function set_language(region)
         text_scripts[3] += "</br>";
         text_scripts[3] += "(But in now, this game was deleted in app store because I didn't managed for a long time)";
         
-        text_scripts[4] = "<span class = 'accent'>the second half of 2018</span>";
+        text_scripts[4] = "<span class = 'accent_red'>the second half of 2018</span>";
         text_scripts[4] += "</br>";
-        text_scripts[4] += "<span class = 'accent2'>'Astronaut'</span>";
+        text_scripts[4] += "<span class = 'accent_red2'>'Astronaut'</span>";
         text_scripts[4] += "</br>";
         text_scripts[4] += "</br>";
         text_scripts[4] += "To go to specialized high school,";
@@ -393,9 +393,9 @@ function set_language(region)
         text_scripts[4] += "</br>";
         text_scripts[4] += "(I got close to perfect score as a result of the examination, but due to personal reasons I couldn't go to that high school X)";
         
-        text_scripts[5] = "<span class = 'accent'>March 10, 2020</span>";
+        text_scripts[5] = "<span class = 'accent_red'>March 10, 2020</span>";
         text_scripts[5] += "</br>";
-        text_scripts[5] += "<span class = 'accent2'>'Arena of Wakgood'</span>";
+        text_scripts[5] += "<span class = 'accent_red2'>'Arena of Wakgood'</span>";
         text_scripts[5] += "</br>";
         text_scripts[5] += "</br>";
         text_scripts[5] += "This game was developed for Youtuber 'Woowakgood'";
@@ -405,16 +405,16 @@ function set_language(region)
         text_scripts[5] += "</br>";
         text_scripts[5] += "March 10, 2020 Released";
         
-        text_scripts[6] = "<span class = 'accent'>July 03, 2022</span>";
+        text_scripts[6] = "<span class = 'accent_gold'>July 03, 2022</span>";
         text_scripts[6] += "</br>";
-        text_scripts[6] += "<span class = 'accent2'>'Delauney Triangulation'</span>";
+        text_scripts[6] += "<span class = 'accent_gold2'>'Delauney Triangulation'</span>";
         text_scripts[6] += "</br>";
         text_scripts[6] += "</br>";
         text_scripts[6] += "This project was developed for high school math class when I was student"
         
-        text_scripts[7] = "<span class = 'accent'>December 16, 2023</span>";
+        text_scripts[7] = "<span class = 'accent_purple'>December 16, 2023</span>";
         text_scripts[7] += "</br>";
-        text_scripts[7] += "<span class = 'accent2'>'Bocchi!'</span>";
+        text_scripts[7] += "<span class = 'accent_purple2'>'Bocchi!'</span>";
         text_scripts[7] += "</br>";
         text_scripts[7] += "</br>";
         text_scripts[7] += "This is website for 'Wallpaper Engine' which available on Steam";
@@ -422,9 +422,9 @@ function set_language(region)
         text_scripts[7] += "</br>";
         text_scripts[7] += "December 16, 2023 Released";
         
-        text_scripts[8] = "<span class = 'accent'>January 19, 2023</span>";
+        text_scripts[8] = "<span class = 'accent_red'>January 19, 2023</span>";
         text_scripts[8] += "</br>";
-        text_scripts[8] += "<span class = 'accent2'>'Project Wak'</span>";
+        text_scripts[8] += "<span class = 'accent_red2'>'Project Wak'</span>";
         text_scripts[8] += "</br>";
         text_scripts[8] += "</br>";
         text_scripts[8] += "Action, RPG, and Soullike genre game";
@@ -437,9 +437,9 @@ function set_language(region)
         text_scripts[8] += "</br>";
         text_scripts[8] += "January 19, 2023 Released";
         
-        text_scripts[9] = "<span class = 'accent'>March 11, 2023</span>";
+        text_scripts[9] = "<span class = 'accent_purple'>March 11, 2023</span>";
         text_scripts[9] += "</br>";
-        text_scripts[9] += "<span class = 'accent2'>'Hirori Bocchi!'</span>";
+        text_scripts[9] += "<span class = 'accent_purple2'>'Hirori Bocchi!'</span>";
         text_scripts[9] += "</br>";
         text_scripts[9] += "</br>";
         text_scripts[9] += "This is website for 'Wallpaper Engine' which available on Steam";
@@ -447,9 +447,9 @@ function set_language(region)
         text_scripts[9] += "</br>";
         text_scripts[9] += "March 11, 2023 Released";
         
-        text_scripts[10] = "<span class = 'accent'>January 14, 2024</span>";
+        text_scripts[10] = "<span class = 'accent_red'>January 14, 2024</span>";
         text_scripts[10] += "</br>";
-        text_scripts[10] += "<span class = 'accent2'>'Project Wak Beat'</span>";
+        text_scripts[10] += "<span class = 'accent_red2'>'Project Wak Beat'</span>";
         text_scripts[10] += "</br>";
         text_scripts[10] += "</br>";
         text_scripts[10] += "Rhythm, action, and ammunition genres game";
@@ -1032,8 +1032,6 @@ function css_values()
     var tmp_xx = set_value_case(n_scroll_pos*4,0,3000,true);
     document.documentElement.style.setProperty("--sepa_bg_left_xx",tmp_xx+"px");
     
-    document.documentElement.style.setProperty("--m_interect_120xx",-120-mouse_movement_dis_xx-tmp_xx*1.5+"px"); //pink wave
-    document.documentElement.style.setProperty("--m_interect_12xx",-12+mouse_movement_dis_xx-tmp_xx*1.8+"px"); //purple wave
     document.documentElement.style.setProperty("--m_interect_0xx",-(tmp_xx)+"px"); //white wave
     
     

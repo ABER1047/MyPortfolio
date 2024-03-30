@@ -72,7 +72,7 @@ body
 .waveAnimation .waveTop
 {
     animation : move_wave 8s linear infinite;
-    margin-top : var(--m_interect_120xx);
+    margin-top : -120px;
     /* transition : margin 0.12s; */
 }
 
@@ -95,7 +95,7 @@ body
 .waveAnimation .waveBottom
 {
     animation : move_wave 12s linear infinite;
-    margin-top : var(--m_interect_12xx);
+    margin-top : -12px;
     /* transition : margin 0.1s; */
 }
 
@@ -138,35 +138,71 @@ body
 
 .loading_bar_grad
 {
-    background-image : linear-gradient(to right,#fcf5f7,#fcf5f7,#c079d0,#7ad3e2,#3bb9d3,#d8eaeb);
     height : 2px;
+    
+    background : linear-gradient(to right,#fcf5f7,#fcf5f7,#c079d0,#7ad3e2,#3bb9d3,#d8eaeb);
+    -webkit-background-clip : content-box;
+    background-clip : content-box;
+    -webkit-text-fill-color : transparent;
+    background-size : 500% auto;
+    animation : textShine 5s ease-in-out infinite alternate;
 }
 
 
+
+
+@keyframes textShine 
+{
+    0% 
+    {
+        background-position: 0% 50%;
+    }
+    100% 
+    {
+        background-position: 100% 50%;
+    }
+}
+
 .hello_title_eng
 {
+    -webkit-text-stroke : 12px white;
+    paint-order : stroke fill;
+    color : transparent;
+    
     font-size : var(--s160px);
     left : var(--s112px);
     font-weight : bold;
     transition : opacity 0.5s;
     margin-left : var(--m_interect_xx);
     margin-top : var(--m_interect_yy);
-    text-shadow: -8px -8px 0 #fff9f6, 8px -8px 0 #fff9f6, -8px 8px 0 #fff9f6, 8px 8px 0 #fff9f6;
 }
 
 .hello_title_kor
 {
+    background : linear-gradient(to right,#d4bf7d 20%,#fbfcd0 30%,#fef7ae 70%,#dac282 80%);
+    -webkit-background-clip : text;
+    background-clip : text;
+    -webkit-text-fill-color : transparent;
+    background-size : 500% auto;
+    animation : textShine 5s ease-in-out infinite alternate;
+    
     font-size : var(--s48px);
     left : var(--s112px);
     font-weight : bold;
     transition : opacity 0.5s;
     margin-left : var(--m_interect_xx);
     margin-top : var(--m_interect_yy);
-    text-shadow: -3px -3px 0 #fff9f6, 3px -3px 0 #fff9f6, -3px 3px 0 #fff9f6, 3px 3px 0 #fff9f6;
 }
 
 .hello_title_jap
 {
+    background : linear-gradient(to left,#725e92 20%,#a994d2 30%,#816b9f 70%,#54446c 80%);
+    -webkit-background-clip : text;
+    background-clip : text;
+    -webkit-text-fill-color : transparent;
+    background-size : 500% auto;
+    animation : textShine 5s ease-in-out infinite alternate;
+    
     font-size : var(--s48px);
     left : var(--s108px);
     font-weight : bold;
@@ -174,7 +210,6 @@ body
     transition : opacity 0.5s;
     margin-left : var(--m_interect_xx);
     margin-top : var(--m_interect_yy);
-    text-shadow: -2.3px -2.3px 0 #fff9f6, 2.3px -2.3px 0 #fff9f6, -2.3px 2.3px 0 #fff9f6, 2.3px 2.3px 0 #fff9f6;
 }
 
 .hello_title_desc
@@ -184,12 +219,12 @@ body
     transition : opacity 0.5s;
     margin-left : var(--m_interect_xx);
     margin-top : var(--m_interect_yy);;
-    text-shadow: -1px -1px 0 #fff9f6, 1px -1px 0 #fff9f6, -1px 1px 0 #fff9f6, 1px 1px 0 #fff9f6;
+    /* text-shadow: -0.2px -1px 0 #fff9f6, 0.2px -0.2px 0 #fff9f6, -0.2px 0.2px 0 #fff9f6, 0.2px 0.2px 0 #fff9f6; */
 }
 
 .quick_select_bg_outline
 {
-    background : #ebebeb;
+    background : #ffffff;
     mix-blend-mode : difference;
 }
 
@@ -231,21 +266,57 @@ body
 
 
 
-.accent
+.accent_blue
 {
     font-size : 20px;
-    color : #e29056;
+    color : #6dbde3;
 }
 
-.accent2
+.accent_blue2
 {
     font-size : 18px;
-    color : white;
+    color : #bff8fe;
+}
+
+.accent_gold
+{
+    font-size : 20px;
+    color : #f0da90;
+}
+
+.accent_gold2
+{
+    font-size : 18px;
+    color : #feffd0;
+}
+
+.accent_red
+{
+    font-size : 20px;
+    color : #db624d;
+}
+
+.accent_red2
+{
+    font-size : 18px;
+    color : #f7a188;
+}
+
+.accent_purple
+{
+    font-size : 20px;
+    color : #c9b3fc;
+}
+
+.accent_purple2
+{
+    font-size : 18px;
+    color : #f4dffe;
 }
 
 .jp
 {
-    font-family: customfont_jp;
+    font-family : customfont_jp;
 }
 
 

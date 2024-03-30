@@ -12,13 +12,13 @@
 
 
     <body id = "body_t" class = "body_t">
-        <div id = "loading_bar_bg" class = "loading_bar_bg" style = "z-index : 999; left : 0px; background : #24254a; width : 100%; height : 105%; top : -8px; cursor : progress; position : fixed"></div>
+        <div id = "loading_bar_bg" class = "loading_bar_bg" style = "z-index : 999; left : 0px; background : #090909; width : 100%; height : 105%; top : -8px; cursor : progress; position : fixed"></div>
         <div id = "loading_bar_grad" class = "loading_bar_grad" style = "z-index : 1000; top : 50%; left : -100%; width : 100%; position : fixed; cursor : progress; width : 100%;"></div>
         <div id = "screen_transition_bg" class = "screen_transition_bg" style = "z-index : 1001; left : 0px; background : #ffffff; width : 100%; height : 105%; top : 101%; cursor : progress; position : fixed; transition : height 0.7s, top 0.7s;"></div>
 
         
         
-        <div class = "background" loading = "eager" style = "position : absolute; z-index : 0; width : 100%; height : 10810px; background-image : linear-gradient(to bottom,#242446,#242446,#242446,#867dff); left : 0px;"></div>
+        <div class = "background" loading = "eager" style = "position : absolute; z-index : 0; width : 100%; height : 10810px; background-image : linear-gradient(to bottom,#242446,#242446,#242446,#c9b3fc); left : 0px;"></div>
         <div class = "trailer_bg" id = "trailer_bg" style = "opacity : 1; filter : blur(0px); position : fixed;">
             <video id = "trailer_video" class = "trailer_video" muted loop playsinline control preload = "true" style = "height : var(--view_width_x1p1); filter : blur(50px); z-index : 100; position : fixed; transition : filter 1s, transform 0.03s; left : var(--trailer_video_xx);">
                 <source src = "imgs/main_trailer.mp4" type = "video/mp4" loading = "eager" preload = "auto">
@@ -27,16 +27,16 @@
         </div>
         
         
-        <div class = "waveWrapper waveAnimation" style = "color : #ebebeb; transition : margin-left 0.1s, margin-top 0.1s;">
+        <div class = "waveWrapper waveAnimation" style = "color : #ffffff;">
             <div class = "wave waveTop" style = "background-image : url('imgs/wave_bg_1.png'); z-index : 32;"></div>
             <div class = "wave waveMiddle" style = "background-image : url('imgs/wave_bg.png'); z-index : 33;"></div>
             <div class = "wave waveBottom" style = "background-image : url('imgs/wave_bg_3.png'); z-index : 34;"></div>
         </div>
         
         <div class = "hello_title_eng" id = "hello_title_eng" style = "position : fixed; color : #121212; opacity : 0; top : var(--s110px); z-index : 64;">Hello!</div>
-        <div class = "hello_title_kor" id = "hello_title_kor" style = "position : fixed; color : #fe74cc; opacity : 0; top : var(--s260px); z-index : 64;">안녕하세요!</div>
-        <div class = "hello_title_jap" id = "hello_title_jap" style = "position : fixed; color : #867dff; opacity : 0; top : var(--s300px); z-index : 64;">こんにちは!</div>
-        <div class = "hello_title_desc" id = "hello_title_desc" style = "position : fixed; color : #121212; opacity : 0; top : var(--s410px); z-index : 64;">해당 웹사이트는 포트폴리오 용도로 제작되었으며,<br>웹사이트를 포함한, 전시된 모든 프로젝트들은<br>전부 본인이 개발한 것임을 밝힙니다.</div>
+        <div class = "hello_title_kor" id = "hello_title_kor" style = "position : fixed; color : #f0da90; opacity : 0; top : var(--s260px); z-index : 64;">안녕하세요!</div>
+        <div class = "hello_title_jap" id = "hello_title_jap" style = "position : fixed; color : #6dbde3; opacity : 0; top : var(--s300px); z-index : 64;">こんにちは!</div>
+        <div class = "hello_title_desc" id = "hello_title_desc" style = "position : fixed; color : #ffffff; opacity : 0; top : var(--s410px); z-index : 64;">해당 웹사이트는 포트폴리오 용도로 제작되었으며,<br>웹사이트를 포함한, 전시된 모든 프로젝트들은<br>전부 본인이 개발한 것임을 밝힙니다.</div>
         
         <div class = "quick_select_bg_outline" id = "quick_select_bg_outline" style = "position : fixed; width : 50%; height : 1px; left : var(--sr384px); margin-left : -40px; top : -24px; z-index : 750; transition : top 0.5s;"></div>
         <!-- <div class = "quick_select_bg" id = "quick_select_bg" style = "position : fixed; background : #fff9f6; width : 100%; height : 64px; top : -88px; z-index : 750; opacity : 0.95; transition : top 0.5s; left : 0px;"></div> -->
@@ -49,8 +49,8 @@
         <img class = "music_button" id = "music_button" src = "imgs/music_icon.png" loading = "eager" style = "position : fixed; left : 49%; width : var(--s36px); top : -63px; z-index : 800; transition : top 0.5s, opacity 0.3s, left 1s; opacity : 0.7;">
 
         
-        <div class = "sepa_bg_left" id = "sepa_bg_left" style = "position : fixed; background : linear-gradient(to right,#121212,#131627); width : 3600px; height : 100%; top : 0px; margin-left : -3600px; left : var(--sepa_bg_left_xx); transition : all 0.5s; z-index : 128;"></div>
-        <div class = "waveWrapper waveAnimation" style = "color : #ebebeb; transition : margin-left 0.1s, margin-top 0.1s; z-index : 128;">
+        <div class = "sepa_bg_left" id = "sepa_bg_left" style = "position : fixed; background : linear-gradient(to right,#090909,#0c0c0e,#0c0c0e); width : 3600px; height : 100%; top : 0px; margin-left : -3600px; left : var(--sepa_bg_left_xx); transition : all 0.5s; z-index : 128;"></div>
+        <div class = "waveWrapper waveAnimation" style = "color : #ffffff; transition : margin-left 0.1s, margin-top 0.1s; z-index : 128;">
             <div class = "wave waveBlinder" style = "background-image : url('imgs/wave_bg_2.png');"></div>
         </div>
         
@@ -66,12 +66,12 @@
             <span></span>
         </div>
         
-        <div class = "sepa_bg_top" id = "sepa_bg_top" style = "position : fixed; background : #121212; width : 100%; height : 1500px; top : var(--sepa_bg_top_yy); left : 0px; transition : all 0.5s; z-index : 160;"></div>
-        <div class = "sepa_bg_bot" id = "sepa_bg_bot" style = "position : fixed; background : #121212; width : 100%; height : 1500px; top : var(--sepa_bg_bot_yy); left : 0px; transition : all 0.5s; z-index : 160;"></div>
+        <div class = "sepa_bg_top" id = "sepa_bg_top" style = "position : fixed; background : #090909; width : 100%; height : 1500px; top : var(--sepa_bg_top_yy); left : 0px; transition : all 0.5s; z-index : 160;"></div>
+        <div class = "sepa_bg_bot" id = "sepa_bg_bot" style = "position : fixed; background : #090909; width : 100%; height : 1500px; top : var(--sepa_bg_bot_yy); left : 0px; transition : all 0.5s; z-index : 160;"></div>
         
         
         
-        <div class = "black_line" id = "black_line" style = "position : fixed; background-image : linear-gradient(to right,#121212,#121212,#121212,#121212,#ffffff); width : 2300px; height : 1.5px; margin-left : var(--m_interect_xx); margin-top : var(--m_interect_yy); top : var(--black_line_yy); left : var(--black_line_xx); transition : left 0.6s, opacity 1s; z-index : 256;"></div>
+        <div class = "black_line" id = "black_line" style = "position : fixed; background-image : linear-gradient(to right,#090909,#090909,#121212,#121212,#ffffff); width : 2300px; height : 1.5px; margin-left : var(--m_interect_xx); margin-top : var(--m_interect_yy); top : var(--black_line_yy); left : var(--black_line_xx); transition : left 0.6s, opacity 1s; z-index : 256;"></div>
         <div class = "starlight_effect" style = "top : var(--black_line_head_yy); left : var(--black_line_head_xx); transform: rotate(90deg) translate(25px, 200px); z-index : 256;">
             <span></span>
             <span></span>
