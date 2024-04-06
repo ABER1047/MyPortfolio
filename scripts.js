@@ -475,9 +475,20 @@ setTimeout(show_page,loading_speed);
 obj_loading_bar_grad.style.left = "0px";
 obj_loading_bar_grad.style.transition = "left "+(loading_speed/1000)+"s";
 
+obj_trailer_video.onloadeddata = function()
+{
+    obj_trailer_video.style.opacity = 1;
+    if (loading_speed != -4)
+    {
+        setTimeout(show_page,100);
+    }
+}
+
+
 
 function show_page()
 {
+    loading_speed = -4; //-4 means that page was fully loaded
     window.scrollTo({top : 0, left : 0, behavior : "smooth"});
     css_values();
     background_stars = 0;
