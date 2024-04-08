@@ -20,6 +20,12 @@ body
     overflow-y : hidden;
     scroll-behavior : smooth;
     transition : scroll-behavior 1s;
+    cursor : none;
+}
+
+.link
+{
+    cursor : none;
 }
 
 .body_t
@@ -32,20 +38,21 @@ body
 {
     0% 
     {
-        transform: translateX(0) translateZ(0) scaleY(0.9)
+        transform : translateX(0) translateZ(0) scaleY(0.9)
     }
     50% 
     {
-        transform: translateX(-25%) translateZ(0) scaleY(1)
+        transform : translateX(-25%) translateZ(0) scaleY(1)
     }
     100% 
     {
-        transform: translateX(-50%) translateZ(0) scaleY(0.9)
+        transform : translateX(-50%) translateZ(0) scaleY(0.9)
     }
 }
 
 .waveWrapper 
 {
+    pointer-events : none;
     position : fixed;
     left : -950px;
     right : 0;
@@ -64,8 +71,8 @@ body
     height : 100%;
     background-repeat : repeat no-repeat;
     background-position : 0 bottom;
-    transform-origin: center bottom;
-    background-size: 50% 290px;
+    transform-origin : center bottom;
+    background-size : 50% 290px;
     transition : all 0.2s;
 }
 
@@ -86,6 +93,7 @@ body
 
 .waveAnimation .waveBlinder
 {
+    pointer-events : none;
     animation : move_wave 6.8s linear infinite;
     margin-top : var(--m_interect_0xx);
     top : 180px;
@@ -105,25 +113,25 @@ body
 /* width */
 ::-webkit-scrollbar 
 {
-    width: 0px;
+    width : 0px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track 
 {
-    background: #fff9f6; 
+    background : #fff9f6; 
 }
  
 /* Handle */
 ::-webkit-scrollbar-thumb 
 {
-    background: #749eca; 
+    background : #749eca; 
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover 
 {
-    background: #6082a7;
+    background : #6082a7;
 }
 
 
@@ -155,11 +163,11 @@ body
 {
     0% 
     {
-        background-position: 0% 50%;
+        background-position : 0% 50%;
     }
     100% 
     {
-        background-position: 100% 50%;
+        background-position : 100% 50%;
     }
 }
 
@@ -206,7 +214,7 @@ body
     font-size : var(--s48px);
     left : var(--s108px);
     font-weight : bold;
-    font-family: customfont_jp;
+    font-family : customfont_jp;
     transition : opacity 0.5s;
     margin-left : var(--m_interect_xx);
     margin-top : var(--m_interect_yy);
@@ -219,7 +227,7 @@ body
     transition : opacity 0.5s;
     margin-left : var(--m_interect_xx);
     margin-top : var(--m_interect_yy);;
-    /* text-shadow: -0.2px -1px 0 #fff9f6, 0.2px -0.2px 0 #fff9f6, -0.2px 0.2px 0 #fff9f6, 0.2px 0.2px 0 #fff9f6; */
+    /* text-shadow : -0.2px -1px 0 #fff9f6, 0.2px -0.2px 0 #fff9f6, -0.2px 0.2px 0 #fff9f6, 0.2px 0.2px 0 #fff9f6; */
 }
 
 .quick_select_bg_outline
@@ -230,33 +238,33 @@ body
 
 .quick_select_works
 {
-    color: #fff9f6;
-    mix-blend-mode: difference;
+    color : #fff9f6;
+    mix-blend-mode : difference;
 }
 
 .quick_select_contact
 {
-    color: #fff9f6;
-    mix-blend-mode: difference;
+    color : #fff9f6;
+    mix-blend-mode : difference;
 }
 
 .quick_select_main
 {
-    color: #fff9f6;
-    mix-blend-mode: difference;
+    color : #fff9f6;
+    mix-blend-mode : difference;
 }
 
 .music_info
 {
-    color: #fff9f6;
-    mix-blend-mode: difference;
+    color : #fff9f6;
+    mix-blend-mode : difference;
     /* text-shadow : -1px -1px 0 #fff9f6, 1px -1px 0 #fff9f6, -1px 1px 0 #fff9f6, 1px 1px 0 #fff9f6; */
 }
 
 .music_info2
 {
-    color: #fff9f6;
-    mix-blend-mode: difference;
+    color : #fff9f6;
+    mix-blend-mode : difference;
 }
 
 .music_button
@@ -323,50 +331,49 @@ body
 
 .arrow 
 {
-    position: fixed;
-    top: 95%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    cursor: pointer;
+    position : fixed;
+    top : 95%;
+    left : 50%;
+    transform : translate(-50%, -50%);
 }
 
 .arrow span 
 {
-    display: block;
-    width: 16px;
-    height: 16px;
-    border-bottom: 5px solid white;
-    border-right: 5px solid white;
-    transform: rotate(45deg);
-    margin: -10px;
-    animation: animate 2s infinite;
+    display : block;
+    width : 16px;
+    height : 16px;
+    border-bottom : 5px solid white;
+    border-right : 5px solid white;
+    transform : rotate(45deg);
+    margin : -10px;
+    animation : animate 2s infinite;
 }
 
 .arrow span:nth-child(2) 
 {
-    animation-delay: -0.2s;
+    animation-delay : -0.2s;
 }
 
 .arrow span:nth-child(3) 
 {
-    animation-delay: -0.4s;
+    animation-delay : -0.4s;
 }
 
 @keyframes animate 
 {
     0% 
     {
-        opacity: 0;
-        transform: rotate(45deg) translate(-20px, -20px);
+        opacity : 0;
+        transform : rotate(45deg) translate(-20px, -20px);
     }
     50% 
     {
-        opacity: 1;
+        opacity : 1;
     }
     100% 
     {
-        opacity: 0;
-        transform: rotate(45deg) translate(20px, 20px);
+        opacity : 0;
+        transform : rotate(45deg) translate(20px, 20px);
     }
 }
 
@@ -375,7 +382,7 @@ body
 
 .starlight_effect
 {
-    position: fixed;
+    position : fixed;
     margin-left : var(--m_interect_xx); 
     margin-top : var(--m_interect_yy); 
     transition : left 0.6s;
@@ -383,23 +390,23 @@ body
 
 .starlight_effect span 
 {
-    display: block;
-    width: 1.5px;
-    height: 1.5px;
-    border-radius: 16px;
+    display : block;
+    width : 1.5px;
+    height : 1.5px;
+    border-radius : 16px;
     background-color : white;
-    margin: -10px;
-    animation: animate_starlight 5s infinite;
+    margin : -10px;
+    animation : animate_starlight 5s infinite;
 }
 
 .starlight_effect span:nth-child(2) 
 {
-    animation-delay: -0.5s;
+    animation-delay : -0.5s;
 }
 
 .starlight_effect span:nth-child(3) 
 {
-    animation-delay: -1s;
+    animation-delay : -1s;
 }
 
 
@@ -408,16 +415,187 @@ body
 {
     0% 
     {
-        opacity: 0;
-        transform: rotate(45deg) translate(-120px, -120px);
+        opacity : 0;
+        transform : rotate(45deg) translate(-120px, -120px);
     }
     1% 
     {
-        opacity: 1;
+        opacity : 1;
     }
     100% 
     {
-        opacity: 0;
-        transform: rotate(45deg) translate(320px, 320px);
+        opacity : 0;
+        transform : rotate(45deg) translate(320px, 320px);
     }
+}
+
+
+
+/* 별 이펙트 */
+.starlight_effects
+{
+    position : fixed;
+    top : 0;
+    left : 0;
+    margin-left : var(--m_interect_xx); 
+    margin-top : var(--m_interect_yy); 
+    width : var(--sepa_bg_left_xx);;
+    height : 100vh;
+    animation : animation_starlights 50s linear infinite;
+    z-index : 256;
+    transition : width 0.5s, opacity 1s;
+    opacity : var(--starlight_effects_opacity);
+}
+
+@keyframes animation_starlights
+{
+    0%,100%
+    {
+        transform : scale(1);
+    }
+    50%
+    {
+        transform : scale(1.2);
+    }
+}
+
+.starlight_tail_effects
+{
+    position : fixed;
+    top : 50%;
+    left : 50%;
+    width : 4px;
+    height : 4px;
+    background : #ffffff;
+    border-radius : 50%;
+    box-shadow : 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 0 4px rgba(255, 255, 255, 0.1), 0 0 10px rgba(255, 255, 255, 1)  ;
+    animation : animation_starlight_tail_effects 10s linear infinite;
+}
+
+.starlight_tail_effects::before
+{
+    content : '';
+    position : fixed;
+    top : 50%;
+    transform : translateY(-50%);
+    width : 300px;
+    height : 1px;
+    background : linear-gradient(90deg, #fff, transparent);
+}
+
+@keyframes animation_starlight_tail_effects 
+{
+    0%
+    {
+        transform : rotate(0deg) translateX(0);
+        opacity : 0;
+    }
+    10%
+    {
+        opacity : 0.5;
+    }
+    100%
+    {
+        transform : rotate(0deg) translateX(-2500px);
+        opacity : 0;
+    }
+}
+
+.starlight_tail_effects:nth-child(1)
+{
+    top : 15%;
+    right : 15%;
+    left : initial;
+    animation-delay : 0s;
+    animation-duration : 5s;
+}
+
+.starlight_tail_effects:nth-child(2)
+{
+    top : 12%;
+    right : 5%;
+    left : initial;
+    animation-delay : 1s;
+    animation-duration : 12s;
+}
+
+.starlight_tail_effects:nth-child(3)
+{
+    top : 35%;
+    right : 0%;
+    left : initial;
+    animation-delay : 5s ;
+    animation-duration : 7s;
+}
+
+.starlight_tail_effects:nth-child(4)
+{
+    top : 65%;
+    right : 35%;
+    left : initial;
+    animation-delay : 3s;
+    animation-duration : 18s;
+}
+
+.starlight_tail_effects:nth-child(5)
+{
+    top : 42%;
+    right : 35%;
+    left : initial;
+    animation-delay : 8s;
+    animation-duration : 25s;
+}
+
+.starlight_tail_effects:nth-child(6)
+{
+    top : 94%;
+    right : 50%;
+    left : initial;
+    animation-delay : 10s;
+    animation-duration : 30s;
+}
+.starlight_tail_effects:nth-child(7)
+{
+    top : 77%;
+    right : 0%;
+    left : initial;
+    animation-delay : 12s;
+    animation-duration : 17.5s;
+}
+
+.starlight_tail_effects:nth-child(8)
+{
+    top : 82%;
+    right : 55%;
+    left : initial;
+    animation-delay : 5s;
+    animation-duration : 12.5s;
+}
+
+
+
+
+
+
+
+/* 마우스 커서 애니메이션 */
+.cursor_interactive_ins:hover ~ .animated_cursor 
+{
+    padding : 32px;
+}
+
+.animated_cursor
+{
+    pointer-events : none;
+    padding : 16px;
+    border-radius : 50%;
+    transition : padding 0.3s ease;
+    mix-blend-mode : difference; 
+}
+
+.animated_cursor_main
+{
+    pointer-events : none;
+    border-radius : 50%;
+    mix-blend-mode : difference; 
 }

@@ -24,6 +24,7 @@ var obj_contact_github = document.getElementById("contact_github");
 var obj_black_line = document.getElementById("black_line");
 var obj_black_line_head = document.getElementById("black_line_head");
 var obj_arrow = document.getElementById("arrow");
+var obj_animated_cursor = document.getElementById("animated_cursor");
 //#endregion
 
 //#region variables for design
@@ -54,16 +55,19 @@ n_scroll_pos = 0;
 //#endregion
 
 //#region loading speed (for dev)
-loading_speed = 3000; //9000
+var loading_speed = 3000; //9000
 //#endregion
 
-//#region variable for check is window resized
+//#region variable for check is window resized or scrolled
 is_window_resized = true;
+is_window_scrolled = true;
 //#endregion
 
 //#region variable for mouse pos
-mouse_x = 0;
-mouse_y = 0;
+var mouse_x = 0;
+var mouse_y = 0;
+var b_mouse_x = 0;
+var b_mouse_y = 0;
 //#endregion
 
 //#region variable for star element
@@ -112,6 +116,10 @@ var star_point_trailer_link = [
     "https://wallpapers-projects-aber.github.io/HitoriBocchi/", 
     "https://youtu.be/y4fmaVC6ugo?si=Ca-CoinBQLCP8I0v" ];
 //#endregion
+
+//#region variable for cursor animation
+var playing_cursor_animation = false;
+
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -477,7 +485,6 @@ obj_loading_bar_grad.style.transition = "left "+(loading_speed/1000)+"s";
 
 obj_trailer_video.onloadeddata = function()
 {
-    obj_trailer_video.style.opacity = 1;
     if (loading_speed != -4)
     {
         setTimeout(show_page,100);
@@ -488,6 +495,7 @@ obj_trailer_video.onloadeddata = function()
 
 function show_page()
 {
+    obj_trailer_video.style.opacity = 1;
     loading_speed = -4; //-4 means that page was fully loaded
     window.scrollTo({top : 0, left : 0, behavior : "smooth"});
     css_values();
@@ -533,12 +541,11 @@ function show_page()
         star_point_txt_box[i].style.opacity = 0;
         star_point_txt_box[i].style.zIndex = 320;
         star_point_txt_box[i].style.left = (tmp_xx)+"px";
-        star_point_txt_box[i].style.width = tmp_txt_box_width+"px";
-        star_point_txt_box[i].style.height = "360px";
+        star_point_txt_box[i].style.width = "auto";
+        star_point_txt_box[i].style.height = "auto";
         star_point_txt_box[i].innerHTML = text_scripts[1+i];
         star_point_txt_box[i].style.transition = "opacity 0.3s";
         star_point_txt_box[i].style.color = "#cccccc";
-        star_point_txt_box[i].style.cursor = "default";
         star_point_txt_box[i].style.marginLeft = "var(--m_interect_xx3)";
         star_point_txt_box[i].style.marginTop = "var(--m_interect_yy3)";
         obj_star_point_parents.appendChild(star_point_txt_box[i]);
@@ -587,6 +594,7 @@ function show_page()
             star_point_source_code_link_box[i].style.marginLeft = "var(--m_interect_xx3)";
             star_point_source_code_link_box[i].style.marginTop = "var(--m_interect_yy3)";
             star_point_source_code_link_box[i].link_owner_ele = tmp_ele;
+            star_point_source_code_link_box[i].id = "cursor_interactive_ins";
             tmp_ele.appendChild(star_point_source_code_link_box[i]);
         }
         
@@ -608,6 +616,7 @@ function show_page()
             star_point_trailer_link_box[i].style.marginLeft = "var(--m_interect_xx3)";
             star_point_trailer_link_box[i].style.marginTop = "var(--m_interect_yy3)";
             star_point_trailer_link_box[i].link_owner_ele = tmp_ele;
+            star_point_trailer_link_box[i].id = "cursor_interactive_ins";
             tmp_ele.appendChild(star_point_trailer_link_box[i]);
         }
         
@@ -629,6 +638,7 @@ function show_page()
             star_point_download_link_box[i].style.marginLeft = "var(--m_interect_xx3)";
             star_point_download_link_box[i].style.marginTop = "var(--m_interect_yy3)";
             star_point_download_link_box[i].link_owner_ele = tmp_ele;
+            star_point_download_link_box[i].id = "cursor_interactive_ins";
             tmp_ele.appendChild(star_point_download_link_box[i]);
         }
     }
@@ -989,103 +999,107 @@ window.addEventListener("resize", function()
 
 function css_values()
 {
-    c_w = window.innerWidth;
-    c_h = window.innerHeight;
-    c_x = c_w/1920;
     var c_x_comp = c_w/480;
     c_x_comp = correct_value(c_x_comp,0,1);
-    is_pc = (c_w < 1080 || c_h/c_w > 1 || (/Android|iPhone/i.test(navigator.userAgent))) ? 1/c_x : 1;
     
     if (is_window_resized)
     {
+        c_w = window.innerWidth;
+        c_h = window.innerHeight;
+        c_x = c_w/1920;
+        is_pc = (c_w < 1080 || c_h/c_w > 1 || (/Android|iPhone/i.test(navigator.userAgent))) ? 1/c_x : 1;
+        
         var main_trailer_height = c_h*1.1+32;
         document.documentElement.style.setProperty("--view_width_x1p1",main_trailer_height+"px");
         document.documentElement.style.setProperty("--view_height",c_h+"px");
         document.documentElement.style.setProperty("--trailer_video_xx",(is_pc == 1) ? (64+"px") : (c_w-main_trailer_height/9*16)*0.5+"px");
         
 
-        document.documentElement.style.setProperty("--sr168px",c_w-168*c_x_comp+"px");
-        document.documentElement.style.setProperty("--sr288px",c_w-288*c_x_comp+"px");
-        document.documentElement.style.setProperty("--sr384px",c_w-384*c_x_comp+"px");
-        document.documentElement.style.setProperty("--sr500px",c_w-500*c_x_comp+"px");
+        document.documentElement.style.setProperty("--sr168px",floor(c_w-168*c_x_comp)+"px");
+        document.documentElement.style.setProperty("--sr288px",floor(c_w-288*c_x_comp)+"px");
+        document.documentElement.style.setProperty("--sr384px",floor(c_w-384*c_x_comp)+"px");
+        document.documentElement.style.setProperty("--sr500px",floor(c_w-500*c_x_comp)+"px");
 
         
-        document.documentElement.style.setProperty("--s18px",18*c_x+"px");
-        document.documentElement.style.setProperty("--s36px",36*c_x+"px");
-        document.documentElement.style.setProperty("--s48px",48*c_x+"px");
-        document.documentElement.style.setProperty("--s108px",108*c_x+"px");
-        document.documentElement.style.setProperty("--s112px",112*c_x+"px");
-        document.documentElement.style.setProperty("--s223px",223*c_x+"px");
-        document.documentElement.style.setProperty("--s256px",256*c_x+"px");
-        document.documentElement.style.setProperty("--s160px",160*c_x+"px");
-        document.documentElement.style.setProperty("--s110px",110*c_x+"px");
-        document.documentElement.style.setProperty("--s260px",260*c_x+"px");
-        document.documentElement.style.setProperty("--s300px",300*c_x+"px");
-        document.documentElement.style.setProperty("--s410px",410*c_x+"px");
-        document.documentElement.style.setProperty("--s470px",470*c_x+"px");
-        document.documentElement.style.setProperty("--s800px",800*c_x+"px");
-        document.documentElement.style.setProperty("--s700px",700*c_x+"px");
-        document.documentElement.style.setProperty("--s500px",500*c_x+"px");
-        document.documentElement.style.setProperty("--s450px",450*c_x+"px");
+        document.documentElement.style.setProperty("--s18px",floor(18*c_x)+"px");
+        document.documentElement.style.setProperty("--s36px",floor(36*c_x)+"px");
+        document.documentElement.style.setProperty("--s48px",floor(48*c_x)+"px");
+        document.documentElement.style.setProperty("--s108px",floor(108*c_x)+"px");
+        document.documentElement.style.setProperty("--s112px",floor(112*c_x)+"px");
+        document.documentElement.style.setProperty("--s160px",floor(160*c_x)+"px");
+        document.documentElement.style.setProperty("--s110px",floor(110*c_x)+"px");
+        document.documentElement.style.setProperty("--s260px",floor(260*c_x)+"px");
+        document.documentElement.style.setProperty("--s300px",floor(300*c_x)+"px");
+        document.documentElement.style.setProperty("--s410px",floor(410*c_x)+"px");
 
-        document.documentElement.style.setProperty("--m980px",980+(1-is_pc)*320+"px");
-        document.documentElement.style.setProperty("--m1100px",1100+(1-is_pc)*320+"px");
+        
+        document.documentElement.style.setProperty("--black_line_yy",floor(c_h*0.55)+"px");
+        document.documentElement.style.setProperty("--black_line_head_yy",floor(c_h*0.55-15)+"px");
+        document.documentElement.style.setProperty("--black_line_txt_box_yy",floor(c_h*0.55+17)+"px");
+        document.documentElement.style.setProperty("--black_line_link_box_yy",floor(c_h*0.55-64)+"px");
         is_window_resized = !is_window_resized;
     }
     
     
     
     //for scroll animation
-    var tmp_yy = set_value_case(n_scroll_pos-450,0,1500,true);
-    document.documentElement.style.setProperty("--sepa_bg_top_yy",(tmp_yy-1500)+"px");
-    document.documentElement.style.setProperty("--sepa_bg_bot_yy",(c_h-tmp_yy)+"px");
-    
-    var tmp_xx = set_value_case(n_scroll_pos*4,0,3000,true);
-    document.documentElement.style.setProperty("--sepa_bg_left_xx",tmp_xx+"px");
-    
-    document.documentElement.style.setProperty("--m_interect_0xx",-(tmp_xx)+"px"); //white wave
-    
-    
-    var tmp_xx = (n_scroll_pos-600)*0.2;
-    if (tmp_xx < 240)
+    if (is_window_scrolled)
     {
-        tmp_xx = 0;
-        obj_black_line.style.opacity = 0;
-        obj_black_line_head.style.opacity = 0;
-    }
-    else if (tmp_xx > 1520)
-    {
-        tmp_xx = 2000;
-        obj_black_line.style.opacity = 0;
-        obj_black_line_head.style.opacity = 0;
-    }
-    else
-    {
-        obj_black_line.style.opacity = 1;
-        obj_black_line_head.style.opacity = 1;
-    }
+        var tmp_yy = set_value_case(n_scroll_pos-450,0,1500,true);
+        document.documentElement.style.setProperty("--sepa_bg_top_yy",floor(tmp_yy-1500)+"px");
+        document.documentElement.style.setProperty("--sepa_bg_bot_yy",floor(c_h-tmp_yy)+"px");
+        
+        var tmp_xx = set_value_case(n_scroll_pos*4,0,3000,true);
+        document.documentElement.style.setProperty("--sepa_bg_left_xx",floor(tmp_xx)+"px");
+        
+        document.documentElement.style.setProperty("--m_interect_0xx",-floor(tmp_xx)+"px"); //white wave
+        
+        
+        var tmp_xx = (n_scroll_pos-600)*0.2;
+        if (tmp_xx > 0 && tmp_xx < 200)
+        {
+            tmp_xx = 0;
+            obj_black_line.style.opacity = 0;
+            obj_black_line_head.style.opacity = 0;
+        }
+        else if (tmp_xx > 1520)
+        {
+            tmp_xx = 2000;
+            obj_black_line.style.opacity = 0;
+            obj_black_line_head.style.opacity = 0;
+        }
+        else
+        {
+            obj_black_line.style.opacity = 1;
+            obj_black_line_head.style.opacity = 1;
+        }
 
-    debug_log("tmp_xx / "+tmp_xx);
-    document.documentElement.style.setProperty("--black_line_xx",(-2300+tmp_xx)+"px");
-    document.documentElement.style.setProperty("--black_line_yy",(c_h*0.55)+"px");
-    document.documentElement.style.setProperty("--black_line_head_xx",(tmp_xx-16)+"px");
-    document.documentElement.style.setProperty("--black_line_head_yy",(c_h*0.55-15)+"px");
-    document.documentElement.style.setProperty("--black_line_txt_box_yy",(c_h*0.55+17)+"px");
-    document.documentElement.style.setProperty("--black_line_link_box_yy",(c_h*0.55-64)+"px");
+        //debug_log("tmp_xx / "+tmp_xx);
+        document.documentElement.style.setProperty("--black_line_xx",floor(-2300+tmp_xx)+"px");
+        document.documentElement.style.setProperty("--black_line_head_xx",floor(tmp_xx-16)+"px");
+        
+        //for starlight_effects opacity
+        debug_log("n_scroll_pos : "+n_scroll_pos);
+        document.documentElement.style.setProperty("--starlight_effects_opacity",correct_value(n_scroll_pos-1000,0,1));
+        
+        
+        is_window_scrolled = !is_window_scrolled;
+    }
+    
 
     
 
-    //for scroll & mousemove animation
+    //mousemove animation
     var mouse_movement_dis_xx = ((mouse_x - c_w*0.5)/72*is_pc);
     var mouse_movement_dis_yy = (mouse_y - c_h*0.5)/72*is_pc;
-    document.documentElement.style.setProperty("--m_interect_xx",mouse_movement_dis_xx+"px");
-    document.documentElement.style.setProperty("--m_interect_yy",mouse_movement_dis_yy+"px");
+    document.documentElement.style.setProperty("--m_interect_xx",floor(mouse_movement_dis_xx)+"px");
+    document.documentElement.style.setProperty("--m_interect_yy",floor(mouse_movement_dis_yy)+"px");
 
-    document.documentElement.style.setProperty("--m_interect_xx2",-mouse_movement_dis_xx*0.5+"px");
-    document.documentElement.style.setProperty("--m_interect_yy2",-mouse_movement_dis_yy*0.5+"px");
+    document.documentElement.style.setProperty("--m_interect_xx2",-floor(mouse_movement_dis_xx*0.5)+"px");
+    document.documentElement.style.setProperty("--m_interect_yy2",-floor(mouse_movement_dis_yy*0.5)+"px");
     
-    document.documentElement.style.setProperty("--m_interect_xx3",mouse_movement_dis_xx*0.3+"px");
-    document.documentElement.style.setProperty("--m_interect_yy3",mouse_movement_dis_yy*0.3+"px");
+    document.documentElement.style.setProperty("--m_interect_xx3",floor(mouse_movement_dis_xx*0.3)+"px");
+    document.documentElement.style.setProperty("--m_interect_yy3",floor(mouse_movement_dis_yy*0.3)+"px");
 }
 
 addEventListener("mousemove",function()
@@ -1094,9 +1108,47 @@ addEventListener("mousemove",function()
     mouse_x = event.clientX;
     mouse_y = event.clientY;
     
+    if (is_pc == 1 && !playing_cursor_animation)
+    {
+        playing_cursor_animation = true;
+        cursor_animation();
+    }
+    
     //인터렉티브 css 및 잡다한 변수들 관리용 함수
     css_values();
 });
+
+
+
+function cursor_animation()
+{
+    b_mouse_x += (mouse_x - b_mouse_x)*0.1;
+    b_mouse_y += (mouse_y - b_mouse_y)*0.1;
+    
+    //마우스 커서 애니메이션
+    document.documentElement.style.setProperty("--cursor_xx",b_mouse_x+"px");
+    document.documentElement.style.setProperty("--cursor_yy",b_mouse_y+"px");
+    document.documentElement.style.setProperty("--cursor_xx_main",mouse_x+"px");
+    document.documentElement.style.setProperty("--cursor_yy_main",mouse_y+"px");
+    
+    var tmp_width = parseInt(window.getComputedStyle(obj_animated_cursor).padding);
+    obj_animated_cursor.style.marginLeft = (-tmp_width)+"px";
+    obj_animated_cursor.style.marginTop = (-tmp_width)+"px";
+    
+    
+    if (point_distance(mouse_x,mouse_y,b_mouse_x,b_mouse_y) > 1)
+    {
+        setTimeout(cursor_animation,10);
+    }
+    else
+    {
+        playing_cursor_animation = false;
+    }
+    
+    debug_log("cursor_animation");
+}
+
+
 
 $(window).scroll(function()
 {
@@ -1106,6 +1158,7 @@ $(window).scroll(function()
     debug_log(n_scroll_pos);
     
     //인터렉티브 css 및 잡다한 변수들 관리용 함수
+    is_window_scrolled = true;
     css_values();
 
     for(var i = 0; i < star_point.length; i++)
@@ -1124,7 +1177,6 @@ $(window).scroll(function()
             //각 스타 포인트 속성 및 텍스트 박스, 이미지 박스 속성 관리
             star_point[i].style.opacity = 1;
             star_point[i].style.filter = "blur(0px)";
-            star_point[i].style.cursor = "pointer";
             star_point_txt_box[i].style.opacity = 1;
             star_point_img_box[i].style.opacity = 1;
             
@@ -1133,30 +1185,20 @@ $(window).scroll(function()
             if (star_point_source_code_link_box[i] != false)
             {
                 star_point_source_code_link_box[i].style.opacity = 1;
-                star_point_source_code_link_box[i].style.cursor = "pointer";
                 star_point_source_code_link_box[i].link_owner_ele.href = star_point_source_code_link[i];
             }
             
             if (star_point_download_link_box[i] != false)
             {
                 star_point_download_link_box[i].style.opacity = 1;
-                star_point_download_link_box[i].style.cursor = "pointer";
                 star_point_download_link_box[i].link_owner_ele.href = star_point_download_link[i];
             }
             
             if (star_point_trailer_link_box[i] != false)
             {
                 star_point_trailer_link_box[i].style.opacity = 1;
-                star_point_trailer_link_box[i].style.cursor = "pointer";
                 star_point_trailer_link_box[i].link_owner_ele.href = star_point_trailer_link[i];
             }
-        }
-        else if (tmp_dis >= 50 && tmp_dis < 70 && n_scroll_pos < 8257)
-        {
-            var tmp_val = (tmp_dis-60)/2.5;
-            star_point[i].style.opacity = tmp_val;
-            star_point[i].style.filter = "blur("+tmp_val+"px)";
-            star_point[i].style.cursor = "pointer";
         }
         else
         {
@@ -1164,12 +1206,10 @@ $(window).scroll(function()
             if ((tmp_n_pos < 0 && tmp_dis > 320) || tmp_n_pos > 0 || n_scroll_pos >= 8257)
             {
                 star_point[i].style.opacity = 0;
-                star_point[i].style.cursor = "default";
             }
             else
             {
                 star_point[i].style.opacity = 1;
-                star_point[i].style.cursor = "pointer";
             }
             star_point[i].style.filter = "blur(4px)";
             star_point_txt_box[i].style.opacity = 0;
@@ -1181,21 +1221,18 @@ $(window).scroll(function()
             if (star_point_source_code_link_box[i] != false)
             {
                 star_point_source_code_link_box[i].style.opacity = 0;
-                star_point_source_code_link_box[i].style.cursor = "default";
                 star_point_source_code_link_box[i].link_owner_ele.removeAttribute("href");
             }
             
             if (star_point_download_link_box[i] != false)
             {
                 star_point_download_link_box[i].style.opacity = 0;
-                star_point_download_link_box[i].style.cursor = "default";
                 star_point_download_link_box[i].link_owner_ele.removeAttribute("href");
             }
             
             if (star_point_trailer_link_box[i] != false)
             {
                 star_point_trailer_link_box[i].style.opacity = 0;
-                star_point_trailer_link_box[i].style.cursor = "default";
                 star_point_trailer_link_box[i].link_owner_ele.removeAttribute("href");
             }
         }
