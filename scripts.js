@@ -521,6 +521,7 @@ function show_page()
         //star image
         star_point[i] = document.createElement("img");
         star_point[i].style.top = "var(--black_line_head_yy)";
+        star_point[i].style.pointerEvents = "none";
         star_point[i].src = "imgs/star2.png";
         star_point[i].style.position = "fixed";
         star_point[i].style.width = "32px";
@@ -538,6 +539,7 @@ function show_page()
         star_point_txt_box[i] = document.createElement("div");
         star_point_txt_box[i].style.top = "var(--black_line_txt_box_yy)";
         star_point_txt_box[i].style.position = "fixed";
+        star_point_txt_box[i].style.pointerEvents = "none";
         star_point_txt_box[i].style.opacity = 0;
         star_point_txt_box[i].style.zIndex = 320;
         star_point_txt_box[i].style.left = (tmp_xx)+"px";
@@ -560,7 +562,8 @@ function show_page()
             star_point_img_box[i].loop = true;
             star_point_img_box[i].muted = true;
         }
-        star_point_img_box[i].style.top = (i <= 2) ? "var(--s470px)" : "var(--s223px)";
+        star_point_img_box[i].style.pointerEvents = "none";
+        star_point_img_box[i].style.top = (i > 2) ? (223*c_x+"px") : (470*c_x+"px");
         star_point_img_box[i].src = star_point_img_box_src[i];
         star_point_img_box[i].style.position = "fixed";
         star_point_img_box[i].style.opacity = 0;
@@ -999,15 +1002,15 @@ window.addEventListener("resize", function()
 
 function css_values()
 {
-    var c_x_comp = c_w/480;
-    c_x_comp = correct_value(c_x_comp,0,1);
-    
     if (is_window_resized)
     {
         c_w = window.innerWidth;
         c_h = window.innerHeight;
         c_x = c_w/1920;
         is_pc = (c_w < 1080 || c_h/c_w > 1 || (/Android|iPhone/i.test(navigator.userAgent))) ? 1/c_x : 1;
+        
+        var c_x_comp = c_w/480;
+        c_x_comp = correct_value(c_x_comp,0,1);
         
         var main_trailer_height = c_h*1.1+32;
         document.documentElement.style.setProperty("--view_width_x1p1",main_trailer_height+"px");
@@ -1090,7 +1093,7 @@ function css_values()
     
 
     //mousemove animation
-    var mouse_movement_dis_xx = ((mouse_x - c_w*0.5)/72*is_pc);
+    var mouse_movement_dis_xx = (mouse_x - c_w*0.5)/72*is_pc;
     var mouse_movement_dis_yy = (mouse_y - c_h*0.5)/72*is_pc;
     document.documentElement.style.setProperty("--m_interect_xx",floor(mouse_movement_dis_xx)+"px");
     document.documentElement.style.setProperty("--m_interect_yy",floor(mouse_movement_dis_yy)+"px");
@@ -1177,8 +1180,12 @@ $(window).scroll(function()
             //각 스타 포인트 속성 및 텍스트 박스, 이미지 박스 속성 관리
             star_point[i].style.opacity = 1;
             star_point[i].style.filter = "blur(0px)";
+            star_point[i].style.pointerEvents = "auto";
             star_point_txt_box[i].style.opacity = 1;
+            star_point_txt_box[i].style.pointerEvents = "auto";
             star_point_img_box[i].style.opacity = 1;
+            star_point_img_box[i].style.pointerEvents = "auto";
+
             
             
             //각 스타 포인트 자리의 링크 아이콘들 속성 관리
@@ -1206,14 +1213,18 @@ $(window).scroll(function()
             if ((tmp_n_pos < 0 && tmp_dis > 320) || tmp_n_pos > 0 || n_scroll_pos >= 8257)
             {
                 star_point[i].style.opacity = 0;
+                star_point[i].style.pointerEvents = "none";
             }
             else
             {
                 star_point[i].style.opacity = 1;
+                star_point[i].style.pointerEvents = "auto";
             }
             star_point[i].style.filter = "blur(4px)";
             star_point_txt_box[i].style.opacity = 0;
+            star_point_txt_box[i].style.pointerEvents = "none";
             star_point_img_box[i].style.opacity = 0;
+            star_point_img_box[i].style.pointerEvents = "none";
             
             
             
@@ -1253,6 +1264,11 @@ $(window).scroll(function()
         obj_contact_youtube.style.opacity = "0";
         obj_contact_discord.style.opacity = "0";
         obj_contact_github.style.opacity = "0";
+        
+        obj_contact_text.style.pointerEvents = "none";
+        obj_contact_youtube.style.pointerEvents = "none";
+        obj_contact_discord.style.pointerEvents = "none";
+        obj_contact_github.style.pointerEvents = "none";
     }
     else if (n_scroll_pos >= 500)
     {
@@ -1265,13 +1281,30 @@ $(window).scroll(function()
         obj_contact_youtube.style.opacity = "1";
         obj_contact_discord.style.opacity = "1";
         obj_contact_github.style.opacity = "1";
+        
+        obj_contact_text.style.pointerEvents = "auto";
+        obj_contact_youtube.style.pointerEvents = "auto";
+        obj_contact_discord.style.pointerEvents = "auto";
+        obj_contact_github.style.pointerEvents = "auto";
     }
-    else
+    else if (n_scroll_pos <= 500)
     {
         obj_contact_text.style.opacity = "0";
         obj_contact_youtube.style.opacity = "0";
         obj_contact_discord.style.opacity = "0";
         obj_contact_github.style.opacity = "0";
+        
+        obj_contact_text.style.pointerEvents = "none";
+        obj_contact_youtube.style.pointerEvents = "none";
+        obj_contact_discord.style.pointerEvents = "none";
+        obj_contact_github.style.pointerEvents = "none";
+    }
+    else if (n_scroll_pos <= 100)
+    {
+        obj_contact_text.style.top = "-999px";
+        obj_contact_youtube.style.top = "-999px";
+        obj_contact_discord.style.top = "-999px";
+        obj_contact_github.style.top = "-999px";
     }
 })
 //#endregion
