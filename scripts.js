@@ -486,9 +486,6 @@ obj_loading_bar_grad.style.transition = "left "+(loading_speed/1000)+"s";
 
 if (obj_trailer_video.readyState == 4)
 {
-    obj_animated_cursor.style.opacity = 1;
-    obj_animated_cursor_main.style.opacity = 1;
-    
     if (loading_speed != -4)
     {
         setTimeout(show_page,100);
@@ -499,6 +496,9 @@ if (obj_trailer_video.readyState == 4)
 
 function show_page()
 {
+    obj_animated_cursor.style.opacity = 1;
+    obj_animated_cursor_main.style.opacity = 1;
+    
     obj_trailer_video.style.opacity = 1;
     loading_speed = -4; //-4 means that page was fully loaded
     window.scrollTo({top : 0, left : 0, behavior : "smooth"});
