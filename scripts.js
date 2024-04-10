@@ -24,6 +24,7 @@ var obj_contact_github = document.getElementById("contact_github");
 var obj_black_line = document.getElementById("black_line");
 var obj_black_line_head = document.getElementById("black_line_head");
 var obj_arrow = document.getElementById("arrow");
+var obj_animated_cursor_main = document.getElementById("animated_cursor_main");
 var obj_animated_cursor = document.getElementById("animated_cursor");
 //#endregion
 
@@ -483,8 +484,11 @@ setTimeout(show_page,loading_speed);
 obj_loading_bar_grad.style.left = "0px";
 obj_loading_bar_grad.style.transition = "left "+(loading_speed/1000)+"s";
 
-obj_trailer_video.onloadeddata = function()
+if (obj_trailer_video.readyState == 4)
 {
+    obj_animated_cursor.style.opacity = 1;
+    obj_animated_cursor_main.style.opacity = 1;
+    
     if (loading_speed != -4)
     {
         setTimeout(show_page,100);
