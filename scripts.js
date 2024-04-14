@@ -8,6 +8,7 @@ var obj_hello_title_kor = document.getElementById("hello_title_kor");
 var obj_hello_title_jap = document.getElementById("hello_title_jap");
 var obj_hello_title_desc = document.getElementById("hello_title_desc");
 var obj_trailer_video = document.getElementById("trailer_video");
+var obj_trailer_bg = document.getElementById("trailer_bg");
 var obj_quick_select_bg_outline = document.getElementById("quick_select_bg_outline");
 var obj_quick_select_main = document.getElementById("quick_select_main");
 var obj_quick_select_works = document.getElementById("quick_select_works");
@@ -535,8 +536,8 @@ function show_page()
 {
     obj_animated_cursor.style.opacity = 1;
     obj_animated_cursor_main.style.opacity = 1;
+    obj_trailer_bg.style.opacity = 1;
     
-    obj_trailer_video.style.opacity = 1;
     loading_speed = -4; //-4 means that page was fully loaded
     window.scrollTo({top : 0, left : 0, behavior : "smooth"});
     css_values();
