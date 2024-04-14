@@ -26,6 +26,7 @@ var obj_black_line_head = document.getElementById("black_line_head");
 var obj_arrow = document.getElementById("arrow");
 var obj_animated_cursor_main = document.getElementById("animated_cursor_main");
 var obj_animated_cursor = document.getElementById("animated_cursor");
+var obj_starlight_effect = document.getElementById("starlight_effect");
 //#endregion
 
 //#region variables for design
@@ -72,14 +73,14 @@ var b_mouse_y = 0;
 //#endregion
 
 //#region variable for star element
-var star_point = [-4, -4, -4, -4, -4, -4, -4, -4, -4, -4];
+var star_point = [-4, -4, -4, -4, -4, -4, -4, -4, -4, -4, -4];
 var star_point_txt_box = [];
 var star_point_img_box = [];
-var star_point_img_box_src = [ "imgs/gms.png", "imgs/android.png", "imgs/google_play.jpg", "imgs/astronaut_preview.gif", "imgs/arena_of_wakgood_preview.gif", "imgs/delaunay_preview.gif", "imgs/bocchi_preview.mp4", "imgs/project_wak_preview.mp4", "imgs/hitori_bocchi_trailer.mp4", "imgs/project_wak_beat_preview.mp4"];
-var star_point_img_box_type = [ "img", "img", "img", "img", "img", "img", "video", "video", "video", "video"];
-var star_point_source_code_link_box = [false, false, false, true, true, true, true, true, true, true ];
-var star_point_download_link_box = [false, false, false, false, true, false, true, true, true, true ];
-var star_point_trailer_link_box = [false, false, false, false, true, false, true, true, true, true ];
+var star_point_img_box_src = [ "imgs/gms.png", "imgs/android.png", "imgs/google_play.jpg", "imgs/astronaut_preview.gif", "imgs/arena_of_wakgood_preview.gif", "imgs/delaunay_preview.gif", "imgs/bocchi_preview.mp4", "imgs/project_wak_preview.mp4", "imgs/hitori_bocchi_trailer.mp4", "imgs/project_wak_beat_preview.mp4", "imgs/project_D_preview.mp4"];
+var star_point_img_box_type = [ "img", "img", "img", "img", "img", "img", "video", "video", "video", "video", "video"];
+var star_point_source_code_link_box = [false, false, false, true, true, true, true, true, true, true, true ];
+var star_point_download_link_box = [false, false, false, false, true, false, true, true, true, true, false ];
+var star_point_trailer_link_box = [false, false, false, false, true, false, true, true, true, true, false ];
 
 
 //hyperlinks
@@ -93,7 +94,8 @@ var star_point_source_code_link = [
     "https://github.com/Wallpapers-Projects-ABER/bocchi", 
     "https://github.com/Project-Wak/Project-wak", 
     "https://github.com/Wallpapers-Projects-ABER/HitoriBocchi", 
-    "https://github.com/Just-Wak-Beat/Project_Wak_Beat" ];
+    "https://github.com/Just-Wak-Beat/Project_Wak_Beat",
+    "https://github.com/ABER1047/Distress-diary-Remake" ];
 var star_point_download_link = [
     false, 
     false, 
@@ -104,7 +106,8 @@ var star_point_download_link = [
     "https://steamcommunity.com/sharedfiles/filedetails/?id=2902111469", 
     "https://project-wak.github.io/Project-wak_website/", 
     "https://steamcommunity.com/sharedfiles/filedetails/?id=2945142270", 
-    "https://just-wak-beat.github.io/Project-Wak-Beat-website/" ];
+    "https://just-wak-beat.github.io/Project-Wak-Beat-website/",
+    false ];
 var star_point_trailer_link = [
     false, 
     false, 
@@ -115,7 +118,8 @@ var star_point_trailer_link = [
     "https://wallpapers-projects-aber.github.io/bocchi/", 
     "https://youtu.be/YS-_TZILsJU?si=j43eQ-QJXfc1kR7c", 
     "https://wallpapers-projects-aber.github.io/HitoriBocchi/", 
-    "https://youtu.be/y4fmaVC6ugo?si=Ca-CoinBQLCP8I0v" ];
+    "https://youtu.be/y4fmaVC6ugo?si=Ca-CoinBQLCP8I0v",
+    false ];
 //#endregion
 
 //#region variable for cursor animation
@@ -247,6 +251,17 @@ function set_language(region)
         text_scripts[10] += "</br>";
         text_scripts[10] += "</br>";
         text_scripts[10] += "2024.01.14 출시";
+        
+        text_scripts[11] = "<span class = 'accent_red'>최근 근황</span>";
+        text_scripts[11] += "</br>";
+        text_scripts[11] += "<span class = 'accent_red2'>'Project D (프로젝트 D)'</span>";
+        text_scripts[11] += "</br>";
+        text_scripts[11] += "</br>";
+        text_scripts[11] += "2022년도에 약 2개월간 개발하다 중단된 프로젝트";
+        text_scripts[11] += "</br>";
+        text_scripts[11] += "너무 오래된 프로젝트이기도 하고, 최적화 문제/스파게티 코드 등등";
+        text_scripts[11] += "</br>";
+        text_scripts[11] += "여러가지 문제점이 많아서, 현재 코드를 포함한 모든 부분을 전부 다 리메이크 중";
         //#endregion
     }
     else if (tmp_current_region == "Japan")
@@ -362,6 +377,17 @@ function set_language(region)
         text_scripts[10] += "</br>";
         text_scripts[10] += "</br>";
         text_scripts[10] += "2024.01.14リリース</span>";
+        
+        text_scripts[11] = "<span class = 'accent_red'>最近</span>";
+        text_scripts[11] += "</br>";
+        text_scripts[11] += "<span class = 'accent_red2'>'Project D (プロジェクトD)'</span>";
+        text_scripts[11] += "</br>";
+        text_scripts[11] += "</br>";
+        text_scripts[11] += "2022年度に約2ヶ月間開発したが中断されたプロジェクト";
+        text_scripts[11] += "</br>";
+        text_scripts[11] += "あまりにも古いプロジェクトだし、最適化問題/スパゲッティコードなど";
+        text_scripts[11] += "</br>";
+        text_scripts[11] += "いろいろ問題点が多くて, 現在コードを含むすべての部分を全部リメーク中";
         //#endregion
     }
     else
@@ -472,6 +498,17 @@ function set_language(region)
         text_scripts[10] += "</br>";
         text_scripts[10] += "</br>";
         text_scripts[10] += "January 14, 2024 Released";
+        
+        text_scripts[11] = "<span class = 'accent_red'>Recently</span>";
+        text_scripts[11] += "</br>";
+        text_scripts[11] += "<span class = 'accent_red2'>'Project D'</span>";
+        text_scripts[11] += "</br>";
+        text_scripts[11] += "</br>";
+        text_scripts[11] += "This project was developed for about 2 months in 2022";
+        text_scripts[11] += "</br>";
+        text_scripts[11] += "It was too old and has so many problems like optimizing problem, spaghetti code";
+        text_scripts[11] += "</br>";
+        text_scripts[11] += "So, I've been remaking it recently.";
         //#endregion
     }
 }
@@ -520,7 +557,7 @@ function show_page()
     
     for(var i = 0; i < star_point.length; i++)
     {
-        var tmp_xx = (345+i*120);
+        var tmp_xx = (345+i*120*(9/star_point.length));
         
         //star image
         star_point[i] = document.createElement("img");
@@ -1062,16 +1099,10 @@ function css_values()
         document.documentElement.style.setProperty("--m_interect_0xx",-floor(tmp_xx)+"px"); //white wave
         
         
-        var tmp_xx = (n_scroll_pos-600)*0.2;
+        var tmp_xx = (n_scroll_pos-600)*0.2*(9/star_point.length);
         if (tmp_xx > 0 && tmp_xx < 200)
         {
             tmp_xx = 0;
-            obj_black_line.style.opacity = 0;
-            obj_black_line_head.style.opacity = 0;
-        }
-        else if (tmp_xx > 1520)
-        {
-            tmp_xx = 2000;
             obj_black_line.style.opacity = 0;
             obj_black_line_head.style.opacity = 0;
         }
@@ -1170,10 +1201,11 @@ $(window).scroll(function()
 
     for(var i = 0; i < star_point.length; i++)
     {
-        var tmp_n_pos = 345+i*120-((n_scroll_pos-600)*0.2);
+        var tmp_xx = (n_scroll_pos-600)*0.2*(9/star_point.length);
+        var tmp_n_pos = (345+i*120*(9/star_point.length)) - tmp_xx;
         var tmp_dis = abs(tmp_n_pos);
         debug_log("tmp_dis : "+tmp_dis);
-        if (tmp_dis < 50 && n_scroll_pos < 8257)
+        if (tmp_dis < 60*(9/star_point.length) && n_scroll_pos < 8257/(9/star_point.length))
         {
             //비디오 처음부터 재생
             if (star_point_img_box[i].style.opacity != 1)
@@ -1214,7 +1246,7 @@ $(window).scroll(function()
         else
         {
             //각 스타 포인트 속성 및 텍스트 박스, 이미지 박스 속성 관리
-            if ((tmp_n_pos < 0 && tmp_dis > 320) || tmp_n_pos > 0 || n_scroll_pos >= 8257)
+            if ((tmp_n_pos < 0 && tmp_dis > 320) || tmp_n_pos > 0 || n_scroll_pos >= 8257/(9/star_point.length))
             {
                 star_point[i].style.opacity = 0;
                 star_point[i].style.pointerEvents = "none";
