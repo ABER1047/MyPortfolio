@@ -75,6 +75,7 @@ var b_mouse_y = 0;
 
 //#region variable for star element
 var star_point = [-4, -4, -4, -4, -4, -4, -4, -4, -4, -4, -4];
+var star_point_tp_button = [];
 var star_point_txt_box = [];
 var star_point_img_box = [];
 var star_point_img_box_src = [ "imgs/gms.png", "imgs/android.png", "imgs/google_play.jpg", "imgs/astronaut_preview.gif", "imgs/arena_of_wakgood_preview.gif", "imgs/delaunay_preview.gif", "imgs/bocchi_preview.mp4", "imgs/project_wak_preview.mp4", "imgs/hitori_bocchi_trailer.mp4", "imgs/project_wak_beat_preview.mp4", "imgs/project_D_preview.mp4"];
@@ -517,6 +518,17 @@ set_language(get_country());
 //#endregion
 
 
+//#region scroll function
+
+function page_scroll_to(tmp_scroll_yy)
+{
+    window.scrollTo({top : tmp_scroll_yy, left : 0, behavior : "smooth"});
+    debug_log("scroll to : "+tmp_scroll_yy);
+}
+
+//#endregion
+
+
 //#region 첫 화면 로딩
 setTimeout(show_page,loading_speed);
 obj_loading_bar_grad.style.left = "0px";
@@ -539,7 +551,7 @@ function show_page()
     obj_trailer_bg.style.opacity = 1;
     
     loading_speed = -4; //-4 means that page was fully loaded
-    window.scrollTo({top : 0, left : 0, behavior : "smooth"});
+    page_scroll_to(0);
     css_values();
     background_stars = 0;
     obj_trailer_video.play();
@@ -619,7 +631,7 @@ function show_page()
         obj_star_point_parents.appendChild(star_point_img_box[i]);
         
         
-        //link box
+        //소스코드 링크
         var tmp_icon_box_width = 24;
         if (star_point_source_code_link_box[i])
         {
@@ -639,11 +651,11 @@ function show_page()
             star_point_source_code_link_box[i].style.transition = "opacity 0.3s";
             star_point_source_code_link_box[i].style.marginLeft = "var(--m_interect_xx3)";
             star_point_source_code_link_box[i].style.marginTop = "var(--m_interect_yy3)";
-            star_point_source_code_link_box[i].link_owner_ele = tmp_ele;
             star_point_source_code_link_box[i].id = "cursor_interactive_ins";
             tmp_ele.appendChild(star_point_source_code_link_box[i]);
         }
         
+        //트레일러 및 미리보기 링크
         if (star_point_trailer_link_box[i])
         {
             var tmp_ele = document.createElement("a");
@@ -662,11 +674,11 @@ function show_page()
             star_point_trailer_link_box[i].style.transition = "opacity 0.3s";
             star_point_trailer_link_box[i].style.marginLeft = "var(--m_interect_xx3)";
             star_point_trailer_link_box[i].style.marginTop = "var(--m_interect_yy3)";
-            star_point_trailer_link_box[i].link_owner_ele = tmp_ele;
             star_point_trailer_link_box[i].id = "cursor_interactive_ins";
             tmp_ele.appendChild(star_point_trailer_link_box[i]);
         }
         
+        //다운로드 링크 버튼
         if (star_point_download_link_box[i])
         {
             var tmp_ele = document.createElement("a");
@@ -688,6 +700,24 @@ function show_page()
             star_point_download_link_box[i].id = "cursor_interactive_ins";
             tmp_ele.appendChild(star_point_download_link_box[i]);
         }
+        
+        
+        //특정 프로젝트 바로가기 링크
+        star_point_tp_button[i] = document.createElement("div");
+        star_point_tp_button[i].style.top = "80%";
+        star_point_tp_button[i].style.position = "fixed";
+        star_point_tp_button[i].style.opacity = 0;
+        star_point_tp_button[i].style.borderRadius = "4px";
+        star_point_tp_button[i].style.zIndex = 320;
+        star_point_tp_button[i].style.left = (c_w*0.5 + 8 + 24*(i-star_point.length*0.5))+"px";
+        star_point_tp_button[i].style.width = "16px";
+        star_point_tp_button[i].style.height = "12px";
+        star_point_tp_button[i].style.background = "#ffffff";
+        star_point_tp_button[i].style.transition = "opacity 0.3s";
+        star_point_tp_button[i].style.marginLeft = "var(--m_interect_xx3)";
+        star_point_tp_button[i].style.marginTop = "var(--m_interect_yy3)";
+        star_point_tp_button[i].id = "cursor_interactive_ins";
+        obj_star_point_parents.appendChild(star_point_tp_button[i]);
     }
 }
 
@@ -808,7 +838,7 @@ obj_quick_select_main.addEventListener("mouseleave",function()
 
 obj_quick_select_main.addEventListener("click",function()
 {
-    window.scrollTo({top : 0, left : 0, behavior : "smooth"});
+    page_scroll_to(0);
 });
 
 obj_quick_select_contact.addEventListener("mouseover",function()
@@ -823,7 +853,7 @@ obj_quick_select_contact.addEventListener("mouseleave",function()
 
 obj_quick_select_contact.addEventListener("click",function()
 {
-    window.scrollTo({top : 600, left : 0, behavior : "smooth"});
+    page_scroll_to(600);
 });
 
 obj_quick_select_works.addEventListener("mouseover",function()
@@ -838,7 +868,7 @@ obj_quick_select_works.addEventListener("mouseleave",function()
 
 obj_quick_select_works.addEventListener("click",function()
 {
-    window.scrollTo({top : 2400, left : 0, behavior : "smooth"});
+    page_scroll_to(2400);
 });
 
 obj_credit.addEventListener("mouseover",function()
@@ -853,9 +883,8 @@ obj_credit.addEventListener("mouseleave",function()
 
 obj_arrow.addEventListener("click",function()
 {
-    window.scrollTo({top : 600, left : 0, behavior : "smooth"});
+    page_scroll_to(600);
 });
-
 
 //별 클릭 이벤트
 function star_click_event(evt)
@@ -863,9 +892,8 @@ function star_click_event(evt)
     if (n_scroll_pos >= 1000)
     {
         var i = evt.currentTarget.param1;
-        var tmp_val = 2410+i*120*5;
-        window.scrollTo({top : tmp_val, left : 0, behavior : "smooth"});
-        debug_log("scroll to : "+tmp_val);
+        var tmp_val = 2720+i*120*5;
+        page_scroll_to(tmp_val);
     }
 }
 
@@ -875,6 +903,9 @@ document.addEventListener("click",function()
     {
         star_point[i].addEventListener("click",star_click_event);
         star_point[i].param1 = i;
+        
+        star_point_tp_button[i].addEventListener("click",star_click_event);
+        star_point_tp_button[i].param1 = i;
     }
 });
 //#endregion
@@ -1201,9 +1232,24 @@ $(window).scroll(function()
     //인터렉티브 css 및 잡다한 변수들 관리용 함수
     is_window_scrolled = true;
     css_values();
+    
+
 
     for(var i = 0; i < star_point.length; i++)
     {
+        if (n_scroll_pos >= 2500)
+        {
+            star_point_tp_button[i].style.opacity = "1";
+            star_point_tp_button[i].style.pointerEvents = "auto";
+        }
+        else
+        {
+            star_point_tp_button[i].style.opacity = "0";
+            star_point_tp_button[i].style.pointerEvents = "none";
+        }
+        
+        
+        
         var tmp_xx = (n_scroll_pos-600)*0.2*(9/star_point.length);
         var tmp_n_pos = (345+i*120*(9/star_point.length)) - tmp_xx;
         var tmp_dis = abs(tmp_n_pos);
@@ -1337,13 +1383,6 @@ $(window).scroll(function()
         obj_contact_youtube.style.pointerEvents = "none";
         obj_contact_discord.style.pointerEvents = "none";
         obj_contact_github.style.pointerEvents = "none";
-    }
-    else if (n_scroll_pos <= 100)
-    {
-        obj_contact_text.style.top = "-999px";
-        obj_contact_youtube.style.top = "-999px";
-        obj_contact_discord.style.top = "-999px";
-        obj_contact_github.style.top = "-999px";
     }
 })
 //#endregion
