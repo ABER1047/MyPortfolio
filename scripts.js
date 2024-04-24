@@ -625,6 +625,7 @@ function show_page()
         {
             var tmp_ele = document.createElement("a");
             tmp_ele.target = "_blank";
+            tmp_ele.href = star_point_source_code_link[i];
             obj_star_point_parents.appendChild(tmp_ele);
             
             star_point_source_code_link_box[i] = document.createElement("img");
@@ -647,6 +648,7 @@ function show_page()
         {
             var tmp_ele = document.createElement("a");
             tmp_ele.target = "_blank";
+            tmp_ele.href = star_point_trailer_link[i];
             obj_star_point_parents.appendChild(tmp_ele);
             
             star_point_trailer_link_box[i] = document.createElement("img");
@@ -669,6 +671,7 @@ function show_page()
         {
             var tmp_ele = document.createElement("a");
             tmp_ele.target = "_blank";
+            tmp_ele.href = star_point_download_link[i];
             obj_star_point_parents.appendChild(tmp_ele);
             
             star_point_download_link_box[i] = document.createElement("img");
@@ -682,7 +685,6 @@ function show_page()
             star_point_download_link_box[i].style.transition = "opacity 0.3s";
             star_point_download_link_box[i].style.marginLeft = "var(--m_interect_xx3)";
             star_point_download_link_box[i].style.marginTop = "var(--m_interect_yy3)";
-            star_point_download_link_box[i].link_owner_ele = tmp_ele;
             star_point_download_link_box[i].id = "cursor_interactive_ins";
             tmp_ele.appendChild(star_point_download_link_box[i]);
         }
@@ -1226,22 +1228,22 @@ $(window).scroll(function()
             
             
             //각 스타 포인트 자리의 링크 아이콘들 속성 관리
-            if (star_point_source_code_link_box[i] != false)
+            if (star_point_source_code_link_box[i])
             {
                 star_point_source_code_link_box[i].style.opacity = 1;
-                star_point_source_code_link_box[i].link_owner_ele.href = star_point_source_code_link[i];
+                star_point_source_code_link_box[i].style.pointerEvents = "auto";
             }
             
-            if (star_point_download_link_box[i] != false)
+            if (star_point_download_link_box[i])
             {
                 star_point_download_link_box[i].style.opacity = 1;
-                star_point_download_link_box[i].link_owner_ele.href = star_point_download_link[i];
+                star_point_download_link_box[i].style.pointerEvents = "auto";
             }
             
-            if (star_point_trailer_link_box[i] != false)
+            if (star_point_trailer_link_box[i])
             {
                 star_point_trailer_link_box[i].style.opacity = 1;
-                star_point_trailer_link_box[i].link_owner_ele.href = star_point_trailer_link[i];
+                star_point_trailer_link_box[i].style.pointerEvents = "auto";
             }
         }
         else
@@ -1266,22 +1268,22 @@ $(window).scroll(function()
             
             
             //각 스타 포인트 자리의 링크 아이콘들 속성 관리
-            if (star_point_source_code_link_box[i] != false)
+            if (star_point_source_code_link_box[i])
             {
                 star_point_source_code_link_box[i].style.opacity = 0;
-                star_point_source_code_link_box[i].link_owner_ele.removeAttribute("href");
+                star_point_source_code_link_box[i].style.pointerEvents = "none";
             }
             
-            if (star_point_download_link_box[i] != false)
+            if (star_point_download_link_box[i])
             {
                 star_point_download_link_box[i].style.opacity = 0;
-                star_point_download_link_box[i].link_owner_ele.removeAttribute("href");
+                star_point_download_link_box[i].style.pointerEvents = "none";
             }
             
-            if (star_point_trailer_link_box[i] != false)
+            if (star_point_trailer_link_box[i])
             {
                 star_point_trailer_link_box[i].style.opacity = 0;
-                star_point_trailer_link_box[i].link_owner_ele.removeAttribute("href");
+                star_point_trailer_link_box[i].style.pointerEvents = "none";
             }
         }
     }
