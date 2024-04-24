@@ -135,6 +135,7 @@ var playing_cursor_animation = false;
 //#region set to current region language
 function set_language(region)
 {
+    window.scrollTo(0, 0);
     var tmp_current_region = region;
     console.log(tmp_current_region);
     
@@ -551,7 +552,7 @@ function show_page()
     obj_trailer_bg.style.opacity = 1;
     
     loading_speed = -4; //-4 means that page was fully loaded
-    page_scroll_to(0);
+    window.scrollTo(0, 0);
     css_values();
     background_stars = 0;
     obj_trailer_video.play();
@@ -795,33 +796,6 @@ function quick_select_menu_anime6()
     obj_music_button.style.left = "2.5%";
 }
 
-function text_appearence_anime1(target)
-{
-    target.style.transition = "none";
-    target.style.color = "#dcc4db";
-
-    setTimeout(text_appearence_anime2,50,target);
-}
-
-function text_appearence_anime2(target_)
-{
-    target_.style.transition = "color 1s";
-    target_.style.color = "#121212";
-}
-
-function text_appearence2_anime1(target)
-{
-    target.style.transition = "none";
-    target.style.color = "#dcc4db";
-
-    setTimeout(text_appearence2_anime2,50,target);
-}
-
-function text_appearence2_anime2(target_)
-{
-    target_.style.transition = "color 1s";
-    target_.style.color = "#749eca";
-}
 //#endregion
 
 
