@@ -1244,6 +1244,7 @@ $(window).scroll(function()
             star_point_txt_box[i].style.pointerEvents = "auto";
             star_point_img_box[i].style.opacity = 1;
             star_point_img_box[i].style.pointerEvents = "auto";
+            star_point_tp_button[i].style.background = "#828282";
 
             
             
@@ -1284,6 +1285,7 @@ $(window).scroll(function()
             star_point_txt_box[i].style.pointerEvents = "none";
             star_point_img_box[i].style.opacity = 0;
             star_point_img_box[i].style.pointerEvents = "none";
+            star_point_tp_button[i].style.background = "#ffffff";
             
             
             
