@@ -622,7 +622,7 @@ function show_page()
             star_point_img_box[i].muted = true;
         }
         star_point_img_box[i].style.pointerEvents = "none";
-        star_point_img_box[i].style.top = (i > 2) ? (223*c_x+"px") : (470*c_x+"px");
+        star_point_img_box[i].style.top = (i > 2) ? (c_h/4.84+"px") : (c_h/2.29+"px");
         star_point_img_box[i].src = star_point_img_box_src[i];
         star_point_img_box[i].style.position = "fixed";
         star_point_img_box[i].style.opacity = 0;
@@ -651,7 +651,7 @@ function show_page()
             star_point_source_code_link_box[i].src = "imgs/github_icon_white.png";
             star_point_source_code_link_box[i].style.opacity = 0;
             star_point_source_code_link_box[i].style.zIndex = 320;
-            star_point_source_code_link_box[i].style.left = (is_pc == 1) ? (tmp_txt_box_width+tmp_xx-160)+"px" : (c_w-tmp_icon_box_width)*0.5-160+"px";
+            star_point_source_code_link_box[i].style.left = (is_pc == 1) ? (tmp_txt_box_width+tmp_xx-160)+"px" : (c_w-tmp_icon_box_width)*0.5-96+"px";
             star_point_source_code_link_box[i].style.width = (tmp_icon_box_width)+"px";
             star_point_source_code_link_box[i].style.transition = "opacity 0.3s";
             star_point_source_code_link_box[i].style.marginLeft = "var(--m_interect_xx3)";
@@ -674,7 +674,7 @@ function show_page()
             star_point_trailer_link_box[i].src = "imgs/youtube_icon_white.png";
             star_point_trailer_link_box[i].style.opacity = 0;
             star_point_trailer_link_box[i].style.zIndex = 320;
-            star_point_trailer_link_box[i].style.left = (is_pc == 1) ? (tmp_txt_box_width+tmp_xx-160-48)+"px" : (c_w-tmp_icon_box_width)*0.5-160-48+"px";
+            star_point_trailer_link_box[i].style.left = (is_pc == 1) ? (tmp_txt_box_width+tmp_xx-160-48)+"px" : (c_w-tmp_icon_box_width)*0.5-96-48+"px";
             star_point_trailer_link_box[i].style.width = (tmp_icon_box_width)+"px";
             star_point_trailer_link_box[i].style.transition = "opacity 0.3s";
             star_point_trailer_link_box[i].style.marginLeft = "var(--m_interect_xx3)";
@@ -697,7 +697,7 @@ function show_page()
             star_point_download_link_box[i].src = "imgs/downlaod_icon.png";
             star_point_download_link_box[i].style.opacity = 0;
             star_point_download_link_box[i].style.zIndex = 320;
-            star_point_download_link_box[i].style.left = (is_pc == 1) ? (tmp_txt_box_width+tmp_xx-160-96)+"px" : (c_w-tmp_icon_box_width)*0.5-160-96+"px";
+            star_point_download_link_box[i].style.left = (is_pc == 1) ? (tmp_txt_box_width+tmp_xx-160-96)+"px" : (c_w-tmp_icon_box_width)*0.5-96-96+"px";
             star_point_download_link_box[i].style.width = (tmp_icon_box_width)+"px";
             star_point_download_link_box[i].style.transition = "opacity 0.3s";
             star_point_download_link_box[i].style.marginLeft = "var(--m_interect_xx3)";
