@@ -62,7 +62,6 @@ var loading_speed = 3000; //9000
 //#endregion
 
 //#region variable for check is window resized or scrolled
-is_window_resized = true;
 is_window_scrolled = true;
 //#endregion
 
@@ -83,7 +82,8 @@ var star_point_img_box_type = [ "img", "img", "img", "img", "img", "img", "video
 var star_point_source_code_link_box = [false, false, false, true, true, true, true, true, true, true, true ];
 var star_point_download_link_box = [false, false, false, false, true, false, true, true, true, true, false ];
 var star_point_trailer_link_box = [false, false, false, false, true, false, true, true, true, true, false ];
-
+var star_point_margin_ratio = (9/star_point.length);
+var star_point_margin = 120*star_point_margin_ratio;
 
 //hyperlinks
 var star_point_source_code_link = [
@@ -547,8 +547,6 @@ if (obj_trailer_video.readyState == 4)
 
 function show_page()
 {
-    obj_animated_cursor.style.opacity = 1;
-    obj_animated_cursor_main.style.opacity = 1;
     obj_trailer_bg.style.opacity = 1;
     
     loading_speed = -4; //-4 means that page was fully loaded
@@ -568,10 +566,16 @@ function show_page()
     setTimeout(title_anime3,2400);
     setTimeout(title_anime4,2600);
     
+    if (is_pc == 1)
+    {
+        obj_animated_cursor.style.opacity = 1;
+        obj_animated_cursor_main.style.opacity = 1;
+    }
+    
     
     for(var i = 0; i < star_point.length; i++)
     {
-        var tmp_xx = (345+i*120*(9/star_point.length));
+        var tmp_xx = (345*power(c_x,2)+i*star_point_margin);
         
         //star image
         star_point[i] = document.createElement("img");
@@ -597,7 +601,7 @@ function show_page()
         star_point_txt_box[i].style.pointerEvents = "none";
         star_point_txt_box[i].style.opacity = 0;
         star_point_txt_box[i].style.zIndex = 320;
-        star_point_txt_box[i].style.left = (tmp_xx)+"px";
+        star_point_txt_box[i].style.left = (is_pc == 1) ? (tmp_xx)+"px" : (c_w-tmp_txt_box_width)*0.5+"px";
         star_point_txt_box[i].style.width = "auto";
         star_point_txt_box[i].style.height = "auto";
         star_point_txt_box[i].innerHTML = text_scripts[1+i];
@@ -623,7 +627,7 @@ function show_page()
         star_point_img_box[i].style.position = "fixed";
         star_point_img_box[i].style.opacity = 0;
         star_point_img_box[i].style.zIndex = 320;
-        star_point_img_box[i].style.left = (tmp_xx- ((i <= 2) ? 0 : 32))+"px";
+        star_point_img_box[i].style.left = (is_pc == 1) ? (tmp_xx- ((i <= 2) ? 0 : 32))+"px" : (c_w-tmp_img_box_width)*0.5+"px";
         star_point_img_box[i].style.borderRadius = "16px";
         star_point_img_box[i].style.width = tmp_img_box_width+"px";
         star_point_img_box[i].style.transition = "opacity 0.3s";
@@ -647,7 +651,7 @@ function show_page()
             star_point_source_code_link_box[i].src = "imgs/github_icon_white.png";
             star_point_source_code_link_box[i].style.opacity = 0;
             star_point_source_code_link_box[i].style.zIndex = 320;
-            star_point_source_code_link_box[i].style.left = (tmp_txt_box_width+tmp_xx-160)+"px";
+            star_point_source_code_link_box[i].style.left = (is_pc == 1) ? (tmp_txt_box_width+tmp_xx-160)+"px" : (c_w-tmp_icon_box_width)*0.5-160+"px";
             star_point_source_code_link_box[i].style.width = (tmp_icon_box_width)+"px";
             star_point_source_code_link_box[i].style.transition = "opacity 0.3s";
             star_point_source_code_link_box[i].style.marginLeft = "var(--m_interect_xx3)";
@@ -670,7 +674,7 @@ function show_page()
             star_point_trailer_link_box[i].src = "imgs/youtube_icon_white.png";
             star_point_trailer_link_box[i].style.opacity = 0;
             star_point_trailer_link_box[i].style.zIndex = 320;
-            star_point_trailer_link_box[i].style.left = (tmp_txt_box_width+tmp_xx-160-48)+"px";
+            star_point_trailer_link_box[i].style.left = (is_pc == 1) ? (tmp_txt_box_width+tmp_xx-160-48)+"px" : (c_w-tmp_icon_box_width)*0.5-160-48+"px";
             star_point_trailer_link_box[i].style.width = (tmp_icon_box_width)+"px";
             star_point_trailer_link_box[i].style.transition = "opacity 0.3s";
             star_point_trailer_link_box[i].style.marginLeft = "var(--m_interect_xx3)";
@@ -693,7 +697,7 @@ function show_page()
             star_point_download_link_box[i].src = "imgs/downlaod_icon.png";
             star_point_download_link_box[i].style.opacity = 0;
             star_point_download_link_box[i].style.zIndex = 320;
-            star_point_download_link_box[i].style.left = (tmp_txt_box_width+tmp_xx-160-96)+"px";
+            star_point_download_link_box[i].style.left = (is_pc == 1) ? (tmp_txt_box_width+tmp_xx-160-96)+"px" : (c_w-tmp_icon_box_width)*0.5-160-96+"px";
             star_point_download_link_box[i].style.width = (tmp_icon_box_width)+"px";
             star_point_download_link_box[i].style.transition = "opacity 0.3s";
             star_point_download_link_box[i].style.marginLeft = "var(--m_interect_xx3)";
@@ -1043,7 +1047,6 @@ document.addEventListener("click",function()
 //#region when window resized
 window.addEventListener("resize", function()
 {
-    is_window_resized = true;
     css_values();
 })
 //#endregion
@@ -1051,7 +1054,8 @@ window.addEventListener("resize", function()
 
 function css_values()
 {
-    if (is_window_resized)
+    //창이 리사이즈 되었을 경우
+    if (c_w != window.innerWidth)
     {
         c_w = window.innerWidth;
         c_h = window.innerHeight;
@@ -1060,6 +1064,9 @@ function css_values()
         
         var c_x_comp = c_w/480;
         c_x_comp = correct_value(c_x_comp,0,1);
+        
+        star_point_margin_ratio = (9/star_point.length)*c_x;
+        star_point_margin = 120*star_point_margin_ratio;
         
         var main_trailer_height = c_h*1.1+32;
         document.documentElement.style.setProperty("--view_width_x1p1",main_trailer_height+"px");
@@ -1089,7 +1096,6 @@ function css_values()
         document.documentElement.style.setProperty("--black_line_head_yy",floor(c_h*0.55-15)+"px");
         document.documentElement.style.setProperty("--black_line_txt_box_yy",floor(c_h*0.55+17)+"px");
         document.documentElement.style.setProperty("--black_line_link_box_yy",floor(c_h*0.55-64)+"px");
-        is_window_resized = !is_window_resized;
     }
     
     
@@ -1107,7 +1113,7 @@ function css_values()
         document.documentElement.style.setProperty("--m_interect_0xx",-floor(tmp_xx)+"px"); //white wave
         
         
-        var tmp_xx = (n_scroll_pos-600)*0.2*(9/star_point.length);
+        var tmp_xx = (n_scroll_pos-600)*0.2*star_point_margin_ratio;
         if (tmp_xx > 0 && tmp_xx < 200)
         {
             tmp_xx = 0;
@@ -1199,7 +1205,7 @@ function cursor_animation()
 $(window).scroll(function()
 {
     n_scroll_pos = $(window).scrollTop();
-    var tmp_filter_val = (n_scroll_pos < 512) ? n_scroll_pos : 512;
+    var tmp_filter_val = (n_scroll_pos < 512*power(c_x,2)) ? n_scroll_pos : 512*power(c_x,2);
     obj_trailer_video.style.filter = "blur("+(tmp_filter_val*0.1)+"px)";
     debug_log(n_scroll_pos);
     
@@ -1224,11 +1230,11 @@ $(window).scroll(function()
         
         
         
-        var tmp_xx = (n_scroll_pos-600)*0.2*(9/star_point.length);
-        var tmp_n_pos = (345+i*120*(9/star_point.length)) - tmp_xx;
+        var tmp_xx = (n_scroll_pos-600)*0.2*star_point_margin_ratio;
+        var tmp_n_pos = (345*power(c_x,2)+i*star_point_margin) - tmp_xx;
         var tmp_dis = abs(tmp_n_pos);
         debug_log("tmp_dis : "+tmp_dis);
-        if (tmp_dis < 60*(9/star_point.length) && n_scroll_pos < 8257/(9/star_point.length))
+        if (tmp_dis < 60*star_point_margin_ratio && n_scroll_pos < 8257/star_point_margin_ratio)
         {
             //비디오 처음부터 재생
             if (star_point_img_box[i].style.opacity != 1)
@@ -1270,7 +1276,7 @@ $(window).scroll(function()
         else
         {
             //각 스타 포인트 속성 및 텍스트 박스, 이미지 박스 속성 관리
-            if ((tmp_n_pos < 0 && tmp_dis > 320) || tmp_n_pos > 0 || n_scroll_pos >= 8257/(9/star_point.length))
+            if ((tmp_n_pos < 0 && tmp_dis > 320) || tmp_n_pos > 0 || n_scroll_pos >= 8257/star_point_margin_ratio)
             {
                 star_point[i].style.opacity = 0;
                 star_point[i].style.pointerEvents = "none";
