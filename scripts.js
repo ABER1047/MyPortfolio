@@ -230,7 +230,7 @@ function set_language(region)
         
         text_scripts[9] = "<span class = 'accent_purple'>2023.03.11</span>";
         text_scripts[9] += "</br>";
-        text_scripts[9] += "<span class = 'accent_purple2'>'Hirori Bocchi!'</span>";
+        text_scripts[9] += "<span class = 'accent_purple2'>'Hirori Bocchi'</span>";
         text_scripts[9] += "</br>";
         text_scripts[9] += "</br>";
         text_scripts[9] += "Steam(스팀)의 Wallpaper Engine을 위한 웹사이트";
@@ -356,7 +356,7 @@ function set_language(region)
         
         text_scripts[9] = "<span class = 'jp'><span class = 'accent_purple'>2023.03.11</span>";
         text_scripts[9] += "</br>";
-        text_scripts[9] += "<span class = 'accent_purple2'>'Hirori Bocchi!'</span>";
+        text_scripts[9] += "<span class = 'accent_purple2'>'Hirori Bocchi'</span>";
         text_scripts[9] += "</br>";
         text_scripts[9] += "</br>";
         text_scripts[9] += "SteamのWallpaper Engineのために作ったウェブサイト";
@@ -398,7 +398,7 @@ function set_language(region)
         //#region English text scripts
         text_scripts[1] = "<span class = 'accent_gold'>2013 (3rd grade in elementary school)</span>";
         text_scripts[1] += "</br>";
-        text_scripts[1] += "I Learned programming language(GML) at first in my life";
+        text_scripts[1] += "I Learned my first programming language(GML)";
         
         text_scripts[2] = "<span class = 'accent_red'>January 2016 (Winter vacation after graduating from elementary school)</span>";
         text_scripts[2] += "</br>";
@@ -477,7 +477,7 @@ function set_language(region)
         
         text_scripts[9] = "<span class = 'accent_purple'>March 11, 2023</span>";
         text_scripts[9] += "</br>";
-        text_scripts[9] += "<span class = 'accent_purple2'>'Hirori Bocchi!'</span>";
+        text_scripts[9] += "<span class = 'accent_purple2'>'Hirori Bocchi'</span>";
         text_scripts[9] += "</br>";
         text_scripts[9] += "</br>";
         text_scripts[9] += "This is website for 'Wallpaper Engine' which available on Steam";
