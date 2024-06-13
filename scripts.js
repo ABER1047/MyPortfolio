@@ -8,6 +8,7 @@ var obj_hello_title_kor = document.getElementById("hello_title_kor");
 var obj_hello_title_jap = document.getElementById("hello_title_jap");
 var obj_hello_title_desc = document.getElementById("hello_title_desc");
 var obj_trailer_video = document.getElementById("trailer_video");
+var obj_priview_video_bg = document.getElementById("priview_video_bg");
 var obj_trailer_bg = document.getElementById("trailer_bg");
 var obj_quick_select_bg_outline = document.getElementById("quick_select_bg_outline");
 var obj_quick_select_main = document.getElementById("quick_select_main");
@@ -1240,17 +1241,31 @@ $(window).scroll(function()
             if (star_point_img_box[i].style.opacity != 1)
             {
                 star_point_img_box[i].currentTime = 0;
+
+                //각 스타 포인트 속성 및 텍스트 박스, 이미지 박스 속성 관리
+                star_point[i].style.opacity = 1;
+                star_point[i].style.filter = "blur(0px)";
+                star_point[i].style.pointerEvents = "auto";
+                star_point_txt_box[i].style.opacity = 1;
+                star_point_txt_box[i].style.pointerEvents = "auto";
+                star_point_img_box[i].style.opacity = 1;
+                star_point_img_box[i].style.pointerEvents = "auto";
+                star_point_tp_button[i].style.background = "#828282";
+                
+                var tmp_str = star_point_img_box_src[i];
+                if (tmp_str.indexOf(".mp4") != -1)
+                {
+                    obj_priview_video_bg.src = star_point_img_box_src[i];
+                    obj_priview_video_bg.currentTime = 0;
+                    obj_priview_video_bg.play();
+                    obj_priview_video_bg.style.width = (c_w*1.05)+"px";
+                    obj_priview_video_bg.style.opacity = 0.1;
+                }
+                else
+                {
+                    obj_priview_video_bg.style.opacity = 0;
+                }
             }
-            
-            //각 스타 포인트 속성 및 텍스트 박스, 이미지 박스 속성 관리
-            star_point[i].style.opacity = 1;
-            star_point[i].style.filter = "blur(0px)";
-            star_point[i].style.pointerEvents = "auto";
-            star_point_txt_box[i].style.opacity = 1;
-            star_point_txt_box[i].style.pointerEvents = "auto";
-            star_point_img_box[i].style.opacity = 1;
-            star_point_img_box[i].style.pointerEvents = "auto";
-            star_point_tp_button[i].style.background = "#828282";
 
             
             
