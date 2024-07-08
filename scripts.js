@@ -595,7 +595,7 @@ function show_page()
         
         
         //text box
-        var tmp_txt_box_width = 480;
+        var tmp_txt_box_width = 216*reversed_c_x;
         star_point_txt_box[i] = document.createElement("div");
         star_point_txt_box[i].style.top = "var(--black_line_txt_box_yy)";
         star_point_txt_box[i].style.position = "fixed";
@@ -614,7 +614,7 @@ function show_page()
         
         
         //image box
-        var tmp_img_box_width = (i <= 2) ? 32 : 400;
+        var tmp_img_box_width = ((i <= 2) ? 32 : 400)*reversed_c_x;
         star_point_img_box[i] = document.createElement(star_point_img_box_type[i]);
         if (star_point_img_box_type[i] == "video")
         {
@@ -638,7 +638,7 @@ function show_page()
         
         
         //소스코드 링크
-        var tmp_icon_box_width = 24;
+        var tmp_icon_box_width = 24*reversed_c_x;
         if (star_point_source_code_link_box[i])
         {
             var tmp_ele = document.createElement("a");
@@ -652,7 +652,7 @@ function show_page()
             star_point_source_code_link_box[i].src = "imgs/github_icon_white.png";
             star_point_source_code_link_box[i].style.opacity = 0;
             star_point_source_code_link_box[i].style.zIndex = 320;
-            star_point_source_code_link_box[i].style.left = (is_pc == 1) ? (tmp_txt_box_width+tmp_xx-160)+"px" : (c_w-tmp_icon_box_width)*0.5-96+"px";
+            star_point_source_code_link_box[i].style.left = (is_pc == 1) ? (tmp_txt_box_width+tmp_xx-160)+"px" : (c_w-tmp_icon_box_width)*0.5-96-96+"px";
             star_point_source_code_link_box[i].style.width = (tmp_icon_box_width)+"px";
             star_point_source_code_link_box[i].style.transition = "opacity 0.3s";
             star_point_source_code_link_box[i].style.marginLeft = "var(--m_interect_xx3)";
@@ -698,7 +698,7 @@ function show_page()
             star_point_download_link_box[i].src = "imgs/downlaod_icon.png";
             star_point_download_link_box[i].style.opacity = 0;
             star_point_download_link_box[i].style.zIndex = 320;
-            star_point_download_link_box[i].style.left = (is_pc == 1) ? (tmp_txt_box_width+tmp_xx-160-96)+"px" : (c_w-tmp_icon_box_width)*0.5-96-96+"px";
+            star_point_download_link_box[i].style.left = (is_pc == 1) ? (tmp_txt_box_width+tmp_xx-160-96)+"px" : (c_w-tmp_icon_box_width)*0.5-96+"px";
             star_point_download_link_box[i].style.width = (tmp_icon_box_width)+"px";
             star_point_download_link_box[i].style.transition = "opacity 0.3s";
             star_point_download_link_box[i].style.marginLeft = "var(--m_interect_xx3)";
@@ -736,25 +736,21 @@ function screen_transition1()
 
 function title_anime1()
 {
-    obj_hello_title_eng.style.top = 140*c_x+"px";
     obj_hello_title_eng.style.opacity = "1";
 }
 
 function title_anime2()
 {
-    obj_hello_title_kor.style.top = 290*c_x+"px";
     obj_hello_title_kor.style.opacity = "1";
 }
 
 function title_anime3()
 {
-    obj_hello_title_jap.style.top = 330*c_x+"px";
     obj_hello_title_jap.style.opacity = "1";
 }
 
 function title_anime4()
 {
-    obj_hello_title_desc.style.top = 460*c_x+"px";
     obj_hello_title_desc.style.opacity = "1";
 
     obj_loading_bar_bg.style.height = 0;
@@ -1061,6 +1057,7 @@ function css_values()
         c_w = window.innerWidth;
         c_h = window.innerHeight;
         c_x = c_w/1920;
+        reversed_c_x = sqrt(1920/c_w);
         is_pc = (c_w < 1080 || c_h/c_w > 1 || (/Android|iPhone/i.test(navigator.userAgent))) ? 1/c_x : 1;
         
         var c_x_comp = c_w/480;
@@ -1081,16 +1078,16 @@ function css_values()
         document.documentElement.style.setProperty("--sr500px",floor(c_w-500*c_x_comp)+"px");
 
         
-        document.documentElement.style.setProperty("--s18px",floor(18*c_x)+"px");
+        document.documentElement.style.setProperty("--s18px",floor(18*sqrt(reversed_c_x))+"px");
         document.documentElement.style.setProperty("--s36px",floor(36*c_x)+"px");
-        document.documentElement.style.setProperty("--s48px",floor(48*c_x)+"px");
+        document.documentElement.style.setProperty("--s48px",floor(48*sqrt(reversed_c_x))+"px");
         document.documentElement.style.setProperty("--s108px",floor(108*c_x)+"px");
         document.documentElement.style.setProperty("--s112px",floor(112*c_x)+"px");
-        document.documentElement.style.setProperty("--s160px",floor(160*c_x)+"px");
-        document.documentElement.style.setProperty("--s110px",floor(110*c_x)+"px");
-        document.documentElement.style.setProperty("--s260px",floor(260*c_x)+"px");
-        document.documentElement.style.setProperty("--s300px",floor(300*c_x)+"px");
-        document.documentElement.style.setProperty("--s410px",floor(410*c_x)+"px");
+        document.documentElement.style.setProperty("--s160px",floor(160*sqrt(reversed_c_x))+"px");
+        document.documentElement.style.setProperty("--s140px",floor(140*sqrt(reversed_c_x))+"px");
+        document.documentElement.style.setProperty("--s290px",floor(290*sqrt(reversed_c_x))+"px");
+        document.documentElement.style.setProperty("--s330px",floor(330*sqrt(reversed_c_x))+"px");
+        document.documentElement.style.setProperty("--s460px",floor(460*sqrt(reversed_c_x))+"px");
 
         
         document.documentElement.style.setProperty("--black_line_yy",floor(c_h*0.55)+"px");
@@ -1141,18 +1138,20 @@ function css_values()
     
 
     
+    if (is_pc == 1)
+    {
+        //mousemove animation
+        var mouse_movement_dis_xx = (mouse_x - c_w*0.5)/72*is_pc;
+        var mouse_movement_dis_yy = (mouse_y - c_h*0.5)/72*is_pc;
+        document.documentElement.style.setProperty("--m_interect_xx",floor(mouse_movement_dis_xx)+"px");
+        document.documentElement.style.setProperty("--m_interect_yy",floor(mouse_movement_dis_yy)+"px");
 
-    //mousemove animation
-    var mouse_movement_dis_xx = (mouse_x - c_w*0.5)/72*is_pc;
-    var mouse_movement_dis_yy = (mouse_y - c_h*0.5)/72*is_pc;
-    document.documentElement.style.setProperty("--m_interect_xx",floor(mouse_movement_dis_xx)+"px");
-    document.documentElement.style.setProperty("--m_interect_yy",floor(mouse_movement_dis_yy)+"px");
-
-    document.documentElement.style.setProperty("--m_interect_xx2",-floor(mouse_movement_dis_xx*0.5)+"px");
-    document.documentElement.style.setProperty("--m_interect_yy2",-floor(mouse_movement_dis_yy*0.5)+"px");
-    
-    document.documentElement.style.setProperty("--m_interect_xx3",floor(mouse_movement_dis_xx*0.3)+"px");
-    document.documentElement.style.setProperty("--m_interect_yy3",floor(mouse_movement_dis_yy*0.3)+"px");
+        document.documentElement.style.setProperty("--m_interect_xx2",-floor(mouse_movement_dis_xx*0.5)+"px");
+        document.documentElement.style.setProperty("--m_interect_yy2",-floor(mouse_movement_dis_yy*0.5)+"px");
+        
+        document.documentElement.style.setProperty("--m_interect_xx3",floor(mouse_movement_dis_xx*0.3)+"px");
+        document.documentElement.style.setProperty("--m_interect_yy3",floor(mouse_movement_dis_yy*0.3)+"px");
+    }
 }
 
 addEventListener("mousemove",function()
@@ -1165,10 +1164,11 @@ addEventListener("mousemove",function()
     {
         playing_cursor_animation = true;
         cursor_animation();
-    }
     
-    //인터렉티브 css 및 잡다한 변수들 관리용 함수
-    css_values();
+    
+        //인터렉티브 css 및 잡다한 변수들 관리용 함수
+        css_values();
+    }
 });
 
 
@@ -1291,7 +1291,7 @@ $(window).scroll(function()
         else
         {
             //각 스타 포인트 속성 및 텍스트 박스, 이미지 박스 속성 관리
-            if ((tmp_n_pos < 0 && tmp_dis > 320) || tmp_n_pos > 0 || n_scroll_pos >= 8257/star_point_margin_ratio)
+            if (tmp_n_pos != 0 || n_scroll_pos >= 8257/star_point_margin_ratio)
             {
                 star_point[i].style.opacity = 0;
                 star_point[i].style.pointerEvents = "none";
@@ -1301,7 +1301,7 @@ $(window).scroll(function()
                 star_point[i].style.opacity = 1;
                 star_point[i].style.pointerEvents = "auto";
             }
-            star_point[i].style.filter = "blur(4px)";
+            star_point[i].style.filter = "blur(16px)";
             star_point_txt_box[i].style.opacity = 0;
             star_point_txt_box[i].style.pointerEvents = "none";
             star_point_img_box[i].style.opacity = 0;
