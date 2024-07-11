@@ -652,7 +652,7 @@ function show_page()
             star_point_source_code_link_box[i].src = "imgs/github_icon_white.png";
             star_point_source_code_link_box[i].style.opacity = 0;
             star_point_source_code_link_box[i].style.zIndex = 320;
-            star_point_source_code_link_box[i].style.left = (is_pc == 1) ? (tmp_txt_box_width+tmp_xx-160)+"px" : (c_w-tmp_icon_box_width)*0.5-96-96+"px";
+            star_point_source_code_link_box[i].style.left = (is_pc == 1) ? (tmp_txt_box_width+tmp_xx-150-96)+"px" : (c_w-tmp_icon_box_width)*0.5-128-8+"px";
             star_point_source_code_link_box[i].style.width = (tmp_icon_box_width)+"px";
             star_point_source_code_link_box[i].style.transition = "opacity 0.3s";
             star_point_source_code_link_box[i].style.marginLeft = "var(--m_interect_xx3)";
@@ -675,7 +675,7 @@ function show_page()
             star_point_trailer_link_box[i].src = "imgs/youtube_icon_white.png";
             star_point_trailer_link_box[i].style.opacity = 0;
             star_point_trailer_link_box[i].style.zIndex = 320;
-            star_point_trailer_link_box[i].style.left = (is_pc == 1) ? (tmp_txt_box_width+tmp_xx-160-48)+"px" : (c_w-tmp_icon_box_width)*0.5-96-48+"px";
+            star_point_trailer_link_box[i].style.left = (is_pc == 1) ? (tmp_txt_box_width+tmp_xx-150-48)+"px" : (c_w-tmp_icon_box_width)*0.5-8+"px";
             star_point_trailer_link_box[i].style.width = (tmp_icon_box_width)+"px";
             star_point_trailer_link_box[i].style.transition = "opacity 0.3s";
             star_point_trailer_link_box[i].style.marginLeft = "var(--m_interect_xx3)";
@@ -698,7 +698,7 @@ function show_page()
             star_point_download_link_box[i].src = "imgs/downlaod_icon.png";
             star_point_download_link_box[i].style.opacity = 0;
             star_point_download_link_box[i].style.zIndex = 320;
-            star_point_download_link_box[i].style.left = (is_pc == 1) ? (tmp_txt_box_width+tmp_xx-160-96)+"px" : (c_w-tmp_icon_box_width)*0.5-96+"px";
+            star_point_download_link_box[i].style.left = (is_pc == 1) ? (tmp_txt_box_width+tmp_xx-150)+"px" : (c_w-tmp_icon_box_width)*0.5+128-8+"px";
             star_point_download_link_box[i].style.width = (tmp_icon_box_width)+"px";
             star_point_download_link_box[i].style.transition = "opacity 0.3s";
             star_point_download_link_box[i].style.marginLeft = "var(--m_interect_xx3)";
@@ -713,11 +713,11 @@ function show_page()
         star_point_tp_button[i].style.top = "80%";
         star_point_tp_button[i].style.position = "fixed";
         star_point_tp_button[i].style.opacity = 0;
-        star_point_tp_button[i].style.borderRadius = "4px";
+        star_point_tp_button[i].style.borderRadius = (4*reversed_c_x)+"px";
         star_point_tp_button[i].style.zIndex = 320;
-        star_point_tp_button[i].style.left = (c_w*0.5 + 8 + 24*(i-star_point.length*0.5))+"px";
-        star_point_tp_button[i].style.width = "16px";
-        star_point_tp_button[i].style.height = "12px";
+        star_point_tp_button[i].style.left = (c_w*0.5 + 8 + 24*(i-star_point.length*0.5)*power(reversed_c_x,2))+"px";
+        star_point_tp_button[i].style.width = (16*power(reversed_c_x,2))+"px";
+        star_point_tp_button[i].style.height = (12*power(reversed_c_x,2))+"px";
         star_point_tp_button[i].style.background = "#ffffff";
         star_point_tp_button[i].style.transition = "opacity 0.3s";
         star_point_tp_button[i].style.marginLeft = "var(--m_interect_xx3)";
@@ -1093,7 +1093,7 @@ function css_values()
         document.documentElement.style.setProperty("--black_line_yy",floor(c_h*0.55)+"px");
         document.documentElement.style.setProperty("--black_line_head_yy",floor(c_h*0.55-15)+"px");
         document.documentElement.style.setProperty("--black_line_txt_box_yy",floor(c_h*0.55+17)+"px");
-        document.documentElement.style.setProperty("--black_line_link_box_yy",floor(c_h*0.55-64)+"px");
+        document.documentElement.style.setProperty("--black_line_link_box_yy",floor(c_h*0.55-64*power(reversed_c_x,2))+"px");
     }
     
     
@@ -1218,7 +1218,7 @@ $(window).scroll(function()
 
     for(var i = 0; i < star_point.length; i++)
     {
-        if (n_scroll_pos >= 2500)
+        if (n_scroll_pos >= 2500-(is_pc-1)*965)
         {
             star_point_tp_button[i].style.opacity = "1";
             star_point_tp_button[i].style.pointerEvents = "auto";
