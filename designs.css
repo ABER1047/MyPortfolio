@@ -181,8 +181,6 @@ body
     left : var(--s112px);
     font-weight : bold;
     transition : opacity 0.5s;
-    margin-left : var(--m_interect_xx);
-    margin-top : var(--m_interect_yy);
 }
 
 .hello_title_kor
@@ -198,8 +196,6 @@ body
     left : var(--s112px);
     font-weight : bold;
     transition : opacity 0.5s;
-    margin-left : var(--m_interect_xx);
-    margin-top : var(--m_interect_yy);
 }
 
 .hello_title_jap
@@ -216,8 +212,6 @@ body
     font-weight : bold;
     font-family : customfont_jp;
     transition : opacity 0.5s;
-    margin-left : var(--m_interect_xx);
-    margin-top : var(--m_interect_yy);
 }
 
 .hello_title_desc
@@ -225,8 +219,6 @@ body
     font-size : var(--s18px);
     left : var(--s112px);
     transition : opacity 0.5s;
-    margin-left : var(--m_interect_xx);
-    margin-top : var(--m_interect_yy);;
     /* text-shadow : -0.2px -1px 0 #fff9f6, 0.2px -0.2px 0 #fff9f6, -0.2px 0.2px 0 #fff9f6, 0.2px 0.2px 0 #fff9f6; */
 }
 
@@ -383,8 +375,6 @@ body
 .starlight_effect
 {
     position : fixed;
-    margin-left : var(--m_interect_xx); 
-    margin-top : var(--m_interect_yy); 
     transition : left 0.6s;
 }
 
@@ -437,9 +427,7 @@ body
     position : fixed;
     top : 0;
     left : 0;
-    margin-left : var(--m_interect_xx); 
-    margin-top : var(--m_interect_yy); 
-    width : var(--sepa_bg_left_xx);;
+    width : var(--sepa_bg_left_xx);
     height : 100vh;
     animation : animation_starlights 50s linear infinite;
     z-index : 256;

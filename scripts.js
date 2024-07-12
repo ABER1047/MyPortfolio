@@ -1094,6 +1094,11 @@ function css_values()
         document.documentElement.style.setProperty("--black_line_head_yy",floor(c_h*0.55-15)+"px");
         document.documentElement.style.setProperty("--black_line_txt_box_yy",floor(c_h*0.55+17)+"px");
         document.documentElement.style.setProperty("--black_line_link_box_yy",floor(c_h*0.55-64*power(reversed_c_x,2))+"px");
+        
+        for(var i = 0; i < 3; i++)
+        {
+            document.documentElement.style.setProperty("--contact_xx"+(i),(c_w)*0.5+(i-1)*reversed_c_x*100+"px");
+        }
     }
     
     
@@ -1134,23 +1139,6 @@ function css_values()
         
         
         is_window_scrolled = !is_window_scrolled;
-    }
-    
-
-    
-    if (is_pc == 1)
-    {
-        //mousemove animation
-        var mouse_movement_dis_xx = (mouse_x - c_w*0.5)/72*is_pc;
-        var mouse_movement_dis_yy = (mouse_y - c_h*0.5)/72*is_pc;
-        document.documentElement.style.setProperty("--m_interect_xx",floor(mouse_movement_dis_xx)+"px");
-        document.documentElement.style.setProperty("--m_interect_yy",floor(mouse_movement_dis_yy)+"px");
-
-        document.documentElement.style.setProperty("--m_interect_xx2",-floor(mouse_movement_dis_xx*0.5)+"px");
-        document.documentElement.style.setProperty("--m_interect_yy2",-floor(mouse_movement_dis_yy*0.5)+"px");
-        
-        document.documentElement.style.setProperty("--m_interect_xx3",floor(mouse_movement_dis_xx*0.3)+"px");
-        document.documentElement.style.setProperty("--m_interect_yy3",floor(mouse_movement_dis_yy*0.3)+"px");
     }
 }
 
