@@ -643,7 +643,6 @@ function show_page()
         {
             var tmp_ele = document.createElement("a");
             tmp_ele.target = "_blank";
-            tmp_ele.href = star_point_source_code_link[i];
             obj_star_point_parents.appendChild(tmp_ele);
             
             star_point_source_code_link_box[i] = document.createElement("img");
@@ -666,7 +665,6 @@ function show_page()
         {
             var tmp_ele = document.createElement("a");
             tmp_ele.target = "_blank";
-            tmp_ele.href = star_point_trailer_link[i];
             obj_star_point_parents.appendChild(tmp_ele);
             
             star_point_trailer_link_box[i] = document.createElement("img");
@@ -689,7 +687,6 @@ function show_page()
         {
             var tmp_ele = document.createElement("a");
             tmp_ele.target = "_blank";
-            tmp_ele.href = star_point_download_link[i];
             obj_star_point_parents.appendChild(tmp_ele);
             
             star_point_download_link_box[i] = document.createElement("img");
@@ -1262,18 +1259,21 @@ $(window).scroll(function()
             {
                 star_point_source_code_link_box[i].style.opacity = 1;
                 star_point_source_code_link_box[i].style.pointerEvents = "auto";
+                star_point_source_code_link_box[i].href = star_point_source_code_link[i];
             }
             
             if (star_point_download_link_box[i])
             {
                 star_point_download_link_box[i].style.opacity = 1;
                 star_point_download_link_box[i].style.pointerEvents = "auto";
+                star_point_download_link_box[i].href = star_point_download_link[i];
             }
             
             if (star_point_trailer_link_box[i])
             {
                 star_point_trailer_link_box[i].style.opacity = 1;
                 star_point_trailer_link_box[i].style.pointerEvents = "auto";
+                star_point_trailer_link_box[i].href = star_point_trailer_link[i];
             }
         }
         else
@@ -1303,18 +1303,21 @@ $(window).scroll(function()
             {
                 star_point_source_code_link_box[i].style.opacity = 0;
                 star_point_source_code_link_box[i].style.pointerEvents = "none";
+                star_point_source_code_link_box[i].href = undefined;
             }
             
             if (star_point_download_link_box[i])
             {
                 star_point_download_link_box[i].style.opacity = 0;
                 star_point_download_link_box[i].style.pointerEvents = "none";
+                star_point_download_link_box[i].href = undefined;
             }
             
             if (star_point_trailer_link_box[i])
             {
                 star_point_trailer_link_box[i].style.opacity = 0;
                 star_point_trailer_link_box[i].style.pointerEvents = "none";
+                star_point_trailer_link_box[i].href = undefined;
             }
         }
     }
