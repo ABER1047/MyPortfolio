@@ -641,67 +641,67 @@ function show_page()
         var tmp_icon_box_width = 24*reversed_c_x;
         if (star_point_source_code_link_box[i])
         {
-            var tmp_ele = document.createElement("a");
-            tmp_ele.target = "_blank";
-            obj_star_point_parents.appendChild(tmp_ele);
-            
-            star_point_source_code_link_box[i] = document.createElement("img");
-            star_point_source_code_link_box[i].style.top = "var(--black_line_link_box_yy)";
-            star_point_source_code_link_box[i].style.position = "fixed";
-            star_point_source_code_link_box[i].src = "imgs/github_icon_white.png";
+            star_point_source_code_link_box[i] = document.createElement("a");
+            star_point_source_code_link_box[i].target = "_blank";
             star_point_source_code_link_box[i].style.opacity = 0;
-            star_point_source_code_link_box[i].style.zIndex = 320;
-            star_point_source_code_link_box[i].style.left = (is_pc == 1) ? (tmp_txt_box_width+tmp_xx-150-96)+"px" : (c_w-tmp_icon_box_width)*0.5-128-8+"px";
-            star_point_source_code_link_box[i].style.width = (tmp_icon_box_width)+"px";
-            star_point_source_code_link_box[i].style.transition = "opacity 0.3s";
-            star_point_source_code_link_box[i].style.marginLeft = "var(--m_interect_xx3)";
-            star_point_source_code_link_box[i].style.marginTop = "var(--m_interect_yy3)";
-            star_point_source_code_link_box[i].id = "cursor_interactive_ins";
-            tmp_ele.appendChild(star_point_source_code_link_box[i]);
+            obj_star_point_parents.appendChild(star_point_source_code_link_box[i]);
+            
+            var tmp_ele = document.createElement("img");
+            tmp_ele.style.top = "var(--black_line_link_box_yy)";
+            tmp_ele.style.position = "fixed";
+            tmp_ele.src = "imgs/github_icon_white.png";
+            tmp_ele.style.zIndex = 320;
+            tmp_ele.style.left = (is_pc == 1) ? (tmp_txt_box_width+tmp_xx-150-96)+"px" : (c_w-tmp_icon_box_width)*0.5-128-8+"px";
+            tmp_ele.style.width = (tmp_icon_box_width)+"px";
+            tmp_ele.style.transition = "opacity 0.3s";
+            tmp_ele.style.marginLeft = "var(--m_interect_xx3)";
+            tmp_ele.style.marginTop = "var(--m_interect_yy3)";
+            tmp_ele.id = "cursor_interactive_ins";
+            star_point_source_code_link_box[i].appendChild(tmp_ele);
         }
         
         //트레일러 및 미리보기 링크
         if (star_point_trailer_link_box[i])
         {
-            var tmp_ele = document.createElement("a");
-            tmp_ele.target = "_blank";
-            obj_star_point_parents.appendChild(tmp_ele);
-            
-            star_point_trailer_link_box[i] = document.createElement("img");
-            star_point_trailer_link_box[i].style.top = "var(--black_line_link_box_yy)";
-            star_point_trailer_link_box[i].style.position = "fixed";
-            star_point_trailer_link_box[i].src = "imgs/youtube_icon_white.png";
+            star_point_trailer_link_box[i] = document.createElement("a");
+            star_point_trailer_link_box[i].target = "_blank";
             star_point_trailer_link_box[i].style.opacity = 0;
-            star_point_trailer_link_box[i].style.zIndex = 320;
-            star_point_trailer_link_box[i].style.left = (is_pc == 1) ? (tmp_txt_box_width+tmp_xx-150-48)+"px" : (c_w-tmp_icon_box_width)*0.5-8+"px";
-            star_point_trailer_link_box[i].style.width = (tmp_icon_box_width)+"px";
-            star_point_trailer_link_box[i].style.transition = "opacity 0.3s";
-            star_point_trailer_link_box[i].style.marginLeft = "var(--m_interect_xx3)";
-            star_point_trailer_link_box[i].style.marginTop = "var(--m_interect_yy3)";
-            star_point_trailer_link_box[i].id = "cursor_interactive_ins";
-            tmp_ele.appendChild(star_point_trailer_link_box[i]);
+            obj_star_point_parents.appendChild(star_point_trailer_link_box[i]);
+            
+            var tmp_ele = document.createElement("img");
+            tmp_ele.style.top = "var(--black_line_link_box_yy)";
+            tmp_ele.style.position = "fixed";
+            tmp_ele.src = "imgs/youtube_icon_white.png";
+            tmp_ele.style.zIndex = 320;
+            tmp_ele.style.left = (is_pc == 1) ? (tmp_txt_box_width+tmp_xx-150-48)+"px" : (c_w-tmp_icon_box_width)*0.5-8+"px";
+            tmp_ele.style.width = (tmp_icon_box_width)+"px";
+            tmp_ele.style.transition = "opacity 0.3s";
+            tmp_ele.style.marginLeft = "var(--m_interect_xx3)";
+            tmp_ele.style.marginTop = "var(--m_interect_yy3)";
+            tmp_ele.id = "cursor_interactive_ins";
+            star_point_trailer_link_box[i].appendChild(tmp_ele);
         }
         
         //다운로드 링크 버튼
         if (star_point_download_link_box[i])
         {
-            var tmp_ele = document.createElement("a");
-            tmp_ele.target = "_blank";
-            obj_star_point_parents.appendChild(tmp_ele);
-            
-            star_point_download_link_box[i] = document.createElement("img");
-            star_point_download_link_box[i].style.top = "var(--black_line_link_box_yy)";
-            star_point_download_link_box[i].style.position = "fixed";
-            star_point_download_link_box[i].src = "imgs/downlaod_icon.png";
+            star_point_download_link_box[i] = document.createElement("a");
+            star_point_download_link_box[i].target = "_blank";
             star_point_download_link_box[i].style.opacity = 0;
-            star_point_download_link_box[i].style.zIndex = 320;
-            star_point_download_link_box[i].style.left = (is_pc == 1) ? (tmp_txt_box_width+tmp_xx-150)+"px" : (c_w-tmp_icon_box_width)*0.5+128-8+"px";
-            star_point_download_link_box[i].style.width = (tmp_icon_box_width)+"px";
-            star_point_download_link_box[i].style.transition = "opacity 0.3s";
-            star_point_download_link_box[i].style.marginLeft = "var(--m_interect_xx3)";
-            star_point_download_link_box[i].style.marginTop = "var(--m_interect_yy3)";
-            star_point_download_link_box[i].id = "cursor_interactive_ins";
-            tmp_ele.appendChild(star_point_download_link_box[i]);
+            obj_star_point_parents.appendChild(star_point_download_link_box[i]);
+            
+            var tmp_ele = document.createElement("img");
+            tmp_ele.style.top = "var(--black_line_link_box_yy)";
+            tmp_ele.style.position = "fixed";
+            tmp_ele.src = "imgs/downlaod_icon.png";
+            tmp_ele.style.zIndex = 320;
+            tmp_ele.style.left = (is_pc == 1) ? (tmp_txt_box_width+tmp_xx-150)+"px" : (c_w-tmp_icon_box_width)*0.5+128-8+"px";
+            tmp_ele.style.width = (tmp_icon_box_width)+"px";
+            tmp_ele.style.transition = "opacity 0.3s";
+            tmp_ele.style.marginLeft = "var(--m_interect_xx3)";
+            tmp_ele.style.marginTop = "var(--m_interect_yy3)";
+            tmp_ele.id = "cursor_interactive_ins";
+            star_point_download_link_box[i].appendChild(tmp_ele);
         }
         
         
