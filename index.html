@@ -20,7 +20,7 @@
 
         
         
-        <div class = "background" loading = "eager" style = "position : absolute; z-index : 0; width : 100%; height : 10810px; background : black; left : 0px;"></div>
+        <div class = "background" id = "background" loading = "eager" style = "position : absolute; z-index : 0; width : 100%; height : 10810px; background : black; left : 0px;"></div>
         
         <div class = "trailer_bg" id = "trailer_bg" style = "opacity : 0; position : fixed; transition : opacity 1s;">
             <video id = "trailer_video" class = "trailer_video" muted loop playsinline control preload = "true" style = "pointer-events : none; height : var(--view_width_x1p1); filter : blur(50px); z-index : 100; position : fixed; transition : filter 1s, transform 0.03s; left : var(--trailer_video_xx);">
@@ -29,7 +29,7 @@
         </div>
         
         
-        <div class = "waveWrapper waveAnimation" style = "color : #ffffff;">
+        <div class = "waveWrapper waveAnimation" id = "waveWrapper waveAnimation" style = "color : #ffffff;">
             <div class = "wave waveTop" style = "background-image : url('imgs/wave_bg_1.png'); z-index : 32;"></div>
             <div class = "wave waveMiddle" style = "background-image : url('imgs/wave_bg.png'); z-index : 33;"></div>
             <div class = "wave waveBottom" style = "background-image : url('imgs/wave_bg_3.png'); z-index : 34;"></div>
@@ -56,14 +56,14 @@
         
         <div class = "sepa_bg_left" id = "sepa_bg_left" style = "pointer-events : none; position : fixed; background : linear-gradient(to right,#090909,#0c0c0e,#0c0c0e); width : 3600px; height : 100%; top : 0px; margin-left : -3600px; left : var(--sepa_bg_left_xx); transition : all 0.5s; z-index : 128;"></div>
         <div class = "waveWrapper waveAnimation" style = "color : #ffffff; transition : margin-left 0.1s, margin-top 0.1s; z-index : 128;">
-            <div class = "wave waveBlinder" style = "background-image : url('imgs/wave_bg_2.png');"></div>
+            <div class = "wave waveBlinder" id = "wave waveBlinder" style = "background-image : url('imgs/wave_bg_2.png');"></div>
         </div>
         
         <div id = "cursor_interactive_ins" class = "cursor_interactive_ins">
-            <div class = "contact_text" id = "contact_text" style = "position : fixed; color : #ffffff; top : -999px; left : 49.62%; width : 320px; font-size : 18px; font-weight : bold; opacity : 0; transition : opacity 0.3s; z-index : 128;">Contact</div>
-            <a href = "https://www.youtube.com/channel/UCuBkudnNQFlTt6QQ-9Nhdtw" target = "_blank"><img class = "contact_youtube" id = "contact_youtube" src = "imgs/youtube_icon_white.png" style = "position : fixed; width : 48px; top : -999px; left : var(--contact_xx0); transition : opacity 0.3s; opacity : 0; z-index : 128;"></a>
-            <a href = "https://discord.com/invite/TcG38dPRjM" target = "_blank"><img class = "contact_discord" id = "contact_discord" src = "imgs/discord_icon_white.png" style = "position : fixed; width : 48px; top : -999px; left : var(--contact_xx1); transition : opacity 0.3s; opacity : 0; z-index : 128;"></a>
-            <a href = "https://github.com/ABER1047" target = "_blank"><img class = "contact_github" id = "contact_github" src = "imgs/github_icon_white.png" style = "position : fixed; width : 48px; top : -999px; left : var(--contact_xx2); transition : opacity 0.3s; opacity : 0; z-index : 128;"></a>
+            <div class = "contact_text" id = "contact_text" style = "position : fixed; color : #ffffff; top : -999px; left : 49.62%; width : 320px; font-size : 18px; font-weight : bold; opacity : 0; transition : opacity 0.3s; z-index : 128; mix-blend-mode : difference;">Contact</div>
+            <a href = "https://www.youtube.com/channel/UCuBkudnNQFlTt6QQ-9Nhdtw" target = "_blank"><img class = "contact_youtube" id = "contact_youtube" src = "imgs/youtube_icon_white.png" style = "position : fixed; width : 48px; top : -999px; left : var(--contact_xx0); transition : opacity 0.3s; opacity : 0; z-index : 128; mix-blend-mode : difference;"></a>
+            <a href = "https://discord.com/invite/TcG38dPRjM" target = "_blank"><img class = "contact_discord" id = "contact_discord" src = "imgs/discord_icon_white.png" style = "position : fixed; width : 48px; top : -999px; left : var(--contact_xx1); transition : opacity 0.3s; opacity : 0; z-index : 128; mix-blend-mode : difference;"></a>
+            <a href = "https://github.com/ABER1047" target = "_blank"><img class = "contact_github" id = "contact_github" src = "imgs/github_icon_white.png" style = "position : fixed; width : 48px; top : -999px; left : var(--contact_xx2); transition : opacity 0.3s; opacity : 0; z-index : 128; mix-blend-mode : difference;"></a>
         </div>
         
         
@@ -94,7 +94,7 @@
         </div>
         
         
-        <div class = "starlight_effects" style = "pointer-events : none">
+        <div class = "starlight_effects" id = "starlight_effects" style = "pointer-events : none">
             <span class = "starlight_tail_effects"></span>
             <span class = "starlight_tail_effects"></span>
             <span class = "starlight_tail_effects"></span>

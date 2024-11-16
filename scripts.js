@@ -530,6 +530,38 @@ function page_scroll_to(tmp_scroll_yy)
 
 //#endregion
 
+//#region Get System theme value
+
+function getSystemTheme()
+{
+    var tmp_chk = 0;
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) 
+    {
+        //dark
+        tmp_chk = 1;
+    } 
+    else if (window.matchMedia('(prefers-color-scheme: light)').matches) 
+    {
+        //light
+        tmp_chk = 2;
+    } 
+    
+    if (tmp_chk == 2)
+    {
+        document.getElementById("starlight_effects").style.filter = 'invert(100%)';
+        document.getElementById("waveWrapper waveAnimation").style.filter = 'invert(100%)';
+        document.getElementById("sepa_bg_left").style.filter = 'invert(100%)';
+        document.getElementById("wave waveBlinder").style.filter = 'invert(100%)';
+        document.getElementById("sepa_bg_top").style.filter = 'invert(100%)';
+        document.getElementById("sepa_bg_bot").style.filter = 'invert(100%)';
+        document.getElementById("black_line_head").style.filter = 'invert(100%)';
+    }
+    
+    return (tmp_chk == 2) ? "light" : "dark";
+}
+
+//#endregion
+
 
 //#region 첫 화면 로딩
 setTimeout(show_page,loading_speed);
@@ -559,6 +591,11 @@ function show_page()
     obj_trailer_video.style.filter = "blur(0px)";
 
     obj_screen_transition_bg.style.top = "-8px";
+    
+    
+    //테마 적용
+    console.log(getSystemTheme());
+    
     console.log("page_loaded");
     setTimeout(screen_transition1,1000);
     
@@ -583,6 +620,7 @@ function show_page()
         star_point[i].style.top = "var(--black_line_head_yy)";
         star_point[i].style.pointerEvents = "none";
         star_point[i].src = "imgs/star2.png";
+        star_point[i].style.mixBlendMode = "difference";
         star_point[i].style.position = "fixed";
         star_point[i].style.width = "32px";
         star_point[i].style.left = (tmp_xx)+"px";
@@ -600,6 +638,7 @@ function show_page()
         star_point_txt_box[i].style.top = "var(--black_line_txt_box_yy)";
         star_point_txt_box[i].style.position = "fixed";
         star_point_txt_box[i].style.pointerEvents = "none";
+        star_point_txt_box[i].style.mixBlendMode = "difference";
         star_point_txt_box[i].style.opacity = 0;
         star_point_txt_box[i].style.zIndex = 320;
         star_point_txt_box[i].style.left = (is_pc == 1) ? (tmp_xx)+"px" : (c_w-tmp_txt_box_width)*0.5+"px";
@@ -625,6 +664,11 @@ function show_page()
         star_point_img_box[i].style.pointerEvents = "none";
         star_point_img_box[i].style.top = (i > 2) ? (c_h/4.84+"px") : (c_h/2.29+"px");
         star_point_img_box[i].src = star_point_img_box_src[i];
+        if (i < 3)
+        {
+            star_point_img_box[i].style.mixBlendMode = "difference";
+        }
+        star_point_img_box[i].style.position = "fixed";
         star_point_img_box[i].style.position = "fixed";
         star_point_img_box[i].style.opacity = 0;
         star_point_img_box[i].style.zIndex = 320;
@@ -649,6 +693,7 @@ function show_page()
             var tmp_ele = document.createElement("img");
             tmp_ele.style.top = "var(--black_line_link_box_yy)";
             tmp_ele.style.position = "fixed";
+            tmp_ele.style.mixBlendMode = "difference";
             tmp_ele.src = "imgs/github_icon_white.png";
             tmp_ele.style.zIndex = 320;
             tmp_ele.style.left = (is_pc == 1) ? (tmp_txt_box_width+tmp_xx-150-96)+"px" : (c_w-tmp_icon_box_width)*0.5-128-8+"px";
@@ -671,6 +716,7 @@ function show_page()
             var tmp_ele = document.createElement("img");
             tmp_ele.style.top = "var(--black_line_link_box_yy)";
             tmp_ele.style.position = "fixed";
+            tmp_ele.style.mixBlendMode = "difference";
             tmp_ele.src = "imgs/youtube_icon_white.png";
             tmp_ele.style.zIndex = 320;
             tmp_ele.style.left = (is_pc == 1) ? (tmp_txt_box_width+tmp_xx-150-48)+"px" : (c_w-tmp_icon_box_width)*0.5-8+"px";
@@ -694,6 +740,7 @@ function show_page()
             tmp_ele.style.top = "var(--black_line_link_box_yy)";
             tmp_ele.style.position = "fixed";
             tmp_ele.src = "imgs/downlaod_icon.png";
+            tmp_ele.style.mixBlendMode = "difference";
             tmp_ele.style.zIndex = 320;
             tmp_ele.style.left = (is_pc == 1) ? (tmp_txt_box_width+tmp_xx-150)+"px" : (c_w-tmp_icon_box_width)*0.5+128-8+"px";
             tmp_ele.style.width = (tmp_icon_box_width)+"px";
@@ -712,6 +759,7 @@ function show_page()
         star_point_tp_button[i].style.opacity = 0;
         star_point_tp_button[i].style.borderRadius = (4*reversed_c_x)+"px";
         star_point_tp_button[i].style.zIndex = 320;
+        star_point_tp_button[i].style.mixBlendMode = "difference";
         star_point_tp_button[i].style.left = (c_w*0.5 + 8 + 24*(i-star_point.length*0.5)*power(reversed_c_x,2))+"px";
         star_point_tp_button[i].style.width = (16*power(reversed_c_x,2))+"px";
         star_point_tp_button[i].style.height = (12*power(reversed_c_x,2))+"px";
