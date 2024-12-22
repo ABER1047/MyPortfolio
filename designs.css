@@ -173,42 +173,42 @@ body
 
 .hello_title_eng
 {
-    -webkit-text-stroke : 12px white;
+    -webkit-text-stroke : 9px black; 
     paint-order : stroke fill;
     color : transparent;
     
-    font-size : var(--s160px);
-    left : var(--s112px);
+    font-size : var(--s192px);
+    left : var(--s118px);
     font-weight : bold;
     transition : opacity 0.5s;
 }
 
 .hello_title_kor
 {
-    background : linear-gradient(to right,#d4bf7d 20%,#fbfcd0 30%,#fef7ae 70%,#dac282 80%);
+    background : linear-gradient(to left,#f26c1c 20%,#eb6c22 30%,#ee7834 70%,#f39e6d 80%);
     -webkit-background-clip : text;
     background-clip : text;
     -webkit-text-fill-color : transparent;
     background-size : 500% auto;
     animation : textShine 5s ease-in-out infinite alternate;
     
-    font-size : var(--s48px);
-    left : var(--s112px);
+    font-size : var(--s24px);
+    left : var(--s130px);
     font-weight : bold;
     transition : opacity 0.5s;
 }
 
 .hello_title_jap
 {
-    background : linear-gradient(to left,#725e92 20%,#a994d2 30%,#816b9f 70%,#54446c 80%);
+    background : linear-gradient(to right,#f26c1c 20%,#eb6c22 30%,#ee7834 70%,#f39e6d 80%);
     -webkit-background-clip : text;
     background-clip : text;
     -webkit-text-fill-color : transparent;
     background-size : 500% auto;
     animation : textShine 5s ease-in-out infinite alternate;
     
-    font-size : var(--s48px);
-    left : var(--s108px);
+    font-size : var(--s24px);
+    left : var(--s240px);
     font-weight : bold;
     font-family : customfont_jp;
     transition : opacity 0.5s;
@@ -217,7 +217,7 @@ body
 .hello_title_desc
 {
     font-size : var(--s18px);
-    left : var(--s112px);
+    left : var(--s118px);
     transition : opacity 0.5s;
     /* text-shadow : -0.2px -1px 0 #fff9f6, 0.2px -0.2px 0 #fff9f6, -0.2px 0.2px 0 #fff9f6, 0.2px 0.2px 0 #fff9f6; */
 }

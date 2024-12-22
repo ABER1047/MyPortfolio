@@ -1111,7 +1111,7 @@ function css_values()
         star_point_margin_ratio = (9/star_point.length)*c_x;
         star_point_margin = 120*star_point_margin_ratio;
         
-        var main_trailer_height = c_h*1.1+32;
+        var main_trailer_height = c_h*1.1+104;
         document.documentElement.style.setProperty("--view_width_x1p1",main_trailer_height+"px");
         document.documentElement.style.setProperty("--view_height",c_h+"px");
         document.documentElement.style.setProperty("--trailer_video_xx",(is_pc == 1) ? (64+"px") : (c_w-main_trailer_height/9*16)*0.5+"px");
@@ -1124,14 +1124,17 @@ function css_values()
 
         
         document.documentElement.style.setProperty("--s18px",floor(18*sqrt(reversed_c_x))+"px");
+        document.documentElement.style.setProperty("--s24px",floor(24*sqrt(reversed_c_x))+"px");
         document.documentElement.style.setProperty("--s36px",floor(36*c_x)+"px");
         document.documentElement.style.setProperty("--s48px",floor(48*sqrt(reversed_c_x))+"px");
         document.documentElement.style.setProperty("--s108px",floor(108*c_x)+"px");
-        document.documentElement.style.setProperty("--s112px",floor(112*c_x)+"px");
-        document.documentElement.style.setProperty("--s160px",floor(160*sqrt(reversed_c_x))+"px");
+        document.documentElement.style.setProperty("--s118px",floor(118*c_x)+"px");
+        document.documentElement.style.setProperty("--s130px",floor(130*c_x)+"px");
+        document.documentElement.style.setProperty("--s192px",floor(192*sqrt(reversed_c_x))+"px");
+        document.documentElement.style.setProperty("--s240px",floor(240*sqrt(reversed_c_x))+"px");
         document.documentElement.style.setProperty("--s140px",floor(140*sqrt(reversed_c_x))+"px");
-        document.documentElement.style.setProperty("--s290px",floor(290*sqrt(reversed_c_x))+"px");
-        document.documentElement.style.setProperty("--s330px",floor(330*sqrt(reversed_c_x))+"px");
+        document.documentElement.style.setProperty("--s315px",floor(315*sqrt(reversed_c_x))+"px");
+        document.documentElement.style.setProperty("--s307px",floor(307*sqrt(reversed_c_x))+"px");
         document.documentElement.style.setProperty("--s460px",floor(460*sqrt(reversed_c_x))+"px");
 
         
