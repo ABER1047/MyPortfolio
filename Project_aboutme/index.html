@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang = "kor">
+    <head>
+        <meta name="viewport" content = "user-scalable = no, initial-scale = 0.5, maximum-scale = 0.5, minimum-scale = 0.5, width = device-width" />
+        <meta charset = "utf-8">
+        <meta name = "viewport" http-equiv = "Content-Security-Policy">
+        
+        <link rel = "icon" href = "imgs/website_icon.png">
+        <link rel = "stylesheet" href = "designs.css">
+        <title>ABER*</title>
+    </head>
+
+
+    <body id = "body_t" class = "body_t">
+        <div id = "loading_bar_bg" class = "loading_bar_bg" style = "z-index : 999; left : 0px; background : #090909; width : 100%; height : 105%; top : -8px; position : fixed"></div>
+        <div id = "cursor_interactive_ins" class = "cursor_interactive_ins">
+            <div id = "loading_bar_grad" class = "loading_bar_grad" style = "z-index : 1000; top : 50%; left : -100%; width : 100%; position : fixed; width : 100%;"></div>
+        </div>
+        <div id = "screen_transition_bg" class = "screen_transition_bg" style = "z-index : 1001; left : 0px; background : #ffffff; width : 100%; height : 105%; top : 101%; position : fixed; transition : height 0.7s, top 0.7s;"></div>
+
+        
+        
+        <div class = "background" id = "background" loading = "eager" style = "position : absolute; z-index : 0; width : 100%; height : 10810px; background : black; left : 0px;"></div>
+        
+        <div class = "trailer_bg" id = "trailer_bg" style = "opacity : 0; position : fixed; transition : opacity 1s;">
+            <video id = "trailer_video" class = "trailer_video" muted loop playsinline control preload = "true" style = "pointer-events : none; height : var(--view_width_x1p1); filter : blur(50px); z-index : 100; position : fixed; transition : filter 1s, transform 0.03s; left : var(--trailer_video_xx);">
+                <source src = "imgs/main_trailer.mp4" type = "video/mp4" loading = "eager" preload = "auto">
+            </video>
+        </div>
+        
+        
+        <div class = "waveWrapper waveAnimation" id = "waveWrapper waveAnimation" style = "color : #ffffff;">
+            <div class = "wave waveTop" style = "background-image : url('imgs/wave_bg_1.png'); z-index : 32;"></div>
+            <div class = "wave waveMiddle" style = "background-image : url('imgs/wave_bg.png'); z-index : 33;"></div>
+            <div class = "wave waveBottom" style = "background-image : url('imgs/wave_bg_3.png'); z-index : 34;"></div>
+        </div>
+        
+        <div id = "cursor_interactive_ins" class = "cursor_interactive_ins">
+            <div class = "hello_title_eng" id = "hello_title_eng" style = "width : auto; height : auto; position : fixed; color : #ffffff; opacity : 0; top : var(--s140px); z-index : 64;">Hello!</div>
+            <div class = "hello_title_kor" id = "hello_title_kor" style = "width : auto; height : auto; position : fixed; color : #f0da90; opacity : 0; top : var(--s315px); z-index : 64;">안녕하세요!</div>
+            <div class = "hello_title_jap" id = "hello_title_jap" style = "width : auto; height : auto; position : fixed; color : #6dbde3; opacity : 0; top : var(--s307px); z-index : 64;">こんにちは!</div>
+            <div class = "hello_title_desc" id = "hello_title_desc" style = "width : auto; height : auto; position : fixed; color : #ffffff; opacity : 0; top : var(--s460px); z-index : 64;">해당 웹사이트는 포트폴리오 용도로 제작되었으며,<br>웹사이트를 포함한, 전시된 모든 프로젝트들은<br>전부 본인이 개발한 것임을 밝힙니다.</div>
+        </div>
+        
+        <div class = "quick_select_bg_outline" id = "quick_select_bg_outline" style = "position : fixed; width : 50%; height : 1px; left : var(--sr384px); margin-left : -40px; top : -24px; z-index : 750; transition : top 0.5s;"></div>
+        <!-- <div class = "quick_select_bg" id = "quick_select_bg" style = "position : fixed; background : #fff9f6; width : 100%; height : 64px; top : -88px; z-index : 750; opacity : 0.95; transition : top 0.5s; left : 0px;"></div> -->
+        
+        <div id = "cursor_interactive_ins" class = "cursor_interactive_ins">
+            <div class = "quick_select_main" id = "quick_select_main" style = "position : fixed; left : var(--sr168px); top : -63px; font-weight : bolder; font-size : 16px; transition : all 0.2s; z-index : 800; transition : top 0.5s;">Main</div>
+            <div class = "quick_select_contact" id = "quick_select_contact" style = "position : fixed; left : var(--sr288px); top : -63px; font-weight : bolder; font-size : 16px; transition : all 0.2s; z-index : 800; transition : top 0.5s;">Contact</div>
+            <div class = "quick_select_works" id = "quick_select_works" style = "position : fixed; left : var(--sr384px); top : -63px; font-weight : bolder; font-size : 16px; transition : all 0.2s; z-index : 800; transition : top 0.5s;">My Works</div>
+            <div class = "music_info" id = "music_info" style = "position : fixed; left : 5%; top : 14px; font-weight : bold; font-size : 12px; transition : all 0.5s; z-index : 800; opacity : 0;">Now playing</div>
+            <div class = "music_info2" id = "music_info2" style = "position : fixed; left : 5%; top : 27px; font-weight : bold; font-size : 13px; transition : all 0.7s; z-index : 800; opacity : 0; font-family: auto;">Ujico*/Snail's House - kokorotravel</div>
+            <img class = "music_button" id = "music_button" src = "imgs/music_icon.png" loading = "eager" style = "position : fixed; left : 49%; width : var(--s36px); top : -63px; z-index : 800; transition : top 0.5s, opacity 0.3s, left 1s; opacity : 0.7;">
+        </div>
+        
+        <div class = "sepa_bg_left" id = "sepa_bg_left" style = "pointer-events : none; position : fixed; background : linear-gradient(to right,#090909,#0c0c0e,#0c0c0e); width : 3600px; height : 100%; top : 0px; margin-left : -3600px; left : var(--sepa_bg_left_xx); transition : all 0.5s; z-index : 128;"></div>
+        <div class = "waveWrapper waveAnimation" style = "color : #ffffff; transition : margin-left 0.1s, margin-top 0.1s; z-index : 128;">
+            <div class = "wave waveBlinder" id = "wave waveBlinder" style = "background-image : url('imgs/wave_bg_2.png');"></div>
+        </div>
+        
+        <div id = "cursor_interactive_ins" class = "cursor_interactive_ins">
+            <div class = "contact_text" id = "contact_text" style = "position : fixed; color : #ffffff; top : -999px; left : 49.62%; width : 320px; font-size : 18px; font-weight : bold; opacity : 0; transition : opacity 0.3s; z-index : 128; mix-blend-mode : difference;">Contact</div>
+            <a href = "https://www.youtube.com/channel/UCuBkudnNQFlTt6QQ-9Nhdtw" target = "_blank"><img class = "contact_youtube" id = "contact_youtube" src = "imgs/youtube_icon_white.png" style = "position : fixed; width : 48px; top : -999px; left : var(--contact_xx0); transition : opacity 0.3s; opacity : 0; z-index : 128; mix-blend-mode : difference;"></a>
+            <a href = "https://discord.com/invite/TcG38dPRjM" target = "_blank"><img class = "contact_discord" id = "contact_discord" src = "imgs/discord_icon_white.png" style = "position : fixed; width : 48px; top : -999px; left : var(--contact_xx1); transition : opacity 0.3s; opacity : 0; z-index : 128; mix-blend-mode : difference;"></a>
+            <a href = "https://github.com/ABER1047" target = "_blank"><img class = "contact_github" id = "contact_github" src = "imgs/github_icon_white.png" style = "position : fixed; width : 48px; top : -999px; left : var(--contact_xx2); transition : opacity 0.3s; opacity : 0; z-index : 128; mix-blend-mode : difference;"></a>
+        </div>
+        
+        
+        <div class = "arrow" id = "arrow" style = "z-index : 130;">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        
+        <div class = "sepa_bg_top" id = "sepa_bg_top" style = "pointer-events : none; position : fixed; background : #090909; width : 100%; height : 1500px; top : var(--sepa_bg_top_yy); left : 0px; transition : all 0.5s; z-index : 160;"></div>
+        <div class = "sepa_bg_bot" id = "sepa_bg_bot" style = "pointer-events : none; position : fixed; background : #090909; width : 100%; height : 1500px; top : var(--sepa_bg_bot_yy); left : 0px; transition : all 0.5s; z-index : 160;"></div>
+        
+        <video id = "priview_video_bg" class = "priview_video_bg" muted loop playsinline control preload = "true" style = "opacity : 0; position : fixed; transition : all 1s; z-index : 170; pointer-events : none; width : 105%; filter : blur(24px); left : -64px;">
+            <source src = ""  type = "video/mp4" loading = "eager" preload = "auto">
+        </video>
+        
+        
+        <div class = "black_line" id = "black_line" style = "position : fixed; background-image : linear-gradient(to right,#090909,#090909,#121212,#121212,#ffffff); width : 2300px; height : 1.5px; top : var(--black_line_yy); left : var(--black_line_xx); transition : left 0.6s, opacity 1s; z-index : 256;"></div>
+        <div class = "starlight_effect" id = "starlight_effect" style = "top : var(--black_line_head_yy); left : var(--black_line_head_xx); transform: rotate(90deg) translate(25px, 200px); z-index : 256;">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <img class = "black_line_head" id = "black_line_head" src = "imgs/star2.png" style = "position : fixed; width : 32px; height : 32px; top : var(--black_line_head_yy); left : var(--black_line_head_xx); transition : left 0.6s, opacity 1s; z-index : 256;">
+        
+        <div id = "cursor_interactive_ins" class = "cursor_interactive_ins">
+            <div class = "star_point_parents" id = "star_point_parents" style = "z-index : 320;"></div>
+        </div>
+        
+        
+        <div class = "starlight_effects" id = "starlight_effects" style = "pointer-events : none">
+            <span class = "starlight_tail_effects"></span>
+            <span class = "starlight_tail_effects"></span>
+            <span class = "starlight_tail_effects"></span>
+            <span class = "starlight_tail_effects"></span>
+            <span class = "starlight_tail_effects"></span>
+            <span class = "starlight_tail_effects"></span>
+            <span class = "starlight_tail_effects"></span>
+            <span class = "starlight_tail_effects"></span>
+        </div>
+        
+        
+        <div class = "animated_cursor_main" id = "animated_cursor_main" style = "opacity : 0; z-index : 999; border-radius : 99px; background : #ffffff; position : fixed; left : var(--cursor_xx_main); top : var(--cursor_yy_main); margin-left : -8px; margin-top : -8px; padding : 8px;"></div>
+        <div class = "animated_cursor" id = "animated_cursor" style = "opacity : 0; z-index : 999; border-radius : 99px; background : #ffffff; position : fixed; left : var(--cursor_xx); top : var(--cursor_yy);"></div>
+        
+        <div id = "cursor_interactive_ins" class = "cursor_interactive_ins">
+            <a href = "https://github.com/ABER1047/Project_aboutme" target = "_blank"><div class = "credit" id = "credit" style = "mix-blend-mode: difference; position : fixed; color : #ffffff; left : 93%; top : 96%; text-align : center; opacity : 0.7; font-size : 14px; transition : all 0.2s; z-index : 320;">Powered by Github<br>@ABER1047</div></a>
+        </div>
+    </body>
+    
+    <script src = "https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src = "https://cdn.jsdelivr.net/gh/ABER1047/Forme/scripts.js"></script>
+    <script src = "scripts.js"></script>
+</html>

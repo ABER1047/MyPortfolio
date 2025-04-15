@@ -78,8 +78,8 @@ var star_point = [-4, -4, -4, -4, -4, -4, -4, -4, -4, -4, -4];
 var star_point_tp_button = [];
 var star_point_txt_box = [];
 var star_point_img_box = [];
-var star_point_img_box_src = [ "imgs/gms.png", "imgs/android.png", "imgs/google_play.jpg", "imgs/astronaut_preview.gif", "imgs/arena_of_wakgood_preview.mp4", "imgs/delaunay_preview.gif", "imgs/bocchi_preview.mp4", "imgs/project_wak_preview.mp4", "imgs/hitori_bocchi_trailer.mp4", "imgs/project_wak_beat_preview.mp4", "imgs/project_D_preview.mp4"];
-var star_point_img_box_type = [ "img", "img", "img", "img", "video", "img", "video", "video", "video", "video", "video"];
+var star_point_img_box_src = [ "imgs/gms.png", "imgs/android.png", "imgs/google_play.jpg", "imgs/astronaut_preview.mp4", "imgs/arena_of_wakgood_preview.mp4", "imgs/delaunay_preview.mp4", "imgs/bocchi_preview.mp4", "imgs/project_wak_preview.mp4", "imgs/hitori_bocchi_trailer.mp4", "imgs/project_wak_beat_preview.mp4", "imgs/project_D_preview.mp4"];
+var star_point_img_box_type = [ "img", "img", "img", "video", "video", "video", "video", "video", "video", "video", "video"];
 var star_point_source_code_link_box = [false, false, false, true, true, true, true, true, true, true, true ];
 var star_point_download_link_box = [false, false, false, false, true, false, true, true, true, true, false ];
 var star_point_trailer_link_box = [false, false, false, false, true, false, true, true, true, true, false ];
@@ -668,7 +668,6 @@ function show_page()
         {
             star_point_img_box[i].style.mixBlendMode = "difference";
         }
-        star_point_img_box[i].style.position = "fixed";
         star_point_img_box[i].style.position = "fixed";
         star_point_img_box[i].style.opacity = 0;
         star_point_img_box[i].style.zIndex = 320;
